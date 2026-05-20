@@ -615,6 +615,32 @@
     .ch-grid{grid-template-columns:1fr}
     .val-card{padding:28px 22px 22px}
   }
+
+  /* ============================================================
+     RUNS section — operational backbone (Rule 20 doctrine)
+     ============================================================ */
+  .runs{position:relative;background:var(--bg);padding:128px 32px 96px;overflow:hidden;border-top:1px solid var(--border)}
+  .runs-bg{position:absolute;inset:0;pointer-events:none}
+  .runs-bg .glow-a{position:absolute;top:80px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(59,130,246,0.10) 0%,rgba(59,130,246,0) 60%);filter:blur(20px)}
+  .runs-bg .glow-b{position:absolute;bottom:80px;left:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(168,85,247,0.06) 0%,rgba(168,85,247,0) 60%);filter:blur(20px)}
+  .runs-inner{position:relative;max-width:1280px;margin:0 auto}
+  .runs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+  .runs-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px 26px;transition:border-color .2s ease,transform .2s ease,box-shadow .25s ease;position:relative;overflow:hidden}
+  .runs-card:hover{border-color:rgba(96,165,250,0.40);transform:translateY(-3px);box-shadow:0 12px 40px -10px rgba(59,130,246,0.25)}
+  .runs-card .ic{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:rgba(168,85,247,0.10);border:1px solid rgba(168,85,247,0.22);color:#c4a4f7;margin-bottom:18px}
+  .runs-card .ic svg{width:18px;height:18px}
+  .runs-card h3{margin:0 0 10px;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:#fff}
+  .runs-card p{margin:0 0 14px;font-size:14.5px;line-height:1.55;color:var(--text-muted);text-wrap:pretty}
+  .runs-card .tag{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:rgba(168,85,247,0.10);border:1px solid rgba(168,85,247,0.22);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#c4a4f7;font-weight:600}
+  .runs-card .tag::before{content:"";width:5px;height:5px;border-radius:999px;background:#c4a4f7;box-shadow:0 0 6px #c4a4f7}
+
+  @media (max-width:1080px){
+    .runs-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:640px){
+    .runs{padding:96px 20px 72px}
+    .runs-grid{grid-template-columns:1fr}
+  }
 </style>
 <link rel="stylesheet" href="assets/mobile-nav.css">
 <script defer src="assets/mobile-nav.js"></script>
@@ -679,7 +705,7 @@
       </h1>
 
       <p class="subhead">
-        AME knows every car on your forecourt, every customer you've ever dealt with, and every conversation in flight. She runs your sales admin — voice, text, pipeline, stock, aftersales — under your brand, for £499/mo flat.
+        AME knows every car on your forecourt, every customer you've ever dealt with, and every conversation in flight. She runs your sales admin — pipeline, stock, deals, aftersales, social, reviews — and talks to customers on every channel from WhatsApp to the phone. £499/mo flat. Under your brand.
       </p>
 
       <div class="cta-row">
@@ -967,18 +993,25 @@
     </div>
 
     <div class="cap-grid">
-      <!-- 1 — Phone -->
+      <!-- 5 — Tag -->
       <article class="cap">
-        <div class="ic-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-        <h3>Answers every call.</h3>
-        <p>AI receptionist on your number 24/7. Captures leads, books test drives, sends recap via SMS. You hear every transcript.</p>
+        <div class="ic-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41 13.42 20.58a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div>
+        <h3>Knows your stock.</h3>
+        <p>Learns every car the moment you list it. Reg, mileage, spec, photos. Answers customer questions before they ask twice.</p>
       </article>
 
-      <!-- 2 — Chat -->
+      <!-- 6 — Heart -->
       <article class="cap">
-        <div class="ic-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="13.5" x2="13" y2="13.5"/></svg></div>
-        <h3>Replies on every channel.</h3>
-        <p>SMS, WhatsApp, Facebook Messenger, Instagram DM, web chat, email — one inbox. AME drafts or auto-replies. You stay in control.</p>
+        <div class="ic-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h3>Looks after your customers.</h3>
+        <p>Day 7 check-in, Day 30 review request, MOT reminders, anniversary nudges. Aftersales runs itself.</p>
+      </article>
+
+      <!-- 9 — Chart -->
+      <article class="cap">
+        <div class="ic-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 6"/><polyline points="15 6 21 6 21 12"/><line x1="3" y1="21" x2="21" y2="21"/></svg></div>
+        <h3>Forecasts your month.</h3>
+        <p>End-of-month forecast based on pipeline + aftersales + stock. Tells you what to chase to hit target.</p>
       </article>
 
       <!-- 3 — Calendar -->
@@ -995,18 +1028,18 @@
         <p>Every enquiry that's gone 14 days quiet gets a polite nudge in your voice. Wakes deals you'd forgotten about.</p>
       </article>
 
-      <!-- 5 — Tag -->
+      <!-- 2 — Chat -->
       <article class="cap">
-        <div class="ic-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41 13.42 20.58a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div>
-        <h3>Knows your stock.</h3>
-        <p>Learns every car the moment you list it. Reg, mileage, spec, photos. Answers customer questions before they ask twice.</p>
+        <div class="ic-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="13.5" x2="13" y2="13.5"/></svg></div>
+        <h3>Replies on every channel.</h3>
+        <p>SMS, WhatsApp, Facebook Messenger, Instagram DM, web chat, email — one inbox. AME drafts or auto-replies. You stay in control.</p>
       </article>
 
-      <!-- 6 — Heart -->
+      <!-- 1 — Phone -->
       <article class="cap">
-        <div class="ic-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-        <h3>Looks after your customers.</h3>
-        <p>Day 7 check-in, Day 30 review request, MOT reminders, anniversary nudges. Aftersales runs itself.</p>
+        <div class="ic-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <h3>Answers every call.</h3>
+        <p>AI receptionist on your number 24/7. Captures leads, books test drives, sends recap via SMS. You hear every transcript.</p>
       </article>
 
       <!-- 7 — Star -->
@@ -1022,13 +1055,66 @@
         <h3>Drafts your social posts.</h3>
         <p>Spots new stock, writes the post, picks the photo, queues it for Facebook + Instagram. You approve or edit.</p>
       </article>
+    </div>
+  </div>
+</section>
 
-      <!-- 9 — Chart -->
-      <article class="cap">
-        <div class="ic-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 6"/><polyline points="15 6 21 6 21 12"/><line x1="3" y1="21" x2="21" y2="21"/></svg></div>
-        <h3>Forecasts your month.</h3>
-        <p>End-of-month forecast based on pipeline + aftersales + stock. Tells you what to chase to hit target.</p>
+<!-- ============================================================
+     SECTION — SHE RUNS YOUR BACK OFFICE (operational depth, Rule 20)
+     ============================================================ -->
+<section class="runs" data-screen-label="04 She runs your back office">
+  <div class="runs-bg"><div class="glow-a"></div><div class="glow-b"></div></div>
+  <div class="runs-inner">
+    <div class="section-head">
+      <span class="pill"><span class="dot"></span>She runs your back office</span>
+      <h2>Most AI tools just talk. AME also does the paperwork.</h2>
+      <p class="sub">The operational backbone — deal sheets, offer documents, prep readiness, customer identity, dealer-tone learning, audit log. The bits that make her an admin, not a chatbot.</p>
+    </div>
+
+    <div class="runs-grid">
+
+      <article class="runs-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg></div>
+        <span class="tag">Deal sheets &middot; offers</span>
+        <h3>Builds the deal. Signs the offer.</h3>
+        <p>Full deal builder with finance illustration, part-ex value, paperwork tracker. Generates frozen-snapshot offer PDFs in your dealership branding — sent on WhatsApp or email, price locked once sent.</p>
       </article>
+
+      <article class="runs-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <span class="tag">Prep readiness</span>
+        <h3>Won't book a viewing on a car that's not ready.</h3>
+        <p>Every vehicle has a prep checklist (mechanical, valet, paperwork). If a customer books a test drive on a car still in prep, AME flags it to you immediately with the outstanding items. No more handover surprises.</p>
+      </article>
+
+      <article class="runs-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 11l-4 4-2-2"/></svg></div>
+        <span class="tag">Identity merge</span>
+        <h3>One customer. Every channel. One record.</h3>
+        <p>Sarah texts you on Monday, WhatsApps Tuesday, emails Wednesday. AME automatically stitches her into a single customer record with one timeline. No duplicates, no missed history, no re-asking questions she's already answered.</p>
+      </article>
+
+      <article class="runs-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+        <span class="tag">Voice learning</span>
+        <h3>Learns your tone from real messages.</h3>
+        <p>AME watches the last 5 messages you actually sent and the times you've edited her drafts. Within the first week she sounds like you — your slang, your sign-offs, your level of detail. Without you writing a single style guide.</p>
+      </article>
+
+      <article class="runs-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <span class="tag">Daily scan</span>
+        <h3>Runs your daily routine on autopilot.</h3>
+        <p>Every morning she checks: who's gone quiet (cold-lead chase), who's due aftersales (Day 7, Day 30, MOT, anniversary, finance refresh), what's the month-end forecast. Drafts ready in your inbox before your first coffee. Each one a switch in AME HQ — you decide what runs.</p>
+      </article>
+
+      <article class="runs-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <span class="tag">Audit log</span>
+        <h3>Every action timestamped. Every action reversible.</h3>
+        <p>Nothing AME does is hidden. Every reply, every booking, every escalation lives on the customer's timeline with a timestamp and the channel it went out on. You can undo anything. You can audit a 30-day window in one screen.</p>
+      </article>
+
     </div>
   </div>
 </section>
@@ -1094,55 +1180,48 @@
     </div>
 
     <div class="ch-grid">
-      <div class="ch phone">
-        <div class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-        <div class="ch-body">
-          <div class="ch-nm">Phone</div>
-          <div class="ch-sub">Vapi · on your number</div>
-        </div>
-      </div>
-      <div class="ch sms">
-        <div class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-        <div class="ch-body">
-          <div class="ch-nm">SMS</div>
-          <div class="ch-sub">Twilio · two-way threaded</div>
-        </div>
-      </div>
       <div class="ch wa">
         <div class="ch-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3 16l-1 6 6.2-1.6A11 11 0 1 0 20.5 3.5zM12 21a9 9 0 0 1-4.6-1.3l-.3-.2-3.7.9.9-3.6-.2-.3A9 9 0 1 1 12 21z"/></svg></div>
         <div class="ch-body">
           <div class="ch-nm">WhatsApp</div>
           <div class="ch-sub">Business API · media support</div>
         </div>
-      </div>
-      <div class="ch fb">
-        <div class="ch-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H8v-2.9h2.4V9.4c0-2.4 1.4-3.7 3.5-3.7 1 0 2 .2 2 .2v2.3h-1.2c-1.2 0-1.6.7-1.6 1.5V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></div>
+      <div class="ch sms">
+        <div class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
         <div class="ch-body">
-          <div class="ch-nm">Facebook Messenger</div>
-          <div class="ch-sub">Page DMs auto-routed</div>
+          <div class="ch-nm">SMS</div>
+          <div class="ch-sub">Twilio · two-way threaded</div>
         </div>
-      </div>
-      <div class="ch ig">
-        <div class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></div>
-        <div class="ch-body">
-          <div class="ch-nm">Instagram DM</div>
-          <div class="ch-sub">Business profile · auto-reply</div>
-        </div>
-      </div>
       <div class="ch web">
         <div class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
         <div class="ch-body">
           <div class="ch-nm">Web chat</div>
           <div class="ch-sub">Widget on your dealer site</div>
         </div>
-      </div>
       <div class="ch em">
         <div class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
         <div class="ch-body">
           <div class="ch-nm">Email</div>
           <div class="ch-sub">Gmail OAuth · your address</div>
         </div>
-      </div>
+      <div class="ch fb">
+        <div class="ch-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H8v-2.9h2.4V9.4c0-2.4 1.4-3.7 3.5-3.7 1 0 2 .2 2 .2v2.3h-1.2c-1.2 0-1.6.7-1.6 1.5V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></div>
+        <div class="ch-body">
+          <div class="ch-nm">Facebook Messenger</div>
+          <div class="ch-sub">Page DMs auto-routed</div>
+        </div>
+      <div class="ch phone">
+        <div class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div class="ch-body">
+          <div class="ch-nm">Phone</div>
+          <div class="ch-sub">Vapi · on your number</div>
+        </div>
+      <div class="ch ig">
+        <div class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></div>
+        <div class="ch-body">
+          <div class="ch-nm">Instagram DM</div>
+          <div class="ch-sub">Business profile · auto-reply</div>
+        </div>
       <div class="ch notes">
         <div class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg></div>
         <div class="ch-body">
