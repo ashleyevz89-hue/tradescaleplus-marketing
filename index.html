@@ -470,6 +470,138 @@
   .footer-tag{margin:16px 0 14px;font-size:14px;line-height:1.55;color:var(--text-muted);max-width:280px}
   .footer-meta{font-size:13px;color:#5a5a64;line-height:1.55}
   .footer-bottom{margin-top:64px;padding:24px 0;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:#5a5a64}
+
+  /* ============================================================
+     VALUE SECTION — 3 cinematic stat cards
+     ============================================================ */
+  .value{position:relative;background:var(--bg-soft);padding:128px 32px 96px;overflow:hidden;border-top:1px solid var(--border)}
+  .value-bg{position:absolute;inset:0;pointer-events:none}
+  .value-bg .glow{position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:1400px;height:700px;background:radial-gradient(ellipse at center,rgba(59,130,246,0.12) 0%,rgba(59,130,246,0) 60%);filter:blur(20px)}
+  .value-inner{position:relative;max-width:1280px;margin:0 auto}
+  .value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+  .val-card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:36px 32px 28px;display:flex;flex-direction:column;gap:14px;transition:border-color .25s ease,transform .25s ease,box-shadow .25s ease;overflow:hidden}
+  .val-card::before{content:"";position:absolute;inset:-1px;border-radius:19px;background:linear-gradient(180deg,rgba(96,165,250,0.25) 0%,rgba(59,130,246,0) 35%);z-index:-1;pointer-events:none;opacity:0.5;transition:opacity .3s ease}
+  .val-card:hover{border-color:rgba(96,165,250,0.45);transform:translateY(-4px);box-shadow:0 12px 40px -10px rgba(59,130,246,0.30),0 4px 20px rgba(0,0,0,0.4)}
+  .val-card:hover::before{opacity:1}
+  .val-tag{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border-radius:999px;background:rgba(59,130,246,0.10);border:1px solid rgba(59,130,246,0.25);font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue-bright);font-weight:600;width:fit-content}
+  .val-tag::before{content:"";width:6px;height:6px;border-radius:999px;background:var(--blue-bright);box-shadow:0 0 8px var(--blue-bright)}
+  .val-stat{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-top:6px;font-feature-settings:"tnum";letter-spacing:-0.04em}
+  .val-stat .v-curr,.val-stat .v-num{font-size:clamp(48px,5.4vw,72px);font-weight:700;line-height:1;background:linear-gradient(180deg,#ffffff 0%,#bcd5ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .val-stat .v-sep,.val-stat .v-arrow{font-size:36px;font-weight:400;color:var(--text-muted);line-height:1}
+  .val-stat .v-unit{font-size:22px;color:var(--text-muted);font-weight:500}
+  .val-stat .v-cross{font-size:clamp(36px,3.6vw,48px);font-weight:600;line-height:1;color:var(--text-muted);text-decoration:line-through;text-decoration-color:rgba(239,68,68,0.5);text-decoration-thickness:3px}
+  .val-card h3{margin:8px 0 0;font-size:22px;font-weight:600;letter-spacing:-0.01em;color:#fff;line-height:1.2}
+  .val-card > p{margin:0;font-size:15px;line-height:1.55;color:var(--text-muted);text-wrap:pretty}
+  .val-vis{margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,0.04)}
+
+  /* Card 1 visual — missed call notification stack */
+  .vis-row{display:grid;grid-template-columns:16px auto 1fr auto;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:12.5px;line-height:1.3;margin-bottom:6px}
+  .vis-row:last-child{margin-bottom:0}
+  .vis-row.missed{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.20);color:var(--text-soft)}
+  .vis-row.caught{background:rgba(16,185,129,0.10);border:1px solid rgba(16,185,129,0.30);color:#fff}
+  .vis-row .vis-dot{width:8px;height:8px;border-radius:999px;background:#ef4444;box-shadow:0 0 8px rgba(239,68,68,0.55)}
+  .vis-row .vis-check{width:14px;height:14px;color:var(--green);font-size:12px;line-height:1;font-weight:800;text-align:center}
+  .vis-row .vis-time{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:var(--text-muted)}
+  .vis-row .vis-label{font-size:12.5px;color:inherit}
+  .vis-row .vis-status{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.04em;text-transform:uppercase;color:#ef4444;text-align:right}
+  .vis-row .vis-status.caught{color:var(--green)}
+
+  /* Card 2 visual — WhatsApp draft */
+  .vis-thread{display:flex;flex-direction:column;gap:8px;padding:12px;background:var(--elev);border:1px solid var(--border);border-radius:10px}
+  .vis-bub{padding:9px 12px;border-radius:12px;font-size:12.5px;line-height:1.4;max-width:88%}
+  .vis-bub.them{background:rgba(255,255,255,0.06);color:var(--text-soft);align-self:flex-start;border-bottom-left-radius:4px}
+  .vis-bub.me{background:rgba(59,130,246,0.18);color:#fff;align-self:flex-end;border-bottom-right-radius:4px;border:1px solid rgba(59,130,246,0.35)}
+  .vis-draft{margin-top:2px;padding:10px;border:1px dashed rgba(96,165,250,0.45);border-radius:10px;background:rgba(59,130,246,0.04)}
+  .vis-draft-label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue-bright);font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+  .vis-draft-label::before{content:"";width:5px;height:5px;border-radius:999px;background:var(--blue-bright);box-shadow:0 0 6px var(--blue-bright);animation:vis-pulse 1.8s ease-in-out infinite}
+  @keyframes vis-pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  .vis-actions{display:flex;gap:6px;margin-top:8px}
+  .vis-btn{font-size:11px;padding:5px 10px;border-radius:6px;background:var(--elev);border:1px solid var(--border);color:var(--text-soft);font-weight:500;letter-spacing:-0.005em}
+  .vis-btn.primary{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+  /* Card 3 visual — stack collapse */
+  .vis-stack{display:flex;flex-direction:column;gap:5px}
+  .vis-stack-row{padding:7px 11px;font-size:12px;border-radius:7px;background:rgba(255,255,255,0.03);border:1px solid var(--border);color:var(--text-muted);font-family:'JetBrains Mono',ui-monospace,monospace}
+  .vis-stack-row.strike{text-decoration:line-through;text-decoration-color:rgba(239,68,68,0.4);text-decoration-thickness:2px;opacity:0.7}
+  .vis-stack-replace{margin-top:6px;padding:10px 13px;font-size:13px;background:rgba(59,130,246,0.14);border:1px solid rgba(96,165,250,0.40);border-radius:8px;color:#fff;font-weight:600;letter-spacing:-0.005em}
+
+  /* ============================================================
+     CHANNELS GRID
+     ============================================================ */
+  .channels{position:relative;background:var(--bg);padding:128px 32px 96px;overflow:hidden;border-top:1px solid var(--border)}
+  .channels-bg{position:absolute;inset:0;pointer-events:none}
+  .channels-bg .glow{position:absolute;top:200px;left:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(168,85,247,0.06) 0%,rgba(168,85,247,0) 60%);filter:blur(20px)}
+  .channels-inner{position:relative;max-width:1280px;margin:0 auto}
+  .ch-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
+  .ch{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;display:flex;align-items:center;gap:14px;transition:border-color .25s ease,transform .2s ease,background .25s ease;overflow:hidden;position:relative}
+  .ch::before{content:"";position:absolute;inset:0;border-radius:14px;opacity:0;transition:opacity .3s ease;pointer-events:none}
+  .ch:hover{transform:translateY(-3px)}
+  .ch:hover::before{opacity:1}
+  .ch .ch-ic{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .25s ease}
+  .ch:hover .ch-ic{transform:scale(1.08)}
+  .ch .ch-ic svg{width:20px;height:20px}
+  .ch.phone .ch-ic{background:rgba(59,130,246,0.14);color:var(--blue-bright)}
+  .ch.phone:hover{border-color:rgba(96,165,250,0.40)}
+  .ch.phone::before{background:radial-gradient(circle at 0% 50%,rgba(59,130,246,0.10) 0%,transparent 60%)}
+  .ch.sms .ch-ic{background:rgba(59,130,246,0.14);color:var(--blue-bright)}
+  .ch.sms:hover{border-color:rgba(96,165,250,0.40)}
+  .ch.sms::before{background:radial-gradient(circle at 0% 50%,rgba(59,130,246,0.10) 0%,transparent 60%)}
+  .ch.wa .ch-ic{background:rgba(16,185,129,0.14);color:var(--green)}
+  .ch.wa:hover{border-color:rgba(16,185,129,0.45)}
+  .ch.wa::before{background:radial-gradient(circle at 0% 50%,rgba(16,185,129,0.10) 0%,transparent 60%)}
+  .ch.fb .ch-ic{background:rgba(99,102,241,0.18);color:#a5b4fc}
+  .ch.fb:hover{border-color:rgba(99,102,241,0.45)}
+  .ch.fb::before{background:radial-gradient(circle at 0% 50%,rgba(99,102,241,0.10) 0%,transparent 60%)}
+  .ch.ig .ch-ic{background:rgba(244,114,182,0.14);color:#f9a8d4}
+  .ch.ig:hover{border-color:rgba(244,114,182,0.45)}
+  .ch.ig::before{background:radial-gradient(circle at 0% 50%,rgba(244,114,182,0.10) 0%,transparent 60%)}
+  .ch.web .ch-ic{background:rgba(245,158,11,0.14);color:var(--amber)}
+  .ch.web:hover{border-color:rgba(245,158,11,0.45)}
+  .ch.web::before{background:radial-gradient(circle at 0% 50%,rgba(245,158,11,0.10) 0%,transparent 60%)}
+  .ch.em .ch-ic{background:rgba(255,255,255,0.08);color:var(--text-soft)}
+  .ch.em:hover{border-color:rgba(255,255,255,0.25)}
+  .ch.notes .ch-ic{background:rgba(168,85,247,0.16);color:#c4a4f7}
+  .ch.notes:hover{border-color:rgba(168,85,247,0.40)}
+  .ch.notes::before{background:radial-gradient(circle at 0% 50%,rgba(168,85,247,0.10) 0%,transparent 60%)}
+  .ch .ch-body{position:relative;z-index:1}
+  .ch .ch-body .ch-nm{font-size:14.5px;font-weight:600;color:#fff;letter-spacing:-0.005em}
+  .ch .ch-body .ch-sub{font-size:12px;color:var(--text-muted);margin-top:2px}
+
+  /* ============================================================
+     HOW SHE THINKS — reasoning trace
+     ============================================================ */
+  .think-section{position:relative;background:var(--bg-soft);padding:128px 32px 96px;overflow:hidden;border-top:1px solid var(--border)}
+  .think-section-bg{position:absolute;inset:0;pointer-events:none}
+  .think-section-bg .glow{position:absolute;bottom:-100px;right:-100px;width:800px;height:800px;background:radial-gradient(circle,rgba(59,130,246,0.08) 0%,rgba(59,130,246,0) 60%);filter:blur(20px)}
+  .think-section-inner{position:relative;max-width:1280px;margin:0 auto}
+  .think-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  .think-copy h2{margin:18px 0 18px;font-size:clamp(30px,3.4vw,42px);font-weight:700;letter-spacing:-0.02em;line-height:1.08;color:#fff;text-wrap:balance}
+  .think-copy p{margin:0 0 14px;font-size:16px;line-height:1.6;color:var(--text-soft);text-wrap:pretty;max-width:520px}
+  .think-list{list-style:none;padding:0;margin:24px 0 0;display:flex;flex-direction:column;gap:14px}
+  .think-list li{display:flex;align-items:flex-start;gap:14px;font-size:15px;color:var(--text-soft);line-height:1.5}
+  .think-list .num{flex-shrink:0;width:30px;height:30px;border-radius:999px;background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.30);color:var(--blue-bright);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;font-family:'JetBrains Mono',ui-monospace,monospace}
+  .think-list strong{color:#fff;font-weight:600;display:block;margin-bottom:2px}
+  .think-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;position:relative;box-shadow:0 4px 20px rgba(0,0,0,0.4),0 30px 80px -20px rgba(0,0,0,0.6)}
+  .think-card-head{font-size:13px;letter-spacing:0.10em;text-transform:uppercase;color:var(--text-muted);margin-bottom:18px;font-weight:500;display:flex;align-items:center;gap:8px}
+  .think-card-head::before{content:"";width:6px;height:6px;border-radius:999px;background:var(--blue-bright);box-shadow:0 0 6px var(--blue-bright);animation:vis-pulse 1.8s ease-in-out infinite}
+  .think-flow{display:flex;flex-direction:column;gap:10px}
+  .think-step{display:flex;align-items:center;gap:14px;padding:13px 14px;border-radius:10px;background:var(--elev);border:1px solid var(--border)}
+  .think-step .lbl{flex:1;font-size:13.5px;color:#fff}
+  .think-step .lbl em{color:var(--text-muted);font-style:normal;font-size:11.5px;display:block;margin-top:3px;font-family:'JetBrains Mono',ui-monospace,monospace}
+  .think-step .ch-i{width:28px;height:28px;border-radius:8px;background:rgba(59,130,246,0.14);color:var(--blue-bright);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .think-step .ch-i svg{width:14px;height:14px}
+  .think-arrow{align-self:center;color:var(--text-muted);font-size:10px;letter-spacing:0.2em}
+
+  @media (max-width:1080px){
+    .value-grid{grid-template-columns:1fr;gap:16px}
+    .ch-grid{grid-template-columns:repeat(2,1fr)}
+    .think-layout{grid-template-columns:1fr;gap:48px}
+  }
+  @media (max-width:640px){
+    .value,.channels,.think-section{padding:96px 20px 72px}
+    .ch-grid{grid-template-columns:1fr}
+    .val-card{padding:28px 22px 22px}
+  }
 </style>
 <link rel="stylesheet" href="assets/mobile-nav.css">
 <script defer src="assets/mobile-nav.js"></script>
@@ -488,7 +620,7 @@
       <span>TradeScale<span style="color:var(--text-muted);font-weight:400">&nbsp;Plus</span></span>
     </div>
     <div class="nav-links">
-      <a href="product.html">Product</a>
+      <a href="index.html#capabilities">Product</a>
       <a href="index.html#how-it-works">Onboarding</a>
       <a href="pricing.html">Pricing</a>
       <a href="for-dealers.html">For dealers</a>
@@ -500,7 +632,7 @@
     <button class="tsp-burger" aria-label="Open menu" aria-expanded="false" aria-controls="tsp-mobile-drawer"><span></span><span></span><span></span></button></div>
   </nav>
 <div class="tsp-drawer" id="tsp-mobile-drawer" data-open="false" role="menu" aria-label="Mobile navigation">
-  <a href="product.html" role="menuitem">Product</a>
+  <a href="index.html#capabilities" role="menuitem">Product</a>
   <a href="index.html#how-it-works" role="menuitem">Onboarding</a>
   <a href="pricing.html" role="menuitem">Pricing</a>
   <a href="for-dealers.html" role="menuitem">For dealers</a>
@@ -717,9 +849,105 @@
 </section>
 
 <!-- ============================================================
+     SECTION — VALUE (what AME actually gets you)
+     ============================================================ -->
+<section class="value" data-screen-label="02 What you actually get" id="value">
+  <div class="value-bg"><div class="glow"></div></div>
+  <div class="value-inner">
+    <div class="section-head">
+      <span class="pill"><span class="dot"></span>What you actually get</span>
+      <h2>She doesn't just talk. She makes you money, gives you nights back, and replaces the stack.</h2>
+    </div>
+
+    <div class="value-grid">
+
+      <!-- Card 1 — REVENUE -->
+      <article class="val-card v-revenue">
+        <span class="val-tag">Revenue protection</span>
+        <div class="val-stat">
+          <span class="v-curr">£400</span>
+          <span class="v-sep">—</span>
+          <span class="v-curr">£15k</span>
+        </div>
+        <h3>Lost on every missed call.</h3>
+        <p>Sunday 9pm. Saturday lunch. The school run. AME picks up every time, captures the lead, books the test drive, and texts the customer a recap before they hang up.</p>
+        <div class="val-vis">
+          <div class="vis-row missed">
+            <span class="vis-dot"></span>
+            <span class="vis-time">Sun 21:14</span>
+            <span class="vis-label">Sarah · WhatsApp · VW Golf GTI</span>
+            <span class="vis-status">missed</span>
+          </div>
+          <div class="vis-row missed">
+            <span class="vis-dot"></span>
+            <span class="vis-time">Sat 14:30</span>
+            <span class="vis-label">Tom · Phone · Audi Q5</span>
+            <span class="vis-status">missed</span>
+          </div>
+          <div class="vis-row caught">
+            <span class="vis-check">✓</span>
+            <span class="vis-time">Sun 21:14</span>
+            <span class="vis-label">Sarah · AME · test drive booked</span>
+            <span class="vis-status caught">caught</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 — TIME -->
+      <article class="val-card v-time">
+        <span class="val-tag">Your time back</span>
+        <div class="val-stat">
+          <span class="v-num">3+ hrs</span>
+          <span class="v-unit">/ day</span>
+        </div>
+        <h3>Of admin you'd never have to do.</h3>
+        <p>Overnight WhatsApps. Google review replies. Facebook posts when new stock lands. Customer-data typing. MOT reminders. AME drafts in your tone — you approve in two taps with your coffee.</p>
+        <div class="val-vis">
+          <div class="vis-thread">
+            <div class="vis-bub them">Hi, still got the silver Q5?</div>
+            <div class="vis-draft">
+              <div class="vis-draft-label">AME drafted &middot; 06:42</div>
+              <div class="vis-bub me">Yes Sarah — 2019 Q5 S Line, 48k miles. Want to come down for a test drive this week?</div>
+              <div class="vis-actions">
+                <span class="vis-btn primary">Approve</span>
+                <span class="vis-btn">Edit</span>
+                <span class="vis-btn">Manual</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 — STACK -->
+      <article class="val-card v-cost">
+        <span class="val-tag">Stack replacement</span>
+        <div class="val-stat">
+          <span class="v-cross">£1,400+</span>
+          <span class="v-arrow">→</span>
+          <span class="v-curr">£499</span>
+        </div>
+        <h3>One bill replaces seven tools.</h3>
+        <p>Auto Trader CRM, scheduling tool, finance broker fees, admin staff hours, social-media VA. Most indie dealers stitch together 5–7 tools and £1,400–£2,200/month. AME is one flat bill.</p>
+        <div class="val-vis">
+          <div class="vis-stack">
+            <div class="vis-stack-row strike">AutoTrader CRM &middot; £349/mo</div>
+            <div class="vis-stack-row strike">Scheduling tool &middot; £49/mo</div>
+            <div class="vis-stack-row strike">Finance broker fees &middot; £200/mo</div>
+            <div class="vis-stack-row strike">Admin staff hours &middot; £800+/mo</div>
+            <div class="vis-stack-row strike">Social-media VA &middot; £150/mo</div>
+            <div class="vis-stack-replace">→ AME &middot; £499/mo flat</div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
      SECTION A — MEET AME
      ============================================================ -->
-<section class="meet" data-screen-label="02 Meet AME">
+<section class="meet" data-screen-label="03 Meet AME" id="capabilities">
   <div class="meet-bg"><div class="glow"></div></div>
   <div class="meet-inner">
     <div class="section-head">
@@ -844,245 +1072,72 @@
 </section>
 
 <!-- ============================================================
-     BLOCK 3 — PIPELINE (text LEFT / shot RIGHT)
+     SECTION — CHANNELS (8 channels she works on)
      ============================================================ -->
-<section class="feat" data-screen-label="06 Pipeline">
-  <div class="feat-bg"><div class="gl gl-a"></div></div>
-  <div class="feat-inner">
-    <div class="feat-copy">
-      <span class="pill"><span class="dot"></span>Pipeline &amp; customer journey</span>
-      <h2>Every lead, every test drive, every sale — one view.</h2>
-      <p>Drag-and-drop pipeline. New enquiries down the left, sold cars down the right. AME moves customers through stages automatically as they book test drives, agree sale, take delivery.</p>
-      <p>Click any card to see the full timeline — every call, every message, every email, every viewing.</p>
-      <ul class="ticks">
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>9-stage journey from enquiry to repeat customer</li>
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Auto-move on booking + sale events</li>
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Customer 360 timeline on every card</li>
-      </ul>
-      <a class="link" href="pipeline.html">See the pipeline <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+<section class="channels" data-screen-label="05 Channels" id="channels">
+  <div class="channels-bg"><div class="glow"></div></div>
+  <div class="channels-inner">
+    <div class="section-head">
+      <span class="pill"><span class="dot"></span>Every channel</span>
+      <h2>She talks however your customers want to talk.</h2>
+      <p class="sub">Eight channels. One conversation thread per customer. AME picks up wherever they reach out, then stitches the back-and-forth onto a single timeline so nothing falls through the cracks.</p>
     </div>
 
-    <div class="shot">
-      <div class="shot-glow"></div>
-      <div class="shot-head">
-        <span class="h-title">Pipeline · This month</span>
-        <span class="h-meta">8 active deals</span>
-        <span class="h-status"><span class="pulse"></span>£18,400 in pipe</span>
+    <div class="ch-grid">
+      <div class="ch phone">
+        <div class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div class="ch-body">
+          <div class="ch-nm">Phone</div>
+          <div class="ch-sub">Vapi · on your number</div>
+        </div>
       </div>
-      <div class="kanban">
-        <div class="col">
-          <div class="col-head">New enquiry <span class="ct">3</span></div>
-          <div class="kcard">
-            <div class="nm">Daniel Okafor</div>
-            <div class="car">BMW 3 Series · 2020</div>
-            <div class="meta"><span class="age">22m</span><span class="pill-tiny hot">Hot</span></div>
-          </div>
-          <div class="kcard">
-            <div class="nm">Aisha Khan</div>
-            <div class="car">VW Golf GTI · 2021</div>
-            <div class="meta"><span class="age">1h</span><span class="pill-tiny warm">Finance</span></div>
-          </div>
-          <div class="kcard">
-            <div class="nm">Webchat · anon</div>
-            <div class="car">Part-ex enquiry</div>
-            <div class="meta"><span class="age">3h</span></div>
-          </div>
+      <div class="ch sms">
+        <div class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="ch-body">
+          <div class="ch-nm">SMS</div>
+          <div class="ch-sub">Twilio · two-way threaded</div>
         </div>
-
-        <div class="col">
-          <div class="col-head">Test drive booked <span class="ct">2</span></div>
-          <div class="kcard">
-            <div class="nm">Sarah Jenkins</div>
-            <div class="car">VW Golf GTI · Sat 11:00</div>
-            <div class="meta"><span class="age">2d</span><span class="pill-tiny hot">Hot</span></div>
-          </div>
-          <div class="kcard">
-            <div class="nm">Tom Bridges</div>
-            <div class="car">Audi Q5 · Sat 11:00</div>
-            <div class="meta"><span class="age">4m</span><span class="pill-tiny warm">New</span></div>
-          </div>
-          <div class="kcard">
-            <div class="nm">Liam O'Connor</div>
-            <div class="car">BMW 3 Series · Fri 16:00</div>
-            <div class="meta"><span class="age">1h</span><span class="pill-tiny warm">Finance</span></div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="col-head">Test drive done <span class="ct">2</span></div>
-          <div class="kcard">
-            <div class="nm">Emma Robinson</div>
-            <div class="car">Mini Cooper S · 2018</div>
-            <div class="meta"><span class="age">3d</span><span class="pill-tiny warm">Considering</span></div>
-          </div>
-          <div class="kcard">
-            <div class="nm">Priya Sharma</div>
-            <div class="car">Volvo XC60 · 2020</div>
-            <div class="meta"><span class="age">2d</span><span class="pill-tiny warm">Part-ex</span></div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="col-head">Negotiating <span class="ct">2</span></div>
-          <div class="kcard">
-            <div class="nm">Owain Davies</div>
-            <div class="car">Ford Kuga · 2019</div>
-            <div class="meta"><span class="age">5d</span><span class="pill-tiny hot">Offer in</span></div>
-          </div>
-          <div class="kcard">
-            <div class="nm">Hannah Wright</div>
-            <div class="car">Nissan Qashqai · 2021</div>
-            <div class="meta"><span class="age">2d</span><span class="pill-tiny hot">Counter</span></div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="col-head">Sale agreed <span class="ct">2</span></div>
-          <div class="kcard">
-            <div class="nm">James Whitfield</div>
-            <div class="car">Mercedes A-Class · £14,995</div>
-            <div class="meta"><span class="age">today</span><span class="pill-tiny green">Signed</span></div>
-          </div>
-          <div class="kcard">
-            <div class="nm">Sofia Bennett</div>
-            <div class="car">Volkswagen Golf · £12,250</div>
-            <div class="meta"><span class="age">yest</span><span class="pill-tiny green">Signed</span></div>
-          </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     BLOCK 2 — INBOX (shot LEFT / text RIGHT)
-     ============================================================ -->
-<section class="feat alt reverse" data-screen-label="05 Inbox">
-  <div class="feat-bg"><div class="gl gl-b"></div></div>
-  <div class="feat-inner">
-    <div class="feat-copy">
-      <span class="pill"><span class="dot"></span>Multi-channel inbox</span>
-      <h2>One inbox for SMS, WhatsApp, Messenger, web chat, voice and email.</h2>
-      <p>Customers message wherever they want. You reply in one place. AME drafts, you approve. Or flip her to autopilot and only step in when something needs a human.</p>
-      <p>Every conversation tied to a customer profile. Every car they've asked about, every test drive they've booked, every aftersales touch — one timeline.</p>
-      <ul class="ticks">
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Drafts in your tone of voice</li>
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Auto-tags channel, urgency, deal stage</li>
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Handover to you when AME isn't sure</li>
-      </ul>
-      <a class="link" href="inbox.html">Tour the inbox <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
-    </div>
-
-    <div class="shot">
-      <div class="shot-glow"></div>
-      <div class="shot-head">
-        <span class="h-title">Inbox</span>
-        <span class="h-meta">12 open</span>
-        <span class="h-status"><span class="pulse"></span>AME on autopilot</span>
+      <div class="ch wa">
+        <div class="ch-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3 16l-1 6 6.2-1.6A11 11 0 1 0 20.5 3.5zM12 21a9 9 0 0 1-4.6-1.3l-.3-.2-3.7.9.9-3.6-.2-.3A9 9 0 1 1 12 21z"/></svg></div>
+        <div class="ch-body">
+          <div class="ch-nm">WhatsApp</div>
+          <div class="ch-sub">Business API · media support</div>
+        </div>
       </div>
-      <div class="inbox">
-        <aside class="inbox-list">
-          <div class="inbox-search">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <input type="text" placeholder="Search" value="" />
-          </div>
-          <div class="thread active">
-            <div class="ch wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3 16l-1 6 6.2-1.6A11 11 0 1 0 20.5 3.5zM12 21a9 9 0 0 1-4.6-1.3l-.3-.2-3.7.9.9-3.6-.2-.3A9 9 0 1 1 12 21z"/></svg></div>
-            <div>
-              <div class="name">Sarah Jenkins <span class="when">now</span></div>
-              <div class="preview">Yeah Saturday at 11 works for me — looking forward to it</div>
-            </div>
-          </div>
-          <div class="thread">
-            <div class="ch sms"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-            <div>
-              <div class="name">Mark Patel <span class="when">4m</span></div>
-              <div class="preview">Cheers, see you Saturday</div>
-            </div>
-          </div>
-          <div class="thread">
-            <div class="ch fb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H8v-2.9h2.4V9.4c0-2.4 1.4-3.7 3.5-3.7 1 0 2 .2 2 .2v2.3h-1.2c-1.2 0-1.6.7-1.6 1.5V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></div>
-            <div>
-              <div class="name">Daniel Okafor <span class="when">22m</span></div>
-              <div class="preview">Hi, is the BMW 3 series still available?</div>
-            </div>
-          </div>
-          <div class="thread">
-            <div class="ch ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></div>
-            <div>
-              <div class="name">Aisha Khan <span class="when">1h</span></div>
-              <div class="preview">Hey saw the Golf GTI — what's the finance like?</div>
-            </div>
-          </div>
-          <div class="thread">
-            <div class="ch web"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-            <div>
-              <div class="name">webchat · anon <span class="when">3h</span></div>
-              <div class="preview">Do you do part exchange?</div>
-            </div>
-          </div>
-          <div class="thread">
-            <div class="ch em"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-            <div>
-              <div class="name">James Whitfield <span class="when">yest</span></div>
-              <div class="preview">RE: finance settlement letter — attached</div>
-            </div>
-          </div>
-        </aside>
-
-        <div class="conv">
-          <div class="conv-head">
-            <div class="av">SJ</div>
-            <div>
-              <div class="nm">Sarah Jenkins</div>
-              <div class="mt">WhatsApp · re: VW Golf GTI</div>
-            </div>
-            <span class="tag">Test drive · hot</span>
-          </div>
-          <div class="conv-body">
-            <div class="turn caller">
-              <div class="av">SJ</div>
-              <div>
-                <div class="bub">Still got the Golf GTI? Saw it on Autotrader</div>
-              </div>
-            </div>
-            <div class="turn ame">
-              <div class="av">AME</div>
-              <div>
-                <div class="bub">Hi Sarah — yes it's still here. 2021, 32k miles, one owner. Want to come down for a test drive this week?</div>
-              </div>
-            </div>
-            <div class="turn caller">
-              <div class="av">SJ</div>
-              <div>
-                <div class="bub">Saturday morning maybe? Around 11?</div>
-              </div>
-            </div>
-            <div class="turn ame">
-              <div class="av">AME</div>
-              <div>
-                <div class="bub">11am Saturday is open. Want me to pencil it in?</div>
-              </div>
-            </div>
-            <div class="turn caller">
-              <div class="av">SJ</div>
-              <div>
-                <div class="bub">Yeah Saturday at 11 works for me — looking forward to it</div>
-              </div>
-            </div>
-
-            <div class="draft">
-              <div class="lbl">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                AME drafted a reply
-              </div>
-              <div class="text">Lovely — you're booked in for 11am Saturday. I'll text you the address now and a reminder Friday evening. See you then, Sarah.</div>
-              <div class="row">
-                <button class="b approve">Approve &amp; send</button>
-                <button class="b edit">Edit</button>
-                <button class="b">Send manually</button>
-              </div>
-            </div>
-          </div>
+      <div class="ch fb">
+        <div class="ch-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H8v-2.9h2.4V9.4c0-2.4 1.4-3.7 3.5-3.7 1 0 2 .2 2 .2v2.3h-1.2c-1.2 0-1.6.7-1.6 1.5V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></div>
+        <div class="ch-body">
+          <div class="ch-nm">Facebook Messenger</div>
+          <div class="ch-sub">Page DMs auto-routed</div>
+        </div>
+      </div>
+      <div class="ch ig">
+        <div class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></div>
+        <div class="ch-body">
+          <div class="ch-nm">Instagram DM</div>
+          <div class="ch-sub">Business profile · auto-reply</div>
+        </div>
+      </div>
+      <div class="ch web">
+        <div class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div class="ch-body">
+          <div class="ch-nm">Web chat</div>
+          <div class="ch-sub">Widget on your dealer site</div>
+        </div>
+      </div>
+      <div class="ch em">
+        <div class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div class="ch-body">
+          <div class="ch-nm">Email</div>
+          <div class="ch-sub">Gmail OAuth · your address</div>
+        </div>
+      </div>
+      <div class="ch notes">
+        <div class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg></div>
+        <div class="ch-body">
+          <div class="ch-nm">Internal notes</div>
+          <div class="ch-sub">Drafts, handovers, audit log</div>
         </div>
       </div>
     </div>
@@ -1090,156 +1145,56 @@
 </section>
 
 <!-- ============================================================
-     BLOCK 1 — VOICE (text LEFT / shot RIGHT)
+     SECTION — HOW SHE THINKS (reasoning trace)
      ============================================================ -->
-<section class="feat" data-screen-label="04 Voice">
-  <div class="feat-bg"><div class="gl gl-a"></div></div>
-  <div class="feat-inner">
-    <div class="feat-copy">
-      <span class="pill"><span class="dot"></span>Voice receptionist</span>
-      <h2>She picks up while you're with a customer.</h2>
-      <p>Every missed call is a missed deal. AME answers on the third ring in your dealership name, captures the lead, books a test drive, and sends you the transcript before you've finished your conversation.</p>
-      <p>Hooked up via Vapi on your own number. You hear every word.</p>
-      <ul class="ticks">
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Answers calls 24/7 — evenings, Sundays, lunch hour</li>
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Books test drives directly into your diary</li>
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Texts the customer a recap + your address</li>
-      </ul>
-      <a class="link" href="voice.html">See voice in action <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
-    </div>
-
-    <div class="shot">
-      <div class="shot-glow"></div>
-      <div class="shot-head">
-        <span class="h-title">Call · +44 7700 ···· 432</span>
-        <span class="h-meta">2 min 14 sec</span>
-        <span class="h-status"><span class="pulse"></span>Answered by AME</span>
+<section class="think-section" data-screen-label="06 How she thinks" id="how-she-thinks">
+  <div class="think-section-bg"><div class="glow"></div></div>
+  <div class="think-section-inner">
+    <div class="think-layout">
+      <div class="think-copy">
+        <span class="pill"><span class="dot"></span>How she thinks</span>
+        <h2>She doesn't guess. She knows.</h2>
+        <p>AME isn't a chatbot reading off a script. She's grounded in your real data — your stock, your customers, your finance offers, your dealership voice — and she reasons against that every time someone reaches out.</p>
+        <p>If she doesn't know something, she doesn't make it up. She takes a message, escalates to you, and waits.</p>
+        <ul class="think-list">
+          <li>
+            <span class="num">1</span>
+            <div><strong>Reads the inbound</strong>SMS, WhatsApp, call transcript, email, web chat — classifies the intent (price enquiry, test-drive request, complaint, finance question, aftersales).</div>
+          </li>
+          <li>
+            <span class="num">2</span>
+            <div><strong>Pulls context</strong>Your stock, the customer's history with you, their finance preferences, the deal stage they're in — assembled into a single picture.</div>
+          </li>
+          <li>
+            <span class="num">3</span>
+            <div><strong>Drafts or acts</strong>Straightforward → she replies in your tone and books the action. Needs you → she drafts and flags it for approval.</div>
+          </li>
+          <li>
+            <span class="num">4</span>
+            <div><strong>Logs everything</strong>Every action timestamped on the customer card. Every reply audited. Every decision reversible.</div>
+          </li>
+        </ul>
       </div>
-      <div class="transcript">
-        <div class="turn caller">
-          <div class="av">M</div>
-          <div>
-            <div class="bub">Hi — is the silver Audi Q5 still available? The 2019 one on your website.</div>
-            <div class="t">00:04</div>
-          </div>
-        </div>
-        <div class="turn ame">
-          <div class="av">AME</div>
-          <div>
-            <div class="bub">Yes, the 2019 Q5 S Line is still here — 48k on the clock, full service history. Would you like to come down for a test drive?</div>
-            <div class="t">00:10</div>
-          </div>
-        </div>
-        <div class="turn caller">
-          <div class="av">M</div>
-          <div>
-            <div class="bub">Saturday morning could work for me. Around 11?</div>
-            <div class="t">00:24</div>
-          </div>
-        </div>
-        <div class="turn ame">
-          <div class="av">AME</div>
-          <div>
-            <div class="bub">Saturday at 11 is free. Can I take a name and a mobile number to confirm?</div>
-            <div class="t">00:31</div>
-          </div>
-        </div>
-        <div class="turn caller">
-          <div class="av">M</div>
-          <div>
-            <div class="bub">Mark Patel. 07700 900 432.</div>
-            <div class="t">00:48</div>
-          </div>
-        </div>
-        <div class="turn ame">
-          <div class="av">AME</div>
-          <div>
-            <div class="bub">Booked, Mark. I'll text you the address now and remind you the night before. Anything else you'd like to know?</div>
-            <div class="t">00:55</div>
-          </div>
-        </div>
-        <div class="transcript-foot">
-          <span class="ckicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-          <div>
-            <div style="font-weight:500">Test drive booked · Sat 11:00 · Audi Q5</div>
-          </div>
-          <span class="meta">+ SMS recap sent</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ============================================================
-     BLOCK 4 — AFTERSALES (shot LEFT / text RIGHT)
-     ============================================================ -->
-<section class="feat alt reverse" data-screen-label="07 Aftersales">
-  <div class="feat-bg"><div class="gl gl-b"></div></div>
-  <div class="feat-inner">
-    <div class="feat-copy">
-      <span class="pill"><span class="dot"></span>Aftersales &amp; lifecycle</span>
-      <h2>She remembers every customer long after the sale.</h2>
-      <p>Day 7 check-in, Day 30 review request, MOT reminder 30 days out, anniversary nudges, finance refresh prompts. AME runs the entire lifecycle on autopilot — in your voice, signed off in your name.</p>
-      <p>Every aftersales touch logged. You see what went out, what got a reply, what turned into a repeat sale.</p>
-      <ul class="ticks">
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>MOT + service reminders 30 days out</li>
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Review requests Day 30 (Google + Facebook)</li>
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Anniversary + finance-refresh nudges</li>
-      </ul>
-      <a class="link" href="aftersales.html">See aftersales flows <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
-    </div>
-
-    <div class="shot">
-      <div class="shot-glow"></div>
-      <div class="shot-head">
-        <span class="h-title">Aftersales — last 30 days</span>
-        <span class="h-meta">4 flows · 43 touches</span>
-        <span class="h-status"><span class="pulse"></span>Running</span>
-      </div>
-      <div class="as">
-        <div class="as-row">
-          <div class="ic check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
-          <div>
-            <div class="nm">Day 7 check-in</div>
-            <div class="sub">SMS · "How's the car been treating you?"</div>
+      <div class="think-card">
+        <div class="think-card-head">Inbound enquiry &middot; live reasoning trace</div>
+        <div class="think-flow">
+          <div class="think-step">
+            <div class="ch-i"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3 16l-1 6 6.2-1.6A11 11 0 1 0 20.5 3.5z"/></svg></div>
+            <div class="lbl">WhatsApp: "Hi, is the 2019 Audi Q5 still available?"<em>customer &middot; Sarah &middot; 14:22</em></div>
           </div>
-          <div class="bar"><div style="width:66%"></div></div>
-          <div class="ct">12<span class="lab">sent · 8 replies</span></div>
-        </div>
-
-        <div class="as-row">
-          <div class="ic review"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-          <div>
-            <div class="nm">Day 30 review request</div>
-            <div class="sub">Email + SMS · Google + Facebook links</div>
+          <div class="think-arrow">▼ AME reads &amp; classifies</div>
+          <div class="think-step">
+            <div class="lbl">Intent: price enquiry &middot; vehicle: 2019 Q5 S Line<em>matched to stock #VRM-21 &middot; £18,400 &middot; 48k mi &middot; in prep</em></div>
           </div>
-          <div class="bar"><div style="width:67%"></div></div>
-          <div class="ct">9<span class="lab">sent · 6 reviews</span></div>
-        </div>
-
-        <div class="as-row">
-          <div class="ic mot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-          <div>
-            <div class="nm">MOT reminder</div>
-            <div class="sub">SMS 30 days out · service booking CTA</div>
+          <div class="think-arrow">▼ AME pulls context</div>
+          <div class="think-step">
+            <div class="lbl">Sarah Jenkins, asked about Golf GTI 14 days ago<em>last contact: 14d &middot; tags: warm, finance</em></div>
           </div>
-          <div class="bar"><div style="width:28%"></div></div>
-          <div class="ct">18<span class="lab">sent · 5 services booked</span></div>
-        </div>
-
-        <div class="as-row">
-          <div class="ic anni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-          <div>
-            <div class="nm">Anniversary nudge</div>
-            <div class="sub">Email · "It's been a year — want to part-ex?"</div>
+          <div class="think-arrow">▼ AME drafts</div>
+          <div class="think-step">
+            <div class="lbl">"Hi Sarah — yes, the Q5 is here. 2019, 48k, full service history. Want to come down for a test drive?"<em>tone: warm &middot; signed: dealership name &middot; flagged for approval</em></div>
           </div>
-          <div class="bar"><div style="width:50%"></div></div>
-          <div class="ct">4<span class="lab">sent · 2 part-ex enquiries</span></div>
-        </div>
-
-        <div class="as-foot">
-          <span>43 touches sent · <strong>21 replies</strong> · <strong>13 booked actions</strong></span>
-          <span style="color:var(--green)">▲ 12% vs last month</span>
         </div>
       </div>
     </div>
