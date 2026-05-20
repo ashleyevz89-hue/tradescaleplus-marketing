@@ -99,111 +99,189 @@
       </div>
     </div>
 
-    <!-- RIGHT — BOOKING CARD -->
+    <!-- RIGHT — BOOKING FORM (live → /api/public/book-demo) -->
     <div class="bk-card-wrap">
       <div class="bk-card-glow"></div>
-      <div class="bk-card">
+      <div class="bk-card" style="padding:36px 32px">
         <div class="card-top">
-          <span class="top-pill"><span class="dot"></span>Choose a time</span>
+          <span class="top-pill"><span class="dot"></span>Book a demo</span>
           <span class="card-meta">15 min · Free · No card</span>
         </div>
 
-        <div class="cal-head">
-          <button class="cal-nav" aria-label="Previous month"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-          <div class="cal-month">May 2026</div>
-          <button class="cal-nav" aria-label="Next month"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <form id="tsp-book-form" class="tsp-form" novalidate style="display:flex;flex-direction:column;gap:14px;margin-top:18px">
+          <label class="fld">
+            <span class="lbl">Dealership name <em>*</em></span>
+            <input type="text" name="dealership" required maxlength="200" autocomplete="organization" placeholder="e.g. South Wales Motors" />
+          </label>
+          <label class="fld">
+            <span class="lbl">Your name <em>*</em></span>
+            <input type="text" name="name" required maxlength="120" autocomplete="name" placeholder="e.g. Ash Evans" />
+          </label>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+            <label class="fld">
+              <span class="lbl">Phone <em>*</em></span>
+              <input type="tel" name="phone" required maxlength="20" autocomplete="tel" placeholder="07700 900 123" />
+            </label>
+            <label class="fld">
+              <span class="lbl">Email <em>*</em></span>
+              <input type="email" name="email" required maxlength="200" autocomplete="email" placeholder="you@dealership.co.uk" />
+            </label>
+          </div>
+          <label class="fld">
+            <span class="lbl">Dealership website <span class="opt">(so we can load your stock before the call)</span></span>
+            <input type="text" name="website" maxlength="200" autocomplete="url" placeholder="www.yourdealership.co.uk" />
+          </label>
+          <label class="fld">
+            <span class="lbl">Preferred time <span class="opt">(optional)</span></span>
+            <input type="text" name="preferred_time" maxlength="200" placeholder="e.g. Tue / Wed mornings, or after 5pm" />
+          </label>
+          <label class="fld">
+            <span class="lbl">Anything else? <span class="opt">(optional)</span></span>
+            <textarea name="notes" maxlength="1000" rows="3" placeholder="Stock count, current system, specific questions..."></textarea>
+          </label>
+
+          <div id="tsp-form-err" class="form-err" hidden></div>
+
+          <button type="submit" class="confirm-cta" id="tsp-form-submit" style="margin-top:6px">
+            <span class="cta-label">Book my demo</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+          </button>
+          <p class="confirm-fine" style="margin-top:10px">Goes straight to Ash. You'll get an email reply within a few hours with Calendar invite + Zoom link.</p>
+        </form>
+
+        <div id="tsp-form-success" class="form-success" hidden>
+          <div style="font-size:42px;line-height:1;margin-bottom:14px">✓</div>
+          <h3 style="margin:0 0 10px;font-size:22px;color:#fff;letter-spacing:-0.01em">Booked — we're on it.</h3>
+          <p style="margin:0 0 8px;color:var(--text-soft);font-size:15px;line-height:1.55">Ash will email you within a few hours with a Calendar invite and Zoom link, and load your dealership stock into the demo environment so you see AME running on your own cars.</p>
+          <p style="margin:14px 0 0;font-size:13px;color:var(--text-muted)">Need to reach us sooner? <a href="mailto:ashevans@tradescaleplus.co.uk" style="color:var(--blue-bright);text-decoration:none">ashevans@tradescaleplus.co.uk</a></p>
         </div>
-
-        <div class="cal-weekdays">
-          <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span class="dim">Sat</span><span class="dim">Sun</span>
-        </div>
-
-        <div class="cal-grid">
-          <!-- May 2026: 1 May is Friday. Today Wed 20. Mon-start grid. -->
-          <!-- Row 1: 27-30 Apr padding, 1-3 May -->
-          <span class="cell past">27</span>
-          <span class="cell past">28</span>
-          <span class="cell past">29</span>
-          <span class="cell past">30</span>
-          <span class="cell past">1</span>
-          <span class="cell past dim">2</span>
-          <span class="cell past dim">3</span>
-          <!-- Row 2: 4-10 May -->
-          <span class="cell past">4</span>
-          <span class="cell past">5</span>
-          <span class="cell past">6</span>
-          <span class="cell past">7</span>
-          <span class="cell past">8</span>
-          <span class="cell past dim">9</span>
-          <span class="cell past dim">10</span>
-          <!-- Row 3: 11-17 May -->
-          <span class="cell past">11</span>
-          <span class="cell past">12</span>
-          <span class="cell past">13</span>
-          <span class="cell past">14</span>
-          <span class="cell past">15</span>
-          <span class="cell past dim">16</span>
-          <span class="cell past dim">17</span>
-          <!-- Row 4: 18-24 May. Today = Wed 20 -->
-          <span class="cell past">18</span>
-          <span class="cell past">19</span>
-          <span class="cell today">20</span>
-          <span class="cell avail selected">21</span>
-          <span class="cell avail">22</span>
-          <span class="cell dim">23</span>
-          <span class="cell dim">24</span>
-          <!-- Row 5: 25-31 May -->
-          <span class="cell avail">25</span>
-          <span class="cell avail">26</span>
-          <span class="cell avail">27</span>
-          <span class="cell avail">28</span>
-          <span class="cell avail">29</span>
-          <span class="cell dim">30</span>
-          <span class="cell dim">31</span>
-          <!-- Row 6: 1-7 June padding -->
-          <span class="cell next">1</span>
-          <span class="cell next">2</span>
-          <span class="cell next">3</span>
-          <span class="cell next">4</span>
-          <span class="cell next">5</span>
-          <span class="cell next dim">6</span>
-          <span class="cell next dim">7</span>
-        </div>
-
-        <div class="card-divider"></div>
-
-        <div class="slots-head">Thursday, 21 May <span class="slots-sub">— Available times</span></div>
-        <div class="slots">
-          <button class="slot">9:00 AM</button>
-          <button class="slot active">10:30 AM</button>
-          <button class="slot">12:00 PM</button>
-          <button class="slot">2:00 PM</button>
-          <button class="slot">3:30 PM</button>
-          <button class="slot">5:00 PM</button>
-        </div>
-
-        <a href="book-demo.html" class="confirm-cta">
-          Confirm 10:30 AM Thursday
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
-        </a>
-        <p class="confirm-fine">All times in GMT. You'll get a Google Calendar invite + Zoom link by email.</p>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- ============== 2 · TRUST STRIP ============== -->
-<section class="trust-strip" data-screen-label="02 Trust strip">
-  <div class="trust-inner">
-    <div class="t-cap">Trusted by indie dealers across the UK</div>
-    <div class="logo-row">
-      <div class="logo condensed">RIVERSIDE</div>
-      <div class="logo serif">Hartwell &amp; Co.</div>
-      <div class="logo mono"><span class="dot-l"></span>kingsway/auto</div>
-      <div class="logo italic">Northgate Motors</div>
-      <div class="logo">PRESTIGE — UK</div>
-    </div>
+<style>
+  .tsp-form .fld{display:flex;flex-direction:column;gap:6px}
+  .tsp-form .lbl{font-size:13px;font-weight:500;color:var(--text-soft);letter-spacing:-0.005em}
+  .tsp-form .lbl em{color:var(--blue-bright);font-style:normal;margin-left:2px}
+  .tsp-form .lbl .opt{color:var(--text-muted);font-weight:400;margin-left:4px}
+  .tsp-form input, .tsp-form textarea{
+    width:100%;
+    background:var(--elev,#161618);
+    border:1px solid var(--border,#1f1f23);
+    border-radius:8px;
+    padding:11px 13px;
+    font-size:14.5px;
+    color:#fff;
+    font-family:inherit;
+    transition:border-color .15s ease, box-shadow .15s ease;
+    box-sizing:border-box;
+  }
+  .tsp-form input::placeholder, .tsp-form textarea::placeholder{color:#5a5a64}
+  .tsp-form input:focus, .tsp-form textarea:focus{
+    outline:none;
+    border-color:var(--blue,#3B82F6);
+    box-shadow:0 0 0 3px rgba(59,130,246,0.18);
+  }
+  .tsp-form textarea{resize:vertical;min-height:78px;font-family:inherit;line-height:1.5}
+  .form-err{
+    padding:10px 13px;
+    border-radius:8px;
+    background:rgba(239,68,68,0.10);
+    border:1px solid rgba(239,68,68,0.35);
+    color:#fca5a5;
+    font-size:13.5px;
+    line-height:1.45;
+  }
+  .form-success{
+    text-align:center;
+    padding:36px 8px 8px;
+    color:#fff;
+  }
+  .form-success > div:first-child{
+    color:var(--green,#10b981);
+    font-size:48px;
+    line-height:1;
+    margin-bottom:18px;
+  }
+  #tsp-form-submit[aria-busy="true"]{opacity:0.65;cursor:wait}
+  #tsp-form-submit[aria-busy="true"] .cta-label::after{content:" ..."}
+</style>
+
+<script>
+(function(){
+  var form = document.getElementById('tsp-book-form');
+  var errBox = document.getElementById('tsp-form-err');
+  var success = document.getElementById('tsp-form-success');
+  var submitBtn = document.getElementById('tsp-form-submit');
+  if (!form) return;
+
+  function showError(msg){
+    errBox.textContent = msg;
+    errBox.hidden = false;
+    errBox.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    errBox.hidden = true;
+    submitBtn.setAttribute('aria-busy', 'true');
+    submitBtn.disabled = true;
+
+    var fd = new FormData(form);
+    var websiteVal = (fd.get('website') || '').toString().trim();
+    var notesVal = (fd.get('notes') || '').toString().trim();
+    var combinedNotes = [
+      websiteVal ? 'Website: ' + websiteVal : '',
+      notesVal,
+    ].filter(Boolean).join('\n');
+
+    var payload = {
+      dealership: (fd.get('dealership') || '').toString().trim(),
+      name: (fd.get('name') || '').toString().trim(),
+      phone: (fd.get('phone') || '').toString().trim(),
+      email: (fd.get('email') || '').toString().trim(),
+      preferred_time: (fd.get('preferred_time') || '').toString().trim(),
+      notes: combinedNotes,
+    };
+
+    if (!payload.dealership) { showError('Please enter your dealership name.'); submitBtn.removeAttribute('aria-busy'); submitBtn.disabled=false; return; }
+    if (!payload.name) { showError('Please enter your name.'); submitBtn.removeAttribute('aria-busy'); submitBtn.disabled=false; return; }
+    if (!payload.phone) { showError('Please enter a UK phone number.'); submitBtn.removeAttribute('aria-busy'); submitBtn.disabled=false; return; }
+    if (!payload.email || payload.email.indexOf('@') < 0) { showError('Please enter a valid email.'); submitBtn.removeAttribute('aria-busy'); submitBtn.disabled=false; return; }
+
+    fetch('https://demo.tradescaleplus.com/api/public/book-demo', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify(payload),
+    }).then(function(r){
+      return r.json().then(function(data){ return {status: r.status, data: data}; });
+    }).then(function(res){
+      if (res.status >= 200 && res.status < 300 && res.data && res.data.ok) {
+        form.style.display = 'none';
+        success.hidden = false;
+        success.scrollIntoView({behavior:'smooth', block:'center'});
+      } else {
+        var msg = (res.data && res.data.error) || 'Something went wrong. Please try again or email ashevans@tradescaleplus.co.uk.';
+        showError(msg);
+        submitBtn.removeAttribute('aria-busy');
+        submitBtn.disabled = false;
+      }
+    }).catch(function(err){
+      showError('Network error. Please try again, or email ashevans@tradescaleplus.co.uk.');
+      submitBtn.removeAttribute('aria-busy');
+      submitBtn.disabled = false;
+    });
+  });
+})();
+</script>
+
+<!-- ============== 2 · FOUNDING COHORT ============== -->
+<section class="trust-strip" data-screen-label="02 Founding cohort">
+  <div class="trust-inner" style="text-align:center">
+    <div class="t-cap">Currently in private beta with founding-cohort dealers</div>
+    <div style="font-size:14px;color:var(--text-soft);line-height:1.6;max-width:760px;margin:8px auto 0">Instant Autos · Ross Car Sales · Stradey Motor Company · West Wales Trade Sales · My Motorcar</div>
   </div>
 </section>
 
@@ -214,7 +292,7 @@
       <span class="pill"><span class="dot"></span>Common questions</span>
       <h2>About the demo.</h2>
       <p class="sub">Most of what dealers ask before booking. If yours isn't here, ping us on the contact page.</p>
-      <a class="call" href="tel:0800">Or just call us → 0800 ···· <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+      <a class="call" href="mailto:ashevans@tradescaleplus.co.uk">Or email us → ashevans@tradescaleplus.co.uk <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
     </div>
 
     <div class="dfaq-list">
@@ -262,14 +340,7 @@
     </div>
 
     <div class="alt-grid">
-      <a class="alt-card" href="tel:0800">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-        <div class="t">Call us</div>
-        <div class="val">0800 ···· ···</div>
-        <div class="cap">Mon–Fri 9–6 GMT</div>
-      </a>
-
-      <a class="alt-card" href="mailto:ashevans@tradescaleplus.co.uk">
+<a class="alt-card" href="mailto:ashevans@tradescaleplus.co.uk">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
         <div class="t">Email us</div>
         <div class="val">ashevans@tradescaleplus.co.uk</div>

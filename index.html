@@ -74,7 +74,7 @@
   .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:rgba(59,130,246,0.10);border:1px solid rgba(59,130,246,0.22);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--blue-bright);font-weight:500}
   .pill .dot{width:6px;height:6px;border-radius:999px;background:var(--blue-bright);box-shadow:0 0 8px var(--blue-bright)}
   h1.headline{font-size:clamp(44px,5.2vw,66px);line-height:1.06;letter-spacing:-0.03em;font-weight:700;margin:24px 0 0;color:#fff}
-  h1.headline .line{display:block;white-space:nowrap}
+  h1.headline .line{display:block;white-space:nowrap;text-wrap:balance}
   h1.headline .accent{background:linear-gradient(180deg,#ffffff 0%,#e6e8ee 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
   h1.headline .price{color:var(--blue-bright)}
   .subhead{font-size:22px;line-height:1.55;font-weight:400;color:var(--text-soft);max-width:620px;margin:28px 0 0;text-wrap:pretty}
@@ -172,14 +172,15 @@
   .logo .dot-l{display:inline-block;width:7px;height:7px;border-radius:999px;background:var(--blue-bright);margin-right:6px;vertical-align:middle}
 
   /* ---------- RESPONSIVE ---------- */
-  @media (max-width:1080px){
+  @media (max-width:1280px){
     .hero{padding:96px 24px 72px;min-height:auto}
-    .hero-inner{grid-template-columns:1fr;gap:64px}
+    .hero-inner{grid-template-columns:1fr;gap:64px;max-width:920px}
     .preview-wrap{margin-top:24px}
     .dash{transform:none}
     .chip-call{left:-12px;top:-18px}
     .chip-book{right:-12px}
-    h1.headline{font-size:clamp(44px,9vw,72px)}
+    h1.headline{font-size:clamp(44px,7vw,68px)}
+    h1.headline .line{white-space:normal}
   }
   @media (max-width:720px){
     .nav-links{display:none}
@@ -543,11 +544,11 @@
           Book a 15-min demo
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
         </a>
-        <a href="#" class="btn-secondary">
+        <a href="voice.html" class="btn-secondary">
           <span class="play">
             <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
           </span>
-          Watch a 90-sec tour
+          See AME in action
         </a>
       </div>
 
@@ -715,17 +716,11 @@
   </div>
 </section>
 
-<!-- ============== LOGO STRIP ============== -->
-<section class="logos" aria-label="Trusted by">
-  <div class="logos-inner">
-    <div class="l-label">Trusted by indie dealers across the UK</div>
-    <div class="logo-row">
-      <div class="logo condensed">RIVERSIDE</div>
-      <div class="logo serif">Hartwell &amp; Co.</div>
-      <div class="logo mono"><span class="dot-l"></span>kingsway/auto</div>
-      <div class="logo italic">Northgate Motors</div>
-      <div class="logo">PRESTIGE — UK</div>
-    </div>
+<!-- ============== FOUNDING COHORT STRIP ============== -->
+<section class="logos" aria-label="Founding cohort">
+  <div class="logos-inner" style="justify-content:center;text-align:center;flex-direction:column;gap:10px">
+    <div class="l-label">Currently in private beta with founding-cohort dealers</div>
+    <div style="font-size:14px;color:var(--text-soft);line-height:1.6;max-width:760px">Instant Autos · Ross Car Sales · Stradey Motor Company · West Wales Trade Sales · My Motorcar</div>
   </div>
 </section>
 
@@ -1127,42 +1122,57 @@
             <div class="meta"><span class="age">2d</span><span class="pill-tiny hot">Hot</span></div>
           </div>
           <div class="kcard">
-            <div class="nm">Mark Patel</div>
+            <div class="nm">Tom Bridges</div>
             <div class="car">Audi Q5 · Sat 11:00</div>
             <div class="meta"><span class="age">4m</span><span class="pill-tiny warm">New</span></div>
           </div>
-          <div class="kcard placeholder"></div>
+          <div class="kcard">
+            <div class="nm">Liam O'Connor</div>
+            <div class="car">BMW 3 Series · Fri 16:00</div>
+            <div class="meta"><span class="age">1h</span><span class="pill-tiny warm">Finance</span></div>
+          </div>
         </div>
 
         <div class="col">
-          <div class="col-head">Test drive done <span class="ct">1</span></div>
+          <div class="col-head">Test drive done <span class="ct">2</span></div>
           <div class="kcard">
             <div class="nm">Emma Robinson</div>
             <div class="car">Mini Cooper S · 2018</div>
             <div class="meta"><span class="age">3d</span><span class="pill-tiny warm">Considering</span></div>
           </div>
-          <div class="kcard placeholder"></div>
+          <div class="kcard">
+            <div class="nm">Priya Sharma</div>
+            <div class="car">Volvo XC60 · 2020</div>
+            <div class="meta"><span class="age">2d</span><span class="pill-tiny warm">Part-ex</span></div>
+          </div>
         </div>
 
         <div class="col">
-          <div class="col-head">Negotiating <span class="ct">1</span></div>
+          <div class="col-head">Negotiating <span class="ct">2</span></div>
           <div class="kcard">
-            <div class="nm">Tom Bridges</div>
+            <div class="nm">Owain Davies</div>
             <div class="car">Ford Kuga · 2019</div>
             <div class="meta"><span class="age">5d</span><span class="pill-tiny hot">Offer in</span></div>
           </div>
-          <div class="kcard placeholder"></div>
+          <div class="kcard">
+            <div class="nm">Hannah Wright</div>
+            <div class="car">Nissan Qashqai · 2021</div>
+            <div class="meta"><span class="age">2d</span><span class="pill-tiny hot">Counter</span></div>
+          </div>
         </div>
 
         <div class="col">
-          <div class="col-head">Sale agreed <span class="ct">1</span></div>
+          <div class="col-head">Sale agreed <span class="ct">2</span></div>
           <div class="kcard">
             <div class="nm">James Whitfield</div>
             <div class="car">Mercedes A-Class · £14,995</div>
             <div class="meta"><span class="age">today</span><span class="pill-tiny green">Signed</span></div>
           </div>
-          <div class="kcard placeholder"></div>
-        </div>
+          <div class="kcard">
+            <div class="nm">Sofia Bennett</div>
+            <div class="car">Volkswagen Golf · £12,250</div>
+            <div class="meta"><span class="age">yest</span><span class="pill-tiny green">Signed</span></div>
+          </div>
       </div>
     </div>
   </div>
@@ -1359,11 +1369,11 @@
         Book a 15-min demo
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="#" class="btn-secondary">
+      <a href="voice.html" class="btn-secondary">
         <span class="play">
           <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         </span>
-        Watch a 90-sec tour
+        See AME in action
       </a>
     </div>
     <div class="caption">Trade Scale Plus Ltd · Companies House 17142290 · UK GDPR compliant</div>
