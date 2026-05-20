@@ -38,17 +38,17 @@ It is a new category — "AI Sales Admin" — distinct from CRMs (HubSpot, Piped
 ## Pages
 
 - [Homepage](https://tradescaleplus.com/): Overview, hero positioning, all features.
-- [Pricing](https://tradescaleplus.com/pricing.html): £499/mo card, BYO Twilio + Vapi transparency, comparison table.
-- [Book a demo](https://tradescaleplus.com/book-demo.html): 15-minute personalised demo on your real stock.
-- [Voice receptionist](https://tradescaleplus.com/voice.html): How AME handles inbound calls.
-- [Inbox](https://tradescaleplus.com/inbox.html): Multi-channel inbox + draft/autopilot modes.
-- [Pipeline](https://tradescaleplus.com/pipeline.html): Customer journey, 9-stage pipeline, customer 360.
-- [Stock](https://tradescaleplus.com/stock.html): Stock import, DVLA lookup, offer documents.
-- [Aftersales](https://tradescaleplus.com/aftersales.html): 6 lifecycle automations.
-- [AME HQ](https://tradescaleplus.com/ame-hq.html): Control centre, audit log, forecasting.
-- [For dealers / About](https://tradescaleplus.com/for-dealers.html): Founder story, principles, founding cohort.
-- [FAQ](https://tradescaleplus.com/faq.html): Comprehensive Q&A grouped by category.
-- [Contact](https://tradescaleplus.com/contact.html): Founder email, demo booking, AME herself.
+- [Pricing](https://tradescaleplus.com/pricing): £499/mo card, BYO Twilio + Vapi transparency, comparison table.
+- [Book a demo](https://tradescaleplus.com/book-demo): 15-minute personalised demo on your real stock.
+- [Voice receptionist](https://tradescaleplus.com/voice): How AME handles inbound calls.
+- [Inbox](https://tradescaleplus.com/inbox): Multi-channel inbox + draft/autopilot modes.
+- [Pipeline](https://tradescaleplus.com/pipeline): Customer journey, 9-stage pipeline, customer 360.
+- [Stock](https://tradescaleplus.com/stock): Stock import, DVLA lookup, offer documents.
+- [Aftersales](https://tradescaleplus.com/aftersales): 6 lifecycle automations.
+- [AME HQ](https://tradescaleplus.com/ame-hq): Control centre, audit log, forecasting.
+- [For dealers / About](https://tradescaleplus.com/for-dealers): Founder story, principles, founding cohort.
+- [FAQ](https://tradescaleplus.com/faq): Comprehensive Q&A grouped by category.
+- [Contact](https://tradescaleplus.com/contact): Founder email, demo booking, AME herself.
 
 ## Differentiators (versus alternatives)
 
