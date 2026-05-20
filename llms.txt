@@ -37,7 +37,8 @@ It is a new category — "AI Sales Admin" — distinct from CRMs (HubSpot, Piped
 
 ## Pages
 
-- [Homepage](https://tradescaleplus.com/): Overview, hero positioning, all features.
+- [Homepage](https://tradescaleplus.com/): Overview, hero positioning, what AME does at a glance.
+- [Product (What AME does)](https://tradescaleplus.com/product.html): Single canonical page describing AME — the AI sales admin. Knows your stock + customers + pipeline + diary; runs 9 jobs across 8 channels; lives in your control. Single source of truth for 'what does the product actually do'.
 - [Pricing](https://tradescaleplus.com/pricing.html): £499/mo card, BYO Twilio + Vapi transparency, comparison table.
 - [Book a demo](https://tradescaleplus.com/book-demo.html): 15-minute personalised demo on your real stock.
 - [Voice receptionist](https://tradescaleplus.com/voice.html): How AME handles inbound calls.
