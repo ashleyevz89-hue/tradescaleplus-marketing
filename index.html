@@ -597,6 +597,19 @@
     .ch-grid{grid-template-columns:repeat(2,1fr)}
     .think-layout{grid-template-columns:1fr;gap:48px}
   }
+  @media (max-width:720px){
+    .val-stat{flex-wrap:nowrap;gap:8px;align-items:baseline}
+    .val-stat .v-curr,.val-stat .v-num{font-size:clamp(34px,9vw,52px);white-space:nowrap}
+    .val-stat .v-sep,.val-stat .v-arrow{font-size:24px}
+    .val-stat .v-cross{font-size:clamp(26px,7vw,38px);white-space:nowrap}
+    .val-stat .v-unit{font-size:18px}
+  }
+  @media (max-width:480px){
+    .val-stat .v-curr,.val-stat .v-num{font-size:clamp(28px,8.5vw,44px)}
+    .val-stat .v-cross{font-size:clamp(22px,6.5vw,32px)}
+    .val-stat .v-sep,.val-stat .v-arrow{font-size:20px}
+    .val-stat{gap:6px}
+  }
   @media (max-width:640px){
     .value,.channels,.think-section{padding:96px 20px 72px}
     .ch-grid{grid-template-columns:1fr}
