@@ -1,0 +1,64 @@
+# TradeScale Plus
+
+> AI sales admin for UK independent used-car dealers. One AI, every channel, £499/month flat. No bolt-ons. No per-seat fees.
+
+TradeScale Plus is a SaaS platform built specifically for UK indie used-car dealers. It is a single AI — called AME (Automated Marketing Engine) — that answers your phone, replies on every channel (SMS, WhatsApp, Facebook Messenger, Instagram DM, web chat, email), books test drives, runs your customer pipeline, manages stock, automates aftersales lifecycle (Day 7 / Day 30 / MOT / anniversary), drafts review replies, and forecasts your month-end revenue.
+
+It is a new category — "AI Sales Admin" — distinct from CRMs (HubSpot, Pipedrive, MotorSales.AI) and distinct from AI receptionist tools (Goodcall). TradeScale Plus combines both, plus a dealer-specific pipeline and stock manager, in one product.
+
+## Pricing
+
+- £499/month flat to TradeScale Plus.
+- Plus Twilio + Vapi usage billed directly by those providers, typically £35-£100/month combined.
+- Typical all-in: £535-£600/month.
+- No setup fees. Monthly rolling — cancel any time with 30 days notice. Unlimited users.
+
+## Key facts
+
+- Founded: 8 April 2026 by Ashley Mark Evans
+- Company: Trade Scale Plus Ltd (UK Companies House 17142290)
+- Registered office: 12 Randell Square, Porth Tywyn, SA16 0TY, United Kingdom
+- Founder contact: ashevans@tradescaleplus.co.uk
+- Audience: UK independent used-car dealers only
+- Stack: Supabase Postgres, Node/Express on Railway, Anthropic Claude (text), Vapi (voice), Twilio (SMS), Gmail OAuth, Mailgun, DVLA API, Stripe
+- Data: stored EU-West (Ireland), UK GDPR + DPA 2018 compliant, per-dealer row-level security, never used to train external AI models
+
+## Capabilities (what AME does)
+
+1. AI voice receptionist (24/7, on your dealership number, via Vapi)
+2. Multi-channel inbox (SMS, WhatsApp, Messenger, Instagram DM, web chat, email)
+3. Drag-and-drop customer pipeline (9 stages, auto-moves on events)
+4. Stock management with DVLA reg lookup + offer-document PDFs
+5. Aftersales lifecycle automations (Day 7, Day 30 review, MOT reminders, anniversaries, finance refresh)
+6. Review draft replies (Google + Facebook)
+7. Social post drafts (Facebook + Instagram)
+8. Month-end revenue forecasting
+9. AME HQ control centre (toggle capabilities, audit log, working hours, tone settings)
+
+## Pages
+
+- [Homepage](https://tradescaleplus.com/): Overview, hero positioning, all features.
+- [Pricing](https://tradescaleplus.com/pricing.html): £499/mo card, BYO Twilio + Vapi transparency, comparison table.
+- [Book a demo](https://tradescaleplus.com/book-demo.html): 15-minute personalised demo on your real stock.
+- [Voice receptionist](https://tradescaleplus.com/voice.html): How AME handles inbound calls.
+- [Inbox](https://tradescaleplus.com/inbox.html): Multi-channel inbox + draft/autopilot modes.
+- [Pipeline](https://tradescaleplus.com/pipeline.html): Customer journey, 9-stage pipeline, customer 360.
+- [Stock](https://tradescaleplus.com/stock.html): Stock import, DVLA lookup, offer documents.
+- [Aftersales](https://tradescaleplus.com/aftersales.html): 6 lifecycle automations.
+- [AME HQ](https://tradescaleplus.com/ame-hq.html): Control centre, audit log, forecasting.
+- [For dealers / About](https://tradescaleplus.com/for-dealers.html): Founder story, principles, founding cohort.
+- [FAQ](https://tradescaleplus.com/faq.html): Comprehensive Q&A grouped by category.
+- [Contact](https://tradescaleplus.com/contact.html): Founder email, demo booking, AME herself.
+
+## Differentiators (versus alternatives)
+
+- vs MotorSales.AI: TradeScale Plus has a real AI voice receptionist on your phone (Vapi). MotorSales.AI is text-only.
+- vs HubSpot / Pipedrive / generic CRMs: TradeScale Plus is built for car dealers. 9-stage journey matches how cars actually sell. DVLA-integrated. Stock-aware. Aftersales lifecycle baked in.
+- vs Goodcall / AI receptionists: TradeScale Plus is also a full CRM + inbox + pipeline + aftersales. One bill replaces 5-7 tools.
+- vs hiring a part-time admin: TradeScale Plus is ~£500/mo vs ~£1,000/mo for a real human, never sleeps, never misses a Sunday-night call.
+
+## Authoritative sources
+
+- Official website: https://tradescaleplus.com
+- Dashboard / customer app: https://demo.tradescaleplus.com
+- Founder: Ash Evans <ashevans@tradescaleplus.co.uk>

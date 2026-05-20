@@ -1,0 +1,119 @@
+/* TradeScale Plus — shared mobile nav + responsive overrides */
+
+/* Hamburger button (hidden on desktop) */
+.tsp-burger {
+  display: none;
+  background: transparent;
+  border: 1px solid #353541;
+  border-radius: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.tsp-burger:focus-visible { outline: 2px solid #3B82F6; outline-offset: 2px; }
+.tsp-burger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #d4d4d8;
+  border-radius: 1px;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.tsp-burger span + span { margin-top: 4px; }
+.tsp-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.tsp-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.tsp-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* Mobile drawer (slides down from below nav) */
+.tsp-drawer {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 49;
+  background: rgba(5, 5, 5, 0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 24px;
+  overflow-y: auto;
+}
+.tsp-drawer[data-open="true"] { display: block; }
+.tsp-drawer a {
+  display: block;
+  padding: 16px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #d4d4d8;
+  border-bottom: 1px solid #1f1f23;
+  text-decoration: none;
+}
+.tsp-drawer a:hover, .tsp-drawer a:focus { color: #fff; }
+.tsp-drawer .tsp-drawer-cta {
+  margin-top: 24px;
+  display: block;
+  text-align: center;
+  background: #3B82F6;
+  color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  border: 1px solid rgba(96, 165, 250, 0.4);
+  border-bottom: 1px solid rgba(96, 165, 250, 0.4);
+  font-size: 16px;
+}
+.tsp-drawer .tsp-drawer-signin {
+  margin-top: 16px;
+  display: block;
+  text-align: center;
+  background: transparent;
+  color: #d4d4d8;
+  padding: 16px;
+  border: 1px solid #353541;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Footer single-col on phones */
+@media (max-width: 720px) {
+  .footer-grid, .ffin .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .tsp-burger { display: inline-flex; }
+  .nav .nav-cta .btn-ghost { display: none; }  /* hide "Sign in" on mobile nav, it's in the drawer */
+}
+
+/* Bottom-of-page sticky CTA on mobile (only on long content pages) */
+@media (max-width: 720px) {
+  .tsp-sticky-cta {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    z-index: 48;
+    background: #3B82F6;
+    color: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    box-shadow: 0 12px 40px rgba(59, 130, 246, 0.4), 0 2px 8px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(96, 165, 250, 0.45);
+  }
+}
+@media (min-width: 721px) {
+  .tsp-sticky-cta { display: none; }
+}
+
+/* Touch target audit — bump all buttons to 44px min on mobile */
+@media (max-width: 720px) {
+  .btn-primary, .btn-secondary, .btn-nav {
+    min-height: 44px;
+  }
+}
