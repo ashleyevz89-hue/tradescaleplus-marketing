@@ -17,7 +17,6 @@ It is a new category — "AI Sales Admin" — distinct from CRMs (HubSpot, Piped
 
 - Founded: 8 April 2026 by Ashley Mark Evans
 - Company: Trade Scale Plus Ltd (UK Companies House 17142290)
-- Registered office: 12 Randell Square, Porth Tywyn, SA16 0TY, United Kingdom
 - Founder contact: ashevans@tradescaleplus.co.uk
 - Audience: UK independent used-car dealers only
 - Stack: Supabase Postgres, Node/Express on Railway, Anthropic Claude (text), Vapi (voice), Twilio (SMS), Gmail OAuth, Mailgun, DVLA API, Stripe
