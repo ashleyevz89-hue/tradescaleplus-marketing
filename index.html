@@ -925,6 +925,1765 @@
   </div>
 </section>
 
+<!-- ============================================================
+     SECTION — TRY IT (Interactive Demo Dashboard)
+     ============================================================ -->
+<style>
+/* ============================================================
+   TRY-IT SECTION — scoped styles (ids prefixed tsp-demo-)
+   ============================================================ */
+.try-it {
+  position: relative;
+  background: var(--bg);
+  padding: 120px 32px 96px;
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+}
+.try-it-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.try-it-bg .gl-a {
+  position: absolute;
+  top: -160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;
+  height: 700px;
+  background: radial-gradient(ellipse at center, rgba(59,130,246,0.13) 0%, rgba(59,130,246,0) 60%);
+  filter: blur(18px);
+}
+.try-it-bg .gl-b {
+  position: absolute;
+  bottom: -100px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(168,85,247,0.07) 0%, rgba(168,85,247,0) 60%);
+  filter: blur(14px);
+}
+.try-it-inner {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Section header */
+.try-it-head {
+  text-align: center;
+  margin-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.try-it-head h2 {
+  margin: 0;
+  font-size: clamp(36px, 4.4vw, 54px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: #fff;
+  text-wrap: balance;
+}
+.try-it-head p {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--text-soft);
+  max-width: 680px;
+  text-wrap: pretty;
+}
+
+/* ---- Dashboard frame ---- */
+#tsp-demo-frame {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow:
+    0 4px 24px rgba(0,0,0,0.45),
+    0 40px 100px -20px rgba(0,0,0,0.7),
+    0 0 0 1px rgba(255,255,255,0.03) inset,
+    0 80px 160px -40px rgba(59,130,246,0.12);
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Chrome bar */
+.tsp-demo-chrome {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255,255,255,0.015);
+  flex-shrink: 0;
+}
+.tsp-demo-chrome .d-dots {
+  display: flex;
+  gap: 6px;
+}
+.tsp-demo-chrome .d-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #2a2a30;
+}
+.tsp-demo-chrome .d-url {
+  margin-left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255,255,255,0.035);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 12px;
+  font-size: 11.5px;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  user-select: none;
+  flex: 1;
+  max-width: 320px;
+}
+.tsp-demo-chrome .d-url .lock {
+  color: var(--green);
+  flex-shrink: 0;
+}
+.tsp-demo-chrome .d-badge {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--blue-bright);
+  background: rgba(59,130,246,0.10);
+  border: 1px solid rgba(59,130,246,0.22);
+  padding: 3px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.tsp-demo-chrome .d-badge .d-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--blue-bright);
+  box-shadow: 0 0 7px var(--blue-bright);
+  animation: tsp-demo-pulse 2s ease-in-out infinite;
+}
+@keyframes tsp-demo-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.85); }
+}
+
+/* ---- Main body: sidebar + content ---- */
+.tsp-demo-body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.tsp-demo-sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  background: rgba(0,0,0,0.20);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+  gap: 2px;
+}
+.tsp-demo-dealer {
+  padding: 0 14px 14px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 10px;
+}
+.tsp-demo-dealer .d-name {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.005em;
+}
+.tsp-demo-dealer .d-sub {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.tsp-demo-dealer .d-ame {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  font-size: 10px;
+  color: var(--green);
+  background: rgba(16,185,129,0.08);
+  border: 1px solid rgba(16,185,129,0.22);
+  padding: 3px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.tsp-demo-dealer .d-ame .d-g {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 5px var(--green);
+}
+.tsp-demo-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 14px;
+  margin: 0 8px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  border: 1px solid transparent;
+  user-select: none;
+  position: relative;
+}
+.tsp-demo-nav-item:hover {
+  background: rgba(255,255,255,0.04);
+  color: var(--text-soft);
+}
+.tsp-demo-nav-item.active {
+  background: rgba(59,130,246,0.12);
+  color: #fff;
+  border-color: rgba(59,130,246,0.25);
+  font-weight: 500;
+}
+.tsp-demo-nav-item svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: opacity 0.15s ease;
+}
+.tsp-demo-nav-item.active svg,
+.tsp-demo-nav-item:hover svg {
+  opacity: 1;
+}
+.tsp-demo-nav-item .d-badge-count {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 600;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 999px;
+  padding: 1px 6px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ---- Content area ---- */
+.tsp-demo-content {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+  padding: 24px;
+  position: relative;
+}
+/* Tab panels */
+.tsp-demo-panel {
+  display: none;
+  animation: tsp-demo-fadein 0.18s ease both;
+}
+.tsp-demo-panel.active {
+  display: block;
+}
+@keyframes tsp-demo-fadein {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- TODAY panel ---- */
+.tsp-kpi-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.tsp-kpi {
+  background: var(--elev);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.tsp-kpi:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+}
+.tsp-kpi .k-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.tsp-kpi .k-val {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: #fff;
+  line-height: 1;
+  font-feature-settings: "tnum";
+}
+.tsp-kpi .k-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.tsp-kpi .k-up {
+  color: var(--green);
+  font-weight: 600;
+  font-size: 11.5px;
+}
+.tsp-kpi .k-amber {
+  color: var(--amber);
+}
+
+/* AME activity feed */
+.tsp-feed-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.tsp-feed-head h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+.tsp-feed-head .f-sub {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.tsp-feed-head .f-sub .f-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--blue-bright);
+  box-shadow: 0 0 5px var(--blue-bright);
+  animation: tsp-demo-pulse 2s ease-in-out infinite;
+}
+.tsp-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--elev);
+}
+.tsp-feed-row {
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--border);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease, transform 0.35s ease, background 0.15s ease;
+}
+.tsp-feed-row:last-child {
+  border-bottom: none;
+}
+.tsp-feed-row:hover {
+  background: rgba(255,255,255,0.02);
+}
+.tsp-feed-row.tsp-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.tsp-feed-row .f-av {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+.tsp-feed-row .f-av.ame {
+  background: linear-gradient(135deg, #3B82F6, #1d4fcc);
+  color: #fff;
+  box-shadow: 0 0 0 1px rgba(96,165,250,0.3) inset;
+}
+.tsp-feed-row .f-av.wa {
+  background: rgba(16,185,129,0.16);
+  color: var(--green);
+}
+.tsp-feed-row .f-av.mot {
+  background: rgba(245,158,11,0.14);
+  color: var(--amber);
+}
+.tsp-feed-row .f-av.star {
+  background: rgba(168,85,247,0.14);
+  color: #c4a4f7;
+}
+.tsp-feed-row .f-body .f-title {
+  font-size: 13.5px;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+.tsp-feed-row .f-body .f-meta {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.tsp-feed-row .f-when {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ---- INBOX panel ---- */
+.tsp-inbox-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 0;
+  background: var(--elev);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 440px;
+}
+.tsp-thread-list {
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+.tsp-thread-list .tl-head {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-soft);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(0,0,0,0.12);
+}
+.tsp-thread {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.15s ease;
+  position: relative;
+}
+.tsp-thread:last-child {
+  border-bottom: none;
+}
+.tsp-thread:hover {
+  background: rgba(255,255,255,0.025);
+}
+.tsp-thread.t-active {
+  background: rgba(59,130,246,0.09);
+  border-left: 2px solid var(--blue);
+  padding-left: 12px;
+}
+.tsp-thread .t-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.tsp-thread .t-icon svg {
+  width: 13px;
+  height: 13px;
+}
+.tsp-thread .t-icon.wa { background: rgba(16,185,129,0.16); color: var(--green); }
+.tsp-thread .t-icon.sms { background: rgba(59,130,246,0.16); color: var(--blue-bright); }
+.tsp-thread .t-icon.em { background: rgba(255,255,255,0.06); color: var(--text-soft); }
+.tsp-thread .t-icon.fb { background: rgba(99,102,241,0.16); color: #a5b4fc; }
+.tsp-thread .t-info { flex: 1; min-width: 0; }
+.tsp-thread .t-name {
+  font-size: 12.5px;
+  color: #fff;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tsp-thread .t-name .t-time {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 400;
+}
+.tsp-thread .t-preview {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+}
+.tsp-thread .t-unread {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue-bright);
+  box-shadow: 0 0 6px var(--blue-bright);
+}
+.tsp-thread.t-active .t-unread {
+  display: none;
+}
+/* Conversation area */
+.tsp-conv-area {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.tsp-conv-head {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(0,0,0,0.10);
+}
+.tsp-conv-head .ch-av {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+}
+.tsp-conv-head .ch-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+.tsp-conv-head .ch-meta {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 1px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.tsp-conv-head .ch-tag {
+  margin-left: auto;
+  font-size: 10px;
+  color: var(--blue-bright);
+  background: rgba(59,130,246,0.10);
+  border: 1px solid rgba(59,130,246,0.25);
+  padding: 3px 9px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.tsp-conv-msgs {
+  flex: 1;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+}
+.tsp-msg {
+  max-width: 76%;
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+}
+.tsp-msg.m-in { align-self: flex-start; }
+.tsp-msg.m-out { align-self: flex-end; flex-direction: row-reverse; }
+.tsp-msg .m-bub {
+  padding: 9px 13px;
+  border-radius: 12px;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: #fff;
+}
+.tsp-msg.m-in .m-bub {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  border-bottom-left-radius: 4px;
+  color: var(--text-soft);
+}
+.tsp-msg.m-out .m-bub {
+  background: rgba(59,130,246,0.16);
+  border: 1px solid rgba(59,130,246,0.30);
+  border-bottom-right-radius: 4px;
+}
+.tsp-msg .m-time {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  white-space: nowrap;
+  margin-bottom: 2px;
+}
+/* AME draft */
+.tsp-draft {
+  margin: 12px 18px 16px;
+  padding: 13px 14px;
+  border: 1px dashed rgba(59,130,246,0.40);
+  border-radius: 10px;
+  background: rgba(59,130,246,0.04);
+  transition: border-color 0.2s ease;
+}
+.tsp-draft .dr-lbl {
+  font-size: 10px;
+  color: var(--blue-bright);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.tsp-draft .dr-text {
+  font-size: 13px;
+  color: var(--text-soft);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.tsp-draft .dr-row {
+  display: flex;
+  gap: 8px;
+}
+.tsp-draft .dr-btn {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 7px;
+  border: 1px solid var(--border-strong);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
+  font-family: 'Inter', sans-serif;
+  line-height: 1;
+}
+.tsp-draft .dr-btn:hover { transform: translateY(-1px); }
+.tsp-draft .dr-btn.approve {
+  background: var(--blue);
+  color: #fff;
+  border-color: transparent;
+}
+.tsp-draft .dr-btn.approve:hover { background: var(--blue-hover); }
+.tsp-draft .dr-btn.edit-btn {
+  background: var(--elev);
+  color: var(--text-soft);
+}
+.tsp-draft .dr-btn.edit-btn:hover { background: rgba(255,255,255,0.06); }
+.tsp-draft-sent {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--green);
+  font-weight: 500;
+  padding: 10px 0 4px;
+}
+.tsp-draft-sent .ds-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(16,185,129,0.14);
+  border: 1px solid rgba(16,185,129,0.30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green);
+}
+.tsp-draft-sent .ds-icon svg { width: 11px; height: 11px; }
+
+/* ---- PIPELINE panel ---- */
+.tsp-pipeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.tsp-col {
+  background: rgba(0,0,0,0.18);
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tsp-col-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 500;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2px;
+}
+.tsp-col-head .tc-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--text-soft);
+  background: var(--elev);
+  border: 1px solid var(--border);
+  padding: 1px 6px;
+  border-radius: 999px;
+  letter-spacing: 0;
+}
+.tsp-kcard {
+  background: var(--elev);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 11px 12px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+  position: relative;
+}
+.tsp-kcard:hover {
+  border-color: rgba(59,130,246,0.35);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.28);
+  transform: translateY(-1px);
+}
+.tsp-kcard .kc-name {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: -0.005em;
+}
+.tsp-kcard .kc-car {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  margin-top: 3px;
+}
+.tsp-kcard .kc-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+.tsp-kcard .kc-age {
+  font-size: 9.5px;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+.tsp-kcard .kc-pill {
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+.tsp-kcard .kc-pill.hot { background: rgba(245,158,11,0.14); color: var(--amber); }
+.tsp-kcard .kc-pill.warm { background: rgba(59,130,246,0.12); color: var(--blue-bright); }
+.tsp-kcard .kc-pill.sold { background: rgba(16,185,129,0.12); color: var(--green); }
+/* AME chasing badge */
+.tsp-ame-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9px;
+  color: var(--blue-bright);
+  background: rgba(59,130,246,0.10);
+  border: 1px solid rgba(59,130,246,0.22);
+  padding: 2px 7px;
+  border-radius: 999px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-top: 6px;
+  animation: tsp-ame-shimmer 2.4s ease-in-out infinite;
+}
+.tsp-ame-badge .ab-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--blue-bright);
+  box-shadow: 0 0 5px var(--blue-bright);
+  animation: tsp-demo-pulse 2s ease-in-out infinite;
+}
+@keyframes tsp-ame-shimmer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+/* Card detail tooltip */
+.tsp-card-detail {
+  position: fixed;
+  z-index: 200;
+  background: var(--card);
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  padding: 16px 18px;
+  min-width: 220px;
+  max-width: 280px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.60), 0 4px 12px rgba(0,0,0,0.35);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(6px) scale(0.97);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.tsp-card-detail.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.tsp-card-detail .cd-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.tsp-card-detail .cd-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.tsp-card-detail .cd-row span { color: var(--text-soft); }
+.tsp-card-detail .cd-ame {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  font-size: 11.5px;
+  color: var(--blue-bright);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.tsp-card-detail .cd-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 13px;
+  pointer-events: auto;
+  transition: background 0.15s ease;
+}
+.tsp-card-detail .cd-close:hover { background: rgba(255,255,255,0.10); }
+
+/* ---- STOCK panel ---- */
+.tsp-stock-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.tsp-stock-card {
+  background: var(--elev);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+.tsp-stock-card:hover {
+  border-color: rgba(59,130,246,0.30);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+}
+.tsp-stock-thumb {
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.tsp-stock-thumb .st-reg {
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  background: rgba(0,0,0,0.75);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+}
+.tsp-stock-thumb .st-status {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+.tsp-stock-thumb .st-status.ready {
+  background: rgba(16,185,129,0.18);
+  border: 1px solid rgba(16,185,129,0.35);
+  color: var(--green);
+}
+.tsp-stock-thumb .st-status.prep {
+  background: rgba(245,158,11,0.16);
+  border: 1px solid rgba(245,158,11,0.30);
+  color: var(--amber);
+}
+.tsp-stock-info {
+  padding: 14px 16px;
+}
+.tsp-stock-info .si-make {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+.tsp-stock-info .si-model {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 1px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.tsp-stock-info .si-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.03em;
+  margin-top: 10px;
+  font-feature-settings: "tnum";
+}
+.tsp-stock-info .si-meta {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+.tsp-stock-info .si-tag {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+.tsp-stock-prep-bar {
+  padding: 10px 16px 14px;
+  border-top: 1px solid var(--border);
+  font-size: 11px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.tsp-stock-prep-bar .pb-track {
+  flex: 1;
+  height: 4px;
+  background: var(--card);
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.tsp-stock-prep-bar .pb-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--blue) 0%, var(--blue-bright) 100%);
+}
+.tsp-stock-prep-bar .pb-pct {
+  font-size: 10.5px;
+  color: var(--text-soft);
+  font-family: 'JetBrains Mono', monospace;
+  white-space: nowrap;
+}
+
+/* ---- CTA row below frame ---- */
+.try-it-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 36px;
+  flex-wrap: wrap;
+}
+
+/* ---- Mobile responsive ---- */
+@media (max-width: 900px) {
+  .try-it {
+    padding: 80px 20px 64px;
+  }
+  .tsp-demo-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    flex-direction: row;
+    padding: 0;
+    overflow-x: auto;
+    gap: 0;
+  }
+  .tsp-demo-dealer {
+    display: none;
+  }
+  .tsp-demo-body {
+    flex-direction: column;
+  }
+  .tsp-demo-nav-item {
+    margin: 6px 4px;
+    padding: 8px 12px;
+    white-space: nowrap;
+  }
+  .tsp-demo-nav-item .d-badge-count {
+    display: none;
+  }
+  .tsp-kpi-row {
+    grid-template-columns: 1fr;
+  }
+  .tsp-stock-grid {
+    grid-template-columns: 1fr;
+  }
+  .tsp-pipeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .tsp-inbox-layout {
+    grid-template-columns: 1fr;
+  }
+  .tsp-thread-list {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .tsp-pipeline {
+    grid-template-columns: 1fr;
+  }
+  .tsp-demo-chrome .d-url {
+    display: none;
+  }
+  .try-it-head h2 {
+    font-size: 30px;
+  }
+  .try-it-head p {
+    font-size: 16px;
+  }
+}
+</style>
+
+<section class="try-it" id="try-it" data-screen-label="01a Try it — interactive demo">
+  <div class="try-it-bg">
+    <div class="gl-a"></div>
+    <div class="gl-b"></div>
+  </div>
+
+  <div class="try-it-inner">
+
+    <!-- Section header -->
+    <div class="try-it-head">
+      <span class="pill"><span class="dot"></span>Try it</span>
+      <h2>Click around a dealer&#8217;s day</h2>
+      <p>This is a live mock of the dashboard your dealership gets &#8212; canned data, real feel. Click each tab to explore.</p>
+    </div>
+
+    <!-- Interactive dashboard frame -->
+    <div id="tsp-demo-frame">
+
+      <!-- Chrome bar -->
+      <div class="tsp-demo-chrome">
+        <div class="d-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="d-url">
+          <svg class="lock" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          demo.tradescaleplus.com/app
+        </div>
+        <div class="d-badge">
+          <span class="d-pulse"></span>AME live
+        </div>
+      </div>
+
+      <!-- Body: sidebar + content -->
+      <div class="tsp-demo-body">
+
+        <!-- Sidebar -->
+        <nav class="tsp-demo-sidebar" aria-label="Dashboard navigation">
+          <div class="tsp-demo-dealer">
+            <div class="d-name">Riverside Motors</div>
+            <div class="d-sub">Pontypridd · est. 2009</div>
+            <div class="d-ame">
+              <span class="d-g"></span>AME active
+            </div>
+          </div>
+
+          <button class="tsp-demo-nav-item active" data-tsp-tab="today" aria-selected="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Today
+          </button>
+          <button class="tsp-demo-nav-item" data-tsp-tab="inbox" aria-selected="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Inbox
+            <span class="d-badge-count">4</span>
+          </button>
+          <button class="tsp-demo-nav-item" data-tsp-tab="pipeline" aria-selected="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="4" height="18" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="5" width="4" height="16" rx="1"/></svg>
+            Pipeline
+          </button>
+          <button class="tsp-demo-nav-item" data-tsp-tab="stock" aria-selected="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/><line x1="12" y1="4" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="20"/><line x1="4" y1="12" x2="2" y2="12"/><line x1="22" y1="12" x2="20" y2="12"/></svg>
+            Stock
+          </button>
+        </nav>
+
+        <!-- Content area -->
+        <div class="tsp-demo-content">
+
+          <!-- TODAY panel -->
+          <div class="tsp-demo-panel active" id="tsp-demo-today">
+            <div class="tsp-kpi-row">
+              <div class="tsp-kpi">
+                <div class="k-label">Calls answered</div>
+                <div class="k-val">7</div>
+                <div class="k-sub">
+                  <span class="k-up">100%</span> vs 63% avg &#8212; AME caught them all
+                </div>
+              </div>
+              <div class="tsp-kpi">
+                <div class="k-label">Test drives booked</div>
+                <div class="k-val">3</div>
+                <div class="k-sub">
+                  <span class="k-up">+2</span> from AME follow-ups
+                </div>
+              </div>
+              <div class="tsp-kpi">
+                <div class="k-label">Pipeline value</div>
+                <div class="k-val">&#163;42,300</div>
+                <div class="k-sub">
+                  <span class="k-amber">4 hot leads</span> active
+                </div>
+              </div>
+            </div>
+
+            <div class="tsp-feed-head">
+              <h3>AME activity today</h3>
+              <div class="f-sub">
+                <span class="f-dot"></span>live
+              </div>
+            </div>
+
+            <div class="tsp-feed" id="tsp-demo-feed">
+              <div class="tsp-feed-row">
+                <div class="f-av ame">AME</div>
+                <div class="f-body">
+                  <div class="f-title">Booked viewing &#8212; Audi Q5 at 2:30pm</div>
+                  <div class="f-meta">Voice call &#183; with Mark Patel &#183; CV68 XYZ</div>
+                </div>
+                <div class="f-when">2m</div>
+              </div>
+              <div class="tsp-feed-row">
+                <div class="f-av wa">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.5 2C6.253 2 2 6.253 2 11.5c0 1.865.538 3.606 1.464 5.07L2 22l5.578-1.447C9.03 21.475 10.238 22 11.5 22c5.247 0 9.5-4.253 9.5-9.5S16.747 2 11.5 2zm0 17.25c-1.641 0-3.164-.506-4.415-1.365l-.317-.199-3.31.858.885-3.228-.218-.332C3.555 13.764 3.25 12.66 3.25 11.5 3.25 6.943 6.943 3.25 11.5 3.25S19.75 6.943 19.75 11.5 16.057 19.25 11.5 19.25z"/></svg>
+                </div>
+                <div class="f-body">
+                  <div class="f-title">Replied to Sarah Jenkins &#8212; VW Golf GTI</div>
+                  <div class="f-meta">WhatsApp &#183; cold lead 14 days dormant &#183; reactivated</div>
+                </div>
+                <div class="f-when">11m</div>
+              </div>
+              <div class="tsp-feed-row">
+                <div class="f-av mot">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div class="f-body">
+                  <div class="f-title">MOT reminder sent &#8212; 12 customers</div>
+                  <div class="f-meta">SMS + Email &#183; scheduled &#183; due within 30 days</div>
+                </div>
+                <div class="f-when">38m</div>
+              </div>
+              <div class="tsp-feed-row">
+                <div class="f-av star">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                </div>
+                <div class="f-body">
+                  <div class="f-title">Review request sent &#8212; 5&#9733; received back</div>
+                  <div class="f-meta">SMS &#183; Gareth Williams &#183; BMW 3 Series sale</div>
+                </div>
+                <div class="f-when">1h 4m</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- INBOX panel -->
+          <div class="tsp-demo-panel" id="tsp-demo-inbox">
+            <div class="tsp-inbox-layout">
+              <!-- Thread list -->
+              <div class="tsp-thread-list">
+                <div class="tl-head">Inbox &#183; 4 unread</div>
+                <div class="tsp-thread t-active" data-tsp-thread="0">
+                  <div class="t-icon wa">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.5 2C6.253 2 2 6.253 2 11.5c0 1.865.538 3.606 1.464 5.07L2 22l5.578-1.447C9.03 21.475 10.238 22 11.5 22c5.247 0 9.5-4.253 9.5-9.5S16.747 2 11.5 2zm0 17.25c-1.641 0-3.164-.506-4.415-1.365l-.317-.199-3.31.858.885-3.228-.218-.332C3.555 13.764 3.25 12.66 3.25 11.5 3.25 6.943 6.943 3.25 11.5 3.25S19.75 6.943 19.75 11.5 16.057 19.25 11.5 19.25z"/></svg>
+                  </div>
+                  <div class="t-info">
+                    <div class="t-name">Sarah Jenkins <span class="t-time">11m</span></div>
+                    <div class="t-preview">Is the GTI still available?</div>
+                  </div>
+                </div>
+                <div class="tsp-thread" data-tsp-thread="1">
+                  <div class="t-icon sms">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  </div>
+                  <div class="t-info">
+                    <div class="t-name">Gareth Williams <span class="t-time">42m</span></div>
+                    <div class="t-preview">Can I get a part-ex value?</div>
+                  </div>
+                  <div class="t-unread"></div>
+                </div>
+                <div class="tsp-thread" data-tsp-thread="2">
+                  <div class="t-icon em">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </div>
+                  <div class="t-info">
+                    <div class="t-name">Sioned Davies <span class="t-time">2h</span></div>
+                    <div class="t-preview">Enquiry about the Fiesta</div>
+                  </div>
+                  <div class="t-unread"></div>
+                </div>
+                <div class="tsp-thread" data-tsp-thread="3">
+                  <div class="t-icon fb">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                  </div>
+                  <div class="t-info">
+                    <div class="t-name">Rhys Evans <span class="t-time">3h</span></div>
+                    <div class="t-preview">What finance options do you have?</div>
+                  </div>
+                  <div class="t-unread"></div>
+                </div>
+              </div>
+
+              <!-- Conversation area - changes per thread -->
+              <div class="tsp-conv-area" id="tsp-conv-area">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- PIPELINE panel -->
+          <div class="tsp-demo-panel" id="tsp-demo-pipeline">
+            <div class="tsp-pipeline">
+
+              <div class="tsp-col">
+                <div class="tsp-col-head">New lead <span class="tc-count">3</span></div>
+                <div class="tsp-kcard" data-tsp-card="0">
+                  <div class="kc-name">Sioned Davies</div>
+                  <div class="kc-car">TS24 KLM &#183; Ford Fiesta 1.0T</div>
+                  <div class="kc-foot">
+                    <span class="kc-age">Today, 10:14</span>
+                    <span class="kc-pill warm">Warm</span>
+                  </div>
+                  <div class="tsp-ame-badge"><span class="ab-dot"></span>AME chasing</div>
+                </div>
+                <div class="tsp-kcard" data-tsp-card="1">
+                  <div class="kc-name">Rhys Evans</div>
+                  <div class="kc-car">FB Messenger &#183; Finance query</div>
+                  <div class="kc-foot">
+                    <span class="kc-age">3h ago</span>
+                    <span class="kc-pill warm">Warm</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tsp-col">
+                <div class="tsp-col-head">Qualified <span class="tc-count">2</span></div>
+                <div class="tsp-kcard" data-tsp-card="2">
+                  <div class="kc-name">Sarah Jenkins</div>
+                  <div class="kc-car">CV68 XYZ &#183; VW Golf GTI</div>
+                  <div class="kc-foot">
+                    <span class="kc-age">2 days</span>
+                    <span class="kc-pill hot">Hot</span>
+                  </div>
+                </div>
+                <div class="tsp-kcard" data-tsp-card="3">
+                  <div class="kc-name">Gareth Williams</div>
+                  <div class="kc-car">PX pending &#183; BMW 3 Series</div>
+                  <div class="kc-foot">
+                    <span class="kc-age">1 day</span>
+                    <span class="kc-pill hot">Hot</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tsp-col">
+                <div class="tsp-col-head">Test drive <span class="tc-count">1</span></div>
+                <div class="tsp-kcard" data-tsp-card="4">
+                  <div class="kc-name">Mark Patel</div>
+                  <div class="kc-car">CV68 XYZ &#183; Audi Q5 2.0T</div>
+                  <div class="kc-foot">
+                    <span class="kc-age">Today 2:30pm</span>
+                    <span class="kc-pill hot">Booked</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tsp-col">
+                <div class="tsp-col-head">Sold <span class="tc-count">1</span></div>
+                <div class="tsp-kcard" data-tsp-card="5">
+                  <div class="kc-name">Dai Morgan</div>
+                  <div class="kc-car">WJ19 RLT &#183; Vauxhall Astra</div>
+                  <div class="kc-foot">
+                    <span class="kc-age">Yesterday</span>
+                    <span class="kc-pill sold">Sold &#10003;</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Card detail popup -->
+            <div class="tsp-card-detail" id="tsp-card-detail">
+              <button class="cd-close" id="tsp-card-detail-close" aria-label="Close">&#215;</button>
+              <div class="cd-name" id="tsp-cd-name"></div>
+              <div class="cd-row"><span>Car</span> <span id="tsp-cd-car"></span></div>
+              <div class="cd-row"><span>Stage</span> <span id="tsp-cd-stage"></span></div>
+              <div class="cd-row"><span>Last touch</span> <span id="tsp-cd-touch"></span></div>
+              <div class="cd-ame">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <span id="tsp-cd-ame"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- STOCK panel -->
+          <div class="tsp-demo-panel" id="tsp-demo-stock">
+            <div class="tsp-stock-grid">
+
+              <div class="tsp-stock-card">
+                <div class="tsp-stock-thumb" style="background: linear-gradient(135deg, #0d1f3c 0%, #1a3a6e 50%, #0a1428 100%);">
+                  <svg width="120" height="52" viewBox="0 0 120 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="8" y="22" width="104" height="16" rx="4" fill="rgba(59,130,246,0.18)" stroke="rgba(59,130,246,0.35)" stroke-width="1"/>
+                    <path d="M18 22 Q22 10 38 8 L80 8 Q96 8 102 22" fill="rgba(59,130,246,0.22)" stroke="rgba(96,165,250,0.45)" stroke-width="1.2"/>
+                    <circle cx="28" cy="38" r="7" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
+                    <circle cx="28" cy="38" r="3.5" fill="rgba(255,255,255,0.15)"/>
+                    <circle cx="92" cy="38" r="7" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
+                    <circle cx="92" cy="38" r="3.5" fill="rgba(255,255,255,0.15)"/>
+                  </svg>
+                  <span class="st-reg">CV68 XYZ</span>
+                  <span class="st-status ready">Ready</span>
+                </div>
+                <div class="tsp-stock-info">
+                  <div class="si-make">Audi Q5</div>
+                  <div class="si-model">2.0 TDI S Line &#183; 2019</div>
+                  <div class="si-price">&#163;21,495</div>
+                  <div class="si-meta">
+                    <span class="si-tag">58,000 mi</span>
+                    <span class="si-tag">Diesel</span>
+                    <span class="si-tag">Auto</span>
+                  </div>
+                </div>
+                <div class="tsp-stock-prep-bar">
+                  <span>Prep</span>
+                  <div class="pb-track"><div class="pb-fill" style="width:100%"></div></div>
+                  <span class="pb-pct">100%</span>
+                </div>
+              </div>
+
+              <div class="tsp-stock-card">
+                <div class="tsp-stock-thumb" style="background: linear-gradient(135deg, #1a1a0d 0%, #2e2e14 50%, #111108 100%);">
+                  <svg width="120" height="52" viewBox="0 0 120 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="8" y="24" width="104" height="14" rx="3" fill="rgba(245,158,11,0.16)" stroke="rgba(245,158,11,0.30)" stroke-width="1"/>
+                    <path d="M22 24 Q26 14 40 12 L78 12 Q92 12 98 24" fill="rgba(245,158,11,0.18)" stroke="rgba(245,158,11,0.40)" stroke-width="1.2"/>
+                    <circle cx="28" cy="38" r="7" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+                    <circle cx="28" cy="38" r="3.5" fill="rgba(255,255,255,0.12)"/>
+                    <circle cx="92" cy="38" r="7" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+                    <circle cx="92" cy="38" r="3.5" fill="rgba(255,255,255,0.12)"/>
+                  </svg>
+                  <span class="st-reg">TS24 KLM</span>
+                  <span class="st-status prep">In prep</span>
+                </div>
+                <div class="tsp-stock-info">
+                  <div class="si-make">Ford Fiesta</div>
+                  <div class="si-model">1.0 EcoBoost ST-Line &#183; 2022</div>
+                  <div class="si-price">&#163;13,995</div>
+                  <div class="si-meta">
+                    <span class="si-tag">24,000 mi</span>
+                    <span class="si-tag">Petrol</span>
+                    <span class="si-tag">Manual</span>
+                  </div>
+                </div>
+                <div class="tsp-stock-prep-bar">
+                  <span>Prep</span>
+                  <div class="pb-track"><div class="pb-fill" style="width:65%"></div></div>
+                  <span class="pb-pct">65%</span>
+                </div>
+              </div>
+
+              <div class="tsp-stock-card">
+                <div class="tsp-stock-thumb" style="background: linear-gradient(135deg, #0f1f0f 0%, #1e3a1e 50%, #0a160a 100%);">
+                  <svg width="120" height="52" viewBox="0 0 120 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="6" y="22" width="108" height="16" rx="4" fill="rgba(16,185,129,0.14)" stroke="rgba(16,185,129,0.28)" stroke-width="1"/>
+                    <path d="M16 22 Q20 9 38 7 L82 7 Q100 7 104 22" fill="rgba(16,185,129,0.18)" stroke="rgba(16,185,129,0.38)" stroke-width="1.2"/>
+                    <circle cx="26" cy="38" r="7" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+                    <circle cx="26" cy="38" r="3.5" fill="rgba(255,255,255,0.12)"/>
+                    <circle cx="94" cy="38" r="7" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+                    <circle cx="94" cy="38" r="3.5" fill="rgba(255,255,255,0.12)"/>
+                  </svg>
+                  <span class="st-reg">WJ19 RLT</span>
+                  <span class="st-status ready">Ready</span>
+                </div>
+                <div class="tsp-stock-info">
+                  <div class="si-make">VW Golf</div>
+                  <div class="si-model">2.0 GTI DSG &#183; 2021</div>
+                  <div class="si-price">&#163;24,750</div>
+                  <div class="si-meta">
+                    <span class="si-tag">31,000 mi</span>
+                    <span class="si-tag">Petrol</span>
+                    <span class="si-tag">Auto</span>
+                  </div>
+                </div>
+                <div class="tsp-stock-prep-bar">
+                  <span>Prep</span>
+                  <div class="pb-track"><div class="pb-fill" style="width:100%"></div></div>
+                  <span class="pb-pct">100%</span>
+                </div>
+              </div>
+
+              <div class="tsp-stock-card">
+                <div class="tsp-stock-thumb" style="background: linear-gradient(135deg, #1f1018 0%, #3a1e30 50%, #160a12 100%);">
+                  <svg width="120" height="52" viewBox="0 0 120 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="10" y="23" width="100" height="15" rx="4" fill="rgba(168,85,247,0.14)" stroke="rgba(168,85,247,0.28)" stroke-width="1"/>
+                    <path d="M20 23 Q24 11 40 9 L80 9 Q96 9 100 23" fill="rgba(168,85,247,0.16)" stroke="rgba(168,85,247,0.36)" stroke-width="1.2"/>
+                    <circle cx="29" cy="38" r="7" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+                    <circle cx="29" cy="38" r="3.5" fill="rgba(255,255,255,0.12)"/>
+                    <circle cx="91" cy="38" r="7" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+                    <circle cx="91" cy="38" r="3.5" fill="rgba(255,255,255,0.12)"/>
+                  </svg>
+                  <span class="st-reg">PX19 AME</span>
+                  <span class="st-status prep">In prep</span>
+                </div>
+                <div class="tsp-stock-info">
+                  <div class="si-make">BMW 3 Series</div>
+                  <div class="si-model">320d M Sport &#183; 2020</div>
+                  <div class="si-price">&#163;19,495</div>
+                  <div class="si-meta">
+                    <span class="si-tag">47,000 mi</span>
+                    <span class="si-tag">Diesel</span>
+                    <span class="si-tag">Auto</span>
+                  </div>
+                </div>
+                <div class="tsp-stock-prep-bar">
+                  <span>Prep</span>
+                  <div class="pb-track"><div class="pb-fill" style="width:40%"></div></div>
+                  <span class="pb-pct">40%</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div><!-- /tsp-demo-content -->
+      </div><!-- /tsp-demo-body -->
+    </div><!-- /tsp-demo-frame -->
+
+    <!-- CTA row -->
+    <div class="try-it-cta">
+      <a class="btn-primary" href="book-demo.html">
+        Book a 15-min demo
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn-secondary" href="pricing.html">
+        See pricing
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+  </div><!-- /try-it-inner -->
+</section>
+
+<script>
+(function () {
+  "use strict";
+
+  // ---- DATA ----
+  var THREADS = [
+    {
+      name: "Sarah Jenkins",
+      car: "VW Golf GTI",
+      ch: "WhatsApp",
+      tag: "Active lead",
+      msgs: [
+        { dir: "in",  text: "Hi, is the VW Golf GTI still available? I saw it on AutoTrader.", time: "11:02" },
+        { dir: "out", text: "Hi Sarah! Yes, the Golf GTI is still available. She’s a cracking car — full service history, one careful owner, 31,000 miles. Are you looking to come for a viewing?", time: "11:03", ame: true },
+        { dir: "in",  text: "Great! What’s the best you can do on price?", time: "11:09" }
+      ],
+      draft: "Hi Sarah, the £24,750 asking price reflects the full service history and low mileage, but come in for a test drive and I’m sure we can have a chat. When suits you this week?"
+    },
+    {
+      name: "Gareth Williams",
+      car: "BMW 3 Series",
+      ch: "SMS",
+      tag: "Part-ex",
+      msgs: [
+        { dir: "in",  text: "Hi there, can I get a part-exchange value on my 2018 Polo? 52k miles, good condition.", time: "09:41" },
+        { dir: "out", text: "Hi Gareth! Happy to help with a part-ex valuation. Can you send me the reg and I’ll get a figure over to you today?", time: "09:43", ame: true }
+      ],
+      draft: "Hi Gareth, based on the details you’ve given, we’d estimate around £6,500-£7,000 for your Polo. Best to bring it in so we can give you a firm offer. Want to book a slot?"
+    },
+    {
+      name: "Sioned Davies",
+      car: "Ford Fiesta",
+      ch: "Email",
+      tag: "New enquiry",
+      msgs: [
+        { dir: "in",  text: "Hello, I’m interested in the Ford Fiesta ST-Line you have listed. Could you tell me more about the service history and if it’s had any bodywork done?", time: "08:14" }
+      ],
+      draft: "Hi Sioned, great choice — the Fiesta ST-Line is a lovely car. Full service history, no bodywork that we’re aware of, and it’s currently going through final prep. I’ll have it ready to view by Friday. Want to come in for a look?"
+    },
+    {
+      name: "Rhys Evans",
+      car: "Finance query",
+      ch: "Facebook",
+      tag: "Finance",
+      msgs: [
+        { dir: "in",  text: "Hi, what finance options do you guys offer? Looking at the Q5.", time: "07:53" },
+        { dir: "out", text: "Hi Rhys! We work with a couple of lenders and can usually get deals approved within the hour. Typical deposits from 10%, terms from 24-60 months. Want me to run a soft-search quote for you?", time: "07:55", ame: true }
+      ],
+      draft: "Hi Rhys, I’ve run a soft search and you’re likely to be approved for the Q5 at around £349/month with a £2,000 deposit over 48 months. No mark on your credit file — want to proceed?"
+    }
+  ];
+
+  var CARDS = [
+    { name: "Sioned Davies",  car: "Ford Fiesta 1.0T EcoBoost",  stage: "New lead",    touch: "AME replied 8 mins ago",  ame: "Following up re: availability + service history" },
+    { name: "Rhys Evans",     car: "Finance enquiry — Audi Q5",     stage: "New lead",    touch: "AME replied 3h ago",       ame: "Soft-search finance quote ready to send" },
+    { name: "Sarah Jenkins",  car: "VW Golf GTI DSG",             stage: "Qualified",   touch: "Replied on WhatsApp 11m ago", ame: "Waiting for viewing confirmation" },
+    { name: "Gareth Williams",car: "BMW 3 Series 320d",           stage: "Qualified",   touch: "Part-ex query 1h ago",     ame: "Part-ex valuation drafted, awaiting send" },
+    { name: "Mark Patel",     car: "Audi Q5 2.0 TDI",            stage: "Test drive",  touch: "Booked via AME 2m ago",    ame: "Confirmation SMS sent, diary blocked" },
+    { name: "Dai Morgan",     car: "Vauxhall Astra 1.4T",        stage: "Sold",        touch: "Day 7 check-in sent",      ame: "Review request sent — 5★ received" }
+  ];
+
+  // ---- HELPERS ----
+  function q(sel) { return document.querySelector(sel); }
+  function qq(sel) { return document.querySelectorAll(sel); }
+
+  // ---- TAB SWITCHING ----
+  var navItems = qq(".tsp-demo-nav-item");
+  var panels   = qq(".tsp-demo-panel");
+
+  navItems.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var tab = btn.getAttribute("data-tsp-tab");
+      navItems.forEach(function (b) {
+        b.classList.remove("active");
+        b.setAttribute("aria-selected", "false");
+      });
+      panels.forEach(function (p) { p.classList.remove("active"); });
+      btn.classList.add("active");
+      btn.setAttribute("aria-selected", "true");
+      var panel = document.getElementById("tsp-demo-" + tab);
+      if (panel) panel.classList.add("active");
+      if (tab === "today") animateFeed();
+    });
+  });
+
+  // ---- ACTIVITY FEED ANIMATION ----
+  var feedAnimated = false;
+  function animateFeed() {
+    if (feedAnimated) return;
+    feedAnimated = true;
+    var rows = qq(".tsp-feed-row");
+    rows.forEach(function (row, i) {
+      setTimeout(function () {
+        row.classList.add("tsp-visible");
+      }, 120 + i * 180);
+    });
+  }
+
+  // Trigger on scroll into view (Today tab is visible on load)
+  if ("IntersectionObserver" in window) {
+    var feedObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          animateFeed();
+          feedObs.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    var feedEl = document.getElementById("tsp-demo-feed");
+    if (feedEl) feedObs.observe(feedEl);
+  } else {
+    animateFeed();
+  }
+
+  // ---- INBOX THREADS ----
+  function buildConv(idx) {
+    var t = THREADS[idx];
+    var area = document.getElementById("tsp-conv-area");
+    if (!area) return;
+
+    var sentMap = {};
+
+    var msgsHtml = t.msgs.map(function (m) {
+      var ameLabel = m.ame ? "<span style=\"font-size:10px;color:var(--blue-bright);margin-left:4px;\">• AME</span>" : "";
+      return "<div class=\"tsp-msg m-" + (m.dir === "in" ? "in" : "out") + "\">" +
+        "<div class=\"m-bub\">" + m.text + ameLabel + "</div>" +
+        "<div class=\"m-time\">" + m.time + "</div>" +
+        "</div>";
+    }).join("");
+
+    area.innerHTML =
+      "<div class=\"tsp-conv-head\">" +
+        "<div class=\"ch-av\">" + t.name.charAt(0) + t.name.split(" ")[1].charAt(0) + "</div>" +
+        "<div><div class=\"ch-name\">" + t.name + "</div><div class=\"ch-meta\">" + t.ch + " · " + t.car + "</div></div>" +
+        "<div class=\"ch-tag\">" + t.tag + "</div>" +
+      "</div>" +
+      "<div class=\"tsp-conv-msgs\">" + msgsHtml + "</div>" +
+      "<div class=\"tsp-draft\" id=\"tsp-draft-" + idx + "\">" +
+        "<div class=\"dr-lbl\">" +
+          "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" width=\"12\" height=\"12\"><path d=\"M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5\"/></svg>" +
+          "AME draft reply" +
+        "</div>" +
+        "<div class=\"dr-text\">" + t.draft + "</div>" +
+        "<div class=\"dr-row\">" +
+          "<button class=\"dr-btn approve\" data-idx=\"" + idx + "\">Approve &amp; send</button>" +
+          "<button class=\"dr-btn edit-btn\">Edit</button>" +
+        "</div>" +
+        "<div class=\"tsp-draft-sent\" id=\"tsp-sent-" + idx + "\">" +
+          "<div class=\"ds-icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" width=\"11\" height=\"11\"><polyline points=\"20 6 9 17 4 12\"/></svg></div>" +
+          "Sent ✓ — AME delivered via " + t.ch +
+        "</div>" +
+      "</div>";
+
+    // Approve button
+    var approveBtn = area.querySelector(".dr-btn.approve");
+    if (approveBtn) {
+      approveBtn.addEventListener("click", function () {
+        var didx = parseInt(approveBtn.getAttribute("data-idx"), 10);
+        var draftEl = document.getElementById("tsp-draft-" + didx);
+        var sentEl  = document.getElementById("tsp-sent-"  + didx);
+        if (!draftEl || !sentEl) return;
+        // Animate draft collapse
+        draftEl.style.transition = "opacity 0.2s ease";
+        draftEl.style.opacity = "0.4";
+        draftEl.querySelector(".dr-row").style.display = "none";
+        draftEl.querySelector(".dr-text").style.display = "none";
+        sentEl.style.display = "flex";
+        sentEl.style.opacity = "0";
+        sentEl.style.transition = "opacity 0.3s ease";
+        setTimeout(function () { sentEl.style.opacity = "1"; draftEl.style.opacity = "1"; }, 50);
+        draftEl.style.borderColor = "rgba(16,185,129,0.40)";
+        draftEl.style.background  = "rgba(16,185,129,0.04)";
+        // Update thread tick
+        var threads = qq(".tsp-thread");
+        if (threads[didx]) {
+          var uEl = threads[didx].querySelector(".t-unread");
+          if (uEl) uEl.style.display = "none";
+          var preview = threads[didx].querySelector(".t-preview");
+          if (preview) preview.textContent = "Sent ✓";
+        }
+      });
+    }
+  }
+
+  // Thread click
+  var threadEls = qq(".tsp-thread");
+  threadEls.forEach(function (el) {
+    el.addEventListener("click", function () {
+      threadEls.forEach(function (t) { t.classList.remove("t-active"); });
+      el.classList.add("t-active");
+      var idx = parseInt(el.getAttribute("data-tsp-thread"), 10);
+      buildConv(idx);
+    });
+  });
+
+  // Build default conv
+  buildConv(0);
+
+  // ---- PIPELINE CARD DETAIL ----
+  var detail = document.getElementById("tsp-card-detail");
+  var detailClose = document.getElementById("tsp-card-detail-close");
+
+  qq(".tsp-kcard").forEach(function (card) {
+    card.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var idx = parseInt(card.getAttribute("data-tsp-card"), 10);
+      var d = CARDS[idx];
+      if (!d) return;
+      document.getElementById("tsp-cd-name").textContent  = d.name;
+      document.getElementById("tsp-cd-car").textContent   = d.car;
+      document.getElementById("tsp-cd-stage").textContent = d.stage;
+      document.getElementById("tsp-cd-touch").textContent = d.touch;
+      document.getElementById("tsp-cd-ame").textContent   = d.ame;
+
+      // Position near the card
+      var rect = card.getBoundingClientRect();
+      var left = rect.right + 12;
+      var top  = rect.top + window.scrollY;
+      // Clamp to viewport
+      var dw = detail.offsetWidth || 250;
+      if (left + dw > window.innerWidth - 16) {
+        left = rect.left - dw - 12;
+      }
+      if (left < 8) left = 8;
+      detail.style.left = left + "px";
+      detail.style.top  = top + "px";
+      detail.classList.add("visible");
+    });
+  });
+
+  if (detailClose) {
+    detailClose.addEventListener("click", function (e) {
+      e.stopPropagation();
+      detail.classList.remove("visible");
+    });
+  }
+
+  document.addEventListener("click", function (e) {
+    if (detail && !detail.contains(e.target) && !e.target.closest(".tsp-kcard")) {
+      detail.classList.remove("visible");
+    }
+  });
+
+})();
+</script>
+
 
 <!-- ============== THE 10-STEP CUSTOMER SALES JOURNEY ============== -->
 <section class="ds-frame" id="dsFrame" data-screen-label="01b The 10-step journey">
