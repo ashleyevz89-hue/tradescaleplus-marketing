@@ -14,8 +14,8 @@
   --blue-bright:#60a5fa;
   --green:#10b981;
   --amber:#f59e0b;
-  --purple:#a855f7;
-  --purple-light:#c084fc;
+  --purple:#60a5fa;
+  --purple-light:#93c5fd;
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
@@ -60,7 +60,7 @@ a{color:inherit;text-decoration:none}
 .ph{position:relative;background:var(--bg);padding:128px 32px 96px;overflow:hidden}
 .ph-bg{position:absolute;inset:0;pointer-events:none}
 .ph-bg .glow-blue{position:absolute;top:-200px;left:-200px;width:1100px;height:1100px;background:radial-gradient(circle at center, rgba(59,130,246,0.18) 0%, rgba(59,130,246,0.06) 28%, rgba(59,130,246,0) 60%);filter:blur(10px)}
-.ph-bg .glow-purple{position:absolute;top:-280px;right:-220px;width:900px;height:900px;background:radial-gradient(circle at center, rgba(168,85,247,0.10) 0%, rgba(168,85,247,0.025) 30%, rgba(168,85,247,0) 60%);filter:blur(10px)}
+.ph-bg .glow-purple{position:absolute;top:-280px;right:-220px;width:900px;height:900px;background:radial-gradient(circle at center, rgba(96,165,250,0.10) 0%, rgba(96,165,250,0.025) 30%, rgba(96,165,250,0) 60%);filter:blur(10px)}
 .ph-bg .grid-fade{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%)}
 .ph-inner{position:relative;max-width:1320px;margin:0 auto;display:grid;grid-template-columns:minmax(0,45fr) minmax(0,55fr);gap:48px;align-items:center}
 .ph-copy h1{margin:22px 0 22px;font-size:clamp(46px,6.4vw,76px);font-weight:700;letter-spacing:-0.03em;line-height:1.02;color:#fff;text-wrap:balance}
@@ -116,7 +116,7 @@ a{color:inherit;text-decoration:none}
 .stage.acc-amber .ct{color:var(--amber)}
 .stage.acc-green{--accent:#10b981}
 .stage.acc-green .ct{color:var(--green)}
-.stage.acc-purple{--accent:#a855f7}
+.stage.acc-purple{--accent:#60a5fa}
 .stage.acc-purple .ct{color:var(--purple-light)}
 .connector{align-self:center;height:1px;background:var(--border-strong);position:relative;flex:1;z-index:1;min-width:6px;margin:0 -2px}
 .stage-flow-connectors{position:absolute;inset:0;display:grid;grid-template-columns:repeat(9,1fr);align-items:center;pointer-events:none;z-index:0}

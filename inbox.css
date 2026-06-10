@@ -57,7 +57,7 @@ a{color:inherit;text-decoration:none}
 .ih{position:relative;background:var(--bg);padding:128px 32px 96px;overflow:hidden}
 .ih-bg{position:absolute;inset:0;pointer-events:none}
 .ih-bg .glow-blue{position:absolute;top:-200px;left:-200px;width:1100px;height:1100px;background:radial-gradient(circle at center, rgba(59,130,246,0.18) 0%, rgba(59,130,246,0.06) 28%, rgba(59,130,246,0) 60%);filter:blur(10px)}
-.ih-bg .glow-purple{position:absolute;top:-280px;right:-220px;width:900px;height:900px;background:radial-gradient(circle at center, rgba(168,85,247,0.10) 0%, rgba(168,85,247,0.025) 30%, rgba(168,85,247,0) 60%);filter:blur(10px)}
+.ih-bg .glow-purple{position:absolute;top:-280px;right:-220px;width:900px;height:900px;background:radial-gradient(circle at center, rgba(96,165,250,0.10) 0%, rgba(96,165,250,0.025) 30%, rgba(96,165,250,0) 60%);filter:blur(10px)}
 .ih-bg .grid-fade{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%)}
 .ih-inner{position:relative;max-width:1320px;margin:0 auto;display:grid;grid-template-columns:minmax(0,45fr) minmax(0,55fr);gap:48px;align-items:center}
 .ih-copy h1{margin:22px 0 22px;font-size:clamp(46px,6.4vw,76px);font-weight:700;letter-spacing:-0.03em;line-height:1.02;color:#fff;text-wrap:balance}
@@ -94,7 +94,7 @@ a{color:inherit;text-decoration:none}
 .cv-av.a{background:linear-gradient(135deg,#3B82F6,#1d4fcc)}
 .cv-av.b{background:linear-gradient(135deg,#10b981,#0c7a59)}
 .cv-av.c{background:linear-gradient(135deg,#f59e0b,#b8730c)}
-.cv-av.d{background:linear-gradient(135deg,#a855f7,#6d28d9)}
+.cv-av.d{background:linear-gradient(135deg,#60a5fa,#2563eb)}
 .cv-av.e{background:linear-gradient(135deg,#ec4899,#9d174d)}
 .cv-head{display:flex;align-items:center;gap:6px;justify-content:space-between}
 .cv-name{font-size:12px;font-weight:600;color:#fff;display:inline-flex;align-items:center;gap:6px}

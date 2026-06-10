@@ -50,7 +50,7 @@ a{color:inherit;text-decoration:none}
 .fh{position:relative;background:var(--bg);padding:96px 32px 64px;overflow:hidden}
 .fh-bg{position:absolute;inset:0;pointer-events:none}
 .fh-bg .glow-blue{position:absolute;top:-200px;left:-200px;width:1100px;height:1100px;background:radial-gradient(circle at center, rgba(59,130,246,0.18) 0%, rgba(59,130,246,0.06) 28%, rgba(59,130,246,0) 60%);filter:blur(10px)}
-.fh-bg .glow-purple{position:absolute;top:-280px;right:-220px;width:900px;height:900px;background:radial-gradient(circle at center, rgba(168,85,247,0.10) 0%, rgba(168,85,247,0.025) 30%, rgba(168,85,247,0) 60%);filter:blur(10px)}
+.fh-bg .glow-purple{position:absolute;top:-280px;right:-220px;width:900px;height:900px;background:radial-gradient(circle at center, rgba(96,165,250,0.10) 0%, rgba(96,165,250,0.025) 30%, rgba(96,165,250,0) 60%);filter:blur(10px)}
 .fh-bg .grid-fade{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%)}
 .fh-inner{position:relative;max-width:760px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:24px;text-align:center}
 .fh h1{margin:0;font-size:clamp(44px,6.4vw,72px);font-weight:700;letter-spacing:-0.03em;line-height:1.05;color:#fff;text-wrap:balance}
