@@ -38,5 +38,5 @@ Every build is bespoke and priced to the job. Free, no-obligation consultation t
 
 - Studio (home): https://tradescaleplus.com/
 - Local: /web-design-swansea, /web-design-cardiff, /web-design-llanelli, /web-design-carmarthen, /web-design-neath, /web-design-newport, /web-design-bridgend, /web-design-pembroke
-- Services: /ai-chatbot, /ai-receptionist, /custom-crm, /business-automation, /custom-software, /lead-generation, /review-management
+- Services: /ai-chatbot, /ai-receptionist, /custom-crm, /business-automation, /custom-software, /lead-generation, /review-management, /ai-search-optimisation
 - Flagship platform: https://tradescaleplus.com/ame.html
