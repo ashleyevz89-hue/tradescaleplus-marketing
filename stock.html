@@ -1,437 +1,366 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-GB" class="no-js">
 <head>
-<meta charset="utf-8" />
-<title>Stock Management for UK Used-Car Dealers | TradeScale Plus</title>
-<meta name="description" content="AME reads your stock automatically. DVLA-integrated reg lookup, photos, customer-facing offer documents (frozen-snapshot PDFs). Works with any UK dealer site." />
-<link rel="canonical" href="https://tradescaleplus.com/stock.html" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://tradescaleplus.com/stock.html" />
-<meta property="og:title" content="Stock Management for UK Used-Car Dealers | TradeScale Plus" />
-<meta property="og:description" content="AME reads your stock automatically. DVLA-integrated reg lookup, photos, customer-facing offer documents (frozen-snapshot PDFs). Works with any UK dealer site." />
-<meta property="og:image" content="https://tradescaleplus.com/assets/og-image.png" />
-<meta property="og:site_name" content="TradeScale Plus" />
-<meta property="og:locale" content="en_GB" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Stock Management for UK Used-Car Dealers | TradeScale Plus" />
-<meta name="twitter:description" content="AME reads your stock automatically. DVLA-integrated reg lookup, photos, customer-facing offer documents (frozen-snapshot PDFs). Works with any UK dealer site." />
-<meta name="twitter:image" content="https://tradescaleplus.com/assets/og-image.png" />
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
-<meta name="theme-color" content="#050505" />
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://tradescaleplus.com/#organization","name":"Trade Scale Plus Ltd","alternateName":"TradeScale Plus","url":"https://tradescaleplus.com","logo":"https://tradescaleplus.com/assets/logo.png","description":"AI sales admin for UK independent used-car dealers. One AI, every channel, \u00a3499/month flat.","foundingDate":"2026-04-08","founder":{"@type":"Person","name":"Ashley Mark Evans","jobTitle":"Founder"},"contactPoint":{"@type":"ContactPoint","email":"ashevans@tradescaleplus.co.uk","contactType":"sales","areaServed":"GB","availableLanguage":"en"},"identifier":"17142290"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tradescaleplus.com/"},{"@type":"ListItem","position":2,"name":"Stock","item":"https://tradescaleplus.com/stock.html"}]}</script>
-
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stock Management | Capture Any Stock in One Click | TradeScale Plus</title>
+<meta name="description" content="Stock management with photos, prices and prep status, added by hand, pulled from a reg plate, scraped from your website, or captured from any page in one click. Book a free consultation.">
+<link rel="canonical" href="https://tradescaleplus.com/stock">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tradescaleplus.com/stock">
+<meta property="og:site_name" content="TradeScale Plus">
+<meta property="og:title" content="Stock Management | Capture Any Stock in One Click | TradeScale Plus">
+<meta property="og:description" content="Stock management with prep status, reg-plate lookup, website scraping and one-click capture.">
+<meta property="og:image" content="https://tradescaleplus.com/hero-poster.jpg">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stock Management | Capture Any Stock in One Click | TradeScale Plus">
+<meta name="twitter:description" content="Stock management with prep status, reg-plate lookup, website scraping and one-click capture.">
+<meta name="twitter:image" content="https://tradescaleplus.com/hero-poster.jpg">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305070c'/%3E%3Ctext x='32' y='45' font-family='Arial, sans-serif' font-size='34' font-weight='700' text-anchor='middle' fill='%233b9eff'%3ET%2B%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="stock.css">
-<link rel="stylesheet" href="assets/mobile-nav.css">
-<script defer src="assets/mobile-nav.js"></script>
-<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": ["Organization", "LocalBusiness"], "@id": "https://tradescaleplus.com/#business", "name": "TradeScale Plus", "legalName": "Trade Scale Plus Ltd", "url": "https://tradescaleplus.com/", "email": "ashleyevz89@gmail.com", "address": {"@type": "PostalAddress", "addressRegion": "South Wales", "addressCountry": "GB", "postalCode": "SA16 0TY"}, "identifier": {"@type": "PropertyValue", "propertyID": "Companies House", "value": "17142290"}, "areaServed": {"@type": "Country", "name": "United Kingdom"}, "sameAs": ["https://find-and-update.company-information.service.gov.uk/company/17142290"]}, {"@type": "Service", "@id": "https://tradescaleplus.com/stock#service", "name": "Stock management", "serviceType": "Stock and inventory management", "provider": {"@id": "https://tradescaleplus.com/#business"}, "areaServed": {"@type": "Country", "name": "United Kingdom"}, "description": "Stock and inventory management for UK businesses that carry stock: vehicles or products with photos, prices, prep status and costs, entered by hand, via reg-plate lookup, scraped from the business website, or captured from any page in one click."}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://tradescaleplus.com/"}, {"@type": "ListItem", "position": 2, "name": "Stock management", "item": "https://tradescaleplus.com/stock"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How does stock get in?", "acceptedAnswer": {"@type": "Answer", "text": "Four ways: typed by hand, via reg-plate lookup, scraped from your website, or captured from any page in one click with our extension."}}, {"@type": "Question", "name": "What is READY vs IN PREP?", "acceptedAnswer": {"@type": "Answer", "text": "A prep checklist tracks outstanding work, so an item is IN PREP until it is done, then READY. Nothing goes out half-finished."}}, {"@type": "Question", "name": "Is it just for car dealers?", "acceptedAnswer": {"@type": "Answer", "text": "Dealers are the proven build, but stock can be shaped to other product businesses."}}, {"@type": "Question", "name": "How much does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Every setup is bespoke, priced after a free, no-obligation consultation."}}]}]}
+</script>
+<script>document.documentElement.className="js";</script>
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --bg:#05070c;
+  --w:#f3f6fa;
+  --dim:rgba(243,246,250,.4);
+  --mut:#96a0b0;
+  --line:rgba(255,255,255,.09);
+  --line2:rgba(255,255,255,.16);
+  --blue:#3b9eff;
+  --teal:#34d8c8;
+  --amber:#ffb454;
+  --sans:'Inter',system-ui,-apple-system,sans-serif;
+  --disp:'Bricolage Grotesque','Inter',sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{position:relative;font-family:var(--sans);background:var(--bg);color:var(--w);font-size:15px;line-height:1.6;letter-spacing:-.005em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img,video{display:block}
+::selection{background:rgba(59,158,255,.35)}
+
+/* ============ BACKGROUND LAYERS: VEIL, HEX SURFACE, GRAIN, CONTENT (front) ============ */
+.veil{position:fixed;inset:0;z-index:1;pointer-events:none;background:
+  radial-gradient(130% 100% at 50% 0%,rgba(5,7,12,.25),rgba(5,7,12,.9) 78%),
+  linear-gradient(180deg,rgba(5,7,12,.5),rgba(5,7,12,.62));
+  opacity:.85}
+.hexbg{position:absolute;inset:0;z-index:2;pointer-events:none;background-color:var(--bg);background-image:radial-gradient(120% 70% at 50% 0%,rgba(59,158,255,.05),rgba(5,7,12,0) 58%),url("data:image/svg+xml,%3Csvg width='28' height='49' viewBox='0 0 28 49' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z' fill='%233b9eff' fill-opacity='.06' fill-rule='evenodd'/%3E%3C/svg%3E");background-size:auto,44px 77px}
+.grain{position:fixed;inset:0;z-index:3;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.content{position:relative;z-index:4}
+
+/* ============ TYPE SYSTEM: TWO REGISTERS ONLY ============ */
+.disp{font-family:var(--disp);font-weight:700;font-size:clamp(2.5rem,5.6vw,4.7rem);line-height:.99;letter-spacing:-.035em}
+.dm{color:inherit}
+.kick{display:flex;align-items:baseline;gap:14px;font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--blue);margin-bottom:28px}
+.lead{font-size:15px;color:var(--mut);max-width:46ch;margin-top:24px;line-height:1.7}
+
+/* ============ LAYOUT ============ */
+.wrap{max-width:1320px;margin:0 auto;padding:0 clamp(24px,5vw,64px)}
+section{padding:9vh 0;position:relative}
+.g{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+.head-l{grid-column:1/span 7}
+.head-r{grid-column:6/span 7}
+@media(max-width:920px){.head-l,.head-r{grid-column:1/-1}}
+
+/* ============ THE ONE GLASS SYSTEM ============ */
+.glass{position:relative;border-radius:18px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(13,18,28,.6),rgba(8,11,18,.52));
+  -webkit-backdrop-filter:blur(14px) saturate(150%);backdrop-filter:blur(14px) saturate(150%);
+  border:1px solid var(--line);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 22px 60px rgba(0,0,0,.4);
+  transition:transform .5s var(--ease),border-color .5s}
+.glass::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;
+  background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,0) 30%,rgba(255,255,255,0) 70%,rgba(59,158,255,.12));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude}
+.glass:hover{transform:translateY(-4px);border-color:var(--line2)}
+
+/* card interiors: one recipe */
+.card{padding:30px 28px}
+.card h3{font-size:15px;font-weight:600;line-height:1.35;color:var(--w);margin:18px 0 8px;letter-spacing:-.01em}
+.card p{font-size:13.5px;color:var(--mut);line-height:1.6}
+svg.ic{width:20px;height:20px;stroke:currentColor;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round;display:block}
+.c-blue .ic{color:var(--blue)}.c-teal .ic{color:var(--teal)}.c-amber .ic{color:var(--amber)}
+
+/* grids of cards */
+.cards4{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
+.tiles{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
+.tile-full{grid-column:1/-1;display:flex;gap:26px;align-items:flex-start;padding:34px 32px}
+.tile-full h3{margin-top:2px}
+.tile-full p{max-width:78ch}
+.steps{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
+.step .n{font-family:var(--disp);font-weight:700;font-size:clamp(2rem,3vw,2.7rem);line-height:1;letter-spacing:-.03em;color:var(--dim);font-variant-numeric:tabular-nums}
+.step h3{margin-top:20px}
+@media(max-width:920px){.cards4{grid-template-columns:repeat(2,1fr)}.tiles{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.cards4,.tiles,.steps{grid-template-columns:1fr}.tile-full{flex-direction:column;gap:16px}}
+
+/* chips */
+.chips{grid-column:1/span 9;display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+.chip{display:inline-flex;align-items:center;gap:9px;padding:11px 18px;border-radius:999px;font-size:12px;font-weight:500;color:var(--w);transform:none}
+.chip:hover{transform:none}
+.chip .d{width:6px;height:6px;border-radius:50%;background:var(--blue);box-shadow:0 0 10px var(--blue)}
+.chip.t .d{background:var(--teal);box-shadow:0 0 10px var(--teal)}
+.chip.a .d{background:var(--amber);box-shadow:0 0 10px var(--amber)}
+.chip.core{color:var(--teal);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:11px}
+@media(max-width:920px){.chips{grid-column:1/-1}}
+
+/* work panel */
+.panel{grid-column:1/-1;margin-top:48px;padding:clamp(34px,5vw,64px)}
+.panel:hover{transform:none}
+.plead{font-size:16px;font-weight:600;color:var(--w);max-width:50ch;line-height:1.55}
+.pbody{font-size:14px;color:var(--mut);max-width:62ch;margin-top:14px;line-height:1.7}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:52px;padding-top:38px;border-top:1px solid var(--line)}
+.stat b{font-family:var(--disp);font-weight:700;font-size:clamp(2.1rem,3.8vw,3.3rem);line-height:1;letter-spacing:-.03em;color:var(--w);font-variant-numeric:tabular-nums}
+.stat.s1 b{color:var(--blue)}.stat.s2 b{color:var(--teal)}.stat.s3 b{color:var(--amber)}
+.stat small{display:block;font-size:12px;color:var(--mut);margin-top:10px}
+@media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* ============ BUTTONS + LINKS ============ */
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--w);color:#060a12;font-size:13px;font-weight:600;letter-spacing:.02em;padding:17px 28px;border-radius:999px;transition:background .35s,transform .35s var(--ease),box-shadow .35s;box-shadow:0 14px 44px rgba(0,0,0,.35)}
+.btn:hover{background:var(--blue);transform:translateY(-2px);box-shadow:0 18px 54px rgba(59,158,255,.35)}
+.tlink{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--w)}
+.tlink .c{color:var(--blue);transition:transform .3s var(--ease)}
+.tlink:hover .c{transform:translateX(4px)}
+
+/* ============ NAV ============ */
+nav{position:fixed;top:0;left:0;right:0;z-index:80;border-bottom:1px solid transparent;transition:background .4s,border-color .4s,-webkit-backdrop-filter .4s,backdrop-filter .4s}
+nav.on{background:rgba(5,7,12,.55);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);border-color:var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+.brand{font-family:var(--disp);font-weight:700;font-size:16px;letter-spacing:-.02em}
+.brand b{color:var(--blue);font-weight:700}
+.nlinks{display:flex;align-items:center;gap:30px}
+.nlinks a{font-size:12px;font-weight:500;color:var(--mut);letter-spacing:.02em;transition:color .25s}
+.nlinks a:hover{color:var(--w)}
+.nlinks .go{background:var(--w);color:#060a12;font-weight:600;padding:10px 18px;border-radius:999px;transition:background .3s}
+.nlinks .go:hover{background:var(--blue);color:#060a12}
+@media(max-width:820px){.nlinks a:not(.go){display:none}}
+
+/* ============ HERO ============ */
+header{min-height:82svh;display:flex;align-items:center;position:relative;padding:104px 0 5vh}
+header::before{content:"";position:absolute;left:0;right:0;bottom:0;height:72%;pointer-events:none;background:linear-gradient(180deg,rgba(5,7,12,0),rgba(5,7,12,.74) 82%)}
+header .wrap{position:relative;width:100%}
+.hkick{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--mut);margin-bottom:34px}
+.hkick .d{width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 12px var(--teal);animation:blink 2.4s ease-in-out infinite}
+@keyframes blink{50%{opacity:.35}}
+h1{font-family:var(--disp);font-weight:700;font-size:clamp(2.9rem,7vw,6.2rem);line-height:.97;letter-spacing:-.04em;max-width:20ch}
+.hsub{font-size:15px;color:#b9c2d0;max-width:44ch;margin:26px 0 34px;line-height:1.7}
+.hcta{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.hnote{display:block;font-size:12px;color:var(--dim);margin-top:20px}
+
+/* ============ VIDEO WINDOW BANDS ============ */
+.band{height:40vh;display:flex;align-items:flex-end;padding-bottom:54px}
+.band .cap{display:flex;align-items:center;gap:16px;font-size:11px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:rgba(243,246,250,.8)}
+.band .cap::before{content:"";width:46px;height:1px;background:rgba(243,246,250,.4)}
+@media(max-width:820px){.band{height:30vh}}
+
+/* statement */
+.statement{min-height:52vh;display:flex;align-items:center}
+.statement .sh{font-family:var(--disp);font-weight:700;font-size:clamp(2.7rem,6.6vw,5.4rem);line-height:1;letter-spacing:-.04em;max-width:15ch}
+
+/* ============ END CTA ============ */
+#contact{padding:12vh 0}
+#contact h2{font-family:var(--disp);font-weight:700;font-size:clamp(3rem,7.4vw,5.8rem);line-height:.97;letter-spacing:-.04em;max-width:12ch}
+#contact .lead{margin-bottom:44px}
+#contact .meta{font-size:12px;color:var(--dim);margin-top:22px}
+
+/* ============ FOOTER ============ */
+footer{border-top:1px solid var(--line);padding:44px 0 60px;background:rgba(5,7,12,.6);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+footer .meta{font-size:12px;color:var(--mut);line-height:1.8}
+footer .meta a{color:var(--blue)}
+
+/* ============ CUSTOM CURSOR ============ */
+html.has-cursor,html.has-cursor a,html.has-cursor button,html.has-cursor input{cursor:none}
+.cur-dot,.cur-ring{position:fixed;left:0;top:0;z-index:300;pointer-events:none;border-radius:50%;transform:translate(-50%,-50%);mix-blend-mode:difference;opacity:0}
+.cur-dot{width:6px;height:6px;background:#fff}
+.cur-ring{width:34px;height:34px;border:1px solid rgba(255,255,255,.75);transition:width .3s var(--ease),height .3s var(--ease)}
+.cur-ring.big{width:56px;height:56px}
+
+/* ============ ONE ENTRANCE RECIPE ============ */
+.js .rv{opacity:0;transform:translateY(20px);filter:blur(9px);transition:opacity .8s var(--ease),transform .8s var(--ease),filter .8s var(--ease)}
+.js .rv.in{opacity:1;transform:translateY(0);filter:blur(0)}
+
+/* ============ REDUCED MOTION ============ */
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none;filter:none}
+}
+
+  /* --- refinement pass --- */
+  .head-l,.head-r{grid-column:1/-1;text-align:center}
+  .head-l .kick,.head-r .kick{justify-content:center}
+  .head-l .lead,.head-r .lead{margin-left:auto;margin-right:auto}
+  .tiles{counter-reset:tile}
+  .tiles .card{counter-increment:tile;position:relative;transition:transform .32s cubic-bezier(.22,1,.36,1),background .32s,box-shadow .32s}
+  .tiles .card .ic{display:none}
+  .tiles .card::before{content:counter(tile,decimal-leading-zero);position:absolute;top:26px;left:28px;font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--dim);font-variant-numeric:tabular-nums}
+  .tiles .card h3{margin-top:44px;font-size:16px}
+  .tiles .card:hover{transform:translateY(-5px);background:rgba(255,255,255,.03);box-shadow:0 22px 54px rgba(0,0,0,.45)}
+
+  #faq .kick{justify-content:center}
+  #faq{text-align:center}
+  #faq .faqs{text-align:left}
+  .faqs{margin-top:44px;border-top:1px solid var(--line);max-width:860px;margin-left:auto;margin-right:auto}
+  .faqs .faq{padding:26px 0;border-bottom:1px solid var(--line)}
+  .faqs .faq h3{font-size:15px;font-weight:600;letter-spacing:-.01em;margin-bottom:8px}
+  .faqs .faq p{font-size:13.5px;color:var(--mut);line-height:1.7;max-width:80ch}
+
+  /* --- capability page layout --- */
+  .ph{min-height:0;display:block;padding:128px 0 4vh}
+  .ph h1{font-size:clamp(2.4rem,5.4vw,4.5rem);max-width:24ch}
+  .ph .hsub{max-width:54ch}
+  .crumb{font-size:12px;color:var(--dim);margin-bottom:30px}
+  .crumb a{color:var(--mut);transition:color .25s}
+  .crumb a:hover{color:var(--w)}
+  .crumb span{margin:0 6px;color:var(--dim)}
+  section.tight{padding:7vh 0}
+  .prose{grid-column:1/-1;max-width:820px;margin:36px auto 0;width:100%;text-align:left}
+  .prose p{font-size:14.5px;color:#b9c2d0;line-height:1.85;margin-bottom:16px}
+  .prose p strong,.prose li strong{color:var(--w);font-weight:600}
+  .prose ul{list-style:none;margin:6px 0 18px;padding:0}
+  .prose li{font-size:14px;color:#b9c2d0;line-height:1.7;padding:11px 0 11px 26px;position:relative;border-bottom:1px solid var(--line)}
+  .prose li::before{content:"\2192";position:absolute;left:0;color:var(--blue)}
+  .status{grid-column:1/-1;max-width:860px;margin:40px auto 0;width:100%;text-align:left}
+  .srow{display:flex;gap:20px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--line)}
+  .srow:first-of-type{border-top:1px solid var(--line)}
+  .stag{flex:0 0 150px;font-size:10.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;text-align:center;padding:6px 10px;border-radius:999px;border:1px solid var(--line2);color:var(--mut);margin-top:2px}
+  .stag.live{color:var(--teal);border-color:rgba(52,216,200,.45)}
+  .stag.conf{color:var(--amber);border-color:rgba(255,180,84,.45)}
+  .srow h3{font-size:14px;font-weight:600;margin-bottom:5px;letter-spacing:-.01em}
+  .srow p{font-size:13px;color:var(--mut);line-height:1.65;max-width:66ch}
+  @media(max-width:620px){.srow{flex-direction:column;gap:10px}.stag{flex:none;align-self:flex-start}}
+  .tiles a.card,.cards4 a.card{display:block}
+  .rel{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
+  .rel a{display:block;padding:24px 26px;text-align:left}
+  .rel h3{font-size:14.5px;font-weight:600;margin-bottom:6px;letter-spacing:-.01em}
+  .rel p{font-size:12.5px;color:var(--mut);line-height:1.6}
+  .rel .go2{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--blue);margin-top:12px;font-weight:500}
+  @media(max-width:920px){.rel{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:620px){.rel{grid-template-columns:1fr}}
+  .scn{grid-column:1/-1;max-width:820px;margin:40px auto 0;width:100%;padding:30px 32px;text-align:left}
+  .scn:hover{transform:none}
+  .scn h3{font-size:14px;font-weight:600;margin-bottom:10px}
+  .scn p{font-size:13.5px;color:#b9c2d0;line-height:1.75}
+</style>
 </head>
 <body>
 
-<!-- ============== NAV ============== -->
-<div class="nav-wrap">
-  <nav class="nav">
-    <a class="brand" href="index.html">
-      <img src="assets/logo.png" alt="TradeScale Plus" style="width:28px;height:28px;object-fit:contain" />
-      <span>TradeScale<span style="color:var(--text-muted);font-weight:400">&nbsp;Plus</span></span>
-    </a>
-    <div class="nav-links">
-      <a href="index.html#how-it-works">Get started</a>
-      <a href="index.html#capabilities" class="active">Product</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="for-dealers.html">For dealers</a>
-    </div>
-    <div class="nav-cta">
-      <a class="btn-ghost" href="https://demo.tradescaleplus.com/app/login">Sign in</a>
-      <a class="btn-nav" href="book-demo.html">Book a demo</a>
-    <button class="tsp-burger" aria-label="Open menu" aria-expanded="false" aria-controls="tsp-mobile-drawer"><span></span><span></span><span></span></button></div>
-  </nav>
-<div class="tsp-drawer" id="tsp-mobile-drawer" data-open="false" role="menu" aria-label="Mobile navigation">
-  <a href="index.html#how-it-works" role="menuitem">Get started</a>
-  <a href="index.html#capabilities" role="menuitem">Product</a>
-  <a href="pricing.html" role="menuitem">Pricing</a>
-  <a href="for-dealers.html" role="menuitem">For dealers</a>
-  <a href="faq.html" role="menuitem">FAQ</a>
-  <a href="contact.html" role="menuitem">Contact</a>
-  <a class="tsp-drawer-cta" href="book-demo.html" role="menuitem">Book a 15-min demo</a>
-  <a class="tsp-drawer-signin" href="https://demo.tradescaleplus.com/app/login" role="menuitem">Sign in</a>
+<div class="veil" id="veil" aria-hidden="true"></div>
+<div class="hexbg" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<div class="content">
+
+<nav id="nav"><div class="wrap">
+  <a class="brand" href="index.html">TradeScale<b>+</b></a>
+  <div class="nlinks">
+    <a href="index.html#build">What we build</a>
+    <a href="index.html#for">Who we build for</a>
+    <a href="index.html#work">Work</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="go">Book a consultation</a>
+  </div>
+</div></nav>
+
+<header class="ph" id="top" data-veil="0.5"><div class="wrap"><p class="crumb rv"><a href="index.html">Home</a><span>/</span><a href="index.html#build">What we build</a><span>/</span>Stock management</p><p class="hkick rv"><span class="d"></span>Stock &middot; Four ways in</p><h1 class="rv">Your stock, four ways in.</h1><p class="hsub rv">Your stock lives in the system with photos, prices, prep status and costs. Type it in, pull it from a reg plate, scrape it from your website, or capture any page in one click.</p><div class="hcta rv"><a href="#contact" class="btn">Book a free consultation</a><a href="#faq" class="tlink">Questions <span class="c" aria-hidden="true">&rarr;</span></a></div></div></header>
+<section class="tight" data-veil="0.6"><div class="wrap g"><div class="head-l rv"><p class="kick">What it is</p><h2 class="disp" style="font-size:clamp(2rem,4vw,3.2rem)">READY or <span class="dm">IN PREP.</span></h2></div><div class="prose rv"><p>Every item shows its prep status, so nothing goes out half-finished. A prep checklist drives READY versus IN PREP states, with cost tracking per item. For dealers, that is every car on the forecourt.</p></div></div></section>
+<section class="tight" data-veil="0.6"><div class="wrap g"><div class="head-r rv"><p class="kick">Easy in</p><h2 class="disp" style="font-size:clamp(2rem,4vw,3.2rem)">One-click <span class="dm">capture.</span></h2></div><div class="prose rv"><p>Reg-plate lookup fills in vehicle details, the scraper pulls stock from your own website, and our browser extension captures any dealer page in one click, even the awkward ones.</p></div></div></section>
+<section id="faq" data-veil="0.6"><div class="wrap"><p class="kick rv">Questions, answered</p><h2 class="disp rv" style="font-size:clamp(1.9rem,3.6vw,2.8rem)">Stock FAQs.</h2><div class="faqs"><div class="faq rv"><h3>How does stock get in?</h3><p>Four ways: typed by hand, via reg-plate lookup, scraped from your website, or captured from any page in one click with our extension.</p></div><div class="faq rv"><h3>What is READY vs IN PREP?</h3><p>A prep checklist tracks outstanding work, so an item is IN PREP until it is done, then READY. Nothing goes out half-finished.</p></div><div class="faq rv"><h3>Is it just for car dealers?</h3><p>Dealers are the proven build, but stock can be shaped to other product businesses.</p></div><div class="faq rv"><h3>How much does it cost?</h3><p>Every setup is bespoke, priced after a free, no-obligation consultation.</p></div></div></div></section>
+<section class="tight" data-veil="0.6"><div class="wrap g"><div class="head-l rv"><p class="kick">More from the studio</p><h2 class="disp" style="font-size:clamp(1.9rem,3.6vw,2.8rem)">The whole <span class="dm">AI system.</span></h2></div><div class="rel" data-stag><a class="glass rv" href="ai-receptionist.html"><h3>AI receptionist</h3><p>Answers every call, knows your business, books work into your diary.</p><span class="go2">Read more <span aria-hidden="true">&rarr;</span></span></a><a class="glass rv" href="custom-crm.html"><h3>Self-running CRM</h3><p>A pipeline the AI keeps up to date, with full history and stock.</p><span class="go2">Read more <span aria-hidden="true">&rarr;</span></span></a><a class="glass rv" href="business-automation.html"><h3>Automation engine</h3><p>Follow-ups, reminders, reviews and campaigns, drafted for approval.</p><span class="go2">Read more <span aria-hidden="true">&rarr;</span></span></a><a class="glass rv" href="index.html"><h3>Everything we build</h3><p>One AI operating system for your business, from a South Wales studio.</p><span class="go2">Back to home <span aria-hidden="true">&rarr;</span></span></a></div></div></section>
+<section id="contact" data-veil="0.6"><div class="wrap"><p class="kick rv">Start here</p><h2 class="rv"><span class="dm">Your stock,</span> in one place.</h2><p class="lead rv">Tell us what you carry and we will show you how it would live in the system.</p><div class="rv" style="margin-top:44px"><a href="mailto:ashleyevz89@gmail.com?subject=Free%20consultation" class="btn">Book your free consultation</a></div><p class="meta rv">Free, and with no obligation. Prefer email? Write to <a href="mailto:ashleyevz89@gmail.com" style="color:var(--blue)">ashleyevz89@gmail.com</a>.</p></div></section>
+<footer>
+<div class="wrap">
+<span class="brand">TradeScale<b>+</b></span>
+<div style="display:flex;flex-wrap:wrap;gap:34px 60px;margin:30px 0 26px"><div style="display:flex;flex-direction:column;min-width:170px"><h4 style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:10px;font-weight:600">What we build</h4><a style="color:var(--mut);font-size:13px;line-height:1.9" href="ai-receptionist.html">AI receptionist</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="ai-chatbot.html">AI chatbot</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="whatsapp-business.html">WhatsApp AI</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="missed-call-text-back.html">Missed-call text-back</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="custom-crm.html">Custom CRM</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="business-automation.html">Business automation</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="custom-software.html">Custom software &amp; agents</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="ai-business-advisor.html">AI advisor</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="lead-generation.html">Lead capture</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="review-management.html">Review management</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="ai-search-optimisation.html">AI search optimisation</a></div><div style="display:flex;flex-direction:column;min-width:170px"><h4 style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:10px;font-weight:600">Web design</h4><a style="color:var(--mut);font-size:13px;line-height:1.9" href="web-design.html">Web design</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="web-design-swansea.html">Swansea</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="web-design-cardiff.html">Cardiff</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="web-design-carmarthen.html">Carmarthen</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="web-design-pembroke.html">Pembroke</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="web-design-llanelli.html">Llanelli</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="web-design-neath.html">Neath</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="web-design-bridgend.html">Bridgend</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="web-design-newport.html">Newport</a></div><div style="display:flex;flex-direction:column;min-width:170px"><h4 style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:10px;font-weight:600">Studio</h4><a style="color:var(--mut);font-size:13px;line-height:1.9" href="index.html">Home</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="studio.html">The studio</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="for-dealers.html">For car dealers</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="product.html">The platform</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="pricing.html">Pricing</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="faq.html">FAQ</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="contact.html">Contact</a><a style="color:var(--mut);font-size:13px;line-height:1.9" href="book-demo.html">Book a consultation</a></div></div>
+<p class="meta">Trade Scale Plus Ltd &middot; Companies House 17142290 &middot; Built in South Wales, serving the UK &middot; <a href="mailto:ashleyevz89@gmail.com" style="color:var(--blue)">ashleyevz89@gmail.com</a></p>
 </div>
-
-</div>
-
-<!-- ============== 1 · HERO ============== -->
-<section class="sh" data-screen-label="01 Stock hero">
-  <div class="sh-bg">
-    <div class="glow-blue"></div>
-    <div class="glow-purple"></div>
-    <div class="grid-fade"></div>
-  </div>
-  <div class="sh-inner">
-    <div class="sh-copy">
-      <span class="pill"><span class="dot"></span>Stock management</span>
-      <h1><span class="line">She knows</span><span class="line">every car</span><span class="line">on your forecourt.</span></h1>
-      <p class="sub">AME reads your stock automatically. Reg, mileage, spec, MOT, photos, service history. Updated every 15 minutes from your website or our Chrome extension — so she answers every customer question without hesitation.</p>
-      <div class="sh-ctas">
-        <a href="book-demo.html" class="btn-primary">
-          Book a demo
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
-        </a>
-        <a href="stock.html" class="btn-secondary">See how stock sync works</a>
-      </div>
-      <div class="sh-trust">DVLA-integrated · Chrome extension · 100% reliable on any UK dealer site</div>
-    </div>
-
-    <!-- Stock grid mockup -->
-    <div class="sg-wrap">
-      <div class="sg-glow"></div>
-      <div class="sg">
-        <div class="sg-top">
-          <span class="ttl">Stock — 35 forecourt · 9 in prep</span>
-          <div class="chips">
-            <span class="chip active">All</span>
-            <span class="chip">Ready</span>
-            <span class="chip">In prep</span>
-            <span class="chip">Sold</span>
-          </div>
-        </div>
-
-        <div class="sg-grid">
-          <article class="veh">
-            <div class="photo"><span class="reg">KX19 ABC</span></div>
-            <div class="body">
-              <div class="nm">2019 Audi Q5 S Line</div>
-              <div class="pr">£18,400</div>
-              <span class="st ready">Ready</span>
-            </div>
-          </article>
-          <article class="veh">
-            <div class="photo"><span class="reg">HG21 XYZ</span></div>
-            <div class="body">
-              <div class="nm">2021 VW Golf GTI</div>
-              <div class="pr">£18,950</div>
-              <span class="st ready">Ready</span>
-            </div>
-          </article>
-          <article class="veh">
-            <div class="photo"><span class="reg">NM18 DEF</span></div>
-            <div class="body">
-              <div class="nm">2018 Mini Cooper S</div>
-              <div class="pr">£11,200</div>
-              <span class="st ready">Ready</span>
-            </div>
-          </article>
-          <article class="veh">
-            <div class="photo"><span class="reg">BD20 PQR</span></div>
-            <div class="body">
-              <div class="nm">2020 BMW 3 Series</div>
-              <div class="pr">£21,500</div>
-              <span class="st ready">Ready</span>
-            </div>
-          </article>
-          <article class="veh">
-            <div class="photo"><span class="reg">LL19 STU</span></div>
-            <div class="body">
-              <div class="nm">2019 Mercedes A-Class</div>
-              <div class="pr">£15,800</div>
-              <span class="st prep">In prep</span>
-            </div>
-          </article>
-          <article class="veh">
-            <div class="photo"><span class="reg">TY17 GHI</span></div>
-            <div class="body">
-              <div class="nm">2017 Ford Focus</div>
-              <div class="pr">£8,950</div>
-              <span class="st prep">In prep</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== 2 · HOW STOCK SYNCS ============== -->
-<section class="sync" data-screen-label="02 Two ways in">
-  <div class="sync-bg"><div class="gl"></div></div>
-  <div class="sync-inner">
-    <div class="section-head">
-      <span class="pill"><span class="dot"></span>Two ways in</span>
-      <h2>Auto-import. Zero double entry.</h2>
-      <p class="sub">List the car once on your website. AME picks it up. Or use our Chrome extension to capture from any dealer site. Either way, you never type the same details twice.</p>
-    </div>
-
-    <div class="sync-grid">
-      <article class="appr">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-        <span class="tag">Server-side scrape</span>
-        <h3>From your existing website.</h3>
-        <p>We pull your stock feed every 15 minutes — reg, mileage, photos, price, spec, MOT. Works with any UK dealer site, including Cloudflare-protected ones.</p>
-        <ul class="ticks">
-          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>No code to install on your site</li>
-          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>DVLA reg lookup for missing data</li>
-          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Photos pulled and rehosted automatically</li>
-        </ul>
-      </article>
-
-      <article class="appr">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18"/><path d="M9 21V9"/><circle cx="6" cy="6" r="0.8" fill="currentColor"/><circle cx="9" cy="6" r="0.8" fill="currentColor"/></svg></div>
-        <span class="tag">Chrome extension</span>
-        <h3>TradeScale Capture (Chrome).</h3>
-        <p>For new stock you list on third-party platforms — AutoTrader, Car Gurus, eBay. One click captures the listing into AME.</p>
-        <ul class="ticks">
-          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Works on AutoTrader, Car Gurus, eBay, Facebook Marketplace</li>
-          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Captures photos + spec + price in one click</li>
-          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Bypasses Cloudflare + bot protection automatically</li>
-        </ul>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============== 3 · VEHICLE PROFILE ============== -->
-<section class="vprof" data-screen-label="03 Vehicle profile">
-  <div class="vprof-bg"><div class="gl"></div></div>
-  <div class="vprof-inner">
-    <div class="vprof-copy">
-      <span class="pill"><span class="dot"></span>Vehicle profile</span>
-      <h2>What AME knows about every car.</h2>
-      <p class="body">When a customer asks "is the Audi Q5 still here?" — AME doesn't guess. She knows the exact spec, the mileage, the MOT status, who's enquired about it, and whether it's ready for handover or still in prep.</p>
-      <ul class="ticks">
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Full spec, mileage, MOT + tax via DVLA lookup</li>
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Photos + service history</li>
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Live "enquiries on this vehicle" count</li>
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Customer-facing offer document (frozen-snapshot PDF)</li>
-      </ul>
-      <a class="link" href="stock.html">See a vehicle card <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
-    </div>
-
-    <div class="vcard">
-      <div class="photo"><span class="photo-reg">KX19 ABC</span></div>
-      <div class="body">
-        <div class="title-row">
-          <div class="title">2019 Audi Q5 S Line</div>
-          <div class="price">£18,400</div>
-        </div>
-        <span class="ready">Ready on forecourt</span>
-
-        <div class="spec-grid">
-          <div class="sp"><span class="k">Mileage</span><span class="v">42,400</span></div>
-          <div class="sp"><span class="k">Fuel</span><span class="v">Diesel</span></div>
-          <div class="sp"><span class="k">Trans</span><span class="v">Automatic</span></div>
-          <div class="sp"><span class="k">Colour</span><span class="v">Glacier White</span></div>
-          <div class="sp"><span class="k">MOT</span><span class="v">Valid to Jan 2027</span></div>
-          <div class="sp"><span class="k">Tax</span><span class="v">£180/yr</span></div>
-        </div>
-
-        <div class="enq-head">Enquiries (4)</div>
-        <div class="enq-row">
-          <div><span class="nm">Mark Patel</span><span class="ago">2 days ago</span></div>
-          <div class="stat">Test drive booked Sat</div>
-        </div>
-        <div class="enq-row">
-          <div><span class="nm">Sarah Jenkins</span><span class="ago">4 hours ago</span></div>
-          <div class="stat">WhatsApp enquiry</div>
-        </div>
-        <div class="enq-row">
-          <div><span class="nm">Daniel Stuart</span><span class="ago">6 hours ago</span></div>
-          <div class="stat">Web chat</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== 4 · FORECOURT VS PREP ============== -->
-<section class="states" data-screen-label="04 Ready vs Prep">
-  <div class="states-bg"><div class="gl"></div></div>
-  <div class="states-inner">
-    <div class="section-head">
-      <span class="pill"><span class="dot"></span>Ready or in prep</span>
-      <h2>She knows what you can sell today.</h2>
-      <p class="sub">Every car has a state. AME doesn't promise customers a viewing on something that's still in workshop. She tells them when it'll be ready, then chases them back when it is.</p>
-    </div>
-
-    <div class="states-grid">
-      <article class="state ready">
-        <div class="chip-row">
-          <span class="schip"><span class="dot"></span>Ready on forecourt</span>
-          <span class="big">35</span>
-        </div>
-        <h3>vehicles on forecourt.</h3>
-        <p>Available for viewing today. AME books test drives directly. Photos uploaded. Specs verified. Price live on your website.</p>
-      </article>
-
-      <article class="state prep">
-        <div class="chip-row">
-          <span class="schip"><span class="dot"></span>In prep</span>
-          <span class="big">9</span>
-        </div>
-        <h3>vehicles in prep.</h3>
-        <p>Just acquired, awaiting service / MOT / valeting. AME tells interested customers an estimated ready date and texts them when it's ready to view.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============== 5 · OFFER DOCUMENTS ============== -->
-<section class="offer" data-screen-label="05 Offer documents">
-  <div class="offer-bg"><div class="gl"></div></div>
-  <div class="offer-inner">
-    <div class="offer-copy">
-      <span class="pill"><span class="dot"></span>Frozen-snapshot PDFs</span>
-      <h2>Beautiful offers. One tap.</h2>
-      <p class="body">Customer asks for "all the details on the Q5"? AME generates a branded PDF with vehicle spec, photos, finance illustration, your dealership branding. Sent on WhatsApp or email, signed snapshot — the price doesn't change after you've sent it.</p>
-      <ul class="ticks">
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Frozen price (no surprise changes after send)</li>
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Your dealership branding on every page</li>
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Finance illustration baked in</li>
-        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Customer can sign + return digitally</li>
-      </ul>
-      <a class="link" href="stock.html">See a sample offer <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
-    </div>
-
-    <div class="offer-doc">
-      <span class="frame-tag">Offer · PDF preview</span>
-      <div class="pdoc">
-        <div class="pdoc-head">
-          <div class="pdoc-logo"><span class="lk"></span>Riverside Motors</div>
-          <span class="pdoc-lab">Vehicle Offer</span>
-        </div>
-        <div class="pdoc-veh">2019 Audi Q5 S Line</div>
-        <div class="pdoc-photo"></div>
-        <div class="pdoc-spec">
-          <div class="r"><span class="k">Mileage</span><span class="v">42,400</span></div>
-          <div class="r"><span class="k">Fuel</span><span class="v">Diesel</span></div>
-          <div class="r"><span class="k">MOT</span><span class="v">Jan 2027</span></div>
-          <div class="r"><span class="k">Tax</span><span class="v">£180/yr</span></div>
-        </div>
-        <div class="pdoc-price">
-          <div class="cash">£18,400 cash</div>
-          <div class="fin">or £218/mo from £4,000 deposit · 48 months</div>
-        </div>
-        <div class="pdoc-foot">
-          <div>
-            <span class="sig"></span>
-            <span class="v">Customer signature</span>
-          </div>
-          <div style="text-align:right">
-            Valid until 27 May 2026
-            <span class="v">Offer #RM-1284</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== 6 · STOCK FAQ ============== -->
-<section class="sfaq" data-screen-label="06 Stock FAQ">
-  <div class="sfaq-inner">
-    <div class="section-head">
-      <span class="pill"><span class="dot"></span>Stock FAQ</span>
-      <h2>Stock questions, answered.</h2>
-    </div>
-
-    <div class="sfaq-list">
-      <details class="sfaq-item" open>
-        <summary>What if my website doesn't have a stock feed?<span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
-        <div class="answer">We use the Chrome extension or scrape your stock pages directly. Works on any UK dealer site, including ones behind Cloudflare. Zero setup on your end.</div>
-      </details>
-      <details class="sfaq-item" open>
-        <summary>How fast does new stock appear in AME?<span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
-        <div class="answer">Within 15 minutes of you publishing it. For brand-new captures via the Chrome extension, it's instant.</div>
-      </details>
-      <details class="sfaq-item">
-        <summary>Does she check MOT + tax via DVLA?<span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
-        <div class="answer">Yes. Every reg gets a DVLA Vehicle Enquiry API lookup — make, model, year, fuel, MOT status, tax status. Saves you re-typing.</div>
-      </details>
-      <details class="sfaq-item">
-        <summary>What about photos?<span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
-        <div class="answer">Pulled from your website automatically. For Chrome-extension captures, photos are pulled from the listing source.</div>
-      </details>
-      <details class="sfaq-item">
-        <summary>Can I edit a vehicle in AME?<span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
-        <div class="answer">Yes. Any vehicle in AME can be manually edited — price, description, photos, status. Changes don't get overwritten by the next sync if you've manually edited.</div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ============== 7 · FINAL CTA ============== -->
-<section class="sfin" data-screen-label="07 Final CTA">
-  <div class="sfin-bg">
-    <div class="grid"></div>
-    <div class="gl"></div>
-  </div>
-  <div class="sfin-inner">
-    <span class="pill"><span class="dot"></span>Sync your stock</span>
-    <h2>35 cars on your forecourt. AME knows every one.</h2>
-    <p class="sub">15-minute demo. We sync your real stock before the call.</p>
-    <div class="ctas">
-      <a href="book-demo.html" class="btn-primary">
-        Book a 15-min demo
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
-      </a>
-      <a href="pricing.html" class="btn-secondary">See pricing</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============== FOOTER ============== -->
-<footer class="footer" data-screen-label="08 Footer">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <div class="footer-brand">
-          <img src="assets/logo.png" alt="TradeScale Plus" style="width:28px;height:28px;object-fit:contain" />
-          <span>TradeScale<span style="color:var(--text-muted);font-weight:400">&nbsp;Plus</span></span>
-        </div>
-        <p class="footer-tag">The AI sales admin for UK indie used-car dealers.</p>
-        <p class="footer-meta">Trade Scale Plus Ltd<br/>Companies House 17142290</p>
-      </div>
-      <div class="footer-col">
-        <h4>Product</h4>
-        <ul>
-          <li><a href="voice.html">Voice receptionist</a></li>
-          <li><a href="inbox.html">Inbox</a></li>
-          <li><a href="pipeline.html">Pipeline</a></li>
-          <li><a href="stock.html">Stock</a></li>
-          <li><a href="aftersales.html">Aftersales</a></li>
-          <li><a href="ame-hq.html">AME HQ</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="for-dealers.html">For dealers</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="book-demo.html">Book a demo</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="https://demo.tradescaleplus.com/privacy">Privacy</a></li>
-          <li><a href="https://demo.tradescaleplus.com/terms">Terms</a></li>
-          <li><a href="https://demo.tradescaleplus.com/dpa">DPA</a></li>
-          <li><a href="https://demo.tradescaleplus.com/security">Security</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Trade Scale Plus Ltd. All rights reserved.</span>
-      <span>Built in the UK · For UK indie dealers.</span>
-    </div>
-  </div>
 </footer>
 
+</div>
+
+<script>
+(function(){
+"use strict";
+var doc=document.documentElement;
+var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var finePointer=window.matchMedia("(pointer: fine)").matches;
+
+/* ---------- entrance reveals: one recipe, staggered, fire once ---------- */
+var stagGroups=document.querySelectorAll("[data-stag]");
+Array.prototype.forEach.call(stagGroups,function(g){
+  Array.prototype.forEach.call(g.children,function(c,i){
+    c.style.transitionDelay=Math.min(i*0.1,0.9).toFixed(2)+"s";
+  });
+});
+var rvs=Array.prototype.slice.call(document.querySelectorAll(".rv"));
+function showAll(){rvs.forEach(function(e){e.classList.add("in");});}
+if(!("IntersectionObserver" in window)||reduce){showAll();}
+else{
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});
+  },{threshold:.12,rootMargin:"0px 0px -6% 0px"});
+  rvs.forEach(function(e){io.observe(e);});
+  requestAnimationFrame(function(){
+    rvs.forEach(function(e){var r=e.getBoundingClientRect();if(r.top<innerHeight*.92)e.classList.add("in");});
+  });
+}
+
+/* ---------- nav state ---------- */
+var nav=document.getElementById("nav");
+function navState(){nav.classList.toggle("on",scrollY>10);}
+addEventListener("scroll",navState,{passive:true});navState();
+
+/* ---------- veil engine (no core video on this page) ---------- */
+var veil=document.getElementById("veil");
+var veilEls=Array.prototype.slice.call(document.querySelectorAll("[data-veil]"));
+var vC=.85;
+
+/* ---------- custom cursor: dot + lerping ring ---------- */
+var curOn=finePointer&&!reduce;
+var cd,cr,mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my,curSeen=false;
+if(curOn){
+  doc.classList.add("has-cursor");
+  cd=document.createElement("div");cd.className="cur-dot";
+  cr=document.createElement("div");cr.className="cur-ring";
+  document.body.appendChild(cd);document.body.appendChild(cr);
+  addEventListener("mousemove",function(e){
+    mx=e.clientX;my=e.clientY;
+    cd.style.left=mx+"px";cd.style.top=my+"px";
+    if(!curSeen){curSeen=true;rx=mx;ry=my;cd.style.opacity=1;cr.style.opacity=1;}
+  },{passive:true});
+  addEventListener("mouseover",function(e){
+    var hit=e.target.closest?e.target.closest("a,button,input"):null;
+    cr.classList.toggle("big",!!hit);
+  });
+}
+
+/* ---------- main loop: veil + cursor ---------- */
+function loop(){
+  var mid=innerHeight*.5,target=.87;
+  for(var i=0;i<veilEls.length;i++){
+    var r=veilEls[i].getBoundingClientRect();
+    if(r.top<=mid&&r.bottom>=mid){target=parseFloat(veilEls[i].getAttribute("data-veil"));break;}
+  }
+  vC+=(target-vC)*.07;
+  veil.style.opacity=vC.toFixed(3);
+  if(curOn&&curSeen){
+    rx+=(mx-rx)*.16;ry+=(my-ry)*.16;
+    cr.style.left=rx+"px";cr.style.top=ry+"px";
+  }
+  requestAnimationFrame(loop);
+}
+if(!reduce)requestAnimationFrame(loop);
+})();
+</script>
 </body>
 </html>
