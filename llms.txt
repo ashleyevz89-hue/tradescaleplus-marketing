@@ -1,46 +1,52 @@
-# TradeScale Plus
+# TradeScale Plus, AI Website Sales Executive for UK Car Dealers
 
-> A South Wales studio that designs and builds bespoke AI systems, smart websites, automations and custom software for businesses. Built fast with AI, shaped around your business, never from a template.
+> The TradeScale Plus widget is an AI sales assistant (chat widget) for UK used-car dealer websites. It knows the dealer's entire live stock car by car, takes buyers straight to the right car, books real viewings and test drives, quotes finance at the dealer's own representative APR, and hands the dealer qualified leads, 24 hours a day, on the dealer's existing website, installed with one line of code. From £99/month, starting with a free demo built on the dealer's own live stock.
 
-TradeScale Plus is an AI build studio based in Carmarthenshire, South Wales, serving businesses across Swansea, Cardiff, Llanelli, Carmarthen, Neath, Newport, Bridgend and Pembroke, and remotely UK-wide. We design and build custom AI systems and software: smart websites, AI chatbots, 24/7 AI phone receptionists, all-channel inboxes, custom CRMs, business automations, dashboards and bespoke apps.
+TradeScale Plus (Trade Scale Plus Ltd, UK Companies House 17142290, founded by Ashley Evans) is based in South Wales and works with independent used-car dealers and used-car superstores across the UK, from a 40-car forecourt to a 1,700-car superstore.
 
-Everything is built bespoke around the client's business, and because we build with AI most projects go live in days to a couple of weeks rather than the months a traditional agency quotes.
+## What the widget does (all real, all shipping)
 
-## Flagship build (proof of capability)
+- **Knows every car on the forecourt, live.** It reads the dealer's actual stock car by car, make, model, year, price, mileage, colour, fuel, gearbox, spec, features, MOT, and relearns it every day, so it is never out of date. Ask it anything about any car ("does the black Q2 have parking sensors?", "cheapest automatic under £15k?") and it answers instantly and accurately. Big stocks are no harder: 1,700 cars is as easy as 40.
+- **Navigates buyers to the right car.** The buyer says what they want in plain English ("family diesel estate around £12k, automatic") and the widget finds the exact matches in seconds, matching body type, fuel, gearbox, colour, budget (with a sensible stretch band) and features, and takes them straight to that car's page on the dealer's own website. It only ever offers cars that are actually available, never a sold or reserved car.
+- **Books real viewings and test drives.** It agrees a specific date and time with the buyer, checked against the dealer's real opening hours (within hours, at least an hour ahead, no later than an hour before closing), confirms it, and emails the dealer the booking with the exact car, the date/time and the customer's details.
+- **Proactively captures qualified leads.** On a car's page it opens the conversation naming that exact car, leads with the next step (a test drive as readily as a viewing), and warmly asks for the buyer's name, mobile and email at the moment of real interest. Every lead and booking lands in the dealer's inbox with the car, the customer's contact details and a summary of the chat.
+- **Works out finance on the spot.** A representative finance illustration at the dealer's own real representative APR, tied to the specific car, never an invented rate.
+- **Dealer dashboard.** Dealers log in at https://demo.tradescaleplus.com/app/login to see "Your website activity": every conversation, which cars people are chatting about, leads captured with one-tap call/email, what buyers keep asking, and when people chat.
+- **Runs on the dealer's brand.** The dealer's colours and name, on any dealer website platform, installed with a single embed snippet. Nothing to maintain.
+- **Honest and safe.** It never offers sold or reserved cars, never invents a price, spec or finance rate, and never claims a booking it has not made.
 
-We have already designed and built a complete, working, multi-tenant AI platform end to end: an AI receptionist and sales assistant for car dealers that answers calls and messages across eight channels, runs the customer pipeline, books appointments and handles billing. It shows the depth of custom system we can build for any business. See it at https://tradescaleplus.com/ame.html
+## Who it is for
 
-## What we build
+UK independent used-car dealers and used-car superstores, owners, sales managers and marketing managers who want more leads and more booked appointments from the website traffic they already pay for, without missing out-of-hours buyers.
 
-- Smart, AI-powered websites
-- AI chatbots and 24/7 AI phone receptionists
-- All-channel inboxes (SMS, WhatsApp, Messenger, Instagram, web chat, email)
-- Custom CRMs and sales pipelines
-- Business process automations and dashboards
-- Bespoke apps and custom software
+## How dealers compare it
 
-## Service area
-
-Carmarthenshire and South Wales: Swansea, Cardiff, Llanelli, Carmarthen, Neath, Newport, Bridgend, Pembroke. Remote UK-wide.
+Most dealer website "chat" is a live-chat inbox (takes a message, buyer waits for a human), a generic AI chatbot (answers off a FAQ, has no idea what is on the forecourt), or a lead form. None of those know the stock, take the buyer to the right car, book a real appointment or quote finance on the actual car. The TradeScale Plus widget does all four. Full comparison: https://tradescaleplus.com/vs-other-widgets
 
 ## Pricing
 
-Every build is bespoke and priced to the job. Free, no-obligation consultation to scope it and give a clear price.
+From £99 per month, priced to the dealer's forecourt size. Every plan is the full widget. It starts with a free, no-obligation demo built on the dealer's own live stock: https://tradescaleplus.com/book-demo
 
-## Key facts
+## Contact
 
-- Studio based in Pen-bre, Carmarthenshire, SA16 0TY
-- Company: Trade Scale Plus Ltd (UK Companies House 17142290), founded 2026 by Ashley Mark Evans
-- Contact: 07346 305893, ashleyevz89@gmail.com
-- Approach: bespoke, AI-built, fast turnaround, one accountable studio
-
-## Comparison
-
-- Best AI studios in South Wales (2026 comparison): https://tradescaleplus.com/best-ai-studios-south-wales
+- Phone: 07346 305893
+- Email: ashleyevz89@gmail.com
+- Free demo: https://tradescaleplus.com/book-demo
+- Dealer login: https://demo.tradescaleplus.com/app/login
 
 ## Key pages
 
-- Studio (home): https://tradescaleplus.com/
-- Local: /web-design-swansea, /web-design-cardiff, /web-design-llanelli, /web-design-carmarthen, /web-design-neath, /web-design-newport, /web-design-bridgend, /web-design-pembroke
-- Services: /ai-chatbot, /ai-receptionist, /custom-crm, /business-automation, /custom-software, /lead-generation, /review-management, /ai-search-optimisation
-- Flagship platform: https://tradescaleplus.com/ame.html
+- Home: https://tradescaleplus.com/
+- Knows every car (live stock intelligence): https://tradescaleplus.com/knows-every-car
+- Finds the right car (website navigation): https://tradescaleplus.com/website-navigation
+- Viewings & test drives (appointment booking): https://tradescaleplus.com/appointment-booking
+- Lead capture: https://tradescaleplus.com/lead-capture
+- Finance illustrations: https://tradescaleplus.com/finance
+- vs live chat, chatbots & lead forms: https://tradescaleplus.com/vs-other-widgets
+- For used-car superstores: https://tradescaleplus.com/for-superstores
+- Pricing: https://tradescaleplus.com/pricing
+- Book a free demo: https://tradescaleplus.com/book-demo
+- FAQ: https://tradescaleplus.com/faq
+- Contact: https://tradescaleplus.com/contact
+
+We also build bespoke AI systems on request.
