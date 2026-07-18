@@ -383,11 +383,13 @@ html.has-cursor,html.has-cursor a,html.has-cursor button,html.has-cursor input{c
 <option>1,000+</option>
 </select>
 <label for="f-phone">Best number to reach you</label>
-<input id="f-phone" name="phone" type="tel" autocomplete="tel">
+<input id="f-phone" name="phone" type="tel" autocomplete="tel" required>
+<label for="f-email">Your email</label>
+<input id="f-email" name="email" type="email" autocomplete="email" required>
 <label for="f-notes">Anything we should know? (optional)</label>
 <textarea id="f-notes" name="notes" rows="3"></textarea>
 <button type="submit" class="btn">Request my free demo</button>
-<p class="fnote">Sends as an email from your own mail app to <a href="mailto:ashleyevz89@gmail.com">ashleyevz89@gmail.com</a>, nothing is stored on this page. Prefer to talk? Call <a href="tel:07346305893">07346 305893</a>.</p>
+<p class="fnote">We&rsquo;ll get straight back to you to build your free demo on your own stock. Prefer to talk? Call <a href="tel:07346305893">07346 305893</a> or email <a href="mailto:ashleyevz89@gmail.com">ashleyevz89@gmail.com</a>.</p>
 </form>
 </div>
 </div></section>
@@ -504,17 +506,27 @@ if(!reduce)requestAnimationFrame(loop);
 "use strict";
 var f=document.getElementById("demoForm");
 if(!f)return;
+var submitting=false;
 f.addEventListener("submit",function(e){
   e.preventDefault();
+  if(submitting)return;
   function v(id){var el=document.getElementById(id);return el&&el.value?el.value.trim():"";}
-  var body="Hi Ashley,%0D%0A%0D%0AI'd like a free demo of the AI Website Sales Executive built on our stock.%0D%0A%0D%0A"+
-    "Name: "+encodeURIComponent(v("f-name"))+"%0D%0A"+
-    "Dealership: "+encodeURIComponent(v("f-dealer"))+"%0D%0A"+
-    "Website: "+encodeURIComponent(v("f-site"))+"%0D%0A"+
-    "Stock size: "+encodeURIComponent(v("f-size"))+"%0D%0A"+
-    "Phone: "+encodeURIComponent(v("f-phone"))+"%0D%0A"+
-    "Notes: "+encodeURIComponent(v("f-notes"))+"%0D%0A";
-  location.href="mailto:ashleyevz89@gmail.com?subject="+encodeURIComponent("Free demo on our stock, "+(v("f-dealer")||"my dealership"))+"&body="+body;
+  var btn=f.querySelector('button[type="submit"]'), note=f.querySelector(".fnote");
+  var name=v("f-name"),dealer=v("f-dealer"),site=v("f-site"),size=v("f-size"),phone=v("f-phone"),email=v("f-email"),notes=v("f-notes");
+  if(!name||!dealer||!phone||!email){ if(note){note.textContent="Please add your name, dealership, phone and email so we can get back to you.";note.style.color="var(--amber)";} return; }
+  var payload={dealership:dealer,name:name,phone:phone,email:email,stock_count:size,notes:(notes?notes+"\n":"")+(site?"Website: "+site:"")};
+  submitting=true; if(btn){btn.disabled=true;btn.textContent="Sending\u2026";}
+  fetch("https://demo.tradescaleplus.com/api/public/book-demo",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)})
+    .then(function(r){return r.json().catch(function(){return{ok:r.ok};});})
+    .then(function(d){
+      if(d&&d.ok){
+        f.innerHTML='<div style="text-align:center;padding:26px 0"><h3 style="margin:0 0 10px">Thanks, '+(name.split(" ")[0]||"")+' \u2014 got it.</h3><p style="color:var(--mut);font-size:14px;line-height:1.8">We\u2019ll be in touch to build your free demo on '+(dealer||"your dealership")+'\u2019s live stock. Prefer to talk now? Call <a href="tel:07346305893" style="color:var(--blue)">07346 305893</a>.</p></div>';
+      } else { throw new Error((d&&d.error)||"failed"); }
+    })
+    .catch(function(){
+      submitting=false; if(btn){btn.disabled=false;btn.textContent="Request my free demo";}
+      if(note){note.innerHTML='Sorry, that didn\u2019t send. Please call <a href="tel:07346305893">07346 305893</a> or email <a href="mailto:ashleyevz89@gmail.com?subject='+encodeURIComponent("Free demo on our stock, "+(dealer||"my dealership"))+'">ashleyevz89@gmail.com</a>.';note.style.color="var(--amber)";}
+    });
 });
 })();
 </script>
