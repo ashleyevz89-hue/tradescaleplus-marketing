@@ -451,7 +451,7 @@ var veilEls=Array.prototype.slice.call(document.querySelectorAll("[data-veil]"))
 var vC=.85;
 
 /* ---------- custom cursor: dot + lerping ring ---------- */
-var curOn=finePointer&&!reduce;
+var curOn=false;/* custom cursor removed per Ash 2026-07-18 */
 var cd,cr,mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my,curSeen=false;
 if(curOn){
   doc.classList.add("has-cursor");
