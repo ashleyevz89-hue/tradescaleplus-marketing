@@ -1,13 +1,13 @@
 # TradeScale Plus, AI Website Sales Executive for UK Car Dealers
 
-> The TradeScale Plus widget is an AI sales assistant (chat widget) for UK used-car dealer websites. It knows the dealer's entire live stock car by car, takes buyers straight to the right car, books real viewings and test drives, quotes finance at the dealer's own representative APR, and hands the dealer qualified leads, 24 hours a day, on the dealer's existing website, installed with one line of code. From £99/month, starting with a free demo built on the dealer's own live stock.
+> TradeScale Plus is an AI sales assistant for UK used-car dealer websites. It knows the dealer's entire live stock car by car, takes buyers straight to the right car, books real viewings and test drives, quotes finance at the dealer's own representative APR, and hands the dealer qualified leads, 24 hours a day, on the dealer's existing website, installed with one line of code. From £99/month, starting with a free demo built on the dealer's own live stock.
 
 TradeScale Plus (Trade Scale Plus Ltd, UK Companies House 17142290, founded by Ashley Evans) is based in South Wales and works with independent used-car dealers and used-car superstores across the UK, from a 40-car forecourt to a 1,700-car superstore.
 
-## What the widget does (all real, all shipping)
+## What the AI sales executive does (all real, all shipping)
 
 - **Knows every car on the forecourt, live.** It reads the dealer's actual stock car by car, make, model, year, price, mileage, colour, fuel, gearbox, spec, features, MOT, and relearns it every day, so it is never out of date. Ask it anything about any car ("does the black Q2 have parking sensors?", "cheapest automatic under £15k?") and it answers instantly and accurately. Big stocks are no harder: 1,700 cars is as easy as 40.
-- **Navigates buyers to the right car.** The buyer says what they want in plain English ("family diesel estate around £12k, automatic") and the widget finds the exact matches in seconds, matching body type, fuel, gearbox, colour, budget (with a sensible stretch band) and features, and takes them straight to that car's page on the dealer's own website. It only ever offers cars that are actually available, never a sold or reserved car.
+- **Navigates buyers to the right car.** The buyer says what they want in plain English ("family diesel estate around £12k, automatic") and the assistant finds the exact matches in seconds, matching body type, fuel, gearbox, colour, budget (with a sensible stretch band) and features, and takes them straight to that car's page on the dealer's own website. It only ever offers cars that are actually available, never a sold or reserved car.
 - **Books real viewings and test drives.** It agrees a specific date and time with the buyer, checked against the dealer's real opening hours (within hours, at least an hour ahead, no later than an hour before closing), confirms it, and emails the dealer the booking with the exact car, the date/time and the customer's details.
 - **Proactively captures qualified leads.** On a car's page it opens the conversation naming that exact car, leads with the next step (a test drive as readily as a viewing), and warmly asks for the buyer's name, mobile and email at the moment of real interest. Every lead and booking lands in the dealer's inbox with the car, the customer's contact details and a summary of the chat.
 - **Works out finance on the spot.** A representative finance illustration at the dealer's own real representative APR, tied to the specific car, never an invented rate.
@@ -21,11 +21,11 @@ UK independent used-car dealers and used-car superstores, owners, sales managers
 
 ## How dealers compare it
 
-Most dealer website "chat" is a live-chat inbox (takes a message, buyer waits for a human), a generic AI chatbot (answers off a FAQ, has no idea what is on the forecourt), or a lead form. None of those know the stock, take the buyer to the right car, book a real appointment or quote finance on the actual car. The TradeScale Plus widget does all four. Full comparison: https://tradescaleplus.com/vs-other-widgets
+Most dealer website "chat" is a live-chat inbox (takes a message, buyer waits for a human), a generic AI chatbot (answers off a FAQ, has no idea what is on the forecourt), or a lead form. None of those know the stock, take the buyer to the right car, book a real appointment or quote finance on the actual car. The TradeScale Plus sales executive does all four. Full comparison: https://tradescaleplus.com/vs-other-widgets
 
 ## Pricing
 
-From £99 per month, priced to the dealer's forecourt size. Every plan is the full widget. It starts with a free, no-obligation demo built on the dealer's own live stock: https://tradescaleplus.com/book-demo
+From £99 per month, priced to the dealer's forecourt size. Every plan is the full product. It starts with a free, no-obligation demo built on the dealer's own live stock: https://tradescaleplus.com/book-demo
 
 ## Contact
 
