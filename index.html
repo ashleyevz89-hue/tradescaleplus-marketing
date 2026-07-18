@@ -111,6 +111,13 @@ svg.ic{width:20px;height:20px;stroke:currentColor;stroke-width:1.5;fill:none;str
 .chip.t .d{background:var(--teal);box-shadow:0 0 10px var(--teal)}
 .chip.a .d{background:var(--amber);box-shadow:0 0 10px var(--amber)}
 .chip.core{color:var(--teal);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:11px}
+.orbit-wrap{display:flex;flex-direction:column;align-items:center;margin-top:2vh}
+.orbit-title{margin-bottom:10px}
+.orbit{position:relative;width:min(600px,94vw);aspect-ratio:1/1;margin:0 auto}
+.orbit .core-reveal{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60%;aspect-ratio:1/1;margin:0}
+.orbit .orbit-c{position:absolute;transform:translate(-50%,-50%);white-space:nowrap;background:rgba(9,13,20,.66);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);box-shadow:0 6px 22px rgba(0,0,0,.42)}
+.orbit .p1{left:67%;top:9%}.orbit .p2{left:91%;top:33%}.orbit .p3{left:91%;top:67%}.orbit .p4{left:67%;top:91%}.orbit .p5{left:33%;top:91%}.orbit .p6{left:9%;top:67%}.orbit .p7{left:9%;top:33%}.orbit .p8{left:33%;top:9%}
+@media(max-width:860px){.orbit{position:static;width:auto;aspect-ratio:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:9px}.orbit .orbit-c{position:static;transform:none}.orbit .core-reveal{position:static;transform:none;width:min(250px,60vw);margin:2vh auto 1vh;flex-basis:100%}}
 @media(max-width:920px){.chips{grid-column:1/-1}}
 
 /* work panel */
@@ -450,27 +457,27 @@ html.has-cursor,html.has-cursor a,html.has-cursor button,html.has-cursor input{c
       <h2 class="disp"><span class="dm">Not a chatbot.</span><br>A salesperson that never sleeps.</h2>
       <p class="lead">The TradeScale Plus widget is an AI sales assistant that lives on your website, learns your entire stock car by car, and actively sells: answering, navigating, booking and capturing, every hour of every day.</p>
     </div>
-    <div class="chips rv" data-stag>
-      <span class="chip glass core t"><span class="d"></span>One widget &middot; Always selling</span>
-      <span class="chip glass"><span class="d"></span>Live stock</span>
-      <span class="chip glass t"><span class="d"></span>Car matching</span>
-      <span class="chip glass"><span class="d"></span>Site navigation</span>
-      <span class="chip glass a"><span class="d"></span>Viewings</span>
-      <span class="chip glass a"><span class="d"></span>Test drives</span>
-      <span class="chip glass t"><span class="d"></span>Finance</span>
-      <span class="chip glass"><span class="d"></span>Lead capture</span>
-      <span class="chip glass t"><span class="d"></span>Dealer dashboard</span>
-    </div>
   </div>
-  <div class="core-reveal" aria-hidden="true">
-    <img id="bgp" alt="" style="display:none">
-    <video id="bgv" autoplay muted loop playsinline preload="metadata"></video>
+  <div class="orbit-wrap rv">
+    <span class="chip glass core t orbit-title"><span class="d"></span>One widget &middot; Always selling</span>
+    <div class="orbit">
+      <div class="core-reveal" aria-hidden="true">
+        <img id="bgp" alt="" style="display:none">
+        <video id="bgv" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+      <span class="chip glass orbit-c p1"><span class="d"></span>Live stock</span>
+      <span class="chip glass t orbit-c p2"><span class="d"></span>Car matching</span>
+      <span class="chip glass orbit-c p3"><span class="d"></span>Site navigation</span>
+      <span class="chip glass a orbit-c p4"><span class="d"></span>Viewings</span>
+      <span class="chip glass a orbit-c p5"><span class="d"></span>Test drives</span>
+      <span class="chip glass t orbit-c p6"><span class="d"></span>Finance</span>
+      <span class="chip glass orbit-c p7"><span class="d"></span>Lead capture</span>
+      <span class="chip glass t orbit-c p8"><span class="d"></span>Dealer dashboard</span>
+    </div>
   </div>
 </section>
 
-<div class="band" data-veil="0.52" aria-hidden="true">
-  <div class="wrap"><p class="cap">One widget. Always selling.</p></div>
-</div>
+
 
 <section id="capabilities" data-veil="0.6">
   <div class="wrap g">
