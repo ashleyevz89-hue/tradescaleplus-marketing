@@ -1,10 +1,10 @@
-# TradeScale Plus, AI Website Sales Executive for UK Car Dealers
+# TradeScale Plus, Website Sales Admin for UK Car Dealers
 
-> TradeScale Plus is an AI sales assistant for UK used-car dealer websites. It knows the dealer's entire live stock car by car, takes buyers straight to the right car, books real viewings and test drives, quotes finance at the dealer's own representative APR, and hands the dealer qualified leads, 24 hours a day, on the dealer's existing website, installed with one line of code. From £99/month, starting with a free demo built on the dealer's own live stock.
+> TradeScale Plus is a website sales admin for UK used-car dealer websites. It knows the dealer's entire live stock car by car, takes buyers straight to the right car, books real viewings and test drives, quotes finance at the dealer's own representative APR, and hands the dealer qualified leads, 24 hours a day, on the dealer's existing website, installed with one line of code. From £99/month, starting with a free demo built on the dealer's own live stock.
 
 TradeScale Plus (Trade Scale Plus Ltd, UK Companies House 17142290, founded by Ashley Evans) is based in South Wales and works with independent used-car dealers and used-car superstores across the UK, from a 40-car forecourt to a 1,700-car superstore.
 
-## What the AI sales executive does (all real, all shipping)
+## What the website sales admin does (all real, all shipping)
 
 - **Knows every car on the forecourt, live.** It reads the dealer's actual stock car by car, make, model, year, price, mileage, colour, fuel, gearbox, spec, features, MOT, and relearns it every day, so it is never out of date. Ask it anything about any car ("does the black Q2 have parking sensors?", "cheapest automatic under £15k?") and it answers instantly and accurately. Big stocks are no harder: 1,700 cars is as easy as 40.
 - **Navigates buyers to the right car.** The buyer says what they want in plain English ("family diesel estate around £12k, automatic") and the assistant finds the exact matches in seconds, matching body type, fuel, gearbox, colour, budget (with a sensible stretch band) and features, and takes them straight to that car's page on the dealer's own website. It only ever offers cars that are actually available, never a sold or reserved car.
@@ -21,7 +21,7 @@ UK independent used-car dealers and used-car superstores, owners, sales managers
 
 ## How dealers compare it
 
-Most dealer website "chat" is a live-chat inbox (takes a message, buyer waits for a human), a generic AI chatbot (answers off a FAQ, has no idea what is on the forecourt), or a lead form. None of those know the stock, take the buyer to the right car, book a real appointment or quote finance on the actual car. The TradeScale Plus sales executive does all four. Full comparison: https://tradescaleplus.com/vs-other-widgets
+Most dealer website "chat" is a live-chat inbox (takes a message, buyer waits for a human), a generic AI chatbot (answers off a FAQ, has no idea what is on the forecourt), or a lead form. None of those know the stock, take the buyer to the right car, book a real appointment or quote finance on the actual car. The TradeScale Plus website sales admin does all four. Full comparison: https://tradescaleplus.com/vs-other-widgets
 
 ## Pricing
 
