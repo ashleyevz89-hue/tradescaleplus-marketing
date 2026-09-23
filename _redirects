@@ -1,8 +1,8 @@
 /lap https://demo.tradescaleplus.com/lap 302
 
 # 2026-09-23: the retired AI Receptionist / CRM / DMS pages, each to its closest
-# live page. The .html files are kept (Cloudflare follows the redirect anyway),
-# so undoing this is deleting these lines.
+# live page. The page files were deleted the same day (recoverable from git
+# history); these rules keep every old link landing on a live page.
 /for-dealers / 301
 /for-dealers.html / 301
 /ai-receptionist / 301
@@ -45,3 +45,26 @@
 /ai-chatbot.html /vs-other-widgets 301
 /studio /about 301
 /studio.html /about 301
+
+# 2026-09-23: the old studio pages for local web design. We no longer sell web
+# design; the files are deleted and these rules keep any old link working.
+/web-design / 301
+/web-design.html / 301
+/web-design-bridgend / 301
+/web-design-bridgend.html / 301
+/web-design-cardiff / 301
+/web-design-cardiff.html / 301
+/web-design-carmarthen / 301
+/web-design-carmarthen.html / 301
+/web-design-llanelli / 301
+/web-design-llanelli.html / 301
+/web-design-neath / 301
+/web-design-neath.html / 301
+/web-design-newport / 301
+/web-design-newport.html / 301
+/web-design-pembroke / 301
+/web-design-pembroke.html / 301
+/web-design-swansea / 301
+/web-design-swansea.html / 301
+/best-ai-studios-south-wales /about 301
+/best-ai-studios-south-wales.html /about 301
