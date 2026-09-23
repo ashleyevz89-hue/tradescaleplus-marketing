@@ -1,1 +1,47 @@
 /lap https://demo.tradescaleplus.com/lap 302
+
+# 2026-09-23: the retired AI Receptionist / CRM / DMS pages, each to its closest
+# live page. The .html files are kept (Cloudflare follows the redirect anyway),
+# so undoing this is deleting these lines.
+/for-dealers / 301
+/for-dealers.html / 301
+/ai-receptionist / 301
+/ai-receptionist.html / 301
+/voice / 301
+/voice.html / 301
+/ame / 301
+/ame.html / 301
+/ame-hq / 301
+/ame-hq.html / 301
+/aftersales / 301
+/aftersales.html / 301
+/business-automation / 301
+/business-automation.html / 301
+/missed-call-text-back / 301
+/missed-call-text-back.html / 301
+/whatsapp-business / 301
+/whatsapp-business.html / 301
+/review-management / 301
+/review-management.html / 301
+/ai-business-advisor / 301
+/ai-business-advisor.html / 301
+/ai-search-optimisation / 301
+/ai-search-optimisation.html / 301
+/custom-software / 301
+/custom-software.html / 301
+/product / 301
+/product.html / 301
+/custom-crm /lead-capture 301
+/custom-crm.html /lead-capture 301
+/pipeline /lead-capture 301
+/pipeline.html /lead-capture 301
+/inbox /lead-capture 301
+/inbox.html /lead-capture 301
+/lead-generation /lead-capture 301
+/lead-generation.html /lead-capture 301
+/stock /knows-every-car 301
+/stock.html /knows-every-car 301
+/ai-chatbot /vs-other-widgets 301
+/ai-chatbot.html /vs-other-widgets 301
+/studio /about 301
+/studio.html /about 301
