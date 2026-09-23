@@ -374,32 +374,14 @@ html.has-cursor,html.has-cursor a,html.has-cursor button,html.has-cursor input{c
   .hgrid h1{font-size:clamp(2.7rem,5.6vw,5rem)}
   @media(max-width:980px){.hgrid{grid-template-columns:1fr}.hgrid .convo{margin:16px auto 0}}
 
-  /* --- floating chat demo (glass) --- */
-  .cw-btn{position:fixed;bottom:26px;right:26px;z-index:90;width:58px;height:58px;border-radius:50%;background:var(--w);border:0;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 44px rgba(0,0,0,.5);transition:transform .3s var(--ease),background .3s;cursor:pointer}
-  .cw-btn:hover{transform:translateY(-3px);background:var(--blue)}
-  .cw-btn svg{width:24px;height:24px;stroke:#060a12;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
-  .cw-panel{position:fixed;bottom:98px;right:26px;z-index:90;width:346px;max-width:calc(100vw - 40px);border-radius:18px;opacity:0;transform:translateY(14px) scale(.97);transform-origin:bottom right;pointer-events:none;transition:opacity .35s var(--ease),transform .35s var(--ease)}
-  .cw-panel:hover{transform:translateY(14px) scale(.97)}
-  .cw-panel.open{opacity:1;transform:none;pointer-events:auto}
-  .cw-panel.open:hover{transform:none}
-  .cw-head{display:flex;align-items:center;gap:11px;padding:16px;border-bottom:1px solid var(--line)}
-  .cw-head .av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--teal));display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;color:#04101f}
-  .cw-head h5{font-size:13px;font-weight:600}
-  .cw-head small{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--teal)}
-  .cw-head .d{width:5px;height:5px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px var(--teal);animation:blink 1.8s infinite}
+  /* --- floating link to the live assistant on the sample forecourt (replaced the canned chat demo, 2026-09-23) --- */
+  .cw-live{position:fixed;bottom:26px;right:26px;z-index:90;display:inline-flex;align-items:center;gap:9px;padding:14px 20px;border-radius:999px;background:var(--w);color:#060a12;font-family:var(--sans);font-size:14px;font-weight:600;text-decoration:none;box-shadow:0 14px 44px rgba(0,0,0,.5);transition:transform .3s var(--ease),background .3s}
+  .cw-live:hover{transform:translateY(-3px);background:var(--blue)}
+  .cw-live:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+  .cw-live .d{width:7px;height:7px;border-radius:50%;background:#12a594;box-shadow:0 0 8px var(--teal);animation:blink 1.8s infinite}
   @keyframes blink{50%{opacity:.35}}
-  .cw-body{padding:16px;height:280px;overflow-y:auto;display:flex;flex-direction:column;gap:10px}
-  .cw-msg{max-width:85%;padding:10px 13px;border-radius:14px;font-size:13px;line-height:1.5}
-  .cw-msg.ai{background:rgba(255,255,255,.06);border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px;color:var(--w)}
-  .cw-msg.me{background:var(--blue);color:#04101f;align-self:flex-end;border-bottom-right-radius:4px;font-weight:500}
-  .cw-quick{display:flex;flex-wrap:wrap;gap:6px}
-  .cw-quick button{font-family:var(--sans);font-size:11.5px;color:var(--blue);background:rgba(59,158,255,.1);border:1px solid rgba(59,158,255,.3);border-radius:999px;padding:7px 12px;cursor:pointer;transition:background .25s}
-  .cw-quick button:hover{background:rgba(59,158,255,.22)}
-  .cw-foot{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line)}
-  .cw-foot input{flex:1;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:10px;padding:10px 12px;color:var(--w);font-family:var(--sans);font-size:13px;outline:none}
-  .cw-foot input:focus{border-color:var(--blue)}
-  .cw-foot button{background:var(--w);border:0;border-radius:10px;width:42px;cursor:pointer;color:#060a12;font-weight:600;font-size:16px;transition:background .25s}
-  .cw-foot button:hover{background:var(--blue)}
+  @media(max-width:420px){.cw-live{bottom:16px;right:16px;padding:12px 16px;font-size:13px}}
+  @media(prefers-reduced-motion:reduce){.cw-live{transition:none}.cw-live .d{animation:none}}
 
 </style>
 </head>
@@ -432,9 +414,9 @@ html.has-cursor,html.has-cursor a,html.has-cursor button,html.has-cursor input{c
       <p class="hsub rv">It knows every car you&rsquo;ve got, takes buyers straight to the right one, books the viewing and hands you the lead. On your website, on a code in every windscreen so people buy off your forecourt when you are shut, and for your own sales team when they need an answer fast.</p>
       <div class="hcta rv">
         <a href="book-demo.html" class="btn">See it on your own stock &middot; free demo</a>
-        <a href="tel:07346305893" class="tlink">Call 07346 305893 <span class="c" aria-hidden="true">&rarr;</span></a>
+        <a href="https://demo.tradescaleplus.com/lot/tradescale-motors" class="tlink" target="_blank" rel="noopener">Try it live now <span class="c" aria-hidden="true">&rarr;</span></a>
       </div>
-      <span class="hnote rv">Free demo, built on your real, live stock. No obligation. Or email <a href="mailto:ash@tradescaleplus.com" style="color:var(--blue)">ash@tradescaleplus.com</a>.</span>
+      <span class="hnote rv">Try the real assistant on TradeScale Motors, our sample forecourt, or get a free demo built on your own live stock. No obligation. Or call <a href="tel:07346305893" style="color:var(--blue)">07346 305893</a>.</span>
     </div>
     <div class="glass convo rv" role="img" aria-label="Example conversation: the assistant greets a buyer on the Audi A1 page, answers from live stock and books a test drive for Saturday at 10:30">
       <div class="cv-head"><div class="av" aria-hidden="true">AI</div><div><h5>Your Website Sales Admin</h5><small><span class="d"></span>Live on your website</small></div></div>
@@ -717,15 +699,7 @@ html.has-cursor,html.has-cursor a,html.has-cursor button,html.has-cursor input{c
 
 </div>
 
-<button class="cw-btn" id="cwBtn" aria-label="Open chat demo"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></button>
-<div class="cw-panel glass" id="cwPanel" aria-hidden="true">
-  <div class="cw-head"><div class="av">TS</div><div><h5>TradeScale assistant</h5><small><span class="d"></span>Scripted demo</small></div></div>
-  <div class="cw-body" id="cwBody">
-    <div class="cw-msg ai">Hi! I'm a scripted demo. The real assistant learns your actual stock and sells on your website. Ask away, or pick an option.</div>
-    <div class="cw-quick"><button data-q="What does the assistant do?">What does it do?</button><button data-q="Does it know my stock?">Does it know my stock?</button><button data-q="How much does it cost?">How much?</button><button data-q="Book a free demo">Book a free demo</button></div>
-  </div>
-  <div class="cw-foot"><input id="cwInput" type="text" placeholder="Type a message..." aria-label="Message"><button id="cwSend" aria-label="Send">&rarr;</button></div>
-</div>
+<a class="cw-live" href="https://demo.tradescaleplus.com/lot/tradescale-motors" target="_blank" rel="noopener"><span class="d" aria-hidden="true"></span>Try the live assistant</a>
 
 <script>
 (function(){
@@ -833,42 +807,6 @@ function loop(){
 }
 if(!reduce)requestAnimationFrame(loop);
 
-/* ---------- scripted chat demo ---------- */
-var btn=document.getElementById("cwBtn"),panel=document.getElementById("cwPanel"),body=document.getElementById("cwBody"),input=document.getElementById("cwInput"),send=document.getElementById("cwSend");
-function toggle(){panel.classList.toggle("open");if(panel.classList.contains("open")){setTimeout(function(){input.focus();},200);}}
-if(btn)btn.addEventListener("click",toggle);
-function add(text,who){var d=document.createElement("div");d.className="cw-msg "+who;d.textContent=text;body.appendChild(d);body.scrollTop=body.scrollHeight;}
-function addLinks(links){
-  var d=document.createElement("div");d.className="cw-msg ai";
-  links.forEach(function(l,i){
-    if(i>0)d.appendChild(document.createTextNode(" \u00b7 "));
-    var a=document.createElement("a");a.href=l[0];a.textContent=l[1];a.style.color="#3b9eff";a.style.textDecoration="underline";
-    d.appendChild(a);
-  });
-  body.appendChild(d);body.scrollTop=body.scrollHeight;
-}
-var DEMO=[["book-demo.html","Book a free demo"],["tel:07346305893","Call 07346 305893"],["mailto:ash@tradescaleplus.com","Email"]];
-function reply(q){var s=q.toLowerCase(),r,links=null;
-  if(s.indexOf("@")>-1){r="So nothing gets lost: I'm a scripted demo and can't store messages. Use a link below and Ashley will reply personally.";links=DEMO;}
-  else if(s.indexOf("demo")>-1||s.indexOf("book")>-1||s.indexOf("try")>-1||s.indexOf("trial")>-1){r="Brilliant. We build the free demo on your real, live stock, so you can ask it about your own cars before deciding anything. Pick a link below.";links=DEMO;}
-  else if(s.indexOf("price")>-1||s.indexOf("cost")>-1||s.indexOf("how much")>-1||s.indexOf("\u00a3")>-1){r="From \u00a399 up to \u00a3599 a month, depending on your stock and volume. Every plan is the full product, and you get your exact figure with the free demo.";links=[["pricing.html","See pricing"],["book-demo.html","Book the free demo"]];}
-  else if(s.indexOf("stock")>-1||s.indexOf("my cars")>-1||s.indexOf("know")>-1){r="Yes. The real assistant reads your live stock car by car, spec, price, mileage, features, MOT, and relearns it every day. Ask it \u201cdoes the black Q2 have parking sensors?\u201d and it answers accurately. It never offers a sold or reserved car.";links=[["knows-every-car.html","How the stock intelligence works"]];}
-  else if(s.indexOf("find")>-1||s.indexOf("navigat")>-1||s.indexOf("search")>-1||s.indexOf("filter")>-1||s.indexOf("superstore")>-1||s.indexOf("big site")>-1){r="Buyers just say what they want, like \u201cfamily diesel estate around \u00a312k, automatic\u201d, and the assistant finds the exact matches in your live stock and takes them straight to that car's page. Built for superstore-scale sites.";links=[["website-navigation.html","How car matching works"],["for-superstores.html","For superstores"]];}
-  else if(s.indexOf("test drive")>-1||s.indexOf("viewing")>-1||s.indexOf("appointment")>-1||s.indexOf("book")>-1){r="It books real viewings and test drives at actual dates and times, checked against your opening hours, and emails you the booking with the car and the customer's details.";links=[["appointment-booking.html","How bookings work"]];}
-  else if(s.indexOf("finance")>-1||s.indexOf("apr")>-1||s.indexOf("monthly")>-1){r="It gives a representative finance illustration at your own real APR, tied to the exact car the buyer is viewing, never an invented rate.";links=[["finance.html","How finance works"]];}
-  else if(s.indexOf("lead")>-1||s.indexOf("capture")>-1||s.indexOf("enquir")>-1){r="On a car's page it proactively opens naming that exact car, then warmly captures the buyer's name, mobile and email the moment they show real interest. Every lead lands in your inbox with the car and a chat summary.";links=[["lead-capture.html","How lead capture works"]];}
-  else if(s.indexOf("chatbot")>-1||s.indexOf("live chat")>-1||s.indexOf("compare")>-1||s.indexOf("different")>-1||s.indexOf("vs")>-1){r="Live chat takes messages. Generic chatbots answer off a FAQ and don't know your forecourt. This one reads your live stock, navigates buyers to the exact car, books real appointments and quotes finance at your APR.";links=[["vs-other-widgets.html","See the full comparison"]];}
-  else if(s.indexOf("install")>-1||s.indexOf("code")>-1||s.indexOf("website")>-1||s.indexOf("platform")>-1){r="Two lines of code on any dealer website, in your own branding and name. Nothing for your team to maintain, and it relearns your stock daily.";links=[["faq.html","More in the FAQs"]];}
-  else if(s.indexOf("login")>-1||s.indexOf("dashboard")>-1){r="Your dealer dashboard shows every conversation, the cars people are chatting about, and every lead with one-tap call and email.";links=[["https://demo.tradescaleplus.com/app/login?next=/app/widget","Dealer login"]];}
-  else if(s.indexOf("what")>-1||s.indexOf("assistant")>-1||s.indexOf("do")>-1){r="TradeScale Plus is a website sales admin for your dealer website: it knows your entire live stock car by car, takes buyers straight to the right car, books real viewings and test drives, quotes finance at your APR and hands you qualified leads, 24/7.";links=[["book-demo.html","See it on your own stock"]];}
-  else{r="Good question. I'm only a scripted taste; the real thing answers from your actual live stock. The best next step is the free demo, built on your own cars.";links=DEMO;}
-  setTimeout(function(){add(r,"ai");if(links)addLinks(links);},650);}
-function submit(text){if(!text||!text.trim())return;add(text,"me");if(input)input.value="";reply(text);}
-if(send)send.addEventListener("click",function(){submit(input.value);});
-if(input)input.addEventListener("keydown",function(e){if(e.key==="Enter")submit(input.value);});
-Array.prototype.forEach.call(document.querySelectorAll(".cw-quick button"),function(b){
-  b.addEventListener("click",function(){submit(b.getAttribute("data-q"));});
-});
 })();
 </script>
 </body>
