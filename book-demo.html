@@ -535,7 +535,7 @@ f.addEventListener("submit",function(e){
     .then(function(r){return r.json().catch(function(){return{ok:r.ok};});})
     .then(function(d){
       if(d&&d.ok){
-        f.innerHTML='<div style="text-align:center;padding:26px 0"><h3 style="margin:0 0 10px">Thanks, '+(name.split(" ")[0]||"")+' \u2014 got it.</h3><p style="color:var(--mut);font-size:14px;line-height:1.8">We\u2019ll be in touch to build your free demo on '+(dealer||"your dealership")+'\u2019s live stock. Prefer to talk now? Call <a href="tel:07346305893" style="color:var(--blue)">07346 305893</a>.</p></div>';
+        f.innerHTML='<div style="text-align:center;padding:26px 0"><h3 style="margin:0 0 10px">Thanks, '+(name.split(" ")[0]||"")+', got it.</h3><p style="color:var(--mut);font-size:14px;line-height:1.8">We\u2019ll be in touch to build your free demo on '+(dealer||"your dealership")+'\u2019s live stock. Prefer to talk now? Call <a href="tel:07346305893" style="color:var(--blue)">07346 305893</a>.</p></div>';
       } else { throw new Error((d&&d.error)||"failed"); }
     })
     .catch(function(){
