@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- The Website Sales Admin for UK car dealers -->
-  <url><loc>https://tradescaleplus.com/</loc><lastmod>2026-10-02</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://tradescaleplus.com/</loc><lastmod>2026-10-07</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://tradescaleplus.com/knows-every-car</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tradescaleplus.com/website-navigation</loc><lastmod>2026-10-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tradescaleplus.com/forecourt-cards</loc><lastmod>2026-10-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
@@ -13,6 +13,6 @@
   <url><loc>https://tradescaleplus.com/pricing</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tradescaleplus.com/about</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tradescaleplus.com/book-demo</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
-  <url><loc>https://tradescaleplus.com/faq</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tradescaleplus.com/faq</loc><lastmod>2026-10-07</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tradescaleplus.com/contact</loc><lastmod>2026-10-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
