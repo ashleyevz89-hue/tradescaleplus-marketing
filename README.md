@@ -1,10 +1,13 @@
 # tradescaleplus-marketing
 
-Marketing site for **TradeScale Plus** — the AI sales admin for UK indie used-car dealers.
+Marketing site for **TradeScale Plus**: the AI website sales admin for UK used-car dealers. It knows the dealer's live
+stock, finds buyers the right car, answers questions about each car, gives finance illustrations at the dealer's own
+APR, books viewings and test drives, and passes the leads to the dealer. One product; the earlier voice receptionist,
+CRM and "AME" pages are retired and redirect to the homepage (`_redirects`).
 
 - **Live at:** https://tradescaleplus.com
 - **Host:** Cloudflare Pages (auto-deploy on push to `main`)
-- **Stack:** Static HTML/CSS/JS — no build step
+- **Stack:** Static HTML/CSS/JS, no build step
 
 ## Pages
 
@@ -13,18 +16,20 @@ Marketing site for **TradeScale Plus** — the AI sales admin for UK indie used-
 | Homepage | `index.html` |
 | Pricing | `pricing.html` |
 | Book a demo | `book-demo.html` |
-| Voice receptionist | `voice.html` |
-| Multi-channel inbox | `inbox.html` |
-| Pipeline + customer journey | `pipeline.html` |
-| Stock | `stock.html` |
-| Aftersales | `aftersales.html` |
-| AME HQ (control centre) | `ame-hq.html` |
-| For dealers / About | `for-dealers.html` |
+| Knows every car | `knows-every-car.html` |
+| Finance | `finance.html` |
+| Appointment booking | `appointment-booking.html` |
+| Lead capture | `lead-capture.html` |
+| Website navigation | `website-navigation.html` |
+| Forecourt cards | `forecourt-cards.html` |
+| For superstores | `for-superstores.html` |
+| Compared with other widgets | `vs-other-widgets.html` |
+| About | `about.html` |
 | FAQ | `faq.html` |
 | Contact | `contact.html` |
 
 ## Shared assets
 
-- `assets/favicon.svg` — brand mark
-- `assets/mobile-nav.css` + `assets/mobile-nav.js` — hamburger + drawer
-- `sitemap.xml`, `robots.txt`, `llms.txt` — SEO + AI-engine discoverability
+- `assets/favicon.svg`: brand mark
+- `assets/mobile-nav.css` + `assets/mobile-nav.js`: hamburger and drawer
+- `sitemap.xml`, `robots.txt`, `llms.txt`: SEO and AI-engine discoverability
