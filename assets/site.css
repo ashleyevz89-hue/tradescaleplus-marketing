@@ -330,3 +330,53 @@ html.has-cursor,html.has-cursor a,html.has-cursor button,html.has-cursor input{c
 .fcol{display:flex;flex-direction:column;min-width:170px}
 .fh{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:10px;font-weight:600}
 .fl{color:var(--mut);font-size:13px;line-height:1.9}
+
+/* ---------- PHONES: the mobile pass (every rule for small screens that is not a page's own) ---------- */
+/* No sideways wobble: the hero's moving background is drawn a little larger than the screen. */
+html{overflow-x:hidden;overflow-x:clip}
+@media(max-width:820px){
+  /* a form box under 16px makes an iPhone zoom the whole page when it is tapped */
+  .form input,.form select,.form textarea{font-size:16px}
+  /* everything tapped is at least 44px tall, the size a thumb needs */
+  #nav .nlinks a.tel,#nav .nlinks .go{min-height:44px;display:inline-flex;align-items:center}
+  .tlink{min-height:44px;font-size:14px}
+  /* the breadcrumb's links: a full-height tap, the line itself unchanged */
+  .crumb{font-size:13px;margin-bottom:18px}
+  .crumb a{display:inline-block;padding:12px 0}
+  /* the footer's links two columns across, each a full-height tap */
+  .fcols{gap:22px 18px}
+  .fcol{min-width:0;flex:1 1 140px}
+  .fl{padding:11px 0;line-height:1.35;font-size:14px}
+  /* the smallest words a touch larger */
+  .hnote{font-size:13px}
+  .cv-note{font-size:12px}
+  footer .meta{font-size:13px}
+  .chip{font-size:13px}
+  /* the section labels and the top bar's buttons readable at arm's length */
+  .kick,.hkick,.fh{font-size:12px}
+  #nav .nlinks a.tel,#nav .nlinks .go{font-size:13px}
+}
+@media(max-width:640px){
+  /* the comparison table: each row a card, its column names from the table's own headings (data-label) */
+  .cmpwrap{overflow-x:visible}
+  .cmpwrap .cmp-inner{min-width:0;padding:2px 4px 6px}
+  table.cmp,.cmp tbody,.cmp tr,.cmp th,.cmp td{display:block}
+  .cmp thead{display:none}
+  .cmp tbody tr{padding:16px 12px;border-bottom:1px solid var(--line)}
+  .cmp tbody tr:last-child{border-bottom:0}
+  .cmp th,.cmp td{border-bottom:0;padding:0}
+  .cmp tbody th{min-width:0;font-size:15px;margin-bottom:10px}
+  .cmp td{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:5px 0;font-size:13.5px}
+  .cmp td::before{content:attr(data-label);color:var(--dim);flex:none}
+  .cmp td>span{text-align:right}
+  .cmp td.us{padding:8px 10px;margin:0 -10px 4px;border-radius:10px}
+  .cmp td.us::before{color:var(--teal);font-weight:600}
+}
+@media(max-width:560px){
+  /* the dashboard preview: one tile to a row, so its big words fit */
+  .dtiles{grid-template-columns:1fr}
+  .dtile{padding:14px 16px}
+  .dtile b{font-size:22px}
+  .dtile small{font-size:12px}
+  .dash .dh small{font-size:11.5px}
+}

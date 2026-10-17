@@ -60,7 +60,7 @@
   .cw-live .d{width:7px;height:7px;border-radius:50%;background:#12a594;box-shadow:0 0 8px var(--teal);animation:blink 1.8s infinite}
   @keyframes blink{50%{opacity:.35}}
   @media(max-width:420px){.cw-live{bottom:16px;right:16px;padding:12px 16px;font-size:13px}}
-  @media(max-width:820px){.cw-live{transition:transform .3s var(--ease),background .3s,opacity .3s,visibility .3s}.cw-live.away{opacity:0;visibility:hidden;transform:translateY(12px)}}
+  @media(max-width:820px){.cw-live{transition:transform .3s var(--ease),background .3s,opacity .3s,visibility .3s}.cw-live.away,.cw-live.tuck{opacity:0;visibility:hidden;transform:translateY(12px)}}
   @media(prefers-reduced-motion:reduce){.cw-live{transition:none}.cw-live .d{animation:none}}
 </style>
 </head>
@@ -294,12 +294,12 @@
     <div class="glass cmpwrap rv"><div class="cmp-inner"><table class="cmp">
       <thead><tr><th scope="col">What a buyer needs</th><th scope="col" class="us">TradeScale Plus</th><th scope="col">Live chat</th><th scope="col">Generic chatbot</th><th scope="col">Lead form</th></tr></thead>
       <tbody>
-        <tr><th scope="row">Knows your live stock</th><td class="us"><span class="y">Yes, daily</span></td><td><span class="n">When staffed</span></td><td><span class="n">No</span></td><td><span class="n">No</span></td></tr>
-        <tr><th scope="row">Takes buyers to the right car</th><td class="us"><span class="y">Yes</span></td><td><span class="n">When staffed</span></td><td><span class="n">No</span></td><td><span class="n">No</span></td></tr>
-        <tr><th scope="row">Books real viewings &amp; test drives</th><td class="us"><span class="y">Yes, real times</span></td><td><span class="n">When staffed</span></td><td><span class="n">No</span></td><td><span class="n">No</span></td></tr>
-        <tr><th scope="row">Finance on the actual car</th><td class="us"><span class="y">Yes, your APR</span></td><td><span class="n">When staffed</span></td><td><span class="n">No</span></td><td><span class="n">No</span></td></tr>
-        <tr><th scope="row">Full strength out of hours</th><td class="us"><span class="y">Yes, 24/7</span></td><td><span class="n">Takes a message</span></td><td><span class="n">Partly</span></td><td><span class="n">It's a form</span></td></tr>
-        <tr><th scope="row">Qualified leads with context</th><td class="us"><span class="y">Yes, car + summary</span></td><td><span class="n">A transcript</span></td><td><span class="n">Rarely</span></td><td><span class="n">Details only</span></td></tr>
+        <tr><th scope="row">Knows your live stock</th><td class="us" data-label="TradeScale Plus"><span class="y">Yes, daily</span></td><td data-label="Live chat"><span class="n">When staffed</span></td><td data-label="Generic chatbot"><span class="n">No</span></td><td data-label="Lead form"><span class="n">No</span></td></tr>
+        <tr><th scope="row">Takes buyers to the right car</th><td class="us" data-label="TradeScale Plus"><span class="y">Yes</span></td><td data-label="Live chat"><span class="n">When staffed</span></td><td data-label="Generic chatbot"><span class="n">No</span></td><td data-label="Lead form"><span class="n">No</span></td></tr>
+        <tr><th scope="row">Books real viewings &amp; test drives</th><td class="us" data-label="TradeScale Plus"><span class="y">Yes, real times</span></td><td data-label="Live chat"><span class="n">When staffed</span></td><td data-label="Generic chatbot"><span class="n">No</span></td><td data-label="Lead form"><span class="n">No</span></td></tr>
+        <tr><th scope="row">Finance on the actual car</th><td class="us" data-label="TradeScale Plus"><span class="y">Yes, your APR</span></td><td data-label="Live chat"><span class="n">When staffed</span></td><td data-label="Generic chatbot"><span class="n">No</span></td><td data-label="Lead form"><span class="n">No</span></td></tr>
+        <tr><th scope="row">Full strength out of hours</th><td class="us" data-label="TradeScale Plus"><span class="y">Yes, 24/7</span></td><td data-label="Live chat"><span class="n">Takes a message</span></td><td data-label="Generic chatbot"><span class="n">Partly</span></td><td data-label="Lead form"><span class="n">It's a form</span></td></tr>
+        <tr><th scope="row">Qualified leads with context</th><td class="us" data-label="TradeScale Plus"><span class="y">Yes, car + summary</span></td><td data-label="Live chat"><span class="n">A transcript</span></td><td data-label="Generic chatbot"><span class="n">Rarely</span></td><td data-label="Lead form"><span class="n">Details only</span></td></tr>
       </tbody>
     </table></div></div>
     <div class="head-r rv" style="margin-top:34px"><p class="lead" style="margin-top:0"><a class="tlink" href="vs-other-widgets.html">The full comparison <span class="c" aria-hidden="true">&rarr;</span></a></p></div>
@@ -489,6 +489,9 @@ if(!reduce)requestAnimationFrame(loop);
 /* ---------- floating "try the live assistant": on phones it waits for the hero (which has the same link) to scroll away ---------- */
 var live=document.querySelector(".cw-live"),hero=document.getElementById("top");
 if(live&&hero&&"IntersectionObserver" in window){new IntersectionObserver(function(en){live.classList.toggle("away",en[0].isIntersecting);}).observe(hero);}
+/* and on phones it tucks away while the reader scrolls down, so it never sits over what they are reading; a scroll
+   up, or the end of the page, brings it back */
+if(live&&window.matchMedia&&matchMedia("(max-width:820px)").matches){var lastY=scrollY;addEventListener("scroll",function(){var y=scrollY,end=y+innerHeight>=document.documentElement.scrollHeight-120;if(end||y<lastY-6)live.classList.remove("tuck");else if(y>lastY+6)live.classList.add("tuck");lastY=y;},{passive:true});}
 })();
 </script>
 </body>
