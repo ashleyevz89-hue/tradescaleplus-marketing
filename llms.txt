@@ -56,10 +56,15 @@ From £99 per month, priced to the dealer's forecourt size. Every plan is the fu
 - Lead capture: https://tradescaleplus.com/lead-capture
 - Finance illustrations: https://tradescaleplus.com/finance
 - vs live chat, chatbots & lead forms: https://tradescaleplus.com/vs-other-widgets
+- Get your stock into ChatGPT and AI search: https://tradescaleplus.com/ai-search
+- Can you trust AI on your forecourt?: https://tradescaleplus.com/trust
+- AI and car finance, what it will and won't say: https://tradescaleplus.com/ai-finance
 - For used-car superstores: https://tradescaleplus.com/for-superstores
 - Pricing: https://tradescaleplus.com/pricing
 - Book a free demo: https://tradescaleplus.com/book-demo
 - FAQ: https://tradescaleplus.com/faq
 - Contact: https://tradescaleplus.com/contact
 
-We also build bespoke AI systems on request.
+## Readable by AI
+
+Each dealer's stock is readable by AI as well as by people: car data in the schema.org format on every car page, a stock connector built on MCP that AI apps can use to search the cars, check one is available, ask about it and book a test drive, and the same tools for AI agents browsing the dealer's pages. All of it comes from the dealer's own published stock. https://tradescaleplus.com/ai-search
