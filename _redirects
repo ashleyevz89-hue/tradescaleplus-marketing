@@ -71,3 +71,6 @@
 
 # 2026-10-02: README.md is the repo's notes, not a page. Keep it off the public site.
 /README.md / 301
+
+# 2026-10-21: browsers and crawlers ask for /favicon.ico at the root; the icon lives in /assets.
+/favicon.ico /assets/favicon.ico 200
