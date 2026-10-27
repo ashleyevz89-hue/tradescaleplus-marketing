@@ -1,6 +1,6 @@
 # TradeScale Plus, AI Live Chat and Website Sales Admin for UK Car Dealers
 
-> TradeScale Plus is a website sales admin for UK used-car dealer websites. It knows the dealer's entire live stock car by car, takes buyers straight to the right car, books real viewings and test drives, quotes finance at the dealer's own representative APR, and hands the dealer qualified leads, 24 hours a day, on the dealer's existing website, installed with two lines of code. From £99/month, starting with a free demo built on the dealer's own live stock.
+> TradeScale Plus is a website sales admin for UK used-car dealer websites. It knows the dealer's entire live stock car by car, takes buyers straight to the right car, books real viewings and test drives, quotes finance at the dealer's own representative APR, and hands the dealer qualified leads, 24 hours a day, on the dealer's existing website, installed with two lines of code. From £299/month, starting with a free demo built on the dealer's own live stock.
 
 Also described as: AI live chat for car dealers, an AI chatbot for car dealerships, or an AI sales assistant or AI sales agent for used-car dealers.
 
@@ -25,7 +25,7 @@ It never answers from memory: everything it says about a car comes from the deal
 
 - **Is TradeScale Plus an AI live chat for car dealers?** Yes, and it goes further than live chat. It sits on your own website like live chat does, but where live chat takes a message for someone to answer later, it answers there and then from your live stock: the car, the price, the mileage, the finance at your own APR. Then it books the viewing or test drive and sends you the buyer's details. You may see it called an AI chatbot or an AI sales assistant for car dealers; we call it a website sales admin, because that is the job it does.
 - **What happens if the AI gets something wrong?** We don't trust the AI with facts, so it never answers from memory. Everything it says about a car comes from your own stock, and every answer is checked in code before your buyer sees it. A car that isn't in your stock is never offered, and a reserved car is never offered as available. A car's price, mileage, gearbox, fuel and running costs are checked against that car's own listing. Finance figures come from a calculator at your own APR, to the penny, with the full representative example, and any monthly figure that didn't come from it is taken out. You confirm each booking with one tap, and you can read every conversation in your dashboard.
-- **How much does AI live chat cost for a car dealer?** From £99 to £599 a month, depending on how many cars you have in stock. Every plan is the full product: live stock knowledge, test drive booking, finance at your APR, lead capture and your dashboard. Start with a free demo built on your own stock.
+- **How much does AI live chat cost for a car dealer?** From £299 to £599 a month, depending on how many cars you have in stock. Every plan is the full product: live stock knowledge, test drive booking, finance at your APR, lead capture and your dashboard. Start with a free demo built on your own stock.
 - **Does it work out of hours?** Yes. It answers 24 hours a day, so the buyer browsing at 10pm gets the same answers as one on a Saturday morning. A booking made out of hours goes into your next opening hours, and the lead is waiting for you in the morning.
 
 ## Who it is for
@@ -38,7 +38,7 @@ Most dealer website "chat" is a live-chat inbox (takes a message, buyer waits fo
 
 ## Pricing
 
-From £99 per month, priced to the dealer's forecourt size. Every plan is the full product. It starts with a free, no-obligation demo built on the dealer's own live stock: https://tradescaleplus.com/book-demo
+From £299 per month, priced to the dealer's forecourt size. Every plan is the full product. It starts with a free, no-obligation demo built on the dealer's own live stock: https://tradescaleplus.com/book-demo
 
 ## Contact
 
