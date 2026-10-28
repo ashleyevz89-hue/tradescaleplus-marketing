@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Guard: Visible to Genuine AI, Guarded from Malicious AI | TradeScale Plus</title>
+<meta name="description" content="A monthly service for any business: makes your website readable by ChatGPT, Claude, Perplexity and Google, guards it from malicious AI, adds a Website Agent and reports every month. Score your site free.">
+<link rel="canonical" href="https://tradescaleplus.com/ai-guard">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tradescaleplus.com/ai-guard">
+<meta property="og:site_name" content="TradeScale Plus">
+<meta property="og:title" content="AI Guard: visible to genuine AI, guarded from malicious AI">
+<meta property="og:description" content="Make your website readable by AI assistants, guard it from fake crawlers and scrapers, and get a report every month. One DNS change, done for you.">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI Guard: visible to genuine AI, guarded from malicious AI">
+<meta name="twitter:description" content="Make your website readable by AI assistants, guard it from fake crawlers and scrapers, and get a report every month.">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Service","@id":"https://tradescaleplus.com/ai-guard#service","name":"AI Guard","serviceType":"Managed AI visibility and protection for business websites","url":"https://tradescaleplus.com/ai-guard","provider":{"@type":"Organization","@id":"https://tradescaleplus.com/#business","name":"TradeScale Plus","url":"https://tradescaleplus.com/"},"description":"A monthly service that makes a business website readable by AI assistants such as ChatGPT, Claude, Perplexity and Google from a managed layer on the business's own domain, kept in step with the website by a daily read. It guards the website from malicious AI: genuine AI crawlers are verified and let in, impersonators and mass scrapers are blocked, training crawlers are allowed or refused as the owner chooses, and AI agents spamming forms are caught. It adds a Website Agent that knows the whole site, answers visitors and takes callbacks and bookings, and sends a monthly report. It is installed with one DNS change, made for the business."},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does AI Guard change my website for visitors?","acceptedAnswer":{"@type":"Answer","text":"No. Your pages look and work for people as they do now. The changes are underneath: in the code your pages arrive with, and in the files AI looks for, such as llms.txt and your sitemap. The one new thing visitors see is the Website Agent."}},{"@type":"Question","name":"Can I switch AI Guard off?","acceptedAnswer":{"@type":"Answer","text":"Yes. Turning it off is the same DNS change undone, and your website goes back to working exactly as it did before."}},{"@type":"Question","name":"Does AI Guard work with my web host?","acceptedAnswer":{"@type":"Answer","text":"AI Guard sits in front of your website rather than inside it, so it is built to work whatever your site is built on and wherever it is hosted. It needs one change to your domain's DNS settings, which we make for you. Before anything changes, we check your setup and tell you if anything stands in the way."}},{"@type":"Question","name":"Will AI recommend my business?","acceptedAnswer":{"@type":"Answer","text":"No one can promise that. AI assistants choose their own answers. What AI Guard does is make sure AI can read you: your words, what you offer and where to find it, kept up to date every day, so that when someone asks about what you do, AI can include you."}}]}]}
+</script>
+<script>document.documentElement.className="js";</script>
+<script>(function(){try{var t=localStorage.getItem("tsp-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
+<link rel="stylesheet" href="/assets/site.css?v=2">
+<style>
+/* this page only (the shared rules, colours and both themes: /assets/site.css) */
+/* the hero: the site's page header, with the illustrative panel beside it */
+.ph.guard h1{font-size:clamp(2.4rem,5vw,4.4rem);max-width:20ch}
+.ph.guard .hnote{max-width:54ch}
+.hgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:clamp(32px,4vw,64px);align-items:center}
+@media(max-width:980px){.hgrid{grid-template-columns:1fr}.hgrid .door{margin:16px auto 0}}
+
+/* the door: an illustrative panel, built on the site's conversation vignette (.cv-head, .cv-note) */
+.door{max-width:440px;width:100%;padding:0;text-align:left}
+.door:hover{transform:none}
+.door .cv-head h2{font-size:13px;font-weight:600;line-height:1.4}
+.dr-rows{list-style:none;padding:4px 16px 8px}
+.dr-rows li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px}
+.dr-rows li:last-child{border-bottom:0}
+.dr-rows li>div{min-width:0}
+.dr-rows b{display:block;font-weight:600;color:var(--w);overflow-wrap:anywhere}
+.dr-rows span{display:block;color:var(--mut);font-size:12px;line-height:1.45}
+.dr-rows em{flex:none;font-style:normal;font-size:11px;font-weight:600;letter-spacing:.04em;padding:4px 10px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
+.dr-rows em.in{color:var(--teal)}
+.dr-rows em.ch{color:var(--amber)}
+.dr-rows em.out{color:var(--red)}
+
+/* the problem: each card's colour bar */
+.card .bar{display:block;width:28px;height:3px;border-radius:9px;background:var(--blue)}
+.c-teal .bar{background:var(--teal)}.c-amber .bar{background:var(--amber)}
+
+/* what you get: the four parts */
+.parts{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:48px}
+.part{padding:clamp(26px,3vw,36px) clamp(22px,3vw,34px)}
+.part .n{font-family:var(--disp);font-weight:700;font-size:clamp(2rem,3vw,2.7rem);line-height:1;letter-spacing:-.03em;color:var(--blue);font-variant-numeric:tabular-nums}
+.part.c-teal .n{color:var(--teal)}.part.c-amber .n{color:var(--amber)}
+.part h3{font-size:17px;margin-top:20px}
+.part p{font-size:14px}
+.part ul{list-style:none;margin-top:18px}
+.part li{font-size:13.5px;color:var(--sub);line-height:1.6;padding:10px 0 10px 26px;position:relative;border-top:1px solid var(--line)}
+.part li::before{content:"\2192";position:absolute;left:0;color:var(--blue)}
+.part.c-teal li::before{color:var(--teal)}.part.c-amber li::before{color:var(--amber)}
+@media(max-width:760px){.parts{grid-template-columns:1fr}}
+
+/* who it is for: the chips centred under the heading */
+#who .chips{grid-column:1/-1;justify-content:center}
+
+/* questions */
+.faqs .faq p+p{margin-top:10px}
+.faq-end{margin-top:34px}
+
+/* the call to action */
+#score{padding:12vh 0}
+#score h2{font-family:var(--disp);font-weight:700;font-size:clamp(3rem,7.4vw,5.8rem);line-height:.97;letter-spacing:-.04em;max-width:12ch}
+#score .lead+.lead{margin-top:14px}
+#score .meta{font-size:12px;color:var(--dim);margin-top:22px}
+
+/* phones: the hero and call-to-action buttons full width */
+@media(max-width:620px){
+  .ctarow .btn,.hcta .btn{width:100%;justify-content:center}
+  .hcta{gap:14px}
+}
+</style>
+</head>
+<body>
+<div class="veil" id="veil" aria-hidden="true"></div>
+<div class="hexbg" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<div class="content">
+
+<nav id="nav"><div class="wrap">
+  <a class="brand" href="index.html">TradeScale<b>+</b></a>
+  <div class="nlinks">
+    <a href="index.html">Home</a>
+    <a href="index.html#features">Features</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="about.html">About</a>
+    <button type="button" class="theme" aria-label="Switch to light theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+    <a class="tel" href="tel:07346305893">Call us</a>
+    <a href="https://demo.tradescaleplus.com/app/login?next=/app/widget">Dealer Login</a>
+    <a href="book-demo.html" class="go">Book a demo</a>
+  </div>
+</div></nav>
+
+<header class="ph guard" id="top" data-veil="0.5">
+  <div class="wrap hgrid">
+    <div>
+      <p class="crumb rv"><a href="index.html">Home</a><span>/</span>AI Guard</p>
+      <p class="hkick rv"><span class="d"></span>AI Guard &middot; For any business, in any country</p>
+      <h1 class="rv">Visible to genuine AI.<br><span class="dm">Guarded from malicious AI.</span></h1>
+      <p class="hsub rv">A monthly service that makes your website readable by AI assistants like ChatGPT, Claude, Perplexity and Google, guards it from malicious AI, adds a Website Agent that knows your whole site, and reports back every month. Turning it on is one DNS change, and we make it for you.</p>
+      <div class="hcta rv">
+        <a href="ai-score.html" class="btn">Score your site free</a>
+        <a href="mailto:ash@tradescaleplus.com?subject=AI%20Guard%3A%20one%20of%20the%20first%20businesses" class="tlink">Ask to be one of the first <span class="c" aria-hidden="true">&rarr;</span></a>
+      </div>
+      <span class="hnote rv">AI Guard is opening to its first businesses now, and we set each one up by hand. Start with the free score: no sign-up, and a score out of 100 in a few seconds, with what AI can and cannot read about your business.</span>
+    </div>
+    <div class="glass door rv" role="img" aria-label="Illustrative example of AI Guard at a website's door: ChatGPT search, Claude search and Perplexity crawlers verified and let in; a training crawler set by the owner's choice; a fake Googlebot and a mass scraper blocked; an AI agent spamming the contact form caught">
+      <div class="cv-head"><div class="av" aria-hidden="true">AI</div><div><h2>AI Guard on your domain</h2><small><span class="d"></span>Genuine AI in, fakes out</small></div></div>
+      <ul class="dr-rows">
+        <li><div><b>OAI-SearchBot</b><span>ChatGPT search</span></div><em class="in">Verified, let in</em></li>
+        <li><div><b>Googlebot</b><span>Google Search and AI Overviews</span></div><em class="in">Verified, let in</em></li>
+        <li><div><b>PerplexityBot</b><span>Perplexity answers</span></div><em class="in">Verified, let in</em></li>
+        <li><div><b>GPTBot</b><span>OpenAI model training</span></div><em class="ch">Your choice</em></li>
+        <li><div><b>&ldquo;Googlebot&rdquo;</b><span>Not from Google&rsquo;s addresses</span></div><em class="out">Blocked</em></li>
+        <li><div><b>Mass scraper</b><span>Copying every page</span></div><em class="out">Blocked</em></li>
+        <li><div><b>AI agent</b><span>Your contact form, again and again</span></div><em class="out">Caught</em></li>
+      </ul>
+      <p class="cv-note">Illustrative example, not a real log.</p>
+    </div>
+  </div>
+</header>
+
+<section id="problem" data-veil="0.6">
+  <div class="wrap g">
+    <div class="head-l rv">
+      <p class="kick">The problem</p>
+      <h2 class="disp">Built for people.<br><span class="dm">Read by machines.</span></h2>
+      <p class="lead">People see your website after their browser has run its scripts and drawn the page. Most AI crawlers never do. They read the raw code your server sends, follow your robots.txt, and your website takes every visitor&rsquo;s word for who it is.</p>
+    </div>
+    <div class="cards4" data-stag>
+      <div class="glass card c-blue rv"><span class="bar" aria-hidden="true"></span><h3>Blank to most AI crawlers</h3><p>Most AI crawlers read the HTML your server sends and do not run JavaScript. If your words, prices or contact details only appear after scripts run, many sites look close to blank to them.</p></div>
+      <div class="glass card c-teal rv"><span class="bar" aria-hidden="true"></span><h3>One line in robots.txt</h3><p>A rule in robots.txt, often set years ago or added by a plugin, can shut out the crawlers AI assistants use to read you. People still see the site, so nobody notices.</p></div>
+      <div class="glass card c-amber rv"><span class="bar" aria-hidden="true"></span><h3>Fake crawlers</h3><p>Anyone can send a request that says it is GPTBot or Googlebot. Unless something checks where it really comes from, a scraper wearing a famous name gets the same welcome as the real thing.</p></div>
+      <div class="glass card c-blue rv"><span class="bar" aria-hidden="true"></span><h3>Agents on your forms</h3><p>AI agents can now fill in forms for people. That is useful when a real customer sends one. When one fills in your contact form again and again, your inbox pays for it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how" data-veil="0.6">
+  <div class="wrap g">
+    <div class="head-r rv">
+      <p class="kick">How it works</p>
+      <h2 class="disp">Three steps <span class="dm">to guarded.</span></h2>
+    </div>
+    <div class="steps" data-stag>
+      <div class="glass card step rv"><div class="n">01</div><h3>Score your site, free</h3><p>Type your address into the free AI readiness score. In a few seconds you see what ChatGPT, Claude and Perplexity can and cannot read about your business, scored out of 100.</p></div>
+      <div class="glass card step rv"><div class="n">02</div><h3>One DNS change, done for you</h3><p>AI Guard runs in a managed layer in front of your website, on your own domain. Turning it on is one change to your domain&rsquo;s DNS settings, and we make that change for you.</p></div>
+      <div class="glass card step rv"><div class="n">03</div><h3>A report every month</h3><p>Your score again, the genuine AI visits to your site and the fakes that were blocked, every month, in plain English.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="get" data-veil="0.35">
+  <div class="wrap g">
+    <div class="head-l rv">
+      <p class="kick">What you get</p>
+      <h2 class="disp">Four parts.<br><span class="dm">One monthly service.</span></h2>
+      <p class="lead">Everything runs from one managed layer on your own domain. Every day it reads your website again, so what AI is given stays in step with what your website says.</p>
+    </div>
+    <div class="parts" data-stag>
+      <div class="glass card part c-blue rv">
+        <div class="n">01</div>
+        <h3>Readable by AI</h3>
+        <p>AI assistants such as ChatGPT, Claude, Perplexity and Google get a version of your site they can read, straight from the raw page.</p>
+        <ul>
+          <li>Your words as readable text in the raw page, no scripts needed</li>
+          <li>Structured data about your business and what it sells</li>
+          <li>An llms.txt file: a plain guide to your site for AI</li>
+          <li>A sitemap, so AI can find every page</li>
+          <li>An AI agent connector, a proper way in for AI agents acting for your customers</li>
+        </ul>
+      </div>
+      <div class="glass card part c-teal rv">
+        <div class="n">02</div>
+        <h3>Guarded from malicious AI</h3>
+        <p>The same layer decides which AI gets in, and which does not.</p>
+        <ul>
+          <li>Genuine AI crawlers checked against where they really come from, then let in</li>
+          <li>Impersonators and mass scrapers blocked</li>
+          <li>Training crawlers allowed or refused, as you choose</li>
+          <li>AI agents spamming your forms caught</li>
+        </ul>
+      </div>
+      <div class="glass card part c-amber rv">
+        <div class="n">03</div>
+        <h3>A Website Agent</h3>
+        <p>An assistant on your website that knows your whole site, from the same daily read, so it says what your website says.</p>
+        <ul>
+          <li>Answers your visitors&rsquo; questions</li>
+          <li>Takes callbacks</li>
+          <li>Takes bookings</li>
+        </ul>
+      </div>
+      <div class="glass card part c-blue rv">
+        <div class="n">04</div>
+        <h3>A monthly report</h3>
+        <p>Every month, in plain English, so you can see what AI Guard is doing for you.</p>
+        <ul>
+          <li>Your AI readiness score again</li>
+          <li>The genuine AI visits to your site</li>
+          <li>The fakes that were blocked</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="who" data-veil="0.6">
+  <div class="wrap g">
+    <div class="head-r rv">
+      <p class="kick">Who it is for</p>
+      <h2 class="disp">Any business.<br><span class="dm">Any country.</span></h2>
+      <p class="lead">If your customers can ask an AI assistant about the kind of thing you do, AI can only include you if it can read you. AI Guard works on your domain, whatever you sell and wherever you are.</p>
+    </div>
+    <div class="chips rv">
+      <span class="chip glass"><span class="d"></span>Shops and online stores</span>
+      <span class="chip glass t"><span class="d"></span>Trades and home services</span>
+      <span class="chip glass a"><span class="d"></span>Restaurants, cafes and hotels</span>
+      <span class="chip glass"><span class="d"></span>Clinics and salons</span>
+      <span class="chip glass t"><span class="d"></span>Solicitors, accountants and advisers</span>
+      <span class="chip glass a"><span class="d"></span>Car dealers</span>
+      <span class="chip glass"><span class="d"></span>Charities and clubs</span>
+    </div>
+  </div>
+</section>
+
+<section id="score" data-veil="0.6">
+  <div class="wrap">
+    <p class="kick rv">Start here</p>
+    <h2 class="rv"><span class="dm">Score your site</span> free.</h2>
+    <p class="lead rv">See your website the way ChatGPT, Claude and Perplexity read it: a score out of 100 in a few seconds, with what AI can and cannot read about your business. Free, no sign-up.</p>
+    <p class="lead rv">AI Guard is opening to its first businesses now, and we set each one up by hand. Start with your score, then ask to be one of the first.</p>
+    <div class="ctarow rv">
+      <a href="ai-score.html" class="btn">Score your site free</a>
+      <a href="mailto:ash@tradescaleplus.com?subject=AI%20Guard%3A%20one%20of%20the%20first%20businesses" class="btn ghost">Ask to be one of the first</a>
+      <a href="tel:07346305893" class="btn ghost">Call 07346 305893</a>
+    </div>
+    <p class="meta rv">Trade Scale Plus Ltd &middot; Built in South Wales</p>
+  </div>
+</section>
+
+<section id="faq" data-veil="0.6">
+  <div class="wrap">
+    <p class="kick rv">Questions</p>
+    <h2 class="disp rv">Straight answers.</h2>
+    <div class="faqs rv">
+      <div class="faq">
+        <h3>Does it change my website for visitors?</h3>
+        <p>No. Your pages look and work for people as they do now. The changes are underneath: in the code your pages arrive with, and in the files AI looks for, such as llms.txt and your sitemap. The one new thing visitors see is the Website Agent.</p>
+      </div>
+      <div class="faq">
+        <h3>Can I switch it off?</h3>
+        <p>Yes. Turning it off is the same DNS change undone, and your website goes back to working exactly as it did before.</p>
+      </div>
+      <div class="faq">
+        <h3>Does it work with my web host?</h3>
+        <p>AI Guard sits in front of your website rather than inside it, so it is built to work whatever your site is built on and wherever it is hosted. It needs one change to your domain&rsquo;s DNS settings, which we make for you. Before anything changes, we check your setup and tell you if anything stands in the way.</p>
+      </div>
+      <div class="faq">
+        <h3>Will AI recommend me?</h3>
+        <p>No one can promise that. AI assistants choose their own answers.</p>
+        <p>What AI Guard does is make sure AI can read you: your words, what you offer and where to find it, kept up to date every day. That way, when someone asks about what you do, AI can include you.</p>
+      </div>
+    </div>
+    <p class="faq-end rv"><a class="tlink" href="ai-score.html">Score your site free <span class="c" aria-hidden="true">&rarr;</span></a></p>
+  </div>
+</section>
+
+<footer>
+<div class="wrap">
+<span class="brand">TradeScale<b>+</b></span>
+<div class="fcols">
+<div class="fcol"><h4 class="fh">Free tools</h4><a class="fl" href="ai-score.html">AI readiness score</a><a class="fl" href="ai-search.html">Your stock in AI search</a></div>
+<div class="fcol"><h4 class="fh">Company</h4><a class="fl" href="index.html">Home</a><a class="fl" href="ai-guard.html">AI Guard</a><a class="fl" href="pricing.html">Pricing</a><a class="fl" href="about.html">About us</a><a class="fl" href="book-demo.html">Book a free demo</a></div>
+<div class="fcol"><h4 class="fh">Talk to us</h4><a class="fl" href="tel:07346305893">Call 07346 305893</a><a class="fl" href="mailto:ash@tradescaleplus.com">ash@tradescaleplus.com</a></div>
+</div>
+<div class="theme-row"><button type="button" class="theme" aria-label="Switch to light theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button><span>Light or dark: your choice is kept on this device</span></div>
+<p class="meta">Trade Scale Plus Ltd &middot; Companies House 17142290 &middot; Founded by Ashley Evans &middot; Built in South Wales &middot; <a href="tel:07346305893">07346 305893</a> &middot; <a href="mailto:ash@tradescaleplus.com">ash@tradescaleplus.com</a></p>
+</div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+"use strict";
+var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* entrance reveals, as on every page of the site */
+Array.prototype.forEach.call(document.querySelectorAll("[data-stag]"),function(g){
+  Array.prototype.forEach.call(g.children,function(c,i){c.style.transitionDelay=Math.min(i*0.1,0.9).toFixed(2)+"s";});
+});
+var rvs=Array.prototype.slice.call(document.querySelectorAll(".rv"));
+if(!("IntersectionObserver" in window)||reduce){rvs.forEach(function(e){e.classList.add("in");});}
+else{
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.12,rootMargin:"0px 0px -6% 0px"});
+  rvs.forEach(function(e){io.observe(e);});
+  requestAnimationFrame(function(){rvs.forEach(function(e){if(e.getBoundingClientRect().top<innerHeight*.92)e.classList.add("in");});});
+}
+
+/* nav state */
+var nav=document.getElementById("nav");
+function navState(){nav.classList.toggle("on",scrollY>10);}
+addEventListener("scroll",navState,{passive:true});navState();
+
+/* the veil follows the section in view */
+var veil=document.getElementById("veil"),veilEls=Array.prototype.slice.call(document.querySelectorAll("[data-veil]")),vC=.85;
+function loop(){var mid=innerHeight*.5,target=.87;for(var i=0;i<veilEls.length;i++){var r=veilEls[i].getBoundingClientRect();if(r.top<=mid&&r.bottom>=mid){target=parseFloat(veilEls[i].getAttribute("data-veil"));break;}}vC+=(target-vC)*.07;veil.style.opacity=vC.toFixed(3);requestAnimationFrame(loop);}
+if(!reduce)requestAnimationFrame(loop);
+})();
+</script>
+<script src="/assets/theme.js?v=1" defer></script>
+</body>
+</html>
