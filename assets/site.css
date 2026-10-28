@@ -56,13 +56,14 @@
   --disp:'Bricolage Grotesque','Inter',sans-serif;
   --ease:cubic-bezier(.22,1,.36,1);
 }
-/* light: the AI Guard draft's palette (docs/drafts/ai-guard-page.html in the app repo) */
+/* light: the AI Guard draft's palette (docs/drafts/ai-guard-page.html in the app repo), with the text colours a shade
+   deeper (dim, mut, blue, teal, amber) so small text still reads at 4.5:1 where it crosses a hexagon line */
 :root[data-theme="light"]{
-  --bg:#f3f5f9;--w:#0b1220;--dim:rgba(11,18,32,.6);--mut:#55606f;--sub:#36414f;--code:#2a3646;
+  --bg:#f3f5f9;--w:#0b1220;--dim:rgba(11,18,32,.64);--mut:#4d5867;--sub:#36414f;--code:#2a3646;
   --line:rgba(11,18,32,.1);--line2:rgba(11,18,32,.2);
-  --blue:#1769c9;--teal:#0b7a70;--amber:#a35f00;--red:#c0392b;--red2:#b42318;--orange:#c2410c;--err:#a12a1f;
+  --blue:#1256a8;--teal:#08635a;--amber:#844b00;--red:#ad2e22;--red2:#b42318;--orange:#c2410c;--err:#a12a1f;
   --ink:#ffffff;--on-accent:#ffffff;
-  --fg-rgb:11,18,32;--bg-rgb:243,245,249;--blue-rgb:23,105,201;--teal-rgb:11,127,116;--amber-rgb:163,95,0;--red-rgb:192,57,43;
+  --fg-rgb:11,18,32;--bg-rgb:243,245,249;--blue-rgb:18,86,168;--teal-rgb:8,99,90;--amber-rgb:132,75,0;--red-rgb:173,46,34;
   --glass-a:rgba(255,255,255,.82);--glass-b:rgba(255,255,255,.7);--glass-hi:rgba(255,255,255,.9);--glass-edge:rgba(255,255,255,.8);
   --panel:rgba(255,255,255,.82);--panel2:rgba(255,255,255,.78);--chip-bg:rgba(255,255,255,.86);--field:rgba(255,255,255,.92);
   --code-bg:rgba(11,18,32,.04);--option-bg:#ffffff;--tel-line:rgba(11,18,32,.28);
@@ -387,6 +388,20 @@ html.has-cursor,html.has-cursor a,html.has-cursor button,html.has-cursor input{c
 .fh{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:10px;font-weight:600}
 .fl{color:var(--mut);font-size:13px;line-height:1.9}
 
+/* ============ THE LIGHT AND DARK SWITCH ============ */
+/* A round button in the nav (over 480px wide) and in the footer on every page: the sun shows on dark, the moon on
+   light. The site starts dark; a visitor's pick is kept on their device and applied in each page's head before it is
+   drawn. The buttons are run by assets/theme.js. */
+.theme{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;flex:none;border-radius:999px;border:1px solid var(--tel-line);background:transparent;color:var(--w);cursor:pointer;transition:border-color .25s}
+.theme:hover{border-color:var(--blue)}
+.theme:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.theme svg{width:16px;height:16px}
+.theme .moon{display:none}
+:root[data-theme="light"] .theme .sun{display:none}
+:root[data-theme="light"] .theme .moon{display:block}
+/* in the footer it has a line of its own under the columns, so they stay where they were */
+.theme-row{display:flex;align-items:center;gap:12px;flex:0 0 100%;color:var(--mut);font-size:13px}
+
 /* ---------- PHONES: the mobile pass (every rule for small screens that is not a page's own) ---------- */
 /* No sideways wobble: the hero's moving background is drawn a little larger than the screen. */
 html{overflow-x:hidden;overflow-x:clip}
@@ -436,6 +451,13 @@ html{overflow-x:hidden;overflow-x:clip}
   .dtile small{font-size:12px}
   .dash .dh small{font-size:11.5px}
 }
+
+/* the switch: a full thumb-sized tap on phones and tablets. Up to 480px wide the top bar has no room for it (Call us
+   and Book a demo wrapped onto two lines), so there the footer's switch does the job. From 821px to 960px the full
+   top bar plus the switch only fits on one line with the links a little closer together. */
+@media(max-width:820px){.theme{width:44px;height:44px}}
+@media(min-width:821px) and (max-width:960px){.nlinks{gap:16px}}
+@media(max-width:480px){#nav .theme{display:none}}
 
 /* Under 360px "Call us" goes, since the number is in the hero anyway. Last in the file: written beside the other
    phone nav rules, the 44px tap rule after it switched it back on, and "Book a demo" ran 26px off a 320px screen. */

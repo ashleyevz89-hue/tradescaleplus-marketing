@@ -30,6 +30,8 @@ CRM and "AME" pages are retired and redirect to the homepage (`_redirects`).
 
 ## Shared assets
 
+- `assets/site.css`: the one stylesheet; every colour is a token, dark (the default) and light
+- `assets/theme.js`: the light and dark switch (nav and footer of every page); each page's head applies a saved choice
 - `assets/favicon.svg`: brand mark
 - `assets/mobile-nav.css` + `assets/mobile-nav.js`: hamburger and drawer
 - `sitemap.xml`, `robots.txt`, `llms.txt`: SEO and AI-engine discoverability
