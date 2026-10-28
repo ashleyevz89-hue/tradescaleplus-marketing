@@ -36,7 +36,7 @@
 .orbit-title{margin-bottom:10px}
 .orbit{position:relative;width:min(600px,94vw);aspect-ratio:1/1;margin:0 auto}
 .orbit .core-reveal{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60%;aspect-ratio:1/1;margin:0}
-.orbit .orbit-c{position:absolute;transform:translate(-50%,-50%);white-space:nowrap;background:rgba(9,13,20,.66);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);box-shadow:0 6px 22px rgba(0,0,0,.42)}
+.orbit .orbit-c{position:absolute;transform:translate(-50%,-50%);white-space:nowrap;background:var(--chip-bg);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);box-shadow:0 6px 22px var(--chip-shadow)}
 .orbit .p1{left:67%;top:9%}.orbit .p2{left:91%;top:33%}.orbit .p3{left:91%;top:67%}.orbit .p4{left:67%;top:91%}.orbit .p5{left:33%;top:91%}.orbit .p6{left:9%;top:67%}.orbit .p7{left:9%;top:33%}.orbit .p8{left:33%;top:9%}
 @media(max-width:860px){.orbit{position:static;width:auto;aspect-ratio:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:9px}.orbit .orbit-c{position:static;transform:none}.orbit .core-reveal{position:static;transform:none;width:min(250px,60vw);margin:2vh auto 1vh;flex-basis:100%}}
 .band{height:auto;display:flex;align-items:center;padding:3vh 0 5vh}
@@ -44,7 +44,7 @@
 
   /* --- AI core reveal (kept from the existing system) --- */
   .core-reveal{position:relative;width:min(360px,46vw);aspect-ratio:1/1;margin:1vh auto 0;pointer-events:none}
-  .core-reveal::after{content:"";position:absolute;left:50%;top:50%;width:78%;height:78%;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;mix-blend-mode:screen;background:radial-gradient(circle,rgba(59,158,255,.18),rgba(52,216,200,.05) 46%,rgba(5,7,12,0) 72%)}
+  .core-reveal::after{content:"";position:absolute;left:50%;top:50%;width:78%;height:78%;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;mix-blend-mode:screen;background:radial-gradient(circle,rgba(var(--blue-rgb),.18),rgba(var(--teal-rgb),.05) 46%,rgba(var(--bg-rgb),0) 72%)}
   .core-reveal img,.core-reveal video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;will-change:transform;-webkit-mask-image:radial-gradient(circle at 50% 50%,#000 52%,rgba(0,0,0,0) 74%);mask-image:radial-gradient(circle at 50% 50%,#000 52%,rgba(0,0,0,0) 74%)}
   @media(prefers-reduced-motion:reduce){.core-reveal video{display:none}}
 
@@ -54,7 +54,7 @@
   @media(max-width:980px){.hgrid{grid-template-columns:1fr}.hgrid .convo{margin:16px auto 0}}
 
   /* --- floating link to the live assistant on the sample forecourt (replaced the canned chat demo, 2026-09-23) --- */
-  .cw-live{position:fixed;bottom:26px;right:26px;z-index:90;display:inline-flex;align-items:center;gap:9px;padding:14px 20px;border-radius:999px;background:var(--w);color:#060a12;font-family:var(--sans);font-size:14px;font-weight:600;text-decoration:none;box-shadow:0 14px 44px rgba(0,0,0,.5);transition:transform .3s var(--ease),background .3s}
+  .cw-live{position:fixed;bottom:26px;right:26px;z-index:90;display:inline-flex;align-items:center;gap:9px;padding:14px 20px;border-radius:999px;background:var(--w);color:var(--ink);font-family:var(--sans);font-size:14px;font-weight:600;text-decoration:none;box-shadow:0 14px 44px var(--float-shadow);transition:transform .3s var(--ease),background .3s}
   .cw-live:hover{transform:translateY(-3px);background:var(--blue)}
   .cw-live:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
   .cw-live .d{width:7px;height:7px;border-radius:50%;background:#12a594;box-shadow:0 0 8px var(--teal);animation:blink 1.8s infinite}

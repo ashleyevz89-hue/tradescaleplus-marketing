@@ -34,16 +34,16 @@
 /* this page only (the shared rules: /assets/site.css) */
 .people{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:44px}
 @media(max-width:860px){.people{grid-template-columns:1fr}}
-.person{border:1px solid var(--line);border-radius:16px;padding:28px 26px 26px;background:rgba(255,255,255,.02)}
+.person{border:1px solid var(--line);border-radius:16px;padding:28px 26px 26px;background:rgba(var(--fg-rgb),.02)}
 .person .top{display:flex;align-items:center;gap:16px;margin-bottom:20px}
 /* The portrait slot. Holds a monogram until a photograph replaces it - the
    <img> drops straight in at the same size with no layout change. */
 .pic{width:72px;height:72px;border-radius:50%;flex:0 0 auto;object-fit:cover;display:grid;place-items:center;
-  background:linear-gradient(145deg,rgba(59,158,255,.22),rgba(52,216,200,.12));border:1px solid var(--line2);
+  background:linear-gradient(145deg,rgba(var(--blue-rgb),.22),rgba(var(--teal-rgb),.12));border:1px solid var(--line2);
   font-family:var(--disp);font-weight:700;font-size:27px;color:var(--blue);letter-spacing:-.02em}
 .person h3{font-family:var(--disp);font-size:20px;font-weight:700;letter-spacing:-.02em;color:var(--w);margin:0 0 3px}
 .person .role{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:600}
-.person p{font-size:14.5px;color:#b9c2d0;line-height:1.85;margin-bottom:14px}
+.person p{font-size:14.5px;color:var(--sub);line-height:1.85;margin-bottom:14px}
 .person p:last-child{margin-bottom:0}
 </style>
 </head>
