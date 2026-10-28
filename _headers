@@ -1,0 +1,8 @@
+# Cloudflare Pages response headers. The AI readiness score page runs a scan as it opens when its link carries
+# ?url=, so no other website may show it in a frame (28 Oct 2026, the score's security review).
+/ai-score
+  X-Frame-Options: DENY
+  Content-Security-Policy: frame-ancestors 'none'
+/ai-score.html
+  X-Frame-Options: DENY
+  Content-Security-Policy: frame-ancestors 'none'
