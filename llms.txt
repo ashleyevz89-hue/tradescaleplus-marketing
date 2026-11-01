@@ -46,7 +46,7 @@ Two lines of code: a link tag (`<link rel="mcp" ...>`) and a script. Nothing els
 ## Free tool and related service
 
 - Free AI readiness score (any business: can ChatGPT, Claude and Perplexity read your website? A score out of 100 with the fixes): https://tradescaleplus.com/ai-score
-- AI Guard (any business: a monthly service that makes a website readable by AI assistants, guards it from malicious AI, adds a Website Agent and sends a monthly report; opening to its first businesses now, set up by hand, starting with the free score): https://tradescaleplus.com/ai-guard
+- AI Guard (any business: an ongoing service that makes a website readable by AI assistants, guards it from malicious AI, adds a Website Agent and sends a monthly report; opening to its first businesses now, set up by hand, starting with the free score): https://tradescaleplus.com/ai-guard
 
 ## Car dealer guides
 
