@@ -30,7 +30,7 @@ We do not publish prices. Every agent is priced for the business it works for. T
 
 ## The AI door
 
-Buyers ask ChatGPT first. Some pages are drawn by JavaScript, which ChatGPT cannot normally read. On 1 November 2026 we put our two install lines on a test page built that way. ChatGPT found the live stock on its own, with no setup by the user. Asked "I need a 7 seater under 18,000", it gave all five correct cars and prices, and a follow-up about electric cars returned all three correct. We saw it in our server logs. Claude's reader runs the page and loads the agent itself. It is plain web pages, so any AI that reads the web can use it. There is also an MCP connector for AI apps that take connectors.
+Some pages are drawn by JavaScript, which ChatGPT cannot normally read. On 1 November 2026 we put our two install lines on a test page built that way. ChatGPT found the live stock on its own, with no setup by the user. Asked "I need a 7 seater under 18,000", it gave all five correct cars and prices, and a follow-up about electric cars returned all three correct. We saw it in our server logs. Claude's reader runs the page and loads the agent itself. It is plain web pages, so any AI that reads the web can use it. There is also an MCP connector for AI apps that take connectors.
 
 This was one test, on a test page we built. It is not a client result and it is not a promise: no one can promise what an AI will recommend, because AI assistants choose their own answers. https://tradescaleplus.com/ai-door
 
