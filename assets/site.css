@@ -70,7 +70,7 @@
   --nav-bg:rgba(243,245,249,.8);--foot-bg:rgba(243,245,249,.85);
   --shadow:rgba(20,32,56,.1);--btn-shadow:rgba(20,32,56,.16);--lift-shadow:rgba(20,32,56,.14);--chip-shadow:rgba(20,32,56,.1);--float-shadow:rgba(20,32,56,.22);
   --grain:.03;
-  --hex-glow:rgba(23,105,201,.10);--hex:url("data:image/svg+xml,%3Csvg width='28' height='49' viewBox='0 0 28 49' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z' fill='%231769c9' fill-opacity='.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+  --hex-glow:rgba(23,105,201,.10);--hex:url("data:image/svg+xml,%3Csvg width='28' height='49' viewBox='0 0 28 49' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z' fill='%231769c9' fill-opacity='.12' fill-rule='evenodd'/%3E%3C/svg%3E");
   --chev:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%2355606f' fill='none' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -88,6 +88,9 @@ img,video{display:block}
 .hexbg{position:absolute;inset:0;z-index:2;pointer-events:none;background-color:var(--bg);background-image:radial-gradient(120% 70% at 50% 0%,var(--hex-glow),rgba(5,7,12,0) 58%),var(--hex);background-size:auto,44px 77px}
 .grain{position:fixed;inset:0;z-index:3;pointer-events:none;opacity:var(--grain);mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .content{position:relative;z-index:4}
+/* Words on the hexagons: a halo in the page colour clears the lines around each letter; the pattern stays everywhere else */
+.content :is(h1,h2,h3,h4,p,li,dt,dd,.kick,.lead,.hsub,.hline,.hnote,.disp,.plead,.pbody){text-shadow:0 0 1px rgba(var(--bg-rgb),.95),0 0 6px rgba(var(--bg-rgb),.9),0 0 14px rgba(var(--bg-rgb),.75)}
+.content :is(.glass,.btn,.pill,.chip) :is(h1,h2,h3,h4,p,li,span,.kick){text-shadow:none}
 
 /* ============ TYPE SYSTEM: TWO REGISTERS ONLY ============ */
 .disp{font-family:var(--disp);font-weight:700;font-size:clamp(2.5rem,5.6vw,4.7rem);line-height:.99;letter-spacing:-.035em}
