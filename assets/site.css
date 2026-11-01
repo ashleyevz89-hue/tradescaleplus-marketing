@@ -170,7 +170,8 @@ svg.ic{width:20px;height:20px;stroke:currentColor;stroke-width:1.5;fill:none;str
 nav{position:fixed;top:0;left:0;right:0;z-index:80;border-bottom:1px solid transparent;transition:background .4s,border-color .4s,-webkit-backdrop-filter .4s,backdrop-filter .4s}
 nav.on{background:var(--nav-bg);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);border-color:var(--line)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
-.brand{font-family:var(--disp);font-weight:700;font-size:28px;letter-spacing:-.02em}
+.brand{font-family:var(--disp);font-weight:700;font-size:28px;letter-spacing:-.02em;display:inline-flex;align-items:center;gap:10px}
+.brand-mark{width:34px;height:34px;flex:0 0 auto;display:block}
 .brand b{color:var(--blue);font-weight:700}
 .nlinks{display:flex;align-items:center;gap:30px}
 .nlinks a{font-size:12px;font-weight:500;color:var(--mut);letter-spacing:.02em;transition:color .25s}
@@ -181,7 +182,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
    Phones (2026-09-23): the logo and the pills did not fit at 375px, so a pill's words wrapped onto two lines.
    Smaller logo, tighter pill, no wrapping; under 360px the pill goes too (that rule is last in this file), since
    "Book a demo" is the first thing in the drawer. #nav for specificity: the later .nlinks rules must not win. */
-@media(max-width:420px){#nav .brand{font-size:24px}#nav .nlinks{gap:8px}#nav .nlinks .go{white-space:nowrap;padding:9px 13px}}
+@media(max-width:420px){#nav .brand{font-size:24px}#nav .brand-mark{width:28px;height:28px}#nav .nlinks{gap:8px}#nav .nlinks .go{white-space:nowrap;padding:9px 13px}}
 
 /* ============ HERO ============ */
 header{min-height:82svh;display:flex;align-items:center;position:relative;padding:104px 0 5vh}
