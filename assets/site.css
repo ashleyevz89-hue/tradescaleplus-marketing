@@ -7,7 +7,7 @@
 :root{
   --bg:#05070c;
   --w:#f3f6fa;
-  --dim:rgba(243,246,250,.4);
+  --dim:rgba(243,246,250,.52);
   --mut:#96a0b0;
   --sub:#b9c2d0;
   --code:#c9d4e3;
@@ -173,13 +173,12 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 .nlinks a{font-size:12px;font-weight:500;color:var(--mut);letter-spacing:.02em;transition:color .25s}
 .nlinks a:hover{color:var(--w)}
 .nlinks .go{background:var(--w);color:var(--ink);font-weight:600;padding:10px 18px;border-radius:999px;transition:background .3s}
-.nlinks .go:hover{background:var(--blue);color:var(--ink)}.nlinks a.tel{border:1px solid var(--tel-line);border-radius:999px;padding:8px 15px;color:var(--w)}.nlinks a.tel:hover{border-color:var(--blue);color:var(--w)}
-@media(max-width:820px){.nlinks a:not(.go){display:none}}
-/* Phones (2026-09-23): the logo and both pills did not fit at 375px, so "Call us" and
-   "Book a demo" wrapped onto two lines inside their pills. Smaller logo, tighter pills,
-   no wrapping; under 360px "Call us" goes (that rule is the last in the file).
-   #nav for specificity: the later .nlinks rules must not win. */
-@media(max-width:420px){#nav .brand{font-size:24px}#nav .nlinks{gap:8px}#nav .nlinks a.tel,#nav .nlinks .go{white-space:nowrap}#nav .nlinks a.tel{padding:7px 11px}#nav .nlinks .go{padding:9px 13px}}
+.nlinks .go:hover{background:var(--blue);color:var(--ink)}
+/* The menu button and the phone drawer, and the width at which the links give way to them: assets/mobile-nav.css.
+   Phones (2026-09-23): the logo and the pills did not fit at 375px, so a pill's words wrapped onto two lines.
+   Smaller logo, tighter pill, no wrapping; under 360px the pill goes too (that rule is last in this file), since
+   "Book a demo" is the first thing in the drawer. #nav for specificity: the later .nlinks rules must not win. */
+@media(max-width:420px){#nav .brand{font-size:24px}#nav .nlinks{gap:8px}#nav .nlinks .go{white-space:nowrap;padding:9px 13px}}
 
 /* ============ HERO ============ */
 header{min-height:82svh;display:flex;align-items:center;position:relative;padding:104px 0 5vh}
@@ -245,7 +244,11 @@ html.has-cursor,html.has-cursor a,html.has-cursor button,html.has-cursor input{c
   .tiles{counter-reset:tile}
   .tiles .card{counter-increment:tile;position:relative;transition:transform .32s cubic-bezier(.22,1,.36,1),background .32s,box-shadow .32s}
   .tiles .card .ic{display:none}
-  .tiles .card::before{content:counter(tile,decimal-leading-zero);position:absolute;top:26px;left:28px;font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--dim);font-variant-numeric:tabular-nums}
+  /* the tile number sits on ::after: ::before is the glass edge (.glass::before), and a number drawn there was cut out by its mask */
+  .tiles .card::after{content:counter(tile,decimal-leading-zero);position:absolute;top:26px;left:28px;font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--dim);font-variant-numeric:tabular-nums;pointer-events:none}
+  /* a last card left alone in its row spans the row, so a grid never ends on an orphan */
+  @media(min-width:921px){.tiles>.card:last-child:nth-child(3n+1){grid-column:1/-1}}
+  @media(min-width:621px) and (max-width:920px){.tiles>.card:last-child:nth-child(odd){grid-column:1/-1}}
   .tiles .card h3{margin-top:44px;font-size:16px}
   .tiles .card:hover{transform:translateY(-5px);background:rgba(var(--fg-rgb),.03);box-shadow:0 22px 54px var(--lift-shadow)}
 
@@ -379,9 +382,6 @@ html.has-cursor,html.has-cursor a,html.has-cursor button,html.has-cursor input{c
   .btn.ghost:hover{background:rgba(var(--fg-rgb),.07);color:var(--w);box-shadow:none}
   #contact .ctarow{justify-content:flex-start}
 
-  /* --- nav: keep phone reachable on mobile --- */
-  @media(max-width:820px){.nlinks{gap:14px}.nlinks a.tel{display:inline-flex;color:var(--w)}}
-
 /* the footer: its columns, their headings and links (were inline on every page) */
 .fcols{display:flex;flex-wrap:wrap;gap:34px 60px;margin:30px 0 26px}
 .fcol{display:flex;flex-direction:column;min-width:170px}
@@ -409,7 +409,7 @@ html{overflow-x:hidden;overflow-x:clip}
   /* a form box under 16px makes an iPhone zoom the whole page when it is tapped */
   .form input,.form select,.form textarea{font-size:16px}
   /* everything tapped is at least 44px tall, the size a thumb needs */
-  #nav .nlinks a.tel,#nav .nlinks .go{min-height:44px;display:inline-flex;align-items:center}
+  #nav .nlinks .go{min-height:44px;display:inline-flex;align-items:center}
   .tlink{min-height:44px;font-size:14px}
   /* the breadcrumb's links: a full-height tap, the line itself unchanged */
   .crumb{font-size:13px;margin-bottom:18px}
@@ -425,7 +425,7 @@ html{overflow-x:hidden;overflow-x:clip}
   .chip{font-size:13px}
   /* the section labels and the top bar's buttons readable at arm's length */
   .kick,.hkick,.fh{font-size:12px}
-  #nav .nlinks a.tel,#nav .nlinks .go{font-size:13px}
+  #nav .nlinks .go{font-size:13px}
 }
 @media(max-width:640px){
   /* the comparison table: each row a card, its column names from the table's own headings (data-label) */
@@ -452,13 +452,236 @@ html{overflow-x:hidden;overflow-x:clip}
   .dash .dh small{font-size:11.5px}
 }
 
-/* the switch: a full thumb-sized tap on phones and tablets. Up to 480px wide the top bar has no room for it (Call us
-   and Book a demo wrapped onto two lines), so there the footer's switch does the job. From 821px to 960px the full
-   top bar plus the switch only fits on one line with the links a little closer together. */
+/* the switch: a full thumb-sized tap on phones and tablets. Up to 480px wide the top bar has no room for it (the logo,
+   Book a demo and the menu button fill it), so there the switch in the menu drawer and the footer does the job. */
 @media(max-width:820px){.theme{width:44px;height:44px}}
-@media(min-width:821px) and (max-width:960px){.nlinks{gap:16px}}
 @media(max-width:480px){#nav .theme{display:none}}
 
-/* Under 360px "Call us" goes, since the number is in the hero anyway. Last in the file: written beside the other
-   phone nav rules, the 44px tap rule after it switched it back on, and "Book a demo" ran 26px off a 320px screen. */
-@media(max-width:359px){#nav .nlinks a.tel{display:none}}
+/* Under 360px "Book a demo" leaves the top bar (it is the first thing in the menu drawer). Last in the file: written
+   beside the other phone nav rules, the 44px tap rule after it switched it back on, and the pill ran off a 320px screen. */
+@media(max-width:359px){#nav .nlinks .go{display:none}}
+
+/* ============ AGENTS FOR WEBSITES (November 2026) ============ */
+/* The pages of the "AI agents for websites" site: the home page, the three product pages, the AI door page, and the
+   parts they share. Every colour is a token, so the light and dark themes both stay right. */
+
+/* a keyboard visitor can jump the menu, and every link and button shows where the focus is */
+.skip{position:absolute;left:12px;top:-64px;z-index:200;background:var(--w);color:var(--ink);padding:12px 18px;border-radius:999px;font-size:13px;font-weight:600;transition:top .2s}
+.skip:focus{top:10px}
+main{display:block}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+
+/* ---------- hero: copy left, the agent right ---------- */
+.hgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:clamp(32px,4vw,64px);align-items:center}
+.hgrid h1{font-size:clamp(2.7rem,5.6vw,5rem)}
+.hline{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--mut);margin:-12px 0 32px;max-width:52ch;line-height:1.6}
+.hline::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 10px var(--teal)}
+@media(max-width:980px){.hgrid{grid-template-columns:1fr}.hgrid .vwrap,.hgrid .convo{margin:16px auto 0}}
+
+/* the rotating example: a car conversation and a property conversation share one box, so the page never jumps */
+.vwrap{width:100%;max-width:440px;margin:0 auto}
+.vtabs{display:flex;gap:8px;margin-bottom:12px}
+.vtab{flex:1;min-height:44px;padding:10px 14px;border-radius:999px;border:1px solid var(--line2);background:transparent;color:var(--mut);font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.06em;cursor:pointer;transition:color .25s,border-color .25s,background .25s}
+.vtab:hover{color:var(--w)}
+.vtab[aria-selected="true"]{color:var(--w);border-color:var(--blue);background:rgba(var(--blue-rgb),.12)}
+.vstack{display:grid}
+.vstack>.convo{grid-area:1/1;justify-self:center;max-width:none;transition:opacity .5s var(--ease),visibility .5s}
+.vstack>.convo[data-off]{opacity:0;visibility:hidden}
+.no-js .vtabs{display:none}
+.no-js .vstack>.convo+.convo{display:none}
+
+/* ---------- the doors: two markets, then any website ---------- */
+.doors{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:48px}
+.door{display:flex;flex-direction:column;align-items:flex-start;padding:36px 34px 32px;text-align:left}
+.dico{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex:none;color:var(--blue);background:rgba(var(--blue-rgb),.1);border:1px solid rgba(var(--blue-rgb),.28)}
+.dico svg{width:24px;height:24px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.door .dname{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-top:26px}
+.door h3{font-family:var(--disp);font-weight:700;font-size:clamp(1.55rem,2.5vw,2.1rem);line-height:1.06;letter-spacing:-.03em;color:var(--w);margin:10px 0 12px}
+.door p{font-size:14px;color:var(--mut);line-height:1.7;max-width:48ch}
+.door .tlink{margin-top:auto;padding-top:26px}
+.door-wide{grid-column:1/-1;flex-direction:row;align-items:center;gap:26px;padding:26px 32px}
+.door-wide .dname{margin-top:0}
+.door-wide h3{margin:6px 0 8px;font-size:clamp(1.35rem,2vw,1.7rem)}
+.door-wide .dbody{flex:1}
+.door-wide .tlink{margin-top:0;padding-top:0;flex:none}
+@media(max-width:920px){.doors{grid-template-columns:1fr}.door-wide{flex-direction:column;align-items:flex-start;gap:14px}}
+
+/* ---------- bands, pills, pull-quotes ---------- */
+section.alt{background:linear-gradient(180deg,rgba(var(--fg-rgb),.028),rgba(var(--fg-rgb),.012));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;font-size:10.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;border:1px solid var(--line2);color:var(--mut)}
+.pill .d{width:6px;height:6px;border-radius:50%;background:currentColor}
+.pill.live{color:var(--teal);border-color:rgba(var(--teal-rgb),.45)}
+.pill.soon{color:var(--amber);border-color:rgba(var(--amber-rgb),.45)}
+.pull{grid-column:1/-1;font-family:var(--disp);font-weight:700;font-size:clamp(1.5rem,2.8vw,2.3rem);line-height:1.12;letter-spacing:-.03em;color:var(--w);max-width:26ch;margin:34px auto 0;text-align:center}
+.pull .dm{color:var(--blue)}
+.note{font-size:12px;color:var(--dim);line-height:1.6}
+#faq-all{text-align:center}
+#faq-all .kick{justify-content:center}
+#faq-all .faqs{text-align:left}
+.panel.narrow{max-width:920px;margin-left:auto;margin-right:auto;width:100%}
+.g>.ctarow{grid-column:1/-1}
+.panel.center{text-align:center}
+.panel.center .plead{margin-left:auto;margin-right:auto}
+.panel.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,64px);align-items:start;text-align:left}
+@media(max-width:820px){.panel.cols{grid-template-columns:1fr}}
+
+/* a tick list: what lands with the business */
+.ticks{list-style:none;margin:0;padding:0;text-align:left}
+.ticks li{position:relative;padding:18px 0 18px 42px;border-bottom:1px solid var(--line);font-size:15px;color:var(--sub);line-height:1.6}
+.ticks li:first-child{border-top:1px solid var(--line)}
+.ticks li::before{content:"";position:absolute;left:4px;top:23px;width:17px;height:17px;border-radius:50%;background:rgba(var(--teal-rgb),.14);box-shadow:inset 0 0 0 1px rgba(var(--teal-rgb),.5)}
+.ticks li::after{content:"";position:absolute;left:11px;top:27px;width:4px;height:8px;border:solid var(--teal);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.ticks li b{font-weight:600;color:var(--w);letter-spacing:-.01em}
+
+/* a text block beside a picture */
+.split{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,4vw,56px);align-items:center;margin-top:44px;text-align:left}
+.split .dash{margin-top:0;grid-column:auto}
+.split .dtiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+.split .dtile b{font-size:19px;line-height:1.2}
+@media(max-width:560px){.split .dtiles{grid-template-columns:1fr}}
+.split .lead{margin-left:0;margin-top:20px}
+@media(max-width:920px){.split{grid-template-columns:1fr}}
+
+/* two cards side by side */
+.pair{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px;text-align:left}
+.pair .card h3{margin-top:0;font-size:16px}
+.pair .card p+p{margin-top:10px}
+@media(max-width:760px){.pair{grid-template-columns:1fr}}
+
+/* five cards in two rows: three across, then two wider */
+.tiles.t5{grid-template-columns:repeat(6,minmax(0,1fr))}
+.tiles.t5>.card{grid-column:span 2}
+.tiles.t5>.card:nth-child(n+4){grid-column:span 3}
+@media(max-width:920px){.tiles.t5{grid-template-columns:repeat(2,minmax(0,1fr))}.tiles.t5>.card,.tiles.t5>.card:nth-child(n+4){grid-column:auto}.tiles.t5>.card:last-child{grid-column:1/-1}}
+@media(max-width:620px){.tiles.t5{grid-template-columns:1fr}.tiles.t5>.card:last-child{grid-column:auto}}
+
+/* ---------- the two install lines ---------- */
+.codeblock{grid-column:1/-1;max-width:860px;margin:36px auto 0;width:100%;text-align:left;padding:0}
+.codeblock:hover{transform:none}
+.cb-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px 10px 20px;border-bottom:1px solid var(--line);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.cb-copy{min-height:36px;padding:7px 16px;border-radius:999px;border:1px solid var(--line2);background:transparent;color:var(--w);font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.04em;cursor:pointer;transition:border-color .25s,background .25s}
+.cb-copy:hover{border-color:var(--blue);background:rgba(var(--blue-rgb),.1)}
+.codeblock pre{margin:0;padding:20px 22px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;line-height:1.85;color:var(--code);white-space:pre-wrap;overflow-wrap:anywhere}
+.codeblock .cl{display:block}
+.codeblock .cl+.cl{margin-top:14px}
+.codeblock .t{color:var(--blue)}.codeblock .a{color:var(--teal)}.codeblock .s{color:var(--amber)}
+.cb-note{padding:0 22px 18px;font-size:12px;color:var(--dim);line-height:1.6}
+
+/* ---------- the AI door: what an AI reads, and the test result ---------- */
+.seen{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:44px;text-align:left}
+.seen .glass{padding:0}
+.seen .glass:hover{transform:none}
+.seen-bar{display:flex;align-items:center;gap:6px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.seen-bar i{width:8px;height:8px;border-radius:50%;background:var(--line2)}
+.seen-bar span{margin-left:8px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.seen-body{padding:20px 18px 22px}
+.seen-body h3{font-size:14px;font-weight:600;margin-bottom:6px;color:var(--w)}
+.seen-body p{font-size:13px;color:var(--mut);line-height:1.6;margin-bottom:16px}
+.seen-empty{border:1px dashed var(--line2);border-radius:12px;padding:30px 14px;text-align:center;color:var(--dim);font-size:12px;letter-spacing:.04em}
+.seen-row{display:flex;align-items:center;gap:12px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;margin-top:8px}
+.seen-row i{width:34px;height:34px;flex:none;border-radius:8px;background:linear-gradient(135deg,rgba(var(--blue-rgb),.5),rgba(var(--teal-rgb),.4))}
+.seen-row b{display:block;height:8px;width:62%;border-radius:99px;background:rgba(var(--fg-rgb),.2)}
+.seen-row b+b{width:38%;margin-top:7px;background:rgba(var(--fg-rgb),.1)}
+@media(max-width:760px){.seen{grid-template-columns:1fr}}
+
+.result{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;margin-top:44px;text-align:left}
+.result .card{padding:34px 32px}
+.result .card:hover{transform:none}
+.ask{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:14px}
+.result .cv-msg{max-width:100%;align-self:flex-start;font-size:15px;padding:14px 18px}
+.result p.after{font-size:14px;color:var(--mut);line-height:1.7;margin-top:18px}
+.bn{display:flex;gap:clamp(26px,5vw,60px);align-items:flex-end;flex-wrap:wrap}
+.bn b{display:block;font-family:var(--disp);font-weight:700;font-size:clamp(4.6rem,9vw,7.6rem);line-height:.86;letter-spacing:-.05em;color:var(--blue);font-variant-numeric:tabular-nums}
+.bn div+div b{color:var(--teal)}
+.bn small{display:block;margin-top:12px;font-size:12.5px;color:var(--mut)}
+@media(max-width:820px){.result{grid-template-columns:1fr}}
+
+/* ---------- the currency card (property and custom pages) ---------- */
+.fx{grid-column:1/-1;display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,4vw,48px);align-items:center;padding:34px clamp(24px,4vw,44px);margin-top:44px;text-align:left}
+.fx:hover{transform:none}
+.fx-row{display:flex;align-items:center;gap:16px}
+.fx-cur{display:inline-flex;align-items:center;justify-content:center;min-width:92px;padding:16px 20px;border-radius:16px;border:1px solid var(--line2);background:rgba(var(--fg-rgb),.04);font-family:var(--disp);font-weight:700;font-size:clamp(1.6rem,3vw,2.3rem);letter-spacing:-.02em;color:var(--w)}
+.fx-row .fx-cur+.fx-arrow+.fx-cur{color:var(--blue);border-color:rgba(var(--blue-rgb),.4);background:rgba(var(--blue-rgb),.08)}
+.fx-arrow{font-size:22px;color:var(--teal)}
+.fx h3{font-family:var(--disp);font-size:clamp(1.3rem,2.2vw,1.7rem);font-weight:700;letter-spacing:-.025em;margin:0 0 8px;color:var(--w)}
+.fx p{font-size:14px;color:var(--mut);line-height:1.7;max-width:56ch}
+@media(max-width:760px){.fx{grid-template-columns:1fr}}
+
+/* ---------- live demos ---------- */
+.demos{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:48px}
+.demo{display:flex;flex-direction:column;align-items:flex-start;padding:32px 32px 28px;text-align:left}
+.demo h3{font-family:var(--disp);font-weight:700;font-size:clamp(1.4rem,2.2vw,1.8rem);letter-spacing:-.03em;color:var(--w);margin:18px 0 8px}
+.demo p{font-size:14px;color:var(--mut);line-height:1.7;max-width:46ch}
+.demo .tlink{margin-top:auto;padding-top:22px}
+.demo.is-soon:hover{transform:none}
+@media(max-width:820px){.demos{grid-template-columns:1fr}}
+
+/* ---------- the four legal links ---------- */
+.legal4{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:34px;text-align:left}
+.legal4 a{display:block;padding:18px 20px}
+.legal4 b{display:block;font-size:14px;font-weight:600;color:var(--w);margin-bottom:4px}
+.legal4 span{font-size:12.5px;color:var(--mut);line-height:1.5}
+@media(max-width:920px){.legal4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.legal4{grid-template-columns:1fr}}
+
+/* ---------- founder line ---------- */
+.founder{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.founder img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:1px solid var(--line2);flex:none}
+.founder>div{flex:1 1 320px}
+
+/* ---------- pricing page: three products ---------- */
+.prices{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:48px;text-align:left}
+.price{display:flex;flex-direction:column;padding:34px 30px 30px}
+.price.feat{border-color:rgba(var(--blue-rgb),.5)}
+.price .pname{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--blue)}
+.price .pamt{font-family:var(--disp);font-weight:700;font-size:clamp(2rem,3.4vw,2.8rem);line-height:1.04;letter-spacing:-.035em;color:var(--w);margin:16px 0 6px}
+.price .pamt small{font-family:var(--sans);font-size:14px;font-weight:500;letter-spacing:0;color:var(--mut)}
+.price .pfor{font-size:13px;color:var(--mut);margin-bottom:18px}
+.price p{font-size:13.5px;color:var(--mut);line-height:1.65}
+.price .tlink{margin-top:auto;padding-top:24px}
+@media(max-width:920px){.prices{grid-template-columns:1fr}}
+
+/* ---------- the footer, five columns, and its legal line ---------- */
+.fcols{gap:34px 48px}
+.fcol{min-width:150px}
+.flegal{display:flex;flex-wrap:wrap;gap:2px 18px;flex:0 0 100%;font-size:12px}
+.flegal a{color:var(--blue);padding:4px 0}
+.flegal a:hover{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:820px){.flegal a{padding:11px 0;font-size:13px}.fl{display:flex;align-items:center;min-height:44px;padding:0}}
+
+/* ---------- the short notice under every form ---------- */
+.privnote{font-size:12px;color:var(--dim);line-height:1.6;margin-top:12px}
+.privnote a{color:var(--blue);text-decoration:underline;text-underline-offset:2px}
+.form [hidden]{display:none!important}
+
+/* ---------- the ring of the agent's channels, round the moving core (home page) ---------- */
+.orbit-wrap{grid-column:1/-1;display:flex;flex-direction:column;align-items:center;margin-top:2vh}
+.orbit-title{margin-bottom:10px}
+.orbit{position:relative;width:min(600px,94vw);aspect-ratio:1/1;margin:0 auto}
+.orbit .core-reveal{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60%;aspect-ratio:1/1;margin:0}
+.orbit .orbit-c{position:absolute;transform:translate(-50%,-50%);white-space:nowrap;background:var(--chip-bg);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);box-shadow:0 6px 22px var(--chip-shadow)}
+.orbit .p1{left:67%;top:9%}.orbit .p2{left:91%;top:33%}.orbit .p3{left:91%;top:67%}.orbit .p4{left:67%;top:91%}.orbit .p5{left:33%;top:91%}.orbit .p6{left:9%;top:67%}.orbit .p7{left:9%;top:33%}.orbit .p8{left:33%;top:9%}
+.orbit-br{display:none}
+@media(max-width:860px){.orbit{position:static;width:auto;aspect-ratio:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:9px}.orbit .orbit-c{position:static;transform:none}.orbit .core-reveal{position:relative;top:auto;left:auto;transform:none;flex:none;width:min(250px,60vw);margin:2vh 0 1vh}.orbit .orbit-br{display:block;flex-basis:100%;height:0}}
+.core-reveal{position:relative;width:min(360px,46vw);aspect-ratio:1/1;margin:1vh auto 0;pointer-events:none}
+.core-reveal::after{content:"";position:absolute;left:50%;top:50%;width:78%;height:78%;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;mix-blend-mode:screen;background:radial-gradient(circle,rgba(var(--blue-rgb),.18),rgba(var(--teal-rgb),.05) 46%,rgba(var(--bg-rgb),0) 72%)}
+.core-reveal img,.core-reveal video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;-webkit-mask-image:radial-gradient(circle at 50% 50%,#000 52%,rgba(0,0,0,0) 74%);mask-image:radial-gradient(circle at 50% 50%,#000 52%,rgba(0,0,0,0) 74%)}
+/* the video fades in over its still picture once it is playing; on phones, saver mode and reduced motion it never loads */
+.core-reveal video{opacity:0;transition:opacity .8s var(--ease)}
+.core-reveal video.on{opacity:1}
+@media(prefers-reduced-motion:reduce){.core-reveal video{display:none}}
+:root[data-theme="light"] .core-reveal img,:root[data-theme="light"] .core-reveal video{filter:invert(1) hue-rotate(180deg) saturate(1.4);mix-blend-mode:multiply}
+
+/* ---------- small helpers for the new pages ---------- */
+.disp.sm{font-size:clamp(2rem,4vw,3.2rem)}
+.ctarow.mid{justify-content:center}
+
+/* the floating link to the live demo on the home page (it moved here from the home page's own style block) */
+.cw-live{position:fixed;bottom:26px;right:26px;z-index:90;display:inline-flex;align-items:center;gap:9px;padding:14px 20px;border-radius:999px;background:var(--w);color:var(--ink);font-family:var(--sans);font-size:14px;font-weight:600;text-decoration:none;box-shadow:0 14px 44px var(--float-shadow);transition:transform .3s var(--ease),background .3s}
+.cw-live:hover{transform:translateY(-3px);background:var(--blue)}
+.cw-live:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.cw-live .d{width:7px;height:7px;border-radius:50%;background:#12a594;box-shadow:0 0 8px var(--teal);animation:blink 1.8s infinite}
+@media(max-width:420px){.cw-live{bottom:16px;right:16px;padding:12px 16px;font-size:13px}}
+@media(max-width:820px){.cw-live{transition:transform .3s var(--ease),background .3s,opacity .3s,visibility .3s}.cw-live.away,.cw-live.tuck{opacity:0;visibility:hidden;transform:translateY(12px)}}
+@media(prefers-reduced-motion:reduce){.cw-live{transition:none}.cw-live .d{animation:none}}
+footer .meta{flex:0 0 100%}

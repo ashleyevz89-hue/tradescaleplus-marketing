@@ -1,4 +1,4 @@
-# TradeScale Plus — robots.txt
+# TradeScale Plus, robots.txt
 # All search and AI crawlers welcome.
 
 User-agent: *

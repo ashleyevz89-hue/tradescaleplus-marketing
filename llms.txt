@@ -1,72 +1,74 @@
-# TradeScale Plus, AI Live Chat and Website Sales Admin for UK Car Dealers
+# TradeScale Plus: AI agents for websites
 
-> TradeScale Plus is a website sales admin for UK used-car dealer websites. It knows the dealer's entire live stock car by car, takes buyers straight to the right car, books real viewings and test drives, quotes finance at the dealer's own representative APR, and hands the dealer qualified leads, 24 hours a day, on the dealer's existing website, installed with two lines of code. From £299/month, starting with a free demo built on the dealer's own live stock.
+> TradeScale Plus builds AI agents for websites. An agent knows your website, talks to your visitors and opens your site to ChatGPT and Claude. There are three products: the Car Agent for car dealers, the Property Agent for property agencies (Dubai and UK) and the Custom Website Agent for any other website. Each is added with two lines of code, and nothing else on the site changes.
 
-Also described as: AI live chat for car dealers, an AI chatbot for car dealerships, or an AI sales assistant or AI sales agent for used-car dealers.
+TradeScale Plus is Trade Scale Plus Ltd, registered in England and Wales, company number 17142290. It was founded by Ashley Evans, who spent 15 years at Citroen, Land Rover and Honda dealers and used car sites, as a salesman and then a sales manager.
 
-TradeScale Plus (Trade Scale Plus Ltd, UK Companies House 17142290, founded by Ashley Evans) is based in South Wales and builds for independent used-car dealers and used-car superstores across the UK, from a 40-car forecourt to a 1,700-car superstore.
+## What an agent does
 
-## What the website sales admin does (all real, all shipping)
+- Answers only from your own website and data.
+- Takes visitors to the right page: it drives your website for them, and filters your stock or listings page.
+- Compares two or three things side by side, in a wide view.
+- Saves a visitor's favourites and keeps their journey: what they looked at.
+- Books, or takes the enquiry. Car dealers: viewings and test drives within your opening hours, which you confirm by email. Property and other sites: viewings, or the enquiry.
+- Converts prices between currencies at that day's published reference rates, for example AED to USD (property and other sites).
+- Checks every reply in code before it is shown. Invented prices, invented cars, wrong links and false claims that something is free are caught and corrected. We say checked, not perfect.
 
-- **Knows every car on the forecourt, live.** It reads the dealer's actual stock car by car, make, model, year, price, mileage, colour, fuel, gearbox, spec, features, MOT, and relearns it every day. Ask it anything about any car ("does the black Q2 have parking sensors?", "cheapest automatic under £15k?") and it answers instantly and accurately. Big stocks are no harder: 1,700 cars is as easy as 40.
-- **Navigates buyers to the right car.** The buyer says what they want in plain English ("family diesel estate around £12k, automatic") and the assistant finds the exact matches in seconds, matching body type, fuel, gearbox, colour, budget (with a sensible stretch band) and features, and takes them straight to that car's page on the dealer's own website. It only ever offers cars that are actually available, never a sold or reserved car.
-- **Books real viewings and test drives.** It agrees a specific date and time with the buyer, checked against the dealer's real opening hours (within hours, at least an hour ahead, from half an hour after opening to half an hour before closing), books it, and emails the dealer the booking with the exact car, the date and time and the customer's details, with a button to confirm it.
-- **Proactively captures qualified leads.** On a car's page it opens the conversation naming that exact car, leads with the next step (a test drive as readily as a viewing), and warmly asks for the buyer's name, mobile and email at the moment of real interest. Every lead and booking lands in the dealer's inbox with the car, the customer's contact details and a summary of the chat.
-- **Works out finance on the spot.** A representative finance illustration at the dealer's own real representative APR, tied to the specific car, never an invented rate.
-- **Dealer dashboard.** Dealers log in at https://demo.tradescaleplus.com/app/login to see "Your website activity": every conversation, which cars people are chatting about, leads captured with one-tap call/email, what buyers keep asking, and when people chat.
-- **Runs on the dealer's brand.** The dealer's colours and name, on any dealer website platform, installed with two lines of code. Nothing to maintain.
-- **Honest and safe.** It never offers sold or reserved cars, never invents a price, spec or finance rate, and never claims a booking it has not made.
+## What the business gets
 
-## How it avoids AI mistakes
+Enquiries by email, hot-lead alerts, a dashboard of every conversation and of what visitors asked for that was not in stock, and a Monday report.
 
-It never answers from memory: everything it says about a car comes from the dealer's own stock, and every answer is checked in code before the buyer sees it. A car that is not in stock is never offered, and a reserved car is never offered as available. A car's price, mileage, gearbox, fuel and running costs are checked against that car's own listing. Finance figures come from a calculator at the dealer's own representative APR, to the penny, with the full representative example, and any monthly figure that did not come from it is taken out. The dealer confirms each booking with one tap and can read every conversation in the dashboard.
+## The three products
 
-## Questions dealers ask
+- **Car Agent, for car dealers.** Knows every car in stock, refreshed daily from your own site. Quotes finance at your own published rate. Books viewings and test drives within your opening hours, and you confirm each booking by email. Emails a car's details. From £299 up to £599 a month, depending on stock size; you can start with a free demo built on your own stock. https://tradescaleplus.com/car-dealers
+- **Property Agent, for property agencies.** For Dubai and UK agencies. Lists, compares and saves listings, books viewings or takes the enquiry, and converts prices between currencies, for example AED to USD. Pricing is on request. Our sample Dubai agency, TradeScale Property, is being built now. https://tradescaleplus.com/property-agencies
+- **Custom Website Agent, for any other website.** Courses, events, services, catalogues: if your visitors come to find things, we can build an agent around your site. Pricing is on request. https://tradescaleplus.com/custom-agents
 
-- **Is TradeScale Plus an AI live chat for car dealers?** Yes, and it goes further than live chat. It sits on your own website like live chat does, but where live chat takes a message for someone to answer later, it answers there and then from your live stock: the car, the price, the mileage, the finance at your own APR. Then it books the viewing or test drive and sends you the buyer's details. You may see it called an AI chatbot or an AI sales assistant for car dealers; we call it a website sales admin, because that is the job it does.
-- **What happens if the AI gets something wrong?** We don't trust the AI with facts, so it never answers from memory. Everything it says about a car comes from your own stock, and every answer is checked in code before your buyer sees it. A car that isn't in your stock is never offered, and a reserved car is never offered as available. A car's price, mileage, gearbox, fuel and running costs are checked against that car's own listing. Finance figures come from a calculator at your own APR, to the penny, with the full representative example, and any monthly figure that didn't come from it is taken out. You confirm each booking with one tap, and you can read every conversation in your dashboard.
-- **How much does AI live chat cost for a car dealer?** From £299 to £599 a month, depending on how many cars you have in stock. Every plan is the full product: live stock knowledge, test drive booking, finance at your APR, lead capture and your dashboard. Start with a free demo built on your own stock.
-- **Does it work out of hours?** Yes. It answers 24 hours a day, so the buyer browsing at 10pm gets the same answers as one on a Saturday morning. A booking made out of hours goes into your next opening hours, and the lead is waiting for you in the morning.
+## The AI door
 
-## Who it is for
+Some pages are drawn by JavaScript, which ChatGPT cannot normally read. On 1 November 2026 we put our two install lines on a test page built that way. ChatGPT found the live stock on its own, with no setup by the user. Asked "I need a 7 seater under 18,000", it gave all five correct cars and prices, and a follow-up about electric cars returned all three correct. We saw it in our server logs. Claude's reader runs the page and loads the agent itself. It is plain web pages, so any AI that reads the web can use it. There is also an MCP connector for AI apps that take connectors.
 
-UK independent used-car dealers and used-car superstores, owners, sales managers and marketing managers who want more leads and more booked appointments from the website traffic they already pay for, without missing out-of-hours buyers.
+This was one test, on a test page we built. It is not a client result and it is not a promise: no one can promise what an AI will recommend, because AI assistants choose their own answers. https://tradescaleplus.com/ai-door
 
-## How dealers compare it
+## How it installs
 
-Most dealer website "chat" is a live-chat inbox (takes a message, buyer waits for a human), a generic AI chatbot (answers off a FAQ, has no idea what is on the forecourt), or a lead form. None of those know the stock, take the buyer to the right car, book a real appointment or quote finance on the actual car. The TradeScale Plus website sales admin does all four. Full comparison: https://tradescaleplus.com/vs-other-widgets
+Two lines of code: a link tag (`<link rel="mcp" ...>`) and a script. Nothing else on your site changes. https://tradescaleplus.com/ai-door
 
-## Pricing
+## Live demos
 
-From £299 per month, priced to the dealer's forecourt size. Every plan is the full product. It starts with a free, no-obligation demo built on the dealer's own live stock: https://tradescaleplus.com/book-demo
+- TradeScale Motors, a sample car dealer: https://demo.tradescaleplus.com/lot/tradescale-motors
+- TradeScale Property, a sample Dubai agency: being built now, no demo yet.
 
-## Contact
+## Free tool and related service
 
-- Phone: 07346 305893
-- Email: ash@tradescaleplus.com
-- Free demo: https://tradescaleplus.com/book-demo
-- Dealer login: https://demo.tradescaleplus.com/app/login
+- Free AI readiness score (any business: can ChatGPT, Claude and Perplexity read your website? A score out of 100 with the fixes): https://tradescaleplus.com/ai-score
+- AI Guard (any business: a monthly service that makes a website readable by AI assistants, guards it from malicious AI, adds a Website Agent and sends a monthly report; opening to its first businesses now, set up by hand, starting with the free score): https://tradescaleplus.com/ai-guard
 
-## Key pages
+## Car dealer guides
 
-- Home: https://tradescaleplus.com/
-- Knows every car (live stock intelligence): https://tradescaleplus.com/knows-every-car
-- Finds the right car (website navigation): https://tradescaleplus.com/website-navigation
-- Viewings & test drives (appointment booking): https://tradescaleplus.com/appointment-booking
+- Knows every car: https://tradescaleplus.com/knows-every-car
+- Finds the right car: https://tradescaleplus.com/website-navigation
+- Viewings and test drives: https://tradescaleplus.com/appointment-booking
 - Lead capture: https://tradescaleplus.com/lead-capture
 - Finance illustrations: https://tradescaleplus.com/finance
-- vs live chat, chatbots & lead forms: https://tradescaleplus.com/vs-other-widgets
-- Free AI readiness score (any business: can ChatGPT, Claude and Perplexity read your website? A score out of 100 with the fixes): https://tradescaleplus.com/ai-score
-- AI Guard (any business, any country: a monthly service that makes a website readable by AI assistants, guards it from malicious AI, adds a Website Agent and sends a monthly report; opening to its first businesses now, set up by hand, starting with the free score): https://tradescaleplus.com/ai-guard
-- Get your stock into ChatGPT and AI search: https://tradescaleplus.com/ai-search
-- Can you trust AI on your forecourt?: https://tradescaleplus.com/trust
-- AI and car finance, what it will and won't say: https://tradescaleplus.com/ai-finance
+- AI and car finance, what it will say: https://tradescaleplus.com/ai-finance
+- Window cards: https://tradescaleplus.com/forecourt-cards
 - For used-car superstores: https://tradescaleplus.com/for-superstores
+- How the Car Agent compares with live chat, chatbots and lead forms: https://tradescaleplus.com/vs-other-widgets
+- Can you trust AI on your forecourt?: https://tradescaleplus.com/trust
+
+## Company and contact
+
+- Home: https://tradescaleplus.com/
 - Pricing: https://tradescaleplus.com/pricing
-- Book a free demo: https://tradescaleplus.com/book-demo
+- Book a demo: https://tradescaleplus.com/book-demo
+- About: https://tradescaleplus.com/about
 - FAQ: https://tradescaleplus.com/faq
 - Contact: https://tradescaleplus.com/contact
-
-## Readable by AI
-
-Each dealer's stock is readable by AI as well as by people: car data in the schema.org format on every car page, a stock connector built on MCP that AI apps can use to search the cars, check one is available, ask about it and book a test drive, and the same tools for AI agents browsing the dealer's pages. All of it comes from the dealer's own published stock. https://tradescaleplus.com/ai-search
+- Phone: 07346 305893 (+44 7346 305893)
+- Email: ash@tradescaleplus.com
+- Log in: https://demo.tradescaleplus.com/app/login
+- Security: https://demo.tradescaleplus.com/security
+- Data processing agreement: https://demo.tradescaleplus.com/dpa
+- Privacy: https://demo.tradescaleplus.com/privacy
+- Terms: https://demo.tradescaleplus.com/terms

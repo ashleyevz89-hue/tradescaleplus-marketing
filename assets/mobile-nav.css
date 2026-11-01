@@ -1,119 +1,38 @@
-/* TradeScale Plus — shared mobile nav + responsive overrides */
+/* tradescaleplus.com: the menu button and the phone drawer.
+   Rewritten in November 2026 onto the site's colour tokens (the first version used fixed colours, so it ignored the light
+   theme, and no page loaded it). Every page links this after site.css. Up to 1040px wide the top bar's links give way to a
+   menu button; the drawer below holds the same links, then Log in, Book a demo and the phone number. assets/mobile-nav.js
+   runs it. */
 
-/* Hamburger button (hidden on desktop) */
-.tsp-burger {
-  display: none;
-  background: transparent;
-  border: 1px solid #353541;
-  border-radius: 8px;
-  padding: 10px 12px;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-}
-.tsp-burger:focus-visible { outline: 2px solid #3B82F6; outline-offset: 2px; }
-.tsp-burger span {
-  display: block;
-  width: 18px;
-  height: 2px;
-  background: #d4d4d8;
-  border-radius: 1px;
-  transition: transform .2s ease, opacity .2s ease;
-}
-.tsp-burger span + span { margin-top: 4px; }
-.tsp-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-.tsp-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-.tsp-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.tsp-burger{display:none;flex-direction:column;align-items:center;justify-content:center;width:44px;height:44px;flex:none;padding:0;border-radius:999px;border:1px solid var(--tel-line);background:transparent;color:var(--w);cursor:pointer;transition:border-color .25s}
+.tsp-burger:hover{border-color:var(--blue)}
+.tsp-burger:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.tsp-burger span{display:block;width:18px;height:2px;border-radius:1px;background:currentColor;transition:transform .2s ease,opacity .2s ease}
+.tsp-burger span+span{margin-top:4px}
+.tsp-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.tsp-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.tsp-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 
-/* Mobile drawer (slides down from below nav) */
-.tsp-drawer {
-  display: none;
-  position: fixed;
-  top: 60px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 49;
-  background: rgba(5, 5, 5, 0.97);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  padding: 24px;
-  overflow-y: auto;
-}
-.tsp-drawer[data-open="true"] { display: block; }
-.tsp-drawer a {
-  display: block;
-  padding: 16px 0;
-  font-size: 18px;
-  font-weight: 500;
-  color: #d4d4d8;
-  border-bottom: 1px solid #1f1f23;
-  text-decoration: none;
-}
-.tsp-drawer a:hover, .tsp-drawer a:focus { color: #fff; }
-.tsp-drawer .tsp-drawer-cta {
-  margin-top: 24px;
-  display: block;
-  text-align: center;
-  background: #3B82F6;
-  color: #fff;
-  padding: 16px;
-  border-radius: 8px;
-  font-weight: 500;
-  border: 1px solid rgba(96, 165, 250, 0.4);
-  border-bottom: 1px solid rgba(96, 165, 250, 0.4);
-  font-size: 16px;
-}
-.tsp-drawer .tsp-drawer-signin {
-  margin-top: 16px;
-  display: block;
-  text-align: center;
-  background: transparent;
-  color: #d4d4d8;
-  padding: 16px;
-  border: 1px solid #353541;
-  border-radius: 8px;
-  font-size: 16px;
-}
+/* with the drawer open the bar behind the logo is solid, so the page does not show through it */
+nav.open{background:var(--bg);border-color:var(--line)}
 
-/* Footer single-col on phones */
-@media (max-width: 720px) {
-  .footer-grid, .ffin .footer-grid {
-    grid-template-columns: 1fr !important;
-    gap: 32px !important;
-  }
-  .tsp-burger { display: inline-flex; }
-  .nav .nav-cta .btn-ghost { display: none; }  /* hide "Sign in" on mobile nav, it's in the drawer */
-}
+.tsp-drawer{display:none;position:fixed;top:70px;left:0;right:0;bottom:0;z-index:79;background:var(--bg);overflow-y:auto;overscroll-behavior:contain;padding:8px clamp(24px,5vw,64px) 48px}
+.tsp-drawer[data-open="true"]{display:block}
+.tsp-drawer a{display:flex;align-items:center;min-height:56px;font-size:18px;font-weight:500;color:var(--w);border-bottom:1px solid var(--line);transition:color .2s}
+.tsp-drawer a:hover{color:var(--blue)}
+.tsp-drawer a[aria-current="page"]{color:var(--blue)}
+.tsp-drawer a.dgo{justify-content:center;margin-top:28px;border:0;border-radius:999px;background:var(--w);color:var(--ink);font-size:15px;font-weight:600;min-height:54px;transition:background .3s}
+.tsp-drawer a.dgo:hover{background:var(--blue);color:var(--ink)}
+.tsp-drawer a.dcall{justify-content:center;border:0;min-height:52px;font-size:15px;color:var(--mut)}
+.tsp-drawer .drow{display:flex;align-items:center;gap:12px;margin-top:18px;color:var(--mut);font-size:13px}
 
-/* Bottom-of-page sticky CTA on mobile (only on long content pages) */
-@media (max-width: 720px) {
-  .tsp-sticky-cta {
-    position: fixed;
-    bottom: 16px;
-    left: 16px;
-    right: 16px;
-    z-index: 48;
-    background: #3B82F6;
-    color: #fff;
-    padding: 16px;
-    border-radius: 12px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 15px;
-    text-decoration: none;
-    box-shadow: 0 12px 40px rgba(59, 130, 246, 0.4), 0 2px 8px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(96, 165, 250, 0.45);
-  }
+/* up to 1040px: the links go, the button comes, and "Log in" lives in the drawer */
+@media(max-width:1040px){
+  .nlinks a:not(.go){display:none}
+  .tsp-burger{display:inline-flex}
+  .nlinks{gap:12px}
 }
-@media (min-width: 721px) {
-  .tsp-sticky-cta { display: none; }
-}
-
-/* Touch target audit — bump all buttons to 44px min on mobile */
-@media (max-width: 720px) {
-  .btn-primary, .btn-secondary, .btn-nav {
-    min-height: 44px;
-  }
-}
+/* a drawer left open while the window is widened shuts itself */
+@media(min-width:1041px){.tsp-drawer,.tsp-drawer[data-open="true"]{display:none}}
+/* from 1041px to 1180px the full top bar fits with its links a little closer */
+@media(min-width:1041px) and (max-width:1180px){.nlinks{gap:18px}}

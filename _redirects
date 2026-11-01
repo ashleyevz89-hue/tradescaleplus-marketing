@@ -74,3 +74,8 @@
 
 # 2026-10-21: browsers and crawlers ask for /favicon.ico at the root; the icon lives in /assets.
 /favicon.ico /assets/favicon.ico 200
+
+# 2026-11-01: the AI search page is replaced by the AI door page (its connector claims were not proven on a real dealer
+# site). The page file is deleted; these rules keep the old address working.
+/ai-search /ai-door 301
+/ai-search.html /ai-door 301
