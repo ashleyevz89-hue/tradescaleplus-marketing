@@ -1,28 +1,28 @@
-# TradeScale Plus: AI agents for websites
+# TradeScale Plus: every visitor answered, day or night
 
-> TradeScale Plus builds AI agents for websites. An agent knows your website, talks to your visitors and opens your site to ChatGPT, Claude and other AI assistants. There are three products: the Car Agent for car dealers, the Property Agent for property agencies (Dubai and UK) and the Custom Website Agent for any other website. Each is added with two lines of code, and nothing else on the site changes.
+> TradeScale Plus answers every visitor to a car dealer, property agency or other website in seconds, day or night, from the business's own listings, takes them to the right car or home, books viewings and test drives into the business's opening hours, and sends the business every enquiry with what the visitor looked at and asked. It also opens the site to ChatGPT, Claude and other AI assistants. The work is done by AI agents: the Car Agent for car dealers, the Property Agent for property agencies (Dubai and UK) and the Custom Website Agent for any other website. Each is added with two lines of code, and nothing else on the site changes.
 
 TradeScale Plus is Trade Scale Plus Ltd, registered in England and Wales, company number 17142290. It was founded by Ashley Evans (Founder, Product and AI), who spent 15 years selling cars at Citroen, Land Rover and Honda dealers and used car sites, as a salesman and then a sales manager, so he knows where buyers drop off. He then built TradeScale Plus with the latest frontier AI, designing how our agents think, act and check themselves, and he works with the newest AI models every day. Richard Beagle (Head of Partnerships) works with car dealers, property agencies and web providers to get our agents live.
 
-## What an agent does
+## What your visitors get
 
-- Answers only from your own website and data.
-- Takes visitors to the right page: it drives your website for them, and filters your stock or listings page.
-- Compares two or three things side by side, in a wide view.
-- Saves a visitor's favourites and keeps their journey: what they looked at.
-- Books, or takes the enquiry. Car dealers: viewings and test drives within your opening hours, which you confirm by email. Property and other sites: viewings, or the enquiry.
-- Converts prices between currencies at that day's published reference rates, for example AED to USD (property and other sites).
-- Checks every reply in code before it is shown. Invented prices, invented cars, wrong links and false claims that something is free are caught and corrected. We say checked, not perfect.
+- An answer in seconds, day or night, weekends included, from your own website and data and from nothing else.
+- A trip to the right car or home: the agent drives your website for them, and filters your stock or listings page.
+- Help to compare two or three things side by side, in a wide view.
+- Favourites saved with their journey (what they looked at), and a shortlist they can have sent by email.
+- A booking or the enquiry. Car dealers: viewings and test drives booked into your opening hours, even when the team is off, which you confirm by email. Property and other sites: viewings, or the enquiry.
+- Prices in their own currency, converted at that day's published reference rates, for example AED to USD (property and other sites).
+- Every reply checked in code before it is shown. Invented prices, invented cars, wrong links and false claims that something is free are caught and corrected. We say checked, not perfect.
 
 ## What the business gets
 
-Enquiries by email, with what the visitor looked at, and a dashboard of every conversation and of what visitors asked for. Car dealers also get hot-lead alerts and a Monday report.
+Every enquiry by email, with what the visitor looked at and asked. A dashboard of every conversation, of what visitors wanted that was not listed, and of what the site could not answer. Car dealers also get hot-lead alerts and a Monday report.
 
 ## The three products
 
-- **Car Agent, for car dealers.** Knows every car in stock, refreshed daily from your own site. Quotes finance at your own published rate. Books viewings and test drives within your opening hours, and you confirm each booking by email. Emails a car's details. Priced for your business: get a quote. You can start with a free demo built on your own stock. https://tradescaleplus.com/car-dealers
-- **Property Agent, for property agencies.** For Dubai and UK agencies. Lists, compares and saves listings, books viewings or takes the enquiry, and converts prices between currencies, for example AED to USD. Priced for your business: get a quote. Live demo: TradeScale Property, a sample Dubai agency (https://demo.tradescaleplus.com/homes/tradescale-property). https://tradescaleplus.com/property-agencies
-- **Custom Website Agent, for any other website.** Courses, events, services, catalogues: if your visitors come to find things, we can build an agent around your site. Priced for your business: get a quote. https://tradescaleplus.com/custom-agents
+- **Car Agent, for car dealers.** Buyers get an answer on every car in stock, refreshed daily from your own site, day or night. Finance is quoted at your own published rate. Viewings and test drives are booked into your opening hours, and you confirm each booking by email. A car's details can be emailed. Priced for your business: get a quote. You can start with a free demo built on your own stock. https://tradescaleplus.com/car-dealers
+- **Property Agent, for property agencies.** For Dubai and UK agencies. Visitors get an answer on any listing at any hour, compare and save listings, book a viewing or leave the enquiry, and see prices converted between currencies, for example AED to USD. Priced for your business: get a quote. Live demo: TradeScale Property, a sample Dubai agency (https://demo.tradescaleplus.com/homes/tradescale-property). https://tradescaleplus.com/property-agencies
+- **Custom Website Agent, for any other website.** Courses, events, services, catalogues: if your visitors come to find things, every one of them gets an answer from your own pages. Priced for your business: get a quote. https://tradescaleplus.com/custom-agents
 
 ## Pricing
 
@@ -30,7 +30,7 @@ We do not publish prices. Every agent is priced for the business it works for. T
 
 ## The AI door
 
-Some pages are drawn by JavaScript, which ChatGPT cannot normally read. On 1 November 2026 we put our two install lines on a test page built that way. ChatGPT found the live stock on its own, with no setup by the user. Asked "I need a 7 seater under 18,000", it gave all five correct cars and prices, and a follow-up about electric cars returned all three correct. We saw it in our server logs. Claude's reader runs the page and loads the agent itself. It is plain web pages, so any AI that reads the web can use it. There is also an MCP connector for AI apps that take connectors.
+Buyers ask ChatGPT first. Some pages are drawn by JavaScript, which ChatGPT cannot normally read. On 1 November 2026 we put our two install lines on a test page built that way. ChatGPT found the live stock on its own, with no setup by the user. Asked "I need a 7 seater under 18,000", it gave all five correct cars and prices, and a follow-up about electric cars returned all three correct. We saw it in our server logs. Claude's reader runs the page and loads the agent itself. It is plain web pages, so any AI that reads the web can use it. There is also an MCP connector for AI apps that take connectors.
 
 This was one test, on a test page we built. It is not a client result and it is not a promise: no one can promise what an AI will recommend, because AI assistants choose their own answers. https://tradescaleplus.com/ai-door
 
