@@ -2,7 +2,7 @@
 
 > TradeScale Plus builds AI agents for websites. An agent knows your website, talks to your visitors and opens your site to ChatGPT, Claude and other AI assistants. There are three products: the Car Agent for car dealers, the Property Agent for property agencies (Dubai and UK) and the Custom Website Agent for any other website. Each is added with two lines of code, and nothing else on the site changes.
 
-TradeScale Plus is Trade Scale Plus Ltd, registered in England and Wales, company number 17142290. It was founded by Ashley Evans, who spent 15 years at Citroen, Land Rover and Honda dealers and used car sites, as a salesman and then a sales manager.
+TradeScale Plus is Trade Scale Plus Ltd, registered in England and Wales, company number 17142290. It was founded by Ashley Evans (Founder, Product and AI), who spent 15 years selling cars at Citroen, Land Rover and Honda dealers and used car sites, as a salesman and then a sales manager, so he knows where buyers drop off. He then built TradeScale Plus with the latest frontier AI, designing how our agents think, act and check themselves, and he works with the newest AI models every day. Richard Beagle (Head of Partnerships) works with car dealers, property agencies and web providers to get our agents live.
 
 ## What an agent does
 
