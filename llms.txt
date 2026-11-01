@@ -21,7 +21,7 @@ Enquiries by email, hot-lead alerts, a dashboard of every conversation and of wh
 ## The three products
 
 - **Car Agent, for car dealers.** Knows every car in stock, refreshed daily from your own site. Quotes finance at your own published rate. Books viewings and test drives within your opening hours, and you confirm each booking by email. Emails a car's details. From £299 up to £599 a month, depending on stock size; you can start with a free demo built on your own stock. https://tradescaleplus.com/car-dealers
-- **Property Agent, for property agencies.** For Dubai and UK agencies. Lists, compares and saves listings, books viewings or takes the enquiry, and converts prices between currencies, for example AED to USD. Pricing is on request. Our sample Dubai agency, TradeScale Property, is being built now. https://tradescaleplus.com/property-agencies
+- **Property Agent, for property agencies.** For Dubai and UK agencies. Lists, compares and saves listings, books viewings or takes the enquiry, and converts prices between currencies, for example AED to USD. Pricing is on request. Live demo: TradeScale Property, a sample Dubai agency (https://demo.tradescaleplus.com/homes/tradescale-property). https://tradescaleplus.com/property-agencies
 - **Custom Website Agent, for any other website.** Courses, events, services, catalogues: if your visitors come to find things, we can build an agent around your site. Pricing is on request. https://tradescaleplus.com/custom-agents
 
 ## The AI door
@@ -37,7 +37,7 @@ Two lines of code: a link tag (`<link rel="mcp" ...>`) and a script. Nothing els
 ## Live demos
 
 - TradeScale Motors, a sample car dealer: https://demo.tradescaleplus.com/lot/tradescale-motors
-- TradeScale Property, a sample Dubai agency: being built now, no demo yet.
+- TradeScale Property, a sample Dubai agency (invented listings): https://demo.tradescaleplus.com/homes/tradescale-property
 
 ## Free tool and related service
 
