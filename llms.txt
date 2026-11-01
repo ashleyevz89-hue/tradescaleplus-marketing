@@ -2,7 +2,7 @@
 
 > TradeScale Plus builds AI agents for websites. An agent knows your website, talks to your visitors and opens your site to ChatGPT, Claude and other AI assistants. There are three products: the Car Agent for car dealers, the Property Agent for property agencies (Dubai and UK) and the Custom Website Agent for any other website. Each is added with two lines of code, and nothing else on the site changes.
 
-TradeScale Plus is Trade Scale Plus Ltd, registered in England and Wales, company number 17142290. It was founded by Ashley Evans, who spent 15 years at Citroen, Land Rover and Honda dealers and used car sites, as a salesman and then a sales manager.
+TradeScale Plus is Trade Scale Plus Ltd, registered in England and Wales, company number 17142290. It was founded by Ashley Evans (Founder, Product and AI), who spent 15 years selling cars at Citroen, Land Rover and Honda dealers and used car sites, as a salesman and then a sales manager, so he knows where buyers drop off. He then built TradeScale Plus with the latest frontier AI, designing how our agents think, act and check themselves, and he works with the newest AI models every day. Richard Beagle (Head of Partnerships) works with car dealers, property agencies and web providers to get our agents live.
 
 ## What an agent does
 
@@ -16,13 +16,17 @@ TradeScale Plus is Trade Scale Plus Ltd, registered in England and Wales, compan
 
 ## What the business gets
 
-Enquiries by email, hot-lead alerts, a dashboard of every conversation and of what visitors asked for that was not in stock, and a Monday report.
+Enquiries by email, with what the visitor looked at, and a dashboard of every conversation and of what visitors asked for. Car dealers also get hot-lead alerts and a Monday report.
 
 ## The three products
 
-- **Car Agent, for car dealers.** Knows every car in stock, refreshed daily from your own site. Quotes finance at your own published rate. Books viewings and test drives within your opening hours, and you confirm each booking by email. Emails a car's details. From £299 up to £599 a month, depending on stock size; you can start with a free demo built on your own stock. https://tradescaleplus.com/car-dealers
-- **Property Agent, for property agencies.** For Dubai and UK agencies. Lists, compares and saves listings, books viewings or takes the enquiry, and converts prices between currencies, for example AED to USD. Pricing is on request. Live demo: TradeScale Property, a sample Dubai agency (https://demo.tradescaleplus.com/homes/tradescale-property). https://tradescaleplus.com/property-agencies
-- **Custom Website Agent, for any other website.** Courses, events, services, catalogues: if your visitors come to find things, we can build an agent around your site. Pricing is on request. https://tradescaleplus.com/custom-agents
+- **Car Agent, for car dealers.** Knows every car in stock, refreshed daily from your own site. Quotes finance at your own published rate. Books viewings and test drives within your opening hours, and you confirm each booking by email. Emails a car's details. Priced for your business: get a quote. You can start with a free demo built on your own stock. https://tradescaleplus.com/car-dealers
+- **Property Agent, for property agencies.** For Dubai and UK agencies. Lists, compares and saves listings, books viewings or takes the enquiry, and converts prices between currencies, for example AED to USD. Priced for your business: get a quote. Live demo: TradeScale Property, a sample Dubai agency (https://demo.tradescaleplus.com/homes/tradescale-property). https://tradescaleplus.com/property-agencies
+- **Custom Website Agent, for any other website.** Courses, events, services, catalogues: if your visitors come to find things, we can build an agent around your site. Priced for your business: get a quote. https://tradescaleplus.com/custom-agents
+
+## Pricing
+
+We do not publish prices. Every agent is priced for the business it works for. The price depends on how many cars or listings the agent has to know, how many websites or branches it works on, and which features are used, such as the AI door and viewing bookings. Get a quote: https://tradescaleplus.com/book-demo
 
 ## The AI door
 
@@ -60,8 +64,8 @@ Two lines of code: a link tag (`<link rel="mcp" ...>`) and a script. Nothing els
 ## Company and contact
 
 - Home: https://tradescaleplus.com/
-- Pricing: https://tradescaleplus.com/pricing
-- Book a demo: https://tradescaleplus.com/book-demo
+- Priced for your business, how a quote works: https://tradescaleplus.com/pricing
+- Book a demo or get a quote: https://tradescaleplus.com/book-demo
 - About: https://tradescaleplus.com/about
 - FAQ: https://tradescaleplus.com/faq
 - Contact: https://tradescaleplus.com/contact

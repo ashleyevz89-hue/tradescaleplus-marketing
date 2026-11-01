@@ -19,8 +19,8 @@ and opens the site to ChatGPT and Claude. It is added with two lines of code. Th
 | Property agencies (Property Agent) | `property-agencies.html` |
 | Any website (Custom Website Agent) | `custom-agents.html` |
 | The AI door (the ChatGPT test, 1 November 2026) | `ai-door.html` |
-| Pricing | `pricing.html` |
-| Book a demo | `book-demo.html` |
+| Priced for your business (the nav says "Get a quote"; no prices are published) | `pricing.html` |
+| Book a demo or get a quote | `book-demo.html` |
 | Free AI readiness score | `ai-score.html` |
 | AI Guard | `ai-guard.html` |
 | Can you trust AI? | `trust.html` |
