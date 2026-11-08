@@ -40,8 +40,8 @@ Two lines of code: a link tag (`<link rel="mcp" ...>`) and a script. Nothing els
 
 ## Live demos
 
-- TradeScale Motors, a sample car dealer: https://demo.tradescaleplus.com/lot/tradescale-motors
-- TradeScale Property, a sample Dubai agency (invented listings): https://demo.tradescaleplus.com/homes/tradescale-property
+- TradeScale Motors, a sample car dealer: https://demo.tradescaleplus.com/lot/tradescale-motors (what AI assistants read: https://demo.tradescaleplus.com/ai/tradescale-motors)
+- TradeScale Property, a sample Dubai agency with homes for sale and to rent (invented listings): https://demo.tradescaleplus.com/homes/tradescale-property (what AI assistants read: https://demo.tradescaleplus.com/ai/tradescale-property)
 
 ## Free tool and related service
 

@@ -619,6 +619,26 @@ section.alt{background:linear-gradient(180deg,rgba(var(--fg-rgb),.028),rgba(var(
 .demo .tlink{margin-top:auto;padding-top:22px}
 .demo.is-soon:hover{transform:none}
 @media(max-width:820px){.demos{grid-template-columns:1fr}}
+/* the demo cards near the top of the home page: the kind of business, one thing to ask its chat, and two ways in */
+.demo .dtop{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.demo .dkind{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--blue)}
+.demo p.try{margin-top:18px;max-width:none;align-self:stretch;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:rgba(var(--fg-rgb),.03);font-size:14.5px;color:var(--w);line-height:1.55}
+.demo p.try b{display:block;margin-bottom:6px;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
+.demo .dlinks{margin-top:auto;padding-top:24px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px}
+.demo .dlinks .tlink{margin-top:0;padding-top:0}
+/* "See it live" in the top bar, the drawer and the footer of every page: the live dot marks it */
+.nlive{display:inline-flex;align-items:center;gap:8px}
+.nlive .d{width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 10px var(--teal);flex:none}
+.nlinks a.nlive{color:var(--w)}
+/* your data, your dashboard (home page): each dashboard's sections as a short list, and the line on whose data it is */
+.dlist{list-style:none;margin:16px 0 0;padding:0}
+.dlist li{position:relative;padding:10px 0 10px 20px;border-top:1px solid var(--line);font-size:13.5px;color:var(--mut);line-height:1.6}
+.dlist li::before{content:"";position:absolute;left:2px;top:19px;width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.c-blue .dlist li::before{background:var(--blue)}
+.dlist li b{color:var(--w);font-weight:600}
+.pair .card p.dnote{margin-top:16px;font-size:13px;color:var(--sub)}
+.own{grid-column:1/-1;margin:16px auto 0;max-width:60ch;text-align:center;font-size:14px;color:var(--mut);line-height:1.7}
+.own .tlink{display:inline-flex;margin-left:6px}
 
 /* ---------- the four legal links ---------- */
 .legal4{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:34px;text-align:left}

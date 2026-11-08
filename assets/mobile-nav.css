@@ -1,6 +1,6 @@
 /* tradescaleplus.com: the menu button and the phone drawer.
    Rewritten in November 2026 onto the site's colour tokens (the first version used fixed colours, so it ignored the light
-   theme, and no page loaded it). Every page links this after site.css. Up to 1040px wide the top bar's links give way to a
+   theme, and no page loaded it). Every page links this after site.css. Up to 1180px wide the top bar's links give way to a
    menu button; the drawer below holds the same links, then Log in, Book a demo and the phone number. assets/mobile-nav.js
    runs it. */
 
@@ -26,13 +26,13 @@ nav.open{background:var(--bg);border-color:var(--line)}
 .tsp-drawer a.dcall{justify-content:center;border:0;min-height:52px;font-size:15px;color:var(--mut)}
 .tsp-drawer .drow{display:flex;align-items:center;gap:12px;margin-top:18px;color:var(--mut);font-size:13px}
 
-/* up to 1040px: the links go, the button comes, and "Log in" lives in the drawer */
-@media(max-width:1040px){
+/* up to 1180px: the links go, the button comes, and "Log in" lives in the drawer (the bar has seven links since "See it live") */
+@media(max-width:1180px){
   .nlinks a:not(.go){display:none}
   .tsp-burger{display:inline-flex}
   .nlinks{gap:12px}
 }
 /* a drawer left open while the window is widened shuts itself */
-@media(min-width:1041px){.tsp-drawer,.tsp-drawer[data-open="true"]{display:none}}
-/* from 1041px to 1180px the full top bar fits with its links a little closer */
-@media(min-width:1041px) and (max-width:1180px){.nlinks{gap:18px}}
+@media(min-width:1181px){.tsp-drawer,.tsp-drawer[data-open="true"]{display:none}}
+/* from 1181px to 1360px the full top bar fits with its links a little closer (measured: it needs about 830px at 16px apart) */
+@media(min-width:1181px) and (max-width:1360px){.nlinks{gap:16px}}

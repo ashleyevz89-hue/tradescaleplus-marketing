@@ -10,7 +10,7 @@
     var drawer=document.getElementById("tsp-drawer");
     var nav=document.getElementById("nav");
     if(!burger||!drawer)return;
-    var wide=window.matchMedia?window.matchMedia("(min-width: 1041px)"):null;
+    var wide=window.matchMedia?window.matchMedia("(min-width: 1181px)"):null;
 
     function isOpen(){return drawer.getAttribute("data-open")==="true";}
     function set(open,giveFocusBack){

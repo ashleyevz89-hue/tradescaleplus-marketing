@@ -44,4 +44,6 @@ and opens the site to ChatGPT and Claude. It is added with two lines of code. Th
 
 The top bar, the phone drawer and the footer are copied into every page (there is no build step), so a change to a link
 is made in every `.html` file. Pages link each other as `name.html`; the 404 page is served at any depth, so it links
-from the root.
+from the root. "See it live" (top bar, drawer and footer) goes to the two live demos on the home page (`/#demos`; `#demos`
+on the home page itself). With it the top bar holds seven links, so up to 1180px wide they give way to the menu button
+(`assets/mobile-nav.css` and the width in `assets/mobile-nav.js` match).
