@@ -69,7 +69,7 @@ Two lines of code: a link tag (`<link rel="mcp" ...>`) and a script. Nothing els
 - About: https://tradescaleplus.com/about
 - FAQ: https://tradescaleplus.com/faq
 - Contact: https://tradescaleplus.com/contact
-- Phone: 07346 305893 (+44 7346 305893)
+- Phone: 07338 616094 (+44 7338 616094)
 - Email: ash@tradescaleplus.com
 - Log in: https://demo.tradescaleplus.com/app/login
 - Security: https://demo.tradescaleplus.com/security
