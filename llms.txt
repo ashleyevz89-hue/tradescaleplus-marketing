@@ -1,55 +1,64 @@
-# TradeScale Plus: AI agents for websites
+# TradeScale Plus: the Website Agent. Your website, interactive.
 
-> TradeScale Plus builds AI agents for websites. An agent knows your website, talks to your visitors and opens your site to ChatGPT, Claude and other AI assistants. There are three products: the Car Agent for car dealers, the Property Agent for property agencies (Dubai and UK) and the Custom Website Agent for any other website. Each is added with two lines of code, and nothing else on the site changes.
+> TradeScale Plus makes websites interactive. Two lines of code put the Website Agent inside a car dealer's or estate agent's own website, where it answers buyers from the business's own stock and pages, drives the stock list to the cars a buyer describes in their own words, works out finance at the dealer's own rate, books test drives and viewings, and emails every lead to the business with the car or home named. We set it up and run it.
 
-TradeScale Plus is Trade Scale Plus Ltd, registered in England and Wales, company number 17142290. It was founded by Ashley Evans (Founder, Product and AI), who spent 15 years selling cars at Citroen, Land Rover and Honda dealers and used car sites, as a salesman and then a sales manager, so he knows where buyers drop off. He then built TradeScale Plus with the latest frontier AI, designing how our agents think, act and check themselves, and he works with the newest AI models every day. Richard Beagle (Head of Partnerships) works with car dealers, property agencies and web providers to get our agents live.
+TradeScale Plus is Trade Scale Plus Ltd, registered in England and Wales, company number 17142290. It was founded by Ash Evans, who spent 15 years in the motor trade at Citroen, Land Rover and Honda dealers and used car sites, salesman then sales manager. Richard Beagle works with car dealers, estate agencies and web providers to get the Website Agent live.
 
-## What an agent does
+## 01 The interactive website
 
-- Answers only from your own website and data.
-- Takes visitors to the right page: it drives your website for them, and filters your stock or listings page.
-- Compares two or three things side by side, in a wide view.
-- Saves a visitor's favourites and keeps their journey: what they looked at.
-- Books, or takes the enquiry. Car dealers: viewings and test drives within your opening hours, which you confirm by email. Property and other sites: viewings, or the enquiry.
-- Converts prices between currencies at that day's published reference rates, for example AED to USD (property and other sites).
-- Checks every reply in code before it is shown. Invented prices, invented cars, wrong links and false claims that something is free are caught and corrected. We say checked, not perfect.
+- **The bar, on the home page and stock list.** A buyer types what they want in their own words ("automatic SUV under £20k") and the website's own stock list shows exactly those cars, never a sold or reserved one. A question gets its answer right there in the bar. It also shows "Carry on where you left off" (the last cars the buyer looked at, still for sale), the newest arrivals and up to three cars the dealer features from the dashboard.
+- **The panel, on every car page,** under the photos and the price, at one fixed size: the buyer's monthly at the dealer's own APR, worked out to the penny with the representative example; a side by side with a car they saved or looked at; part-exchange details (registration and mileage) for the team, with no price given; a test drive on one of the next five days the dealer is open, inside opening hours, confirmed by the team; and their saved cars. Questions about the car are answered from its own listing, day and night.
+- **On a phone** the bar stacks under the site's search and the panel sits after the site's own buttons, in one column, with the question box always in reach.
+- **For estate agents (UK and Dubai):** the bar counts the agency's homes as the visitor types and opens the agency's own search page for exactly those; the panel on every listing answers from the listing, books viewings as a request for the listing's consultant to confirm, compares homes like it, and keeps the visitor's saved homes.
 
-## What the business gets
+## 02 Your leads
 
-Enquiries by email, with what the visitor looked at, and a dashboard of every conversation and of what visitors asked for. Car dealers also get hot-lead alerts and a Monday report.
+Every enquiry and test drive request is emailed the moment it is made, with the car named, the buyer's name and number or email and what they want; a reply goes straight to the buyer. Keen buyers are marked HOT. A test drive comes with Confirm this time: once pressed, a buyer who gave their email gets their confirmation and a reminder the day before. Estate agency leads go to the listing's own consultant when we have their address.
 
-## The three products
+## 03 The data we provide
 
-- **Car Agent, for car dealers.** Knows every car in stock, refreshed daily from your own site. Quotes finance at your own published rate. Books viewings and test drives within your opening hours, and you confirm each booking by email. Emails a car's details. Priced for your business: get a quote. You can start with a free demo built on your own stock. https://tradescaleplus.com/car-dealers
-- **Property Agent, for property agencies.** For Dubai and UK agencies. Lists, compares and saves listings, books viewings or takes the enquiry, and converts prices between currencies, for example AED to USD. Priced for your business: get a quote. Live demo: TradeScale Property, a sample Dubai agency (https://demo.tradescaleplus.com/homes/tradescale-property). https://tradescaleplus.com/property-agencies
-- **Custom Website Agent, for any other website.** Courses, events, services, catalogues: if your visitors come to find things, we can build an agent around your site. Priced for your business: get a quote. https://tradescaleplus.com/custom-agents
+Only what the Website Agent records on the business's own website: every conversation, kept and searchable; what buyers searched for in the chat and the top prices they gave; the searches nothing in stock fitted (a buying list); the most viewed cars; cars asked about with nobody leaving their details; where buyers came from, with AI tools like ChatGPT counted apart; the questions the adverts could not answer; the Stock Health Check on each car's advert; and which AI tools read the stock. Only totals of visits are kept: nobody is identified.
+
+## 04 Your dashboard
+
+The dealer dashboard opens on the results (leads, viewings and test drives booked, leads while the dealer was shut) and who to ring first, with a diary, the leads, every conversation, the stock and the data above. Estate agencies get a team page: a manager sees the whole team, each consultant opens on their own day.
+
+## 05 Set up and run by us
+
+1. Two lines of code, added by the web company, or with one click from the business in its own Google Tag Manager.
+2. We set it up: colours, logo, opening hours, finance.
+3. It reads the website every day: new stock in, sold stock out, prices as the business sets them.
+4. We look after it: every answer is checked in code before a buyer sees it.
+5. AI can read the stock: a plain page for tools like ChatGPT, with every car or home on it and a search.
+
+## The films
+
+- The Website Agent for car dealers, the walkthrough (3 minutes 26 seconds, the five chapters above): https://tradescaleplus.com/assets/films/car-dealers-walkthrough.mp4
 
 ## Pricing
 
-We do not publish prices. Every agent is priced for the business it works for. The price depends on how many cars or listings the agent has to know, how many websites or branches it works on, and which features are used, such as the AI door and viewing bookings. Get a quote: https://tradescaleplus.com/book-demo
+We do not publish prices. The Website Agent is priced for the business it works for: how many cars or listings it has to know, how many websites or branches it works on, and which features are used. Get a quote: https://tradescaleplus.com/book-demo
 
 ## The AI door
 
-Some pages are drawn by JavaScript, which ChatGPT cannot normally read. On 1 November 2026 we put our two install lines on a test page built that way. ChatGPT found the live stock on its own, with no setup by the user. Asked "I need a 7 seater under 18,000", it gave all five correct cars and prices, and a follow-up about electric cars returned all three correct. We saw it in our server logs. Claude's reader runs the page and loads the agent itself. It is plain web pages, so any AI that reads the web can use it. There is also an MCP connector for AI apps that take connectors.
+Some pages are drawn by JavaScript, which ChatGPT cannot normally read. On 1 November 2026 we put our two install lines on a test page built that way. ChatGPT found the live stock on its own, with no setup by the user. Asked "I need a 7 seater under 18,000", it gave all five correct cars and prices, and a follow-up about electric cars returned all three correct. We saw it in our server logs. This was one test, on a test page we built. It is not a client result and it is not a promise: no one can promise what an AI will recommend. https://tradescaleplus.com/ai-door
 
-This was one test, on a test page we built. It is not a client result and it is not a promise: no one can promise what an AI will recommend, because AI assistants choose their own answers. https://tradescaleplus.com/ai-door
+## See it live
 
-## How it installs
+- TradeScale Motors, our example forecourt, with the Website Agent built into its pages: https://demo.tradescaleplus.com/lot/tradescale-motors (what AI tools read: https://demo.tradescaleplus.com/ai/tradescale-motors)
+- TradeScale Property, our example Dubai estate agency, with invented homes for sale and to rent: https://demo.tradescaleplus.com/homes/tradescale-property (what AI tools read: https://demo.tradescaleplus.com/ai/tradescale-property)
 
-Two lines of code: a link tag (`<link rel="mcp" ...>`) and a script. Nothing else on your site changes. https://tradescaleplus.com/ai-door
+## For car dealers and estate agents
 
-## Live demos
+- Car dealers: https://tradescaleplus.com/car-dealers
+- Estate agents: https://tradescaleplus.com/property-agencies
+- Any other website: https://tradescaleplus.com/custom-agents
+- Used-car superstores and dealer groups: https://tradescaleplus.com/for-superstores
 
-- TradeScale Motors, a sample car dealer: https://demo.tradescaleplus.com/lot/tradescale-motors (what AI assistants read: https://demo.tradescaleplus.com/ai/tradescale-motors)
-- TradeScale Property, a sample Dubai agency with homes for sale and to rent (invented listings): https://demo.tradescaleplus.com/homes/tradescale-property (what AI assistants read: https://demo.tradescaleplus.com/ai/tradescale-property)
+## Guides and free tools
 
-## Free tool and related service
-
-- Free AI readiness score (any business: can ChatGPT, Claude and Perplexity read your website? A score out of 100 with the fixes): https://tradescaleplus.com/ai-score
-- AI Guard (any business: a monthly service that makes a website readable by AI assistants, guards it from malicious AI, adds a Website Agent and sends a monthly report; opening to its first businesses now, set up by hand, starting with the free score): https://tradescaleplus.com/ai-guard
-
-## Car dealer guides
-
+- Free AI readiness score (can ChatGPT, Claude and Perplexity read your website? A score out of 100 with the fixes): https://tradescaleplus.com/ai-score
+- AI Guard: https://tradescaleplus.com/ai-guard
 - Knows every car: https://tradescaleplus.com/knows-every-car
 - Finds the right car: https://tradescaleplus.com/website-navigation
 - Viewings and test drives: https://tradescaleplus.com/appointment-booking
@@ -57,8 +66,7 @@ Two lines of code: a link tag (`<link rel="mcp" ...>`) and a script. Nothing els
 - Finance illustrations: https://tradescaleplus.com/finance
 - AI and car finance, what it will say: https://tradescaleplus.com/ai-finance
 - Window cards: https://tradescaleplus.com/forecourt-cards
-- For used-car superstores: https://tradescaleplus.com/for-superstores
-- How the Car Agent compares with live chat, chatbots and lead forms: https://tradescaleplus.com/vs-other-widgets
+- How the Website Agent compares with live chat, chatbots and lead forms: https://tradescaleplus.com/vs-other-widgets
 - Can you trust AI on your forecourt?: https://tradescaleplus.com/trust
 
 ## Company and contact
