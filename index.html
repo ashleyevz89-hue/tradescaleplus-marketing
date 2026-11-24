@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=5">
+<link rel="stylesheet" href="/assets/site.css?v=6">
 <link rel="preload" as="image" href="/assets/loops/hero-wake.jpg">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://tradescaleplus.com/#business","name":"TradeScale Plus","legalName":"Trade Scale Plus Ltd","description":"TradeScale Plus makes websites interactive with the Website Agent: two lines of code put it inside a car dealer's or estate agent's own website, where it answers buyers from the business's own stock and pages, drives the stock list to the cars a buyer describes, works out finance at the dealer's own rate, books test drives and viewings, and sends every lead to the business.","url":"https://tradescaleplus.com/","logo":"https://tradescaleplus.com/assets/icon-512.png","email":"ash@tradescaleplus.com","telephone":"+447338616094","founder":{"@type":"Person","name":"Ashley Evans"},"identifier":{"@type":"PropertyValue","propertyID":"Companies House","value":"17142290"},"address":{"@type":"PostalAddress","addressRegion":"South Wales","addressCountry":"GB"},"areaServed":[{"@type":"Country","name":"United Kingdom"},{"@type":"City","name":"Dubai"}],"sameAs":["https://find-and-update.company-information.service.gov.uk/company/17142290"]},{"@type":"WebSite","@id":"https://tradescaleplus.com/#website","url":"https://tradescaleplus.com/","name":"TradeScale Plus","publisher":{"@id":"https://tradescaleplus.com/#business"}},{"@type":"VideoObject","name":"TradeScale Plus for car dealers: the walkthrough","description":"The Website Agent on a car dealer's website, in five chapters: the interactive website, your leads, the data we provide, your dashboard, and set up and run by us.","thumbnailUrl":"https://tradescaleplus.com/assets/films/car-dealers-poster.jpg","contentUrl":"https://tradescaleplus.com/assets/films/car-dealers-walkthrough.mp4","uploadDate":"2026-11-24","duration":"PT3M26S","publisher":{"@id":"https://tradescaleplus.com/#business"}},{"@type":"VideoObject","name":"TradeScale Plus for estate agents: the walkthrough","description":"The Website Agent on an estate agency's website, in five chapters: the interactive website, your leads, the data we provide, your dashboard, and set up and run by us.","thumbnailUrl":"https://tradescaleplus.com/assets/films/estate-agents-poster.jpg","contentUrl":"https://tradescaleplus.com/assets/films/estate-agents-walkthrough.mp4","uploadDate":"2026-11-24","duration":"PT3M26S","publisher":{"@id":"https://tradescaleplus.com/#business"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Website Agent?","acceptedAnswer":{"@type":"Answer","text":"It is the part of your website that talks to buyers. It works inside your own pages: a search bar on your home page and stock list that drives the list to the cars a buyer describes in their own words, and a panel on every car page with their monthly at your own rate, a side by side, part-exchange details for your team and test drive booking inside your opening hours. It answers only from your own stock and pages."}},{"@type":"Question","name":"Do I need a new website?","acceptedAnswer":{"@type":"Answer","text":"No. Two lines of code go on the website you already have, added by your web company or through your own Google Tag Manager. We set it up and run it."}},{"@type":"Question","name":"Can it make things up?","acceptedAnswer":{"@type":"Answer","text":"It answers only from your own stock and pages, and every reply is checked in code before a buyer sees it, against your own stock and figures. When only your team can answer, it says so and takes the buyer's details."}},{"@type":"Question","name":"Where do the leads go?","acceptedAnswer":{"@type":"Answer","text":"Every enquiry and test drive request is emailed to you the moment it is made, with the car, the buyer's name and number and what they want. Reply and it goes straight to the buyer. Every conversation is also kept in your dashboard."}},{"@type":"Question","name":"Is it for estate agents too?","acceptedAnswer":{"@type":"Answer","text":"Yes, for UK and Dubai estate agents: a search that counts your homes as a buyer types, and a panel on every listing with viewings booked for the listing's consultant, homes like it and what is nearby. For estate agents"}},{"@type":"Question","name":"What does it cost?","acceptedAnswer":{"@type":"Answer","text":"It is priced for your business: how many cars or listings you have, how many websites or branches it covers and the features you use. Get a quote"}}]}]}
@@ -41,6 +41,7 @@
     <nav class="nav-links" aria-label="Main">
       <a href="car-dealers.html">Car dealers</a>
       <a href="property-agencies.html">Estate agents</a>
+      <a href="custom-agents.html">Any website</a>
       <a href="#website">How it works</a>
       <a href="#films">The films</a>
       <a href="#demos">See it live</a>
@@ -56,6 +57,7 @@
 <div class="drawer" id="drawer" data-open="false">
   <a href="car-dealers.html">Car dealers</a>
   <a href="property-agencies.html">Estate agents</a>
+  <a href="custom-agents.html">Any website</a>
   <a href="#website">How it works</a>
   <a href="#films">The films</a>
   <a href="#demos">See it live</a>
@@ -72,7 +74,7 @@
 <section class="hero" id="top">
   <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="wrap">
-    <p class="eyebrow rv"><span class="dot"></span>The Website Agent, for car dealers and estate agents</p>
+    <p class="eyebrow rv"><span class="dot"></span>The Website Agent, for car dealers, estate agents and any other website</p>
     <h1 class="display rv">Your website, <span class="lit">interactive.</span></h1>
     <p class="lede rv">Two lines of code turn the website you already have into one that answers buyers, drives your stock list, works out their finance and books the test drive. Day and night. We set it up and run it for you.</p>
     <div class="ctas rv">
@@ -326,11 +328,11 @@
         </div>
         <p class="note" style="margin-top:14px">Drawn from TradeScale Motors, our example forecourt. The cars under "Just arrived" are examples of the view, not a claim about that forecourt's newest stock.</p>
       </div>
-      <ul class="points">
+      <details class="more"><summary>Learn more</summary><ul class="points">
         <li class="rv"><b>Found for you</b>How many cars fit, and which, from your live stock. Never a sold or reserved car.</li>
         <li class="rv"><b>Carry on where you left off</b>The last cars a buyer looked at this visit, still for sale, one tap away.</li>
         <li class="rv"><b>Just arrived and Featured</b>Your newest cars, and up to three you choose to feature from your dashboard.</li>
-      </ul>
+      </ul></details>
     </div>
 
     <!-- 1.2 the panel on every car page -->
@@ -446,16 +448,16 @@
         </div>
         <p class="tool-cap" data-cap aria-live="polite"></p>
       </div>
-      <ul class="points">
+      <details class="more"><summary>Learn more</summary><ul class="points">
         <li class="rv"><b>Answered from your own listing</b>Ask about this car and the answer comes from its own advert: owners, service history, range, road tax.</li>
         <li class="rv"><b>Day and night</b>At 9:47pm it still answers, and books the test drive for when you're open.</li>
         <li class="rv"><b>Never a guess</b>When only your team can say, it says so and takes the buyer's details for you.</li>
-      </ul>
+      </ul></details>
       <p class="note" style="margin-top:22px">The figures are TradeScale Motors' own example: cash price £15,995, deposit £1,000, 48 months, representative APR 9.9%. The conversation is an example, answered from that car's own listing.</p>
     </div>
 
     <!-- 1.3 on a phone -->
-    <div class="part" id="phone">
+    <details class="more more-part" id="phone"><summary>And the same on a phone</summary><div class="part" style="padding-top:36px">
       <div class="part-head">
         <div><p class="eyebrow rv">And the same on a phone</p><h3 class="h3 rv">Made for the phone <span class="dim">in their hand.</span></h3></div>
         <p class="lede rv">On a phone the bar stacks under your search, and the panel sits after your buttons: one column, the tools in rows of three, the question box always in reach. It never covers your page.</p>
@@ -507,7 +509,7 @@
         </figure>
       </div>
       <p class="note" style="margin-top:22px;text-align:center">The phone search counts TradeScale Motors' 7-seat cars as its own AI page lists them; the answer about the range comes from the car's own listing.</p>
-    </div>
+    </div></details>
   </div>
 </section>
 
@@ -569,7 +571,7 @@
       <h2 class="h2 rv" id="data-h">What your buyers wanted, <span class="dim">kept for you.</span></h2>
       <p class="lede rv">Your website has always had the buyers. Now it tells you what they were after, including the ones who never left their details. Only what the Website Agent records on your own website.</p>
     </div>
-    <div class="bento">
+    <div class="bento" data-fold>
       <article class="cell w3 rv">
         <h3>Every conversation</h3><p>Every chat on your website, kept and searchable, newest first. Leads only, or flagged, in a tap.</p>
         <span class="tag tag-ex">Example</span>
@@ -617,7 +619,7 @@
           <div class="bar">ChatGPT<i style="--w:4%"></i><span>14</span></div>
         </div></div>
       </article>
-      <article class="cell rv">
+      <article class="cell rv folded">
         <h3>Looked at but not enquired</h3><p>Cars asked about in the chat with nobody leaving their details: worth a look at the advert or the price.</p>
         <span class="tag tag-ex">Example</span>
         <div class="viz"><div class="rows">
@@ -625,7 +627,7 @@
           <div class="row"><b>2019 Toyota RAV4</b><span>4 chats</span></div>
         </div></div>
       </article>
-      <article class="cell rv">
+      <article class="cell rv folded">
         <h3>Questions your adverts could not answer</h3><p>Each ended with "the team can confirm". Put the answer on the advert and the agent answers it on the spot.</p>
         <span class="tag tag-ex">Example</span>
         <div class="viz"><div class="rows">
@@ -633,12 +635,12 @@
           <div class="row"><b>Does it have a spare key?</b><span>2 times</span></div>
         </div></div>
       </article>
-      <article class="cell rv">
+      <article class="cell rv folded">
         <h3>Your adverts, checked</h3><p>The Stock Health Check: what to fix on each car's advert, checked against your own website.</p>
         <span class="tag tag-ex">Example</span>
         <div class="viz"><div class="bigfig">94%<small>of your cars have nothing to fix in what we check: a photo, a price, the mileage, a finance example, the MOT and the service history.</small></div><div class="meter"><i></i></div></div>
       </article>
-      <article class="cell w3 rv">
+      <article class="cell w3 rv folded">
         <h3>Your AI visibility</h3><p>Which AI tools read your stock for the people using them, like ChatGPT, and what they searched it for.</p>
         <span class="tag tag-ex">Example</span>
         <div class="viz"><div class="rows">
@@ -647,12 +649,13 @@
           <div class="row"><b>A lead left by a buyer's AI tool</b><span class="ac">1</span></div>
         </div></div>
       </article>
-      <article class="cell w3 rv">
+      <article class="cell w3 rv folded">
         <h3>Checked before your buyers saw it</h3><p>Every answer checked against your own stock and figures before a buyer saw it, and how many were put right.</p>
         <span class="tag tag-ex">Example</span>
         <div class="viz"><div class="bigfig"><span class="ac">412</span><small>answers checked against your own stock and figures this month. 3 were put right before the buyer saw them: a price, a mileage, a finance figure.</small></div></div>
       </article>
-    </div>
+
+<p class="more-row"><button type="button" class="more-btn" data-unfold>Show all ten</button></p>    </div>
     <p class="note" style="margin-top:18px">Every figure and name in these examples is made up to show the kind of thing you see. Your dashboard shows your own.</p>
   </div>
 </section>
@@ -811,12 +814,12 @@
       <li class="rv"><span class="n">04</span><h3>We look after it</h3><p>Every answer checked in code before a buyer sees it, and a person to ring when you need one.</p></li>
       <li class="rv"><span class="n">05</span><h3>AI can read your stock</h3><p>A page for tools like ChatGPT, with every car on it and a search.</p></li>
     </ol>
-    <div class="install rv">
+    <details class="more"><summary>See the two lines</summary><div class="install rv">
       <div class="install-h"><span>The two lines, as your website gets them</span><button type="button" data-copy="install-code">Copy</button></div>
 <pre id="install-code"><span class="t">&lt;link</span> <span class="a">rel</span>=<span class="s">"mcp"</span> <span class="a">href</span>=<span class="s">"https://demo.tradescaleplus.com/connector/your-dealership"</span><span class="t">&gt;&lt;noscript&gt;&lt;a</span> <span class="a">href</span>=<span class="s">"https://demo.tradescaleplus.com/ai/your-dealership"</span><span class="t">&gt;</span>Our live listings, with prices and a search, readable without JavaScript<span class="t">&lt;/a&gt;&lt;/noscript&gt;</span>
 <span class="t">&lt;script</span> <span class="a">src</span>=<span class="s">"https://demo.tradescaleplus.com/embed.js?slug=your-dealership"</span> <span class="a">data-slug</span>=<span class="s">"your-dealership"</span> <span class="a">async</span><span class="t">&gt;&lt;/script&gt;</span></pre>
     </div>
-    <p class="note" style="margin-top:14px">"your-dealership" stands for your own name with us. The first line also gives AI tools a plain page of your live stock: in our test on 1 November 2026, ChatGPT found a test site's live stock through it on its own. <a href="https://demo.tradescaleplus.com/ai/tradescale-motors" target="_blank" rel="noopener">See TradeScale Motors' AI page</a></p>
+    <p class="note" style="margin-top:14px">"your-dealership" stands for your own name with us. The first line also gives AI tools a plain page of your live stock: in our test on 1 November 2026, ChatGPT found a test site's live stock through it on its own. <a href="https://demo.tradescaleplus.com/ai/tradescale-motors" target="_blank" rel="noopener">See TradeScale Motors' AI page</a></p></details>
   </div>
 </section>
 
@@ -825,9 +828,9 @@
   <div class="wrap">
     <div class="chapter-head">
       <p class="eyebrow rv"><span class="n">06</span> Get started</p>
-      <h2 class="h2 rv" id="start-h">Built for car dealers. <span class="dim">And estate agents.</span></h2>
+      <h2 class="h2 rv" id="start-h">Built for car dealers and estate agents. <span class="dim">And any other website.</span></h2>
     </div>
-    <div class="duo">
+    <div class="duo trio">
       <a class="door rv" href="car-dealers.html">
         <span class="eyebrow">For car dealers</span>
         <h3>Every car page, selling.</h3>
@@ -841,6 +844,12 @@
         <p>A search that counts your homes as the buyer types, and a panel on every listing: viewings booked for the listing's consultant, homes like it, and what's nearby. UK and Dubai.</p>
         <span class="go">The Website Agent for estate agents</span>
         <span class="thumbs" aria-hidden="true"><img loading="lazy" decoding="async" src="/assets/showcase/homes/marina-canal-day.jpg" alt=""><img loading="lazy" decoding="async" src="/assets/showcase/homes/marina-golden-hour.jpg" alt=""></span>
+      </a>
+      <a class="door rv" href="custom-agents.html">
+        <span class="eyebrow">For any other website</span>
+        <h3>Whatever you list, answered.</h3>
+        <p>Courses, events, services, catalogues. It answers from your own site, takes visitors to the right page, compares, saves and books, or takes the enquiry.</p>
+        <span class="go">The Website Agent for any website</span>
       </a>
     </div>
 
@@ -892,7 +901,7 @@
 <footer class="foot">
   <div class="wrap">
     <div class="foot-top">
-      <div><a class="brand" href="index.html"><img src="/assets/tsp-mark-96.png" width="28" height="28" alt=""><span>TradeScale<b>+</b></span></a><p class="tl">The Website Agent: your website, interactive. For car dealers and estate agents.</p>
+      <div><a class="brand" href="index.html"><img src="/assets/tsp-mark-96.png" width="28" height="28" alt=""><span>TradeScale<b>+</b></span></a><p class="tl">The Website Agent: your website, interactive. For car dealers, estate agents and any other website.</p>
         <p class="foot-live"><a class="go" href="https://demo.tradescaleplus.com/lot/tradescale-motors" target="_blank" rel="noopener">Try it live: cars</a><a class="go" href="https://demo.tradescaleplus.com/homes/tradescale-property" target="_blank" rel="noopener">Try it live: homes</a></p></div>
       <div><h4>The walkthrough</h4><ul><li><a href="#website">The interactive website</a></li><li><a href="#leads">Your leads</a></li><li><a href="#data">The data we provide</a></li><li><a href="#dashboard">Your dashboard</a></li><li><a href="#setup">Set up and run by us</a></li><li><a href="#films">The films</a></li></ul></div>
       <div><h4>Who it is for</h4><ul><li><a href="car-dealers.html">Car dealers</a></li><li><a href="property-agencies.html">Estate agents</a></li><li><a href="for-superstores.html">Dealer groups</a></li><li><a href="custom-agents.html">Any other website</a></li><li><a href="#demos">See it live</a></li></ul></div>
@@ -908,6 +917,6 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=5" defer></script>
+<script src="/assets/site.js?v=6" defer></script>
 </body>
 </html>

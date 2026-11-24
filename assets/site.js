@@ -351,6 +351,16 @@
     figs.forEach(function (f) { fio.observe(f.el); });
   }
 
+  /* less on screen: a folded grid shows the rest of its cards on a tap, and the button goes */
+  $$('[data-unfold]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var row = b.parentNode, grid = row.previousElementSibling;
+      while (grid && !grid.hasAttribute('data-fold')) grid = grid.previousElementSibling;
+      if (grid) { grid.classList.add('open'); var f = $('.folded', grid); if (f) { f.setAttribute('tabindex', '-1'); f.focus({ preventScroll: true }); } }
+      row.parentNode.removeChild(row);
+    });
+  });
+
   /* the hero's loop rises a little as the page scrolls (transform only) */
   var hl = $('.hero-loop');
   if (hl && !reduce) {

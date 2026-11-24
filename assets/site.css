@@ -975,6 +975,44 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .try .btn{grid-column:2;grid-row:2/4;align-self:center}
 @media (max-width:520px){.try{grid-template-columns:1fr}.try .btn{grid-column:1;grid-row:auto;justify-self:start;margin-top:8px}}
 
+/* ============ less on screen: each section opens on a headline, a line and a picture; the detail is one tap away ============ */
+/* one idea per screen: a short headline and one line, centred, then one big picture, with room around it */
+.chapter{padding-top:clamp(96px,12vw,176px)}
+.chapter-head{margin:0 auto;text-align:center}
+.chapter-head .lede{margin-left:auto;margin-right:auto;max-width:34em}
+.part{padding-top:clamp(88px,11vw,160px)}
+.part-head{grid-template-columns:1fr;justify-items:center;text-align:center;gap:18px;max-width:780px;margin:0 auto 48px}
+.part-head .lede{max-width:34em}
+.band>.wrap:not(.cols)>.sec-head{margin-left:auto;margin-right:auto;text-align:center}
+.band>.wrap:not(.cols)>.sec-head .lede{margin-left:auto;margin-right:auto}
+.cols>.sec-head:not(:has(+ .prose)):not(:has(+ .stack)):not(:has(+ .panel)):not(:has(+ .form)){margin-left:auto;margin-right:auto;text-align:center}
+.cols>.sec-head:not(:has(+ .prose)):not(:has(+ .stack)):not(:has(+ .panel)):not(:has(+ .form)) .lede{margin-left:auto;margin-right:auto}
+.films-top{flex-direction:column;align-items:center;text-align:center}
+.page-hero.hero-center .hero-media{max-width:1040px;margin-left:auto;margin-right:auto}
+.page-hero.hero-center .loop-cap{justify-content:center;text-align:center}
+.page-hero.hero-center .display{max-width:15ch}
+.more,.more-row{text-align:center}
+.more>:not(summary){text-align:left}
+.more{margin-top:26px}
+.more>summary,.more-btn{display:inline-flex;align-items:center;gap:10px;height:42px;padding:0 18px;border-radius:999px;cursor:pointer;list-style:none;font-size:14.5px;font-weight:500;color:var(--text);background:rgba(140,180,255,.05);box-shadow:inset 0 0 0 1px var(--line3);transition:background-color .2s,box-shadow .2s}
+.more>summary::-webkit-details-marker{display:none}
+.more>summary:hover,.more-btn:hover{background:rgba(140,180,255,.12);box-shadow:inset 0 0 0 1px rgba(var(--accent-rgb),.55)}
+.more>summary::after,.more-btn::after{content:"";width:8px;height:8px;border-right:1.6px solid var(--accent-hi);border-bottom:1.6px solid var(--accent-hi);transform:rotate(45deg) translate(-2px,-2px);transition:transform .25s var(--ease)}
+.more[open]>summary::after{transform:rotate(-135deg) translate(-2px,-2px)}
+.more[open]>summary{margin-bottom:24px}
+.more>.points,.more>.lists{margin-top:0}
+.more-part{margin-top:clamp(56px,7vw,96px);padding-top:28px;border-top:1px solid var(--line)}
+.more-part>summary{height:50px;padding:0 24px;font-size:15.5px}
+.more-row{margin-top:18px}
+.js [data-fold]:not(.open)>.folded{display:none}
+html:not(.js) .more-row{display:none}
+.duo.trio{grid-template-columns:repeat(3,minmax(0,1fr))}
+.duo.trio .door{min-height:300px;padding:28px}
+.duo.trio .door h3{font-size:clamp(24px,2.2vw,30px)}
+.duo.trio .door p{font-size:15px}
+.duo.trio .door .thumbs{opacity:.35}
+@media (max-width:1020px){.duo.trio{grid-template-columns:1fr}.duo.trio .door{min-height:0}}
+
 /* ============ the other pages: one hero, one section, one set of parts ============ */
 .crumb{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:26px;font-size:13px;color:var(--text3)}
 .crumb a{color:var(--text2);transition:color .15s}
