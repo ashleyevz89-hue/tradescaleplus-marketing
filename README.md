@@ -7,18 +7,24 @@ own stock and pages, sends every lead to the business, and records what buyers w
 widget, a chatbot or an AI assistant. The earlier voice receptionist, CRM and "AME" pages are retired and redirect to the
 homepage (`_redirects`).
 
-## The rebuilt pages (24 Nov 2026, branch `redesign-interactive`)
+## One look, every page (24 Nov 2026, branch `redesign-unified`)
 
-`index.html` (the walkthrough, in the films' five chapters), `car-dealers.html` and `property-agencies.html` use their own
-stylesheet and script, `assets/interactive.css` and `assets/interactive.js`: dark, one accent (the films' teal), Geist. The
-older pages keep `assets/site.css` and their own look until they are rebuilt; their menu, phone menu and footer carry the
-same links as the rebuilt pages.
+All 23 pages share one stylesheet and one script, `assets/site.css` and `assets/site.js`: midnight navy with depth (two
+soft lights and the mark's honeycomb behind every page), our blue `#3b9eff` as the only accent, Geist and Geist Mono,
+one top bar, one footer, one set of parts (hero, bands, cards, questions, the last call). There is no light theme.
 
-- `assets/films/`: `car-dealers-walkthrough.mp4` and its poster; the estate agents' film goes in as
-  `estate-agents-walkthrough.mp4` with `estate-agents-poster.jpg` (index.html and property-agencies.html already point at
-  them; add each chapter's start as `data-t` on its chapter button when it lands).
+- `assets/films/`: the two walkthrough films and their posters (each chapter's start is `data-t` on its chapter button).
+- `assets/loops/`: short silent cuts of the films (5 to 10 seconds, no sound), each with a `.jpg` poster. A
+  `<video data-loop>` plays only while it is on screen and stays on its poster with reduced motion. The car film's teal
+  is turned to our blue in these cuts; the estate agents' cuts keep that example agency's gold.
 - `assets/showcase/`: resized copies of the photos our example businesses show (TradeScale Motors' cars, TradeScale
-  Property's Dubai Marina homes), credited in each page's footer.
+  Property's Dubai Marina homes), credited in the footer of each page that shows them.
+- The six feature pages (`website-navigation`, `knows-every-car`, `finance`, `ai-finance`, `appointment-booking`,
+  `lead-capture`) each cover one feature as it works inside the page today; `vs-other-widgets` is the interactive
+  website against a chat bubble in the corner. `forecourt-cards` says the cards are by arrangement (the app's QR cards
+  are archived). `ai-guard` is a product opening to its first businesses.
+- The way to try the product is the real thing: "Try it live" opens our two example businesses in a new tab. No page
+  has a pretend agent.
 
 - **Live at:** https://tradescaleplus.com
 - **Host:** Cloudflare Pages (auto-deploy on push to `main`)
@@ -46,10 +52,8 @@ same links as the rebuilt pages.
 
 ## Shared assets
 
-- `assets/site.css`: the one stylesheet; every colour is a token, dark (the default) and light
-- `assets/site.js`: what the five rebuilt pages (home, car dealers, property agencies, any website, the AI door) do on load
-- `assets/theme.js`: the light and dark switch (top bar, phone menu and footer of every page); each page's head applies a saved choice
-- `assets/mobile-nav.css` + `assets/mobile-nav.js`: the menu button and phone drawer, linked on every page
+- `assets/site.css`: the one stylesheet; every colour is a token
+- `assets/site.js`: what every page does on load (menu, reveals, chapter bar, the story, tabs, films, loops, count-ups)
 - `assets/favicon.svg`: brand mark
 - `og-card.png`: the social share image (1200 by 630)
 - `sitemap.xml`, `robots.txt`, `llms.txt`: SEO and AI-engine discoverability
@@ -58,8 +62,9 @@ same links as the rebuilt pages.
 
 The top bar, the phone drawer and the footer are copied into every page (there is no build step), so a change to a link
 is made in every `.html` file. Pages link each other as `name.html`; the 404 page is served at any depth, so it links
-from the root. Every page's top bar has the same six links: Car dealers, Estate agents, How it works (`/#website`), The films
-(`/#films`), See it live (`/#demos`, the live examples on the home page) and About. On the older pages they give way to the
-menu button up to 1180px wide (`assets/mobile-nav.css` and `assets/mobile-nav.js`); on the rebuilt pages up to 1100px
-(`assets/interactive.css` and `assets/interactive.js`). The home page's chapter anchors (`#website`, `#leads`, `#data`,
-`#dashboard`, `#setup`, `#films`, `#demos`) are linked from every footer, so keep them when the home page changes.
+from the root. Every page's top bar has the same six links: Car dealers, Estate agents, How it works (`#website` on the
+home page), The films (`#films`), See it live (`#demos`) and About; they give way to the menu button up to 1100px wide.
+The footer lists every page. Pages that belong together (what it does, AI and your website, who it is for, company)
+carry a bar under their hero, in the chapter bar's place, that names the family and marks the page you are on. The home
+page's chapter anchors (`#website`, `#leads`, `#data`, `#dashboard`, `#setup`, `#films`, `#demos`) are linked from every
+footer, so keep them when the home page changes.
