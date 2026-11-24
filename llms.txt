@@ -1,4 +1,4 @@
-# TradeScale Plus: smart interactive websites, fully integrated with AI. We turn old, static websites into interactive ones.
+# TradeScale Plus: smart interactive websites, fully integrated with AI, just added onto your current website, easily.
 
 > TradeScale Plus turns old, static websites into interactive, AI-powered ones, custom built for any business (car dealers and estate agents first), and gives the business the customer data its website never captured. Two lines of code put the Website Agent inside a car dealer's or estate agent's own website, where it answers buyers from the business's own stock and pages, drives the stock list to the cars a buyer describes in their own words, works out finance at the dealer's own rate, books test drives and viewings, and emails every lead to the business with the car or home named. We set it up and run it.
 
