@@ -228,11 +228,14 @@
 
   /* ---------- 6. the next five days for a test drive or a viewing (the panel offers days ahead, never past ones); the
      day picked is the first weekday, as the times shown are a weekday's at our example forecourt (9:00 to 18:00) ---------- */
+  /* data-skip names the days the business is closed (0 Sunday to 6 Saturday), which are never offered */
   var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   $$('[data-days]').forEach(function (row) {
-    var now = new Date(), picked = false;
-    $$('span', row).forEach(function (s, i) {
-      var d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i + 1);
+    var skip = (row.getAttribute('data-skip') || '').split(',').filter(Boolean).map(Number);
+    var now = new Date(), picked = false, ahead = 0;
+    $$('span', row).forEach(function (s) {
+      var d;
+      do { ahead += 1; d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + ahead); } while (skip.indexOf(d.getDay()) >= 0 && ahead < 14);
       s.innerHTML = esc(days[d.getDay()]) + '<small>' + d.getDate() + '</small>';
       var weekday = d.getDay() > 0 && d.getDay() < 6;
       s.classList.toggle('on', weekday && !picked);
