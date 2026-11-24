@@ -1361,7 +1361,7 @@ a.card:hover{transform:translateY(-2px);box-shadow:var(--edge-hi)}
    asks here and the conversation stays here, at one fixed size (nothing moves when it is used); an answer that lives on another page
    takes them there, and that page's place carries the conversation on. Far down a page, "Ask the Website Agent" at the foot of the
    screen brings them back. Without the agent (a blocked script), the question goes to the contact page. */
-.agent{position:relative;max-width:880px;margin:44px 0 0;padding:18px;border-radius:24px;text-align:left;
+.agent{position:relative;max-width:880px;margin:44px 0 0;padding:18px;border-radius:24px;text-align:left;scroll-margin-top:96px;
   background:linear-gradient(180deg,rgba(21,33,55,.86),rgba(10,17,32,.92));border:1px solid var(--line2);
   box-shadow:0 1px 0 rgba(255,255,255,.07) inset,0 30px 80px -34px rgba(0,0,0,.75),0 0 60px -30px rgba(var(--accent-rgb),.45);
   -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
