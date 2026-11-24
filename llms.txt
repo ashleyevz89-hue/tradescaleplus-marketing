@@ -1,6 +1,6 @@
-# TradeScale Plus: the Website Agent. Your website, interactive.
+# TradeScale Plus: AI-powered websites. We turn old, static websites into interactive ones.
 
-> TradeScale Plus makes websites interactive. Two lines of code put the Website Agent inside a car dealer's or estate agent's own website, where it answers buyers from the business's own stock and pages, drives the stock list to the cars a buyer describes in their own words, works out finance at the dealer's own rate, books test drives and viewings, and emails every lead to the business with the car or home named. We set it up and run it.
+> TradeScale Plus turns old, static websites into interactive, AI-powered ones, and gives the business the buyer data its website never captured. Two lines of code put the Website Agent inside a car dealer's or estate agent's own website, where it answers buyers from the business's own stock and pages, drives the stock list to the cars a buyer describes in their own words, works out finance at the dealer's own rate, books test drives and viewings, and emails every lead to the business with the car or home named. We set it up and run it.
 
 TradeScale Plus is Trade Scale Plus Ltd, registered in England and Wales, company number 17142290. It was founded by Ash Evans, who spent 15 years in the motor trade at Citroen, Land Rover and Honda dealers and used car sites, salesman then sales manager. Richard Beagle works with car dealers, estate agencies and web providers to get the Website Agent live.
 
