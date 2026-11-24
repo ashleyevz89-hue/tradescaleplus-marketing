@@ -4,8 +4,8 @@
    2. blocks fade up once as they come into view, the cards of a grid one after another;
    3. the chapter bar: which chapter is being read, and how far through the walkthrough (on a family of pages it
       only brings the page you are on into view);
-   4. the story (static website, two lines of code, awake, driving): the step comes from how far the story is scrolled;
-      the two lines and the buyer's words type themselves; without this script the story shows its last step as a still;
+   4. the story (static website, two lines of code, awake, driving): the scroll is the clock: every part moves with how far
+      the story is scrolled and runs back when scrolled back; without this script the story shows its last step as a still;
    5. tabs (the car panel's tools, the bar's views, the dashboard's views, the reel), with arrow keys;
    6. the leads and the bars draw in when seen; the test drive days are the next five days; the films' chapters;
    7. the install lines copy on a tap;
@@ -127,60 +127,78 @@
     var lines = $$('[data-type-line]', story).map(function (el) { return { el: el, segs: segsOf(el) }; });
     var words = $$('[data-type-words]', story);
     var said = words.length ? words[0].getAttribute('data-type-words') : '';
-    var timers = [], visual = -1, caption = -1;
-    var stop = function () { timers.forEach(clearTimeout); timers = []; };
-    var later = function (fn, ms) { timers.push(setTimeout(fn, ms)); };
-    var clearLines = function () { lines.forEach(function (l) { l.el.innerHTML = ''; }); };
-    var fillLines = function () { lines.forEach(function (l) { draw(l.el, l.segs, lengthOf(l.segs), false); }); };
-    var setWords = function (t, caret) { words.forEach(function (w) { w.innerHTML = esc(t) + (caret ? '<i class="caret"></i>' : ''); }); };
-    var typeLines = function () {
-      clearLines();
-      var li = 0, n = 0;
-      var tick = function () {
-        var l = lines[li]; if (!l) return;
-        n += 3;
-        var total = lengthOf(l.segs);
-        draw(l.el, l.segs, Math.min(n, total), n < total || li < lines.length - 1);
-        if (n >= total) { if (li < lines.length - 1) draw(l.el, l.segs, total, false); li++; n = 0; later(tick, 220); }
-        else later(tick, 16);
-      };
-      later(tick, 380);
+    var shownNs = $$('.s-count .c2 b', story);
+    var total = lines.reduce(function (a, l) { return a + lengthOf(l.segs); }, 0);
+    /* each turning filter and each car its place in the order (--k), for the stagger the stylesheet works out */
+    $$('.s-filters', story).forEach(function (f) { $$('.s-f.on', f).forEach(function (el, k) { el.style.setProperty('--k', String(k)); }); });
+    $$('.s-grid', story).forEach(function (g) { $$('.car', g).forEach(function (el, k) { el.style.setProperty('--k', String(k)); }); });
+    /* the story in four steps, each its own stretch of the scroll (the last the longest: the most happens in it) */
+    var STEPS = [[0, .2], [.2, .42], [.42, .64], [.64, 1]];
+    var ramp = function (p, a, b) { return p <= a ? 0 : p >= b ? 1 : (p - a) / (b - a); };
+    var ease = function (x) { return x < .5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2; };
+    var set = function (k, v) { story.style.setProperty(k, String(Math.round(v * 1000) / 1000)); };
+    var caption = -1, chars = -1, typed = -1, shown = -1;
+    /* the two lines, drawn up to n characters across both, the caret on the line being typed */
+    var drawCode = function (n) {
+      if (n === chars) return;
+      chars = n;
+      var left = n;
+      lines.forEach(function (l) {
+        var len = lengthOf(l.segs), m = Math.max(0, Math.min(len, left));
+        left -= len;
+        draw(l.el, l.segs, m, m > 0 && m < len);
+      });
     };
-    var typeWords = function (done) {
-      var n = 0;
-      var tick = function () {
-        n += 1;
-        setWords(said.slice(0, n), true);
-        if (n < said.length) later(tick, 42); else later(function () { setWords(said, false); done(); }, 380);
-      };
-      later(tick, 450);
+    /* the buyer's words, up to n letters, the caret while typing */
+    var sayWords = function (n) {
+      if (n === typed) return;
+      typed = n;
+      words.forEach(function (w) { w.innerHTML = esc(said.slice(0, n)) + (n > 0 && n < said.length ? '<i class="caret"></i>' : ''); });
     };
-    var showVisual = function (s) { visual = s; story.setAttribute('data-step', String(s)); };
-    var go = function (s) {
-      if (s === caption) return;
-      var from = caption;
-      caption = s;
-      steps.forEach(function (el, k) { el.classList.toggle('on', k === s); });
-      stop();
-      if (s === 0) { clearLines(); setWords('', false); showVisual(0); return; }
-      if (s === 1) { setWords('', false); showVisual(1); if (from < 1) typeLines(); else fillLines(); return; }
-      fillLines();
-      if (s === 2) { setWords('', false); showVisual(2); return; }
-      /* 3: awake first if we jumped here, then the buyer's words, then the page drives itself */
-      showVisual(2);
-      typeWords(function () { showVisual(3); });
+    /* the stock list's count running down to the cars that fit */
+    var showCount = function (n) {
+      if (n === shown) return;
+      shown = n;
+      shownNs.forEach(function (b) { b.textContent = String(n); });
     };
-    /* the step from how far the story is scrolled */
+    var go = function (p) {
+      var s = p < STEPS[1][0] ? 0 : p < STEPS[2][0] ? 1 : p < STEPS[3][0] ? 2 : 3;
+      if (s !== caption) {
+        caption = s;
+        steps.forEach(function (el, k) { el.classList.toggle('on', k === s); });
+        story.setAttribute('data-step', String(s));
+      }
+      steps.forEach(function (el, k) { el.style.setProperty('--fill', String(k < s ? 1 : k > s ? 0 : Math.round(ramp(p, STEPS[k][0], STEPS[k][1]) * 1000) / 1000)); });
+      set('--in', ease(ramp(p, 0, .06)));
+      /* 1. a buyer browses the grey stock list, asks about a car, and nobody answers */
+      set('--browse', ease(ramp(p, .02, .11)) * (1 - ease(ramp(p, .14, .2))));
+      set('--ask', ease(ramp(p, .05, .09)) * (1 - ramp(p, .17, .2)));
+      set('--noreply', ease(ramp(p, .11, .135)) * (1 - ramp(p, .17, .2)));
+      /* 2. the two lines' card comes up and the lines type as the page scrolls */
+      set('--code', ease(ramp(p, .2, .25)) * (1 - ease(ramp(p, .42, .47))));
+      drawCode(Math.round(ramp(p, .24, .38) * total));
+      /* 3. colour sweeps across the website, car by car, then the agent's bar arrives in the page */
+      set('--w', ramp(p, .44, .56));
+      set('--bar', ease(ramp(p, .52, .62)));
+      /* 4. the buyer's words, the answer, the filters one by one, the count running down, the cars changing */
+      sayWords(Math.round(ramp(p, .66, .76) * said.length));
+      set('--f', ease(ramp(p, .77, .81)));
+      set('--fl', ramp(p, .79, .87));
+      var c = ramp(p, .8, .9);
+      story.classList.toggle('cnt', c > 0);
+      showCount(Math.round(50 - 44 * ease(c)));
+      set('--g1', ramp(p, .82, .9));
+      set('--g2', ramp(p, .86, .96));
+    };
+    /* how far the story is scrolled */
     var stage = $('.story-stage', story);
     story.classList.add('run');
-    clearLines(); setWords('', false); showVisual(0);
     var raf = 0;
     var measure = function () {
       raf = 0;
       var r = story.getBoundingClientRect();
       var span = story.offsetHeight - stage.offsetHeight;
-      var p = span > 0 ? Math.min(1, Math.max(0, -r.top / span)) : 0;
-      go(p < 0.17 ? 0 : p < 0.42 ? 1 : p < 0.67 ? 2 : 3);
+      go(span > 0 ? Math.min(1, Math.max(0, -r.top / span)) : 0);
     };
     var ask = function () { if (!raf) raf = requestAnimationFrame(measure); };
     window.addEventListener('scroll', ask, { passive: true });

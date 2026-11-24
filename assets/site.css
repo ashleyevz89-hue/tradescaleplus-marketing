@@ -292,37 +292,76 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .code .added{position:relative;color:#e6edf6}
 .code .added::before{content:"+";position:absolute;left:-.9em;color:var(--accent)}
 
-/* the story's steps: data-step on .story set by assets/interactive.js from the scroll (0 static, 1 the two lines,
-   2 awake, 3 driving). Without the script, or with reduced motion, the last step shows as a still. */
-.story[data-step="1"] .code,.story[data-step="1"] .code{opacity:1;transform:translate(-50%,-50%) scale(1)}
+/* the story's states (assets/site.js runs it). STILL, with no script or with reduced motion: the last step, as the page writes it
+   (data-step="3"). RUNNING (.run): the scroll is the clock. Every part follows the scroll frame by frame and runs back when scrolled
+   back, so the picture is always moving while the steps go by (Ash, 24 Nov 21:04: "this part feel like its stuck scrolling, needs to
+   think how to animate it more"). The script sets on the story --in (the window coming in), --browse, --ask and --noreply (a buyer
+   browsing the grey stock list, asking, and nobody answering), --code (the two lines' card), --w (the colour sweeping across the
+   website), --bar (the agent's bar arriving in the page), --f (the answer found), --fl (the filters turning), --g1 and --g2 (the
+   stock list changing); on each filter and each car its own place in the order, --k; on each step its own progress, --fill. */
 .story[data-step="2"] .s-open i,.story[data-step="3"] .s-open i{background:#22c55e}
 .story[data-step="2"] .s-cta,.story[data-step="3"] .s-cta{background:var(--site-blue);color:#fff}
 .story[data-step="2"] .car-pr span,.story[data-step="3"] .car-pr span{color:#60a5fa}
-.story[data-step="2"] .car-ph img.c,.story[data-step="3"] .car-ph img.c{opacity:1}
-.story[data-step="2"] .abar,.story[data-step="3"] .abar{opacity:1;transform:none}
 .s-shift{transform:translateY(0)}
-.story[data-step="2"] .s-shift,.story[data-step="3"] .s-shift{transform:translateY(var(--barh,13.6em))}
-.story[data-step="3"] .s-title .t-all{opacity:0;transform:translateY(-.4em)}
-.story[data-step="3"] .s-title .t-found{opacity:1;transform:none}
-.story[data-step="3"] .s-f.on span{border-color:rgba(var(--accent-rgb),.9);box-shadow:0 0 0 .2em rgba(var(--accent-rgb),.16)}
-.story[data-step="3"] .s-f.on .v i:first-child{opacity:0;transform:translateY(-.8em)}
-.story[data-step="3"] .s-f.on .v i+i{opacity:1;transform:none}
-.story[data-step="3"] .s-count .c1{display:none}
-.story[data-step="3"] .s-count .c2{display:inline}
-.story[data-step="3"] .abar-r .v-open{opacity:0;transform:translateY(-.6em)}
-.story[data-step="3"] .abar-r .v-found{opacity:1;transform:none}
 .s-grid.all .car{opacity:1}
 .s-grid.hits .car{opacity:0;transform:translateY(.8em)}
-.story[data-step="3"] .s-grid.all .car{opacity:0;transform:translateY(-.5em) scale(.98)}
-.story[data-step="3"] .s-grid.hits .car{opacity:1;transform:none;border-color:rgba(var(--accent-rgb),.55)}
-.story[data-step="3"] .s-grid.all{pointer-events:none}
-.s-grid .car:nth-child(2){transition-delay:.05s}.s-grid .car:nth-child(3){transition-delay:.1s}.s-grid .car:nth-child(4){transition-delay:.15s}
-.s-grid .car:nth-child(5){transition-delay:.2s}.s-grid .car:nth-child(6){transition-delay:.25s}.s-grid .car:nth-child(7){transition-delay:.3s}.s-grid .car:nth-child(8){transition-delay:.35s}
-.car-ph img.c{transition-delay:inherit}
+.ghost{position:absolute;z-index:3;left:27%;top:35%;display:flex;flex-direction:column;align-items:flex-start;gap:.55em;pointer-events:none;opacity:0}
+.ghost-q{position:relative;padding:.75em 1.05em;border-radius:1.1em 1.1em 1.1em .3em;background:#f2f4f7;color:#11141a;font-size:1.05em;font-weight:600;letter-spacing:-.01em;white-space:nowrap;box-shadow:0 1.2em 2.6em -.8em rgba(0,0,0,.8)}
+.ghost-no{padding:.4em .85em;border-radius:999px;background:#3a1519;box-shadow:0 0 0 1px rgba(255,120,120,.4);color:#ffb7b7;font-family:var(--mono);font-size:.68em;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.phone .ghost{left:14%;top:41%}
+.story .s-head{position:relative;z-index:2}
+
+/* still: the last step */
+.story:not(.run) .ghost{display:none}
+.story:not(.run) .car-ph img.c{opacity:1}
+.story:not(.run) .abar{opacity:1;transform:none}
+.story:not(.run) .s-shift{transform:translateY(var(--barh,13.6em))}
+.story:not(.run) .s-title .t-all{opacity:0;transform:translateY(-.4em)}
+.story:not(.run) .s-title .t-found{opacity:1;transform:none}
+.story:not(.run) .s-f.on span{border-color:rgba(var(--accent-rgb),.9);box-shadow:0 0 0 .2em rgba(var(--accent-rgb),.16)}
+.story:not(.run) .s-f.on .v i:first-child{opacity:0;transform:translateY(-.8em)}
+.story:not(.run) .s-f.on .v i+i{opacity:1;transform:none}
+.story:not(.run) .s-count .c1{display:none}
+.story:not(.run) .s-count .c2{display:inline}
+.story:not(.run) .abar-r .v-open{opacity:0;transform:translateY(-.6em)}
+.story:not(.run) .abar-r .v-found{opacity:1;transform:none}
+.story:not(.run) .s-grid.all .car{opacity:0;transform:translateY(-.5em) scale(.98)}
+.story:not(.run) .s-grid.hits .car{opacity:1;transform:none;border-color:rgba(var(--accent-rgb),.55)}
+.story:not(.run) .s-grid.all{pointer-events:none}
+
+/* running: nothing waits on a timer */
+.story.run .s-shift,.story.run .abar,.story.run .car,.story.run .s-title h5,.story.run .s-f .v i,.story.run .s-f span,.story.run .abar-r .view,.story.run .car-ph img.c,.story.run .code{transition:none}
+.story.run .frame,.story.run .phone{transform-origin:50% 30%;transform:perspective(1800px) rotateX(calc((1 - var(--in,1)) * 10deg)) scale(calc(.92 + var(--in,1) * .08));will-change:transform}
+/* 1. static: a buyer browses the grey stock list, asks, and nobody answers */
+.story.run .s-body{transform:translateY(calc(var(--browse,0) * -3.4em));opacity:calc(1 - var(--code,0) * .55)}
+.story.run .phone .s-body{transform:translateY(calc(var(--browse,0) * -1.2em))}
+.story.run .ghost{opacity:var(--ask,0);transform:translateY(calc((1 - var(--ask,0)) * .9em)) scale(calc(.96 + var(--ask,0) * .04))}
+.story.run .ghost-no{opacity:var(--noreply,0);transform:translateX(calc((1 - var(--noreply,0)) * -.6em))}
+/* 2. the two lines: their card comes up over the website, and they type as the page scrolls */
+.story.run .code{opacity:var(--code,0);transform:translate(-50%,calc(-50% + (1 - var(--code,0)) * 2.2em)) scale(calc(.96 + var(--code,0) * .04))}
+/* 3. awake: colour sweeps across the website, car by car, then the agent's bar arrives in the page */
+.story.run .car-ph img.c{opacity:1;clip-path:inset(0 calc((1 - clamp(0, var(--w,0) * 1.7 - var(--k,0) * .1, 1)) * 100%) 0 0)}
+.story.run .abar{opacity:clamp(0, var(--bar,0) * 3, 1);transform:none;clip-path:inset(0 0 calc((1 - var(--bar,0)) * 100%) 0 round 1.15em)}
+.story.run .s-shift{transform:translateY(calc(var(--barh,13.6em) * var(--bar,0)))}
+/* 4. driving: the buyer's words (typed by the script), the answer, the filters one by one, the cars */
+.story.run .s-title .t-all{opacity:calc(1 - var(--f,0));transform:translateY(calc(var(--f,0) * -.4em))}
+.story.run .s-title .t-found{opacity:var(--f,0);transform:translateY(calc((1 - var(--f,0)) * .4em))}
+.story.run .abar-r .v-open{opacity:calc(1 - var(--f,0));transform:translateY(calc(var(--f,0) * -.6em))}
+.story.run .abar-r .v-found{opacity:var(--f,0);transform:translateY(calc((1 - var(--f,0)) * .6em))}
+.story.run .s-f.on{--fk:clamp(0, (var(--fl,0) * 1.6 - var(--k,0) * .3) * 1.8, 1)}
+.story.run .s-f.on .v i:first-child{opacity:calc(1 - var(--fk));transform:translateY(calc(var(--fk) * -.8em))}
+.story.run .s-f.on .v i+i{opacity:var(--fk);transform:translateY(calc((1 - var(--fk)) * .8em))}
+.story.run .s-f.on span{box-shadow:0 0 0 1px rgba(var(--accent-rgb),calc(var(--fk) * .9)),0 0 0 .3em rgba(var(--accent-rgb),calc(var(--fk) * .16))}
+.story.run.cnt .s-count .c1{display:none}
+.story.run.cnt .s-count .c2{display:inline}
+.story.run .s-grid.all .car{--o:clamp(0, (var(--g1,0) * 1.7 - var(--k,0) * .1) * 2.2, 1);opacity:calc(1 - var(--o));transform:translateY(calc(var(--o) * -.6em)) scale(calc(1 - var(--o) * .03))}
+.story.run .s-grid.hits .car{--h:clamp(0, (var(--g2,0) * 1.5 - var(--k,0) * .1) * 2.4, 1);opacity:var(--h);transform:translateY(calc((1 - var(--h)) * .9em));border-color:rgba(var(--accent-rgb),calc(var(--h) * .55))}
+.story.run .s-grid.all{pointer-events:none}
+.story.run .step::after,.story.run .step.on::after{height:calc((100% - .55em) * var(--fill,0));transition:none}
 
 /* the story's layout: the steps on the left, the window on the right, held in view while the page scrolls */
 .story{position:relative;margin-top:clamp(24px,4vw,48px)}
-.js .story.run{height:430vh}
+.js .story.run{height:340vh}
 .story-stage{display:grid;grid-template-columns:minmax(250px,330px) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:center;max-width:calc(var(--wrap) + 160px);margin:0 auto;padding:0 var(--gut)}
 .js .story.run .story-stage{position:sticky;top:calc(var(--navh) + var(--chh));height:calc(100vh - var(--navh) - var(--chh));height:calc(100svh - var(--navh) - var(--chh))}
 .steps{list-style:none;display:grid;gap:26px;counter-reset:s}
