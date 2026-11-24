@@ -352,13 +352,23 @@
   }
 
   /* less on screen: a folded grid shows the rest of its cards on a tap, and the button goes */
+  /* whatever a fold reveals is shown at once: its fade-up is marked as already seen */
+  var showNow = function (box) {
+    $$('.rv', box).forEach(function (e) { e.style.transitionDelay = ''; e.classList.add('in'); });
+    $$('.leads, .bars, .d-src, .gate', box).forEach(function (e) { e.classList.add('in'); });
+  };
   $$('[data-unfold]').forEach(function (b) {
     b.addEventListener('click', function () {
-      var row = b.parentNode, grid = row.previousElementSibling;
-      while (grid && !grid.hasAttribute('data-fold')) grid = grid.previousElementSibling;
-      if (grid) { grid.classList.add('open'); var f = $('.folded', grid); if (f) { f.setAttribute('tabindex', '-1'); f.focus({ preventScroll: true }); } }
+      var row = b.parentNode, grid = row.closest ? row.closest('[data-fold]') : null;
+      if (!grid) { grid = row.previousElementSibling; while (grid && !grid.hasAttribute('data-fold')) grid = grid.previousElementSibling; }
+      if (!grid) return;                       /* nothing to open: the button stays, so nothing is lost */
+      grid.classList.add('open');
+      $$('.folded', grid).forEach(function (f) { f.classList.remove('folded'); f.style.transitionDelay = ''; f.classList.add('in'); showNow(f); });
       row.parentNode.removeChild(row);
     });
+  });
+  $$('details.more').forEach(function (d) {
+    d.addEventListener('toggle', function () { if (d.open) showNow(d); });
   });
 
   /* the hero's loop rises a little as the page scrolls (transform only) */
