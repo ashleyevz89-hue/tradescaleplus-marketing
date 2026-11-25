@@ -1515,3 +1515,44 @@ html.film-on #tspw-sbar-pill,html.story-in #tspw-sbar-pill{opacity:0;pointer-eve
   .agent-go svg{width:19px;height:19px}
 }
 @media (prefers-reduced-motion:reduce){.agent::before{animation:none}.agent-go{transition:none}}
+
+/* ============ LIVE DEMOS (25 Nov 2026): two working websites, straight after the opening ============ */
+.ldemo{position:relative;padding:clamp(72px,9vw,128px) 0 clamp(24px,4vw,56px);scroll-margin-top:calc(var(--navh) + 8px)}
+.ldemo-head{max-width:860px;margin:0 auto;text-align:center}
+.ldemo-head .eyebrow{justify-content:center}
+.ldemo-head .lede{margin:18px auto 0}
+.ldemo-two{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1080px;margin:clamp(36px,5vw,56px) auto 0}
+.ldemo-site{position:relative;display:grid;grid-template-columns:172px minmax(0,1fr);gap:26px;align-items:center;padding:22px;border-radius:26px;color:var(--text);text-decoration:none;
+  background:linear-gradient(135deg,rgba(var(--accent-rgb),.16),rgba(var(--accent-rgb),.03) 62%) var(--bg1);box-shadow:inset 0 0 0 1px rgba(var(--accent-rgb),.32),inset 0 1px 0 rgba(190,220,255,.08),0 24px 60px rgba(0,0,0,.35);
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.ldemo-site:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 1px rgba(var(--accent-rgb),.6),0 0 0 1px rgba(var(--accent-rgb),.25),0 30px 70px rgba(0,0,0,.45),0 0 60px rgba(var(--accent-rgb),.18)}
+.ldemo-site:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.ldemo-shot{position:relative;display:block;aspect-ratio:390/620;border-radius:22px;overflow:hidden;background:#05070c;box-shadow:0 0 0 6px #0b0f17,0 0 0 7px rgba(255,255,255,.12),0 18px 40px rgba(0,0,0,.55)}
+.ldemo-shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+.ldemo-shot::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(180deg,transparent 70%,rgba(5,7,12,.55));pointer-events:none}
+.ldemo-body{display:flex;flex-direction:column;align-items:flex-start;gap:10px;min-width:0}
+.ldemo-k{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-hi)}
+.ldemo-k i{width:7px;height:7px;border-radius:50%;background:#34d399;box-shadow:0 0 0 0 rgba(52,211,153,.6);animation:pulse 2.2s ease-out infinite}
+.ldemo-name{font-size:clamp(24px,2.4vw,32px);font-weight:600;letter-spacing:-.035em;line-height:1.1}
+.ldemo-do{font-size:15.5px;line-height:1.5;color:var(--text2)}
+.ldemo-go{margin-top:6px;display:inline-flex;align-items:center;gap:8px}
+.ldemo-go svg{width:16px;height:16px;transition:transform .3s var(--ease)}
+.ldemo-site:hover .ldemo-go svg{transform:translateX(3px)}
+.ldemo-note{margin-top:22px;text-align:center;font-size:14px;color:var(--text3)}
+@media (max-width:900px){.ldemo-two{grid-template-columns:1fr;max-width:620px}}
+@media (max-width:480px){.ldemo-site{grid-template-columns:112px minmax(0,1fr);gap:16px;padding:14px;border-radius:22px}.ldemo-shot{border-radius:16px;box-shadow:0 0 0 4px #0b0f17,0 0 0 5px rgba(255,255,255,.12),0 12px 28px rgba(0,0,0,.5)}
+  .ldemo-name{font-size:21px}.ldemo-do{font-size:14px}.ldemo-k{font-size:10.5px}.ldemo-go{margin-top:2px}}
+
+/* ============ K77: where the Website Agent took a visitor (static/widget-site-bar.js marks it): the part lit as they arrive ============ */
+[data-tsp-lit]{outline:0;animation:none}
+@keyframes tsp-lit-glow{0%{filter:drop-shadow(0 0 0 rgba(59,158,255,0))}22%{filter:drop-shadow(0 0 22px rgba(59,158,255,.85))}100%{filter:drop-shadow(0 0 0 rgba(59,158,255,0))}}
+@keyframes tsp-lit-ring{0%{box-shadow:inset 0 0 0 1px rgba(var(--accent-rgb),.32),0 0 0 0 rgba(59,158,255,0)}20%{box-shadow:inset 0 0 0 1px rgba(var(--accent-rgb),.9),0 0 0 3px rgba(59,158,255,.55),0 0 70px rgba(59,158,255,.45)}100%{box-shadow:inset 0 0 0 1px rgba(var(--accent-rgb),.32),0 0 0 0 rgba(59,158,255,0),0 24px 60px rgba(0,0,0,.35)}}
+[data-tsp-lit-head]{animation:tsp-lit-glow 3s var(--ease) 1}
+[data-tsp-lit] .ldemo-site{animation:tsp-lit-ring 3s var(--ease) 1}
+[data-tsp-lit] .ldemo-site+.ldemo-site{animation-delay:.25s}
+@media (prefers-reduced-motion:reduce){[data-tsp-lit-head]{animation:none;filter:drop-shadow(0 0 14px rgba(59,158,255,.7))}[data-tsp-lit] .ldemo-site{animation:none;box-shadow:inset 0 0 0 1px rgba(var(--accent-rgb),.9),0 0 0 3px rgba(59,158,255,.45)}}
+/* the line under the top bar: the answer is in the conversation, and the way back to it */
+html #tspw-sbar-note{top:calc(var(--navh) + 12px);background:rgba(10,16,30,.92);color:var(--text);font-size:14px;box-shadow:0 0 0 1px rgba(var(--accent-rgb),.45),0 18px 44px rgba(0,0,0,.5);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+html:has(.chapters) #tspw-sbar-note{top:calc(var(--navh) + var(--chh) + 12px)}
+html #tspw-sbar-note b{background:linear-gradient(180deg,#6bb6ff,#3b9eff);color:var(--on-accent)}
+@media (max-width:480px){html #tspw-sbar-note{padding:5px}html #tspw-sbar-note span{display:none}html #tspw-sbar-note b::before{content:"\2191\00a0"}}

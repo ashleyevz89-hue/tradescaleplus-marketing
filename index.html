@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=13">
+<link rel="stylesheet" href="/assets/site.css?v=14">
 <link rel="stylesheet" href="/assets/living-hero.css?v=2">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://tradescaleplus.com/#business","name":"TradeScale Plus","legalName":"Trade Scale Plus Ltd","description":"TradeScale Plus turns old, static websites into interactive, AI-powered ones with the Website Agent: custom built for any business, car dealers and estate agents included, two lines of code put it inside the business's own website, where it answers visitors from the business's own stock and pages, drives the stock list to the cars a buyer describes, works out finance at the dealer's own rate, books test drives and viewings, and sends every lead to the business.","url":"https://tradescaleplus.com/","logo":"https://tradescaleplus.com/assets/icon-512.png","email":"ash@tradescaleplus.com","telephone":"+447338616094","founder":{"@type":"Person","name":"Ashley Evans"},"identifier":{"@type":"PropertyValue","propertyID":"Companies House","value":"17142290"},"address":{"@type":"PostalAddress","addressRegion":"South Wales","addressCountry":"GB"},"areaServed":[{"@type":"Country","name":"United Kingdom"},{"@type":"City","name":"Dubai"}],"sameAs":["https://find-and-update.company-information.service.gov.uk/company/17142290"]},{"@type":"WebSite","@id":"https://tradescaleplus.com/#website","url":"https://tradescaleplus.com/","name":"TradeScale Plus","publisher":{"@id":"https://tradescaleplus.com/#business"}},{"@type":"VideoObject","name":"TradeScale Plus for car dealers: the walkthrough","description":"The Website Agent on a car dealer's website, in five chapters: the interactive website, your leads, the data we provide, your dashboard, and set up and run by us.","thumbnailUrl":"https://tradescaleplus.com/assets/films/car-dealers-poster.jpg","contentUrl":"https://tradescaleplus.com/assets/films/car-dealers-walkthrough.mp4","uploadDate":"2026-11-24","duration":"PT3M26S","publisher":{"@id":"https://tradescaleplus.com/#business"}},{"@type":"VideoObject","name":"TradeScale Plus for estate agents: the walkthrough","description":"The Website Agent on an estate agency's website, in five chapters: the interactive website, your leads, the data we provide, your dashboard, and set up and run by us.","thumbnailUrl":"https://tradescaleplus.com/assets/films/estate-agents-poster.jpg","contentUrl":"https://tradescaleplus.com/assets/films/estate-agents-walkthrough.mp4","uploadDate":"2026-11-24","duration":"PT3M26S","publisher":{"@id":"https://tradescaleplus.com/#business"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Website Agent?","acceptedAnswer":{"@type":"Answer","text":"It is the part of your website that talks to buyers. It works inside your own pages: a search bar on your home page and stock list that drives the list to the cars a buyer describes in their own words, and a panel on every car page with their monthly at your own rate, a side by side, part-exchange details for your team and test drive booking inside your opening hours. It answers only from your own stock and pages."}},{"@type":"Question","name":"Do I need a new website?","acceptedAnswer":{"@type":"Answer","text":"No. Two lines of code go on the website you already have, added by your web company or through your own Google Tag Manager. We set it up and run it."}},{"@type":"Question","name":"Can it make things up?","acceptedAnswer":{"@type":"Answer","text":"It answers only from your own stock and pages, and every reply is checked in code before a buyer sees it, against your own stock and figures. When only your team can answer, it says so and takes the buyer's details."}},{"@type":"Question","name":"Where do the leads go?","acceptedAnswer":{"@type":"Answer","text":"Every enquiry and test drive request is emailed to you the moment it is made, with the car, the buyer's name and number and what they want. Reply and it goes straight to the buyer. Every conversation is also kept in your dashboard."}},{"@type":"Question","name":"Is it only for car dealers and estate agents?","acceptedAnswer":{"@type":"Answer","text":"No. We custom build it for any business with a website, from courses and events to services and catalogues. For UK and Dubai estate agents it searches your homes as a buyer types and books viewings with the listing's consultant."}},{"@type":"Question","name":"What does it cost?","acceptedAnswer":{"@type":"Answer","text":"It is priced for your business: how many cars or listings you have, how many websites or branches it covers and the features you use. Get a quote"}}]}]}
@@ -207,13 +207,47 @@
       <p class="eyebrow"><span class="dot"></span>Your turn</p>
       <h2 class="h3">That was a car dealer’s website. <span class="dim">This one is ours, and it is interactive too.</span></h2>
     </div>
-    <div class="agent rv" id="ask" data-tsp-agent data-tsp-agent-pill><div class="agent-head"><span class="agent-av" aria-hidden="true"><i></i></span><span class="agent-id"><b>Website Agent</b><span class="agent-st">Answers from this website, and takes you there</span></span></div><div class="agent-talk" data-tsp-agent-talk><p class="agent-hello">Ask me anything: what we do, how it works on your website, what it costs, how to start. I answer from our own pages and take you to the one that shows it.</p></div><form class="agent-ask" action="/contact" method="get" aria-label="Ask the Website Agent"><input type="text" name="q" placeholder="Ask anything about TradeScale Plus" aria-label="Your question for the Website Agent" autocomplete="off" maxlength="500"><button type="submit" class="agent-go"><span>Ask</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button></form></div>
+    <div class="agent rv" id="ask" data-tsp-agent data-tsp-agent-pill><div class="agent-head"><span class="agent-av" aria-hidden="true"><i></i></span><span class="agent-id"><b>Website Agent</b><span class="agent-st">Answers from this website, and takes you there</span></span></div><div class="agent-talk" data-tsp-agent-talk><p class="agent-hello">Ask me anything: what we do, how it works on your website, what it costs. I answer from our own pages and take you straight to the part that shows it. Want to see me working on a live car dealer or estate agent website? Just ask.</p></div><form class="agent-ask" action="/contact" method="get" aria-label="Ask the Website Agent"><input type="text" name="q" placeholder="Ask anything about TradeScale Plus" aria-label="Your question for the Website Agent" autocomplete="off" maxlength="500"><button type="submit" class="agent-go"><span>Ask</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button></form></div>
     <ul class="proofs rv">
       <li>Live on a UK car dealer's website</li>
       <li>Answers only from your own stock and pages</li>
       <li>Open to ChatGPT and other AI assistants</li>
       <li>Just added onto your current website, easily</li>
     </ul>
+  </div>
+</section>
+
+<!-- LIVE DEMOS (Ash, 25 Nov 2026 08:14: "we also need to explain that we have live working demos on our estate and dealer website.
+     it kinda gets lost"): straight after the opening, two working websites with the Website Agent in their pages. The agent glides
+     here when a visitor asks to see it working (#demos, plan K77). The pictures are each site's own first screen on a phone. -->
+<section class="ldemo" id="demos" aria-labelledby="demos-h">
+  <div class="wrap">
+    <div class="ldemo-head">
+      <p class="eyebrow rv"><span class="dot"></span>Live demos</p>
+      <h2 class="h2 rv" id="demos-h">See it working. <span class="lit">On two live websites.</span></h2>
+      <p class="lede rv">A car dealer and an estate agency we built to show it, with invented stock and homes. The Website Agent in them is the real one: search, ask and book, exactly as your buyers would.</p>
+    </div>
+    <div class="ldemo-two">
+      <a class="ldemo-site rv" href="https://demo.tradescaleplus.com/lot/tradescale-motors" target="_blank" rel="noopener">
+        <span class="ldemo-shot"><img src="/assets/live/motors.jpg?v=1" width="780" height="1240" alt="The first screen of TradeScale Motors, our live car dealer demo website, on a phone" loading="lazy" decoding="async"></span>
+        <span class="ldemo-body">
+          <span class="ldemo-k"><i></i>Live now · car dealer website</span>
+          <b class="ldemo-name">TradeScale Motors</b>
+          <span class="ldemo-do">Search the stock the way a buyer would, then open a car and ask it anything.</span>
+          <span class="btn ldemo-go">Open it live <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </span>
+      </a>
+      <a class="ldemo-site rv" href="https://demo.tradescaleplus.com/homes/tradescale-property" target="_blank" rel="noopener">
+        <span class="ldemo-shot"><img src="/assets/live/property.jpg?v=1" width="780" height="1240" alt="The first screen of TradeScale Property, our live estate agent demo website, on a phone" loading="lazy" decoding="async"></span>
+        <span class="ldemo-body">
+          <span class="ldemo-k"><i></i>Live now · estate agent website</span>
+          <b class="ldemo-name">TradeScale Property</b>
+          <span class="ldemo-do">Search homes across Dubai the way a buyer would, then open one and ask it anything.</span>
+          <span class="btn ldemo-go">Open it live <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </span>
+      </a>
+    </div>
+    <p class="ldemo-note rv">Each opens in a new tab. The same Website Agent is live on a UK car dealer's own website.</p>
   </div>
 </section>
 
@@ -989,17 +1023,6 @@
         <p>Courses, events, services, catalogues. It answers from your own site, takes visitors to the right page, compares, saves and books, or takes the enquiry.</p>
         <span class="go">The Website Agent for any website</span>
       </a>
-    </div>
-
-    <div class="part" id="demos" style="padding-top:clamp(64px,8vw,104px)">
-      <div class="part-head">
-        <div><p class="eyebrow rv">See it live</p><h3 class="h3 rv">Try it on our example businesses.</h3></div>
-        <p class="lede rv">Both are sample businesses we built, with invented stock. The Website Agent on each is the real one. It is also live on a UK car dealer's own website.</p>
-      </div>
-      <div class="trylive">
-        <a class="try rv" href="https://demo.tradescaleplus.com/lot/tradescale-motors" target="_blank" rel="noopener"><span class="k"><i></i>Live now · opens in a new tab</span><h3>TradeScale Motors</h3><p>Our example forecourt, with the Website Agent built into its pages. Search in the bar, then open a car.</p><span class="btn">Try it live</span></a>
-        <a class="try rv" href="https://demo.tradescaleplus.com/homes/tradescale-property" target="_blank" rel="noopener"><span class="k"><i></i>Live now · opens in a new tab</span><h3>TradeScale Property</h3><p>Our example estate agency in Dubai, with invented homes and the Website Agent built into its pages. Search in the bar, then open a home.</p><span class="btn">Try it live</span></a>
-      </div>
     </div>
 
     <div class="founder rv">
