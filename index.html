@@ -371,11 +371,21 @@
           <p class="lede rv">One film for car dealers, one for estate agents. Each walks through the same five chapters as this page.</p>
         </div>
         <div class="switch rv" role="tablist" aria-label="Choose a film">
-          <button type="button" role="tab" id="tab-film-car" aria-controls="film-car" aria-selected="true">Car dealers <span>3:26</span></button>
+          <button type="button" role="tab" id="tab-film-launch" aria-controls="film-launch" aria-selected="true">In 45 seconds <span>0:45</span></button>
+          <button type="button" role="tab" id="tab-film-car" aria-controls="film-car" aria-selected="false">Car dealers <span>3:26</span></button>
           <button type="button" role="tab" id="tab-film-homes" aria-controls="film-homes" aria-selected="false">Estate agents <span>3:26</span></button>
         </div>
       </div>
-      <div class="film-panel rv" id="film-car" role="tabpanel" aria-labelledby="tab-film-car">
+      <!-- The launch film (assets/films/launch-45s*): 45 seconds, first, for anyone who wants the whole idea at once. -->
+      <div class="film-panel rv" id="film-launch" role="tabpanel" aria-labelledby="tab-film-launch">
+        <figure class="film-box">
+          <div class="film-slate" aria-hidden="true"><b>Smart interactive websites</b><span>The launch film, in 45 seconds</span></div>
+          <video id="film-launch-video" controls playsinline preload="none" poster="/assets/films/launch-45s-poster.jpg" width="1280" height="720" aria-label="TradeScale Plus: smart interactive websites, fully integrated with AI. The launch film, 45 seconds">
+            <source src="/assets/films/launch-45s.mp4" type="video/mp4">
+          </video>
+        </figure>
+      </div>
+      <div class="film-panel rv" id="film-car" role="tabpanel" aria-labelledby="tab-film-car" hidden>
         <figure class="film-box">
           <div class="film-slate" aria-hidden="true"><b>The Website Agent for car dealers</b><span>The walkthrough, in five chapters</span></div>
           <video id="film-car-video" controls playsinline preload="none" poster="/assets/films/car-dealers-poster.jpg" width="1280" height="720" aria-label="The Website Agent for car dealers: the walkthrough, 3 minutes 26 seconds">
