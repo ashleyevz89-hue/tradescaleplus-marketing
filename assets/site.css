@@ -295,9 +295,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .code .added::before{content:"+";position:absolute;left:-.9em;color:var(--accent)}
 
 /* the story's states (assets/site.js runs it). STILL, with no script or with reduced motion: the last step, as the page writes it
-   (data-step="3"). RUNNING (.run): the scroll is the clock. Every part follows the scroll frame by frame and runs back when scrolled
-   back, so the picture is always moving while the steps go by (Ash, 24 Nov 21:04: "this part feel like its stuck scrolling, needs to
-   think how to animate it more"). The script sets on the story --in (the window coming in), --browse, --ask and --noreply (a buyer
+   (data-step="3"). RUNNING (.run): it plays itself, about fifteen seconds, once it is on the screen, and the page is never held (Ash,
+   24 Nov 21:04: "this part feel like its stuck scrolling, needs to think how to animate it more"; 25 Nov 00:20: "i still dont like we
+   get stuck on here": it no longer follows the scroll through 3.4 screens). The script sets on the story --in (the window coming in), --browse, --ask and --noreply (a buyer
    browsing the grey stock list, asking, and nobody answering), --code (the two lines' card), --w (the colour sweeping across the
    website), --bar (the agent's bar arriving in the page), --f (the answer found), --fl (the filters turning), --g1 and --g2 (the
    stock list changing); on each filter and each car its own place in the order, --k; on each step its own progress, --fill. */
@@ -361,11 +361,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .story.run .s-grid.all{pointer-events:none}
 .story.run .step::after,.story.run .step.on::after{height:calc((100% - .55em) * var(--fill,0));transition:none}
 
-/* the story's layout: the steps on the left, the window on the right, held in view while the page scrolls */
-.story{position:relative;margin-top:clamp(24px,4vw,48px)}
-.js .story.run{height:340vh}
+/* the story's layout: the steps on the left, the window on the right; the page scrolls past it as any other part */
+.story{position:relative;margin-top:clamp(24px,4vw,48px);padding:clamp(36px,5vw,72px) 0}
 .story-stage{display:grid;grid-template-columns:minmax(250px,330px) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:center;max-width:calc(var(--wrap) + 160px);margin:0 auto;padding:0 var(--gut)}
-.js .story.run .story-stage{position:sticky;top:calc(var(--navh) + var(--chh));height:calc(100vh - var(--navh) - var(--chh));height:calc(100svh - var(--navh) - var(--chh))}
 .steps{list-style:none;display:grid;gap:26px;counter-reset:s}
 .step{position:relative;padding-left:22px;opacity:.36;transition:opacity .45s var(--ease)}
 .step::before{content:"";position:absolute;left:0;top:.35em;bottom:.2em;width:2px;border-radius:2px;background:var(--line2)}
@@ -376,9 +374,23 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .story .step.on{opacity:1}
 .story .step.on::after{height:calc(100% - .55em)}
 .story:not(.run) .step{opacity:1}
+/* the player: each step's title plays from that step; on a phone, which shows one step at a time, the dots do; then "Play it again" */
+.step-b{all:unset;cursor:pointer}
+.step-b::after{content:"";position:absolute;inset:0}
+.story.run .step:not(.on):hover{opacity:.66}
+.story-ctl{display:flex;align-items:center;gap:14px;margin-top:28px;min-height:40px}
+.story-dots{display:none;flex:1;gap:6px}
+.story-dot{all:unset;cursor:pointer;flex:1;display:flex;align-items:center;height:22px}
+.story-dot i{position:relative;display:block;width:100%;height:3px;border-radius:3px;background:var(--line2);overflow:hidden}
+.story-dot i::after{content:"";position:absolute;inset:0;background:var(--accent);transform-origin:0 50%;transform:scaleX(var(--fill,0))}
+.story-again{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 16px;border-radius:999px;
+  border:1px solid var(--line2);color:var(--text2);font-size:14px;font-weight:500;opacity:0;pointer-events:none;transition:opacity .4s var(--ease),border-color .2s,color .2s}
+.story-again svg{width:15px;height:15px;flex:none}
+.story.done .story-again{opacity:1;pointer-events:auto}
+.story-again:hover{color:var(--text);border-color:rgba(var(--accent-rgb),.6)}
+.step-b:focus-visible,.story-dot:focus-visible,.story-again:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:6px}
 .story-view{min-width:0}
 .story-fit{position:relative;margin:0 auto}
-.js .story.run .story-fit{width:min(100%,calc((100vh - var(--navh) - var(--chh) - 150px) * 1.579));width:min(100%,calc((100svh - var(--navh) - var(--chh) - 150px) * 1.579))}
 .story .frame .screen{aspect-ratio:1200/760}
 .story-cap{margin-top:16px;text-align:center}
 .story .ph-only{display:none}
@@ -390,6 +402,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .step::before,.step::after{display:none}
   .story:not(.run) .steps{display:grid;gap:18px;min-height:0}
   .story:not(.run) .step{padding-left:0}
+  .story-dots{display:flex}
+  .story-ctl{margin-top:12px}
   .step h3{font-size:22px}
   .step p{font-size:15px}
 }
@@ -398,7 +412,6 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .story .frame{display:none}
   .story .ph-only{display:block}
   .story .phone{max-width:min(300px,64vw)}
-  .js .story.run .phone{max-width:min(300px,calc((100svh - var(--navh) - var(--chh) - 190px) * .47))}
   .story-cap{margin-top:12px}
 }
 /* the website inside a phone: 1em is 1/25 of the screen's width (16px on a 400px screen) */
@@ -1398,45 +1411,81 @@ a.card:hover{transform:translateY(-2px);box-shadow:var(--edge-hi)}
 }
 
 /* ============ the Website Agent, live in every page ============
-   Our own agent (plan K76; the app's static/widget-site-bar.js takes this place): every page's opening section holds it. The visitor
-   asks here and the conversation stays here, at one fixed size (nothing moves when it is used); an answer that lives on another page
-   takes them there, and that page's place carries the conversation on. Far down a page, "Ask the Website Agent" at the foot of the
-   screen brings them back. Without the agent (a blocked script), the question goes to the contact page. */
-.agent{position:relative;max-width:880px;margin:44px 0 0;padding:18px;border-radius:24px;text-align:left;scroll-margin-top:96px;
-  background:linear-gradient(180deg,rgba(21,33,55,.86),rgba(10,17,32,.92));border:1px solid var(--line2);
-  box-shadow:0 1px 0 rgba(255,255,255,.07) inset,0 30px 80px -34px rgba(0,0,0,.75),0 0 60px -30px rgba(var(--accent-rgb),.45);
-  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+   Our own agent (plan K76; the app's static/widget-site-bar.js takes this place): every page's opening section holds it, laid out
+   as a conversation: who it is at the top, the conversation in the middle, the question box at the foot, as every chat is (Ash,
+   25 Nov 00:20: "why do we type in the top and the text at bottom"). It keeps one fixed size, so nothing moves when it is used, and
+   a finger that lands in it still scrolls the page (Ash, 25 Nov 00:20: "on mobile if i touch in here i cant scroll"): the
+   conversation scrolls inside only once it is longer than its window, and gives the scroll back to the page at its ends
+   (overscroll-behavior auto, never contain). The rim glows slowly while it waits and quickly while it is answering. An answer that
+   lives on another page takes them there, and that page's place carries the conversation on. Far down a page, "Ask the Website
+   Agent" at the foot of the screen brings them back. Without the agent (a blocked script), the question goes to the contact page. */
+@property --ag-a{syntax:"<angle>";inherits:false;initial-value:0deg}
+.agent{--ag-h:300px;position:relative;isolation:isolate;max-width:860px;margin:44px 0 0;padding:16px;border-radius:26px;text-align:left;scroll-margin-top:96px;
+  background:linear-gradient(180deg,rgba(20,32,54,.92),rgba(8,14,28,.95));border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 1px 0 rgba(255,255,255,.08) inset,0 40px 90px -40px rgba(0,0,0,.8),0 0 70px -34px rgba(var(--accent-rgb),.5);
+  -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+.agent::before{content:"";position:absolute;inset:-1px;z-index:-1;border-radius:inherit;padding:1px;pointer-events:none;
+  background:conic-gradient(from var(--ag-a),rgba(var(--accent-rgb),0) 0deg,rgba(143,202,255,.95) 40deg,rgba(var(--accent-rgb),0) 110deg,rgba(var(--accent-rgb),0) 180deg,rgba(var(--accent-rgb),.7) 230deg,rgba(var(--accent-rgb),0) 300deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);
+  animation:agRim 9s linear infinite;opacity:.75;transition:opacity .4s}
+@keyframes agRim{to{--ag-a:360deg}}
+.agent:has(.tspw-typing)::before{animation-duration:1.8s;opacity:1}
 .hero:not(.hero-left) .agent{margin-left:auto;margin-right:auto}
 .hero-split .agent{grid-column:1/-1}
-.agent-head{display:flex;align-items:center;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;padding:2px 6px 14px}
-.agent-live{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-hi)}
-.agent-live i{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(var(--accent-rgb),.2);animation:agentLive 2.4s ease-in-out infinite}
-@keyframes agentLive{50%{box-shadow:0 0 0 7px rgba(var(--accent-rgb),.06)}}
-.agent-note{font-size:14.5px;color:var(--text2);letter-spacing:-.01em}
-.agent-ask{display:flex;align-items:center;gap:8px;height:60px;margin:0;padding:6px 6px 6px 22px;border-radius:999px;background:#fff;
-  box-shadow:0 0 0 4px rgba(var(--accent-rgb),.24),0 12px 30px -12px rgba(var(--accent-rgb),.55)}
-.agent-ask input{flex:1;min-width:0;height:100%;margin:0;padding:0;border:0;outline:0;background:transparent;font:inherit;font-size:16.5px;color:#0b1424;letter-spacing:-.01em}
-.agent-ask input::placeholder{color:#6b7891;opacity:1}
-.agent-go{flex:none;height:48px;padding:0 24px;border:0;border-radius:999px;cursor:pointer;background:linear-gradient(180deg,#6bb6ff,#3b9eff);
-  color:var(--on-accent);font:inherit;font-size:15.5px;font-weight:600;letter-spacing:-.01em}
-.agent-go:focus-visible,.agent-ask input:focus-visible{outline:2px solid var(--accent-ink);outline-offset:3px}
-.agent-talk{height:270px;margin-top:12px;padding:16px 18px;border-radius:18px;background:var(--paper);color:#0b1424;overflow-y:auto;overscroll-behavior:contain;font-size:15px;line-height:1.55}
+.agent-head{display:flex;align-items:center;gap:12px;padding:2px 4px 14px}
+.agent-av{position:relative;flex:none;width:38px;height:38px;border-radius:50%;
+  background:radial-gradient(circle at 34% 28%,#d6ecff 0,#6bb6ff 30%,#2a7fe6 62%,#0b3470 100%);
+  box-shadow:0 0 0 1px rgba(255,255,255,.2) inset,0 8px 20px -8px rgba(var(--accent-rgb),.9)}
+.agent-av i{position:absolute;right:-1px;bottom:-1px;width:12px;height:12px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px #0f1a2e;
+  opacity:0;transition:opacity .4s}
+.agent[data-tsp-agent="on"] .agent-av i,.agent[data-tsp-agent="talking"] .agent-av i{opacity:1}
+.agent-id{display:grid;gap:1px;min-width:0}
+.agent-id b{font-size:15.5px;font-weight:600;letter-spacing:-.015em;color:var(--text);line-height:1.3}
+.agent-st{font-size:13px;color:var(--text3);letter-spacing:-.005em;line-height:1.35}
+.agent-talk{display:flex;flex-direction:column;gap:10px;height:var(--ag-h);margin:0;padding:16px 14px;border-radius:18px;
+  background:radial-gradient(120% 90% at 50% 0%,rgba(var(--accent-rgb),.10),transparent 60%),rgba(3,8,18,.5);
+  border:1px solid rgba(255,255,255,.06);color:var(--text);overflow-y:auto;overscroll-behavior:auto;
+  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.18) transparent;font-size:15px;line-height:1.55}
 .agent-talk:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.agent-hello{margin:0;color:#4a5872;font-size:15px;line-height:1.6}
-.agent[data-tsp-agent="talking"] .agent-hello{display:none}
-.agent-talk .tspw-msg{font-size:14.5px;line-height:1.55}
-.agent-talk .tspw-msg-admin a{color:var(--accent-ink);font-weight:600}
+.agent .agent-talk .agent-hello,.agent .agent-talk .tspw-msg.tspw-msg-admin{align-self:flex-start;max-width:88%;padding:11px 14px;
+  border-radius:17px 17px 17px 5px;background:rgba(255,255,255,.075);border:1px solid rgba(255,255,255,.08);color:#e7eef8;font-size:15px;line-height:1.55}
+.agent .agent-talk .tspw-msg.tspw-msg-user{align-self:flex-end;max-width:82%;padding:10px 14px;border-radius:17px 17px 5px 17px;
+  background:linear-gradient(180deg,#6bb6ff,#3b9eff);border:0;color:#04101f;font-size:15px;line-height:1.5}
+.agent .agent-talk>.agent-hello{margin:auto 0 0}
+.agent .agent-talk .tspw-msg.tspw-msg-admin a{color:var(--accent-hi);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.agent .agent-talk .tspw-typing{color:var(--text3);padding:6px 4px}
+.agent-ask{display:flex;align-items:center;gap:8px;height:58px;margin:12px 0 0;padding:6px 6px 6px 20px;border-radius:999px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);transition:border-color .2s,background .2s,box-shadow .2s}
+.agent-ask:focus-within{border-color:rgba(var(--accent-rgb),.8);background:rgba(255,255,255,.085);box-shadow:0 0 0 4px rgba(var(--accent-rgb),.2)}
+.agent-ask input{flex:1;min-width:0;height:100%;margin:0;padding:0;border:0;outline:0;background:transparent;font:inherit;font-size:16.5px;color:var(--text);letter-spacing:-.01em}
+.agent-ask input::placeholder{color:#8a98b0;opacity:1}
+.agent-go{flex:none;display:inline-flex;align-items:center;gap:7px;height:46px;padding:0 17px 0 21px;border:0;border-radius:999px;cursor:pointer;
+  background:linear-gradient(180deg,#6bb6ff,#3b9eff);color:var(--on-accent);font:inherit;font-size:15.5px;font-weight:600;letter-spacing:-.01em;
+  box-shadow:0 10px 24px -12px rgba(var(--accent-rgb),.95);transition:filter .2s,transform .2s}
+.agent-go svg{width:17px;height:17px;flex:none}
+.agent-go:hover{filter:brightness(1.07)}
+.agent-go:active{transform:scale(.97)}
+.agent-go:focus-visible{outline:2px solid var(--accent-hi);outline-offset:3px}
 /* our corner chat never shows where a page has the place (it would only flash before the agent takes it) */
 html:has([data-tsp-agent]) .tspw-launcher,html:has([data-tsp-agent]) .tspw-teaser{display:none!important}
 #tspw-sbar-pill{background:linear-gradient(180deg,#6bb6ff,#3b9eff);color:var(--on-accent);font-family:var(--sans);
   box-shadow:0 14px 34px -10px rgba(var(--accent-rgb),.6),0 0 0 1px rgba(255,255,255,.22) inset}
 @media (max-width:640px){
-  .agent{margin-top:32px;padding:12px;border-radius:20px}
-  .agent-head{padding:2px 4px 12px}
-  .agent-note{font-size:13.5px}
+  .agent{--ag-h:270px;margin-top:30px;padding:12px;border-radius:22px}
+  .agent-head{padding:2px 2px 12px}
+  .agent-st{font-size:12.5px}
+  .agent-talk{padding:14px 11px}
+  .agent .agent-talk .agent-hello,.agent .agent-talk .tspw-msg{font-size:14.5px}
   .agent-ask{height:54px;padding-left:16px}
   .agent-ask input{font-size:16px}
-  .agent-go{height:42px;padding:0 18px}
-  .agent-talk{height:300px;padding:14px}
+  .agent-go{height:42px;padding:0 14px 0 17px}
 }
-@media (prefers-reduced-motion:reduce){.agent-live i{animation:none}}
+@media (max-width:480px){
+  .agent{padding:10px}
+  .agent-ask{gap:6px;padding-left:14px}
+  .agent-ask input{text-overflow:ellipsis}
+  .agent-go{width:42px;padding:0;justify-content:center}
+  .agent-go span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .agent-go svg{width:19px;height:19px}
+}
+@media (prefers-reduced-motion:reduce){.agent::before{animation:none}.agent-go{transition:none}}

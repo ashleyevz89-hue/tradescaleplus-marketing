@@ -4,8 +4,8 @@
    2. blocks fade up once as they come into view, the cards of a grid one after another;
    3. the chapter bar: which chapter is being read, and how far through the walkthrough (on a family of pages it
       only brings the page you are on into view);
-   4. the story (static website, two lines of code, awake, driving): the scroll is the clock: every part moves with how far
-      the story is scrolled and runs back when scrolled back; without this script the story shows its last step as a still;
+   4. the story (static website, two lines of code, awake, driving): it plays itself, about fifteen seconds, once it is on the
+      screen, and the page scrolls on as normal; each step plays from itself; without this script the story shows its last step as a still;
    5. tabs (the car panel's tools, the bar's views, the dashboard's views, the reel), with arrow keys;
    6. the leads and the bars draw in when seen; the test drive days are the next five days; the films' chapters;
    7. the install lines copy on a tap;
@@ -124,11 +124,11 @@
   $$('.story').forEach(function (story) {
     if (reduce) return;                       /* reduced motion: the still last step, as written in the page */
     var steps = $$('.step', story);
-    var lines = $$('[data-type-line]', story).map(function (el) { return { el: el, segs: segsOf(el) }; });
+    var lines = $$('[data-type-line]', story).map(function (el) { return { el: el, segs: segsOf(el), box: el.closest('.code') }; });
     var words = $$('[data-type-words]', story);
     var said = words.length ? words[0].getAttribute('data-type-words') : '';
     var shownNs = $$('.s-count .c2 b', story);
-    var total = lines.reduce(function (a, l) { return a + lengthOf(l.segs); }, 0);
+    var boxes = []; lines.forEach(function (l) { if (boxes.indexOf(l.box) < 0) boxes.push(l.box); });
     /* each turning filter and each car its place in the order (--k), for the stagger the stylesheet works out */
     $$('.s-filters', story).forEach(function (f) { $$('.s-f.on', f).forEach(function (el, k) { el.style.setProperty('--k', String(k)); }); });
     $$('.s-grid', story).forEach(function (g) { $$('.car', g).forEach(function (el, k) { el.style.setProperty('--k', String(k)); }); });
@@ -137,16 +137,21 @@
     var ramp = function (p, a, b) { return p <= a ? 0 : p >= b ? 1 : (p - a) / (b - a); };
     var ease = function (x) { return x < .5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2; };
     var set = function (k, v) { story.style.setProperty(k, String(Math.round(v * 1000) / 1000)); };
-    var caption = -1, chars = -1, typed = -1, shown = -1;
-    /* the two lines, drawn up to n characters across both, the caret on the line being typed */
-    var drawCode = function (n) {
-      if (n === chars) return;
-      chars = n;
-      var left = n;
-      lines.forEach(function (l) {
-        var len = lengthOf(l.segs), m = Math.max(0, Math.min(len, left));
-        left -= len;
-        draw(l.el, l.segs, m, m > 0 && m < len);
+    var caption = -1, chars = -1, typed = -1, shown = -1, dots = [];
+    /* the two lines, typed to how far along (0 to 1), the caret on the line being typed; each window (the computer's, the
+       phone's) types its own two lines over the same stretch */
+    var drawCode = function (x) {
+      var key = Math.round(x * 1000);
+      if (key === chars) return;
+      chars = key;
+      boxes.forEach(function (box) {
+        var own = lines.filter(function (l) { return l.box === box; });
+        var left = Math.round(x * own.reduce(function (a, l) { return a + lengthOf(l.segs); }, 0));
+        own.forEach(function (l) {
+          var len = lengthOf(l.segs), m = Math.max(0, Math.min(len, left));
+          left -= len;
+          draw(l.el, l.segs, m, m > 0 && m < len);
+        });
       });
     };
     /* the buyer's words, up to n letters, the caret while typing */
@@ -168,7 +173,11 @@
         steps.forEach(function (el, k) { el.classList.toggle('on', k === s); });
         story.setAttribute('data-step', String(s));
       }
-      steps.forEach(function (el, k) { el.style.setProperty('--fill', String(k < s ? 1 : k > s ? 0 : Math.round(ramp(p, STEPS[k][0], STEPS[k][1]) * 1000) / 1000)); });
+      steps.forEach(function (el, k) {
+        var f = String(k < s ? 1 : k > s ? 0 : Math.round(ramp(p, STEPS[k][0], STEPS[k][1]) * 1000) / 1000);
+        el.style.setProperty('--fill', f);
+        if (dots[k]) dots[k].style.setProperty('--fill', f);
+      });
       set('--in', ease(ramp(p, 0, .06)));
       /* 1. a buyer browses the grey stock list, asks about a car, and nobody answers */
       set('--browse', ease(ramp(p, .02, .11)) * (1 - ease(ramp(p, .14, .2))));
@@ -176,7 +185,7 @@
       set('--noreply', ease(ramp(p, .11, .135)) * (1 - ramp(p, .17, .2)));
       /* 2. the two lines' card comes up and the lines type as the page scrolls */
       set('--code', ease(ramp(p, .2, .25)) * (1 - ease(ramp(p, .42, .47))));
-      drawCode(Math.round(ramp(p, .24, .38) * total));
+      drawCode(ramp(p, .24, .38));
       /* 3. colour sweeps across the website, car by car, then the agent's bar arrives in the page */
       set('--w', ramp(p, .44, .56));
       set('--bar', ease(ramp(p, .52, .62)));
@@ -190,20 +199,51 @@
       set('--g1', ramp(p, .82, .9));
       set('--g2', ramp(p, .86, .96));
     };
-    /* how far the story is scrolled */
+    /* THE CLOCK. The story plays itself, about fifteen seconds, once it is on the screen, and the page is never held: it scrolls
+       on as normal (Ash, 25 Nov 00:20: "i still dont like we get stuck on here"; it used to follow the scroll through 3.4 screens).
+       It pauses while scrolled away and carries on when back; each step's title (on a phone, each dot) plays from that step; at
+       the end it stays on the last step, with "Play it again". */
     var stage = $('.story-stage', story);
-    story.classList.add('run');
-    var raf = 0;
-    var measure = function () {
+    var LENGTH = 15000, at = 0, playing = false, last = 0, raf = 0;
+    var tick = function (t) {
       raf = 0;
-      var r = story.getBoundingClientRect();
-      var span = story.offsetHeight - stage.offsetHeight;
-      go(span > 0 ? Math.min(1, Math.max(0, -r.top / span)) : 0);
+      if (!playing) return;
+      at = Math.min(1, at + (last ? Math.min(64, t - last) : 16) / LENGTH);
+      last = t;
+      go(at);
+      if (at >= 1) { playing = false; story.classList.add('done'); return; }
+      raf = requestAnimationFrame(tick);
     };
-    var ask = function () { if (!raf) raf = requestAnimationFrame(measure); };
-    window.addEventListener('scroll', ask, { passive: true });
-    window.addEventListener('resize', ask);
-    measure();
+    var play = function () { if (playing || at >= 1) return; playing = true; last = 0; if (!raf) raf = requestAnimationFrame(tick); };
+    var pause = function () { playing = false; if (raf) { cancelAnimationFrame(raf); raf = 0; } };
+    var from = function (p) { pause(); at = p; story.classList.remove('done'); go(at); play(); };
+    var ctl = document.createElement('div'); ctl.className = 'story-ctl';
+    var row = document.createElement('div'); row.className = 'story-dots';
+    steps.forEach(function (el, k) {
+      var h = $('h3', el), b = document.createElement('button');
+      b.type = 'button'; b.className = 'step-b'; b.textContent = h.textContent; h.textContent = ''; h.appendChild(b);
+      b.addEventListener('click', function () { from(STEPS[k][0]); });
+      var d = document.createElement('button');
+      d.type = 'button'; d.className = 'story-dot'; d.setAttribute('aria-label', 'Step ' + (k + 1) + ': ' + b.textContent);
+      d.appendChild(document.createElement('i'));
+      d.addEventListener('click', function () { from(STEPS[k][0]); });
+      row.appendChild(d); dots.push(d);
+    });
+    var again = document.createElement('button');
+    again.type = 'button'; again.className = 'story-again';
+    again.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4.5h4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Play it again';
+    again.addEventListener('click', function () { from(0); });
+    ctl.appendChild(row); ctl.appendChild(again);
+    var list = $('.steps', story);
+    list.parentNode.insertBefore(ctl, list.nextSibling);
+    story.classList.add('run');
+    go(0);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        var e = es[es.length - 1];
+        if (e.isIntersecting && e.intersectionRatio >= .45) play(); else if (e.intersectionRatio < .2) pause();
+      }, { threshold: [0, .2, .45, .7, 1] }).observe(stage);
+    } else play();
   });
 
   /* ---------- 5. tabs ---------- */
