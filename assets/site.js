@@ -11,7 +11,8 @@
    7. the install lines copy on a tap;
    8. the loops (short silent cuts of the product) play only while on screen, and stay on their poster with reduced
       motion; figures count up once when seen; the hero's loop rises a little as the page scrolls;
-   9. while a film plays with its sound, the agent's "Ask" button steps out of its way. */
+   9. while a film plays with its sound, or the story is on the screen, the agent's "Ask" button steps out of its way;
+  10. an answer longer than the agent's window: its foot fades and "More" scrolls to the rest. */
 (function () {
   'use strict';
   var root = document.documentElement;
@@ -243,6 +244,7 @@
       new IntersectionObserver(function (es) {
         var e = es[es.length - 1];
         if (e.isIntersecting && e.intersectionRatio >= .45) play(); else if (e.intersectionRatio < .2) pause();
+        root.classList.toggle('story-in', e.isIntersecting && e.intersectionRatio >= .2);
       }, { threshold: [0, .2, .45, .7, 1] }).observe(stage);
     } else play();
   });
@@ -440,4 +442,21 @@
   /* ---------- 9. a film playing: the agent's "Ask" button steps aside (the loops are silent and do not count) ---------- */
   var filmOn = function (e) { var v = e.target; if (v && v.tagName === 'VIDEO' && !v.muted) root.classList.toggle('film-on', e.type === 'play'); };
   ['play', 'pause', 'ended'].forEach(function (ev) { document.addEventListener(ev, filmOn, true); });
+  /* ---------- 10. the agent's conversation: "More" when an answer runs past the foot of its window ---------- */
+  $$('[data-tsp-agent]').forEach(function (spot) {
+    var talk = $('[data-tsp-agent-talk]', spot);
+    if (!talk) return;
+    var more = document.createElement('button');
+    more.type = 'button'; more.className = 'agent-more'; more.setAttribute('aria-label', 'Show the rest of the answer');
+    more.innerHTML = 'More<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    spot.appendChild(more);
+    var raf = 0;
+    var check = function () { raf = 0; spot.classList.toggle('has-more', talk.scrollHeight - talk.scrollTop - talk.clientHeight > 12); };
+    var soon = function () { if (!raf) raf = requestAnimationFrame(check); };
+    talk.addEventListener('scroll', soon, { passive: true });
+    window.addEventListener('resize', soon);
+    if (window.MutationObserver) new MutationObserver(soon).observe(talk, { childList: true, subtree: true, characterData: true });
+    more.addEventListener('click', function () { talk.scrollBy({ top: Math.round(talk.clientHeight * 0.7), behavior: reduce ? 'auto' : 'smooth' }); });
+    check();
+  });
 })();

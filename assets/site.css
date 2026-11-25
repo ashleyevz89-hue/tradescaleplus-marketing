@@ -112,7 +112,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .ctas{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px}
 
 /* ============ the top bar: the same on every page ============ */
-.nav{position:sticky;top:0;z-index:60;height:var(--navh);background:rgba(5,9,18,.86);-webkit-backdrop-filter:saturate(1.6) blur(18px);backdrop-filter:saturate(1.6) blur(18px);border-bottom:1px solid transparent;transition:border-color .25s,background-color .25s}
+.nav{position:sticky;top:0;z-index:60;height:var(--navh);background:rgba(5,9,18,.94);-webkit-backdrop-filter:saturate(1.6) blur(18px);backdrop-filter:saturate(1.6) blur(18px);border-bottom:1px solid transparent;transition:border-color .25s,background-color .25s}
 .nav.on{border-bottom-color:var(--line);background:rgba(5,9,18,.86)}
 .nav-in{max-width:var(--wrap);height:100%;margin:0 auto;padding:0 var(--gut);display:flex;align-items:center;gap:36px}
 .brand{display:inline-flex;align-items:center;gap:10px;font-size:17px;font-weight:600;letter-spacing:-.025em;white-space:nowrap}
@@ -143,7 +143,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 @media (max-width:420px){.nav-end .btn-sm{padding:0 13px}}
 
 /* ============ the chapter bar (home and market pages): where the walkthrough is, always in view ============ */
-.chapters{position:sticky;top:var(--navh);z-index:55;height:var(--chh);background:rgba(5,9,18,.86);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.chapters{position:sticky;top:var(--navh);z-index:55;height:var(--chh);background:rgba(5,9,18,.94);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .chapters ol{list-style:none;max-width:var(--wrap);height:100%;margin:0 auto;padding:0 var(--gut);display:flex;align-items:center;gap:4px;overflow-x:auto;scrollbar-width:none}
 .chapters ol::-webkit-scrollbar{display:none}
 .chapters a{display:flex;align-items:center;gap:8px;height:32px;padding:0 12px;border-radius:999px;font-size:13.5px;color:var(--text3);white-space:nowrap;transition:color .2s,background-color .2s}
@@ -379,8 +379,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .step-b::after{content:"";position:absolute;inset:0}
 .story.run .step:not(.on):hover{opacity:.66}
 .story-ctl{display:flex;align-items:center;gap:14px;margin-top:28px;min-height:40px}
-.story-dots{display:none;flex:1;gap:6px}
-.story-dot{all:unset;cursor:pointer;flex:1;display:flex;align-items:center;height:22px}
+.story-dots{display:none;flex:1;gap:8px}
+.story-dot{all:unset;cursor:pointer;flex:1;display:flex;align-items:center;height:36px}
 .story-dot i{position:relative;display:block;width:100%;height:3px;border-radius:3px;background:var(--line2);overflow:hidden}
 .story-dot i::after{content:"";position:absolute;inset:0;background:var(--accent);transform-origin:0 50%;transform:scaleX(var(--fill,0))}
 .story-again{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 16px;border-radius:999px;
@@ -397,8 +397,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 @media (max-width:900px){
   .story-stage{grid-template-columns:1fr;gap:18px;align-content:center}
   .steps{display:block;position:relative;min-height:8.6em}
-  .js .story.run .step{position:absolute;inset:0 0 auto;padding-left:0;opacity:0;transform:translateY(8px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
-  .js .story.run .step.on{opacity:1;transform:none}
+  .js .story.run .step{position:absolute;inset:0 0 auto;padding-left:0;opacity:0;transform:translateY(8px);transition:opacity .22s var(--ease),transform .22s var(--ease)}
+  .js .story.run .step.on{opacity:1;transform:none;transition-delay:.2s}
   .step::before,.step::after{display:none}
   .story:not(.run) .steps{display:grid;gap:18px;min-height:0}
   .story:not(.run) .step{padding-left:0}
@@ -1427,7 +1427,7 @@ a.card:hover{transform:translateY(-2px);box-shadow:var(--edge-hi)}
    lives on another page takes them there, and that page's place carries the conversation on. Far down a page, "Ask the Website
    Agent" at the foot of the screen brings them back. Without the agent (a blocked script), the question goes to the contact page. */
 @property --ag-a{syntax:"<angle>";inherits:false;initial-value:0deg}
-.agent{--ag-h:300px;position:relative;isolation:isolate;max-width:860px;margin:44px 0 0;padding:16px;border-radius:26px;text-align:left;scroll-margin-top:96px;
+.agent{--ag-h:262px;position:relative;isolation:isolate;max-width:860px;margin:44px 0 0;padding:16px;border-radius:26px;text-align:left;scroll-margin-top:96px;
   background:linear-gradient(180deg,rgba(20,32,54,.92),rgba(8,14,28,.95));border:1px solid rgba(255,255,255,.08);
   box-shadow:0 1px 0 rgba(255,255,255,.08) inset,0 40px 90px -40px rgba(0,0,0,.8),0 0 70px -34px rgba(var(--accent-rgb),.5);
   -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
@@ -1461,6 +1461,13 @@ a.card:hover{transform:translateY(-2px);box-shadow:var(--edge-hi)}
 .agent .agent-talk>.agent-hello{margin:auto 0 0}
 .agent .agent-talk .tspw-msg.tspw-msg-admin a{color:var(--accent-hi);font-weight:600;text-decoration:underline;text-underline-offset:2px}
 .agent .agent-talk .tspw-typing{color:var(--text3);padding:6px 4px}
+.agent.has-more .agent-talk{-webkit-mask-image:linear-gradient(#000 78%,transparent);mask-image:linear-gradient(#000 78%,transparent)}
+.agent-more{position:absolute;left:50%;bottom:98px;z-index:2;display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 14px;border:0;
+  border-radius:999px;background:rgba(20,32,54,.96);box-shadow:0 0 0 1px rgba(var(--accent-rgb),.45),0 8px 20px -8px rgba(0,0,0,.8);color:var(--text);
+  font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;opacity:0;pointer-events:none;transform:translate(-50%,6px);transition:opacity .25s,transform .25s}
+.agent-more svg{width:14px;height:14px}
+.agent.has-more .agent-more{opacity:1;pointer-events:auto;transform:translate(-50%,0)}
+.agent-more:focus-visible{outline:2px solid var(--accent-hi);outline-offset:3px}
 .agent-ask{display:flex;align-items:center;gap:8px;height:58px;margin:12px 0 0;padding:6px 6px 6px 20px;border-radius:999px;
   background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);transition:border-color .2s,background .2s,box-shadow .2s}
 .agent-ask:focus-within{border-color:rgba(var(--accent-rgb),.8);background:rgba(255,255,255,.085);box-shadow:0 0 0 4px rgba(var(--accent-rgb),.2)}
@@ -1481,14 +1488,14 @@ html:has([data-tsp-agent]) .tspw-launcher,html:has([data-tsp-agent]) .tspw-tease
    P1-4); on a phone it is just "Ask"; while a film plays with sound it steps aside (assets/site.js, part 9) */
 html #tspw-sbar-pill{left:auto;right:24px;bottom:24px;transform:translateY(18px)}
 html #tspw-sbar-pill.tspw-sb-show{transform:none}
-html.film-on #tspw-sbar-pill{opacity:0;pointer-events:none}
+html.film-on #tspw-sbar-pill,html.story-in #tspw-sbar-pill{opacity:0;pointer-events:none}
 @media (max-width:640px){
   html #tspw-sbar-pill{right:14px;bottom:14px;height:44px;padding:0 18px}
   html #tspw-sbar-pill span{display:none}
   html #tspw-sbar-pill::after{content:"Ask";font-size:14.5px}
 }
 @media (max-width:640px){
-  .agent{--ag-h:270px;margin-top:30px;padding:12px;border-radius:22px}
+  .agent{--ag-h:292px;margin-top:30px;padding:12px;border-radius:22px}
   .agent-head{padding:2px 2px 12px}
   .agent-st{font-size:12.5px}
   .agent-talk{padding:14px 11px}
@@ -1496,9 +1503,11 @@ html.film-on #tspw-sbar-pill{opacity:0;pointer-events:none}
   .agent-ask{height:54px;padding-left:16px}
   .agent-ask input{font-size:16px}
   .agent-go{height:42px;padding:0 14px 0 17px}
+  .agent-more{bottom:88px}
 }
 @media (max-width:480px){
   .agent{padding:10px}
+  .agent-more{bottom:86px}
   .agent-ask{gap:6px;padding-left:14px}
   .agent-ask input{text-overflow:ellipsis}
   .agent-go{width:42px;padding:0;justify-content:center}
