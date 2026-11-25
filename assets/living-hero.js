@@ -38,7 +38,7 @@
   var acts = Array.prototype.slice.call(document.querySelectorAll('[data-lh-act]'));
   var WORDS = q.getAttribute('data-words') || q.textContent;
   var STATES = ['is-send', 'is-found', 'is-pick', 'is-car', 'is-dep', 'is-term', 'is-monthly', 'is-td', 'td-day', 'td-time', 'td-go',
-    'r1', 'r2', 'r3', 'r4', 'ai-on', 'ai-q', 'ai-read', 'ai-ans', 'f-data', 'f-ai'];
+    'b-on', 'r1', 'r2', 'r3', 'r4', 'ai-on', 'ai-q', 'ai-read', 'ai-ans', 'f-data', 'f-ai'];
   var gen = 0, timers = [], running = false;
 
   var on = function (c) { lh.classList.add(c); };
@@ -117,7 +117,7 @@
     [750, function (now) { type(now); }],
     [2250, function (now) { if (!now) on('is-send'); }],
     [2500, function (now) { on('is-found'); tween(count, 52, 6, 950, whole, now); }],
-    [2800, function (now) { signal('.lh-bar .x-in', '.lh-buyers .x-b1', function () { on('r1'); }, now); }],
+    [2800, function (now) { on('b-on'); signal('.lh-bar .x-in', '.lh-buyers .x-b1', function () { on('r1'); }, now); }],
     [3900, function () { off('is-send'); }],
     [4700, function (now) { if (!now) on('is-pick'); }],
     [5150, function () { on('is-car'); }],

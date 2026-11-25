@@ -112,7 +112,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .ctas{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px}
 
 /* ============ the top bar: the same on every page ============ */
-.nav{position:sticky;top:0;z-index:60;height:var(--navh);background:rgba(5,9,18,.72);-webkit-backdrop-filter:saturate(1.6) blur(18px);backdrop-filter:saturate(1.6) blur(18px);border-bottom:1px solid transparent;transition:border-color .25s,background-color .25s}
+.nav{position:sticky;top:0;z-index:60;height:var(--navh);background:rgba(5,9,18,.86);-webkit-backdrop-filter:saturate(1.6) blur(18px);backdrop-filter:saturate(1.6) blur(18px);border-bottom:1px solid transparent;transition:border-color .25s,background-color .25s}
 .nav.on{border-bottom-color:var(--line);background:rgba(5,9,18,.86)}
 .nav-in{max-width:var(--wrap);height:100%;margin:0 auto;padding:0 var(--gut);display:flex;align-items:center;gap:36px}
 .brand{display:inline-flex;align-items:center;gap:10px;font-size:17px;font-weight:600;letter-spacing:-.025em;white-space:nowrap}
@@ -441,6 +441,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 /* ============ the agent's panel on a car page (static/widget-desk.js) ============ */
 .carpage{container-type:inline-size;border-radius:20px;background:#0b0c0f;box-shadow:0 0 0 1px var(--line2),0 50px 140px -50px rgba(0,0,0,.95);overflow:hidden}
+@container (max-width:560px){.cp .abar{grid-template-columns:minmax(0,1fr)}}
 .cp{font-size:calc(100cqw / 75);padding:2em 2em 2.2em;color:#f2f3f5;font-family:var(--sans);letter-spacing:-.01em;line-height:1.45}
 .cp-top{display:grid;grid-template-columns:1.45fr 1fr;gap:1.6em}
 .cp-photo{border-radius:1.2em;overflow:hidden;border:1px solid #1f2127;background:#15181d;aspect-ratio:16/10}
@@ -801,7 +802,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .dash-note{margin-top:16px}
 /* the dashboard on a narrow screen: the menu becomes a bar across the top, as the real one does on a phone */
 @container (max-width:760px){
-  .dash{font-size:calc(100cqw / 30);grid-template-columns:1fr;height:auto}
+  .dash{font-size:calc(100cqw / 30);grid-template-columns:minmax(0,1fr);height:auto}
   .d-rail{border-right:0;border-bottom:1px solid #1a1d24;padding:.9em 1em}
   .d-dealer,.d-lbl,.d-foot{display:none}
   .d-nav{grid-auto-flow:column;grid-auto-columns:max-content;overflow:hidden;margin-top:.6em}
@@ -894,6 +895,12 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .switch button span{font-family:var(--mono);font-size:12px;color:var(--text3)}
 .switch button[aria-selected="true"]{background:linear-gradient(180deg,#6bb6ff,#3b9eff);color:var(--on-accent)}
 .switch button[aria-selected="true"] span{color:rgba(4,16,31,.7)}
+@media (max-width:640px){
+  .switch{display:flex;max-width:100%;overflow-x:auto;scrollbar-width:none}
+  .switch::-webkit-scrollbar{display:none}
+  .switch button{flex:none;height:40px;padding:0 13px;font-size:13.5px;white-space:nowrap}
+  .switch button span{display:none}
+}
 .film-panel{margin-top:28px}
 .film-panel[hidden]{display:none}
 .film-box{position:relative;aspect-ratio:16/9;border-radius:22px;overflow:hidden;background:#050506;box-shadow:0 0 0 1px var(--line2),0 60px 160px -60px rgba(0,0,0,.95),0 0 120px -40px rgba(var(--accent-rgb),.25)}
@@ -1108,7 +1115,7 @@ html:not(.js) .more-row{display:none}
 .cols>*{grid-column:1/-1;margin-top:0}
 .cols>.sec-head:has(+ .prose),.cols>.sec-head:has(+ .stack),.cols>.sec-head:has(+ .panel),.cols>.sec-head:has(+ .form){grid-column:1;position:sticky;top:calc(var(--navh) + var(--chh) + 28px)}
 .cols>.sec-head+.prose,.cols>.sec-head+.stack,.cols>.sec-head+.panel,.cols>.sec-head+.form{grid-column:2}
-@media (max-width:900px){.cols{grid-template-columns:1fr}.cols>.sec-head:has(+ *),.cols>.sec-head+.prose,.cols>.sec-head+.stack,.cols>.sec-head+.panel,.cols>.sec-head+.form{grid-column:1;position:static}}
+@media (max-width:900px){.cols{grid-template-columns:1fr}.cols>.sec-head:has(+ .prose),.cols>.sec-head:has(+ .stack),.cols>.sec-head:has(+ .panel),.cols>.sec-head:has(+ .form),.cols>.sec-head+.prose,.cols>.sec-head+.stack,.cols>.sec-head+.panel,.cols>.sec-head+.form{grid-column:1;position:static}}
 .stack{display:grid;gap:22px}
 .prose{font-size:17px;line-height:1.7;color:var(--text2);max-width:44em}
 .prose p+p,.prose ul+p,.prose p+ul{margin-top:18px}
@@ -1470,6 +1477,16 @@ a.card:hover{transform:translateY(-2px);box-shadow:var(--edge-hi)}
 html:has([data-tsp-agent]) .tspw-launcher,html:has([data-tsp-agent]) .tspw-teaser{display:none!important}
 #tspw-sbar-pill{background:linear-gradient(180deg,#6bb6ff,#3b9eff);color:var(--on-accent);font-family:var(--sans);
   box-shadow:0 14px 34px -10px rgba(var(--accent-rgb),.6),0 0 0 1px rgba(255,255,255,.22) inset}
+/* the way back to the place sits in the corner, never over the middle of a page or a film's controls (the review of 25 Nov,
+   P1-4); on a phone it is just "Ask"; while a film plays with sound it steps aside (assets/site.js, part 9) */
+html #tspw-sbar-pill{left:auto;right:24px;bottom:24px;transform:translateY(18px)}
+html #tspw-sbar-pill.tspw-sb-show{transform:none}
+html.film-on #tspw-sbar-pill{opacity:0;pointer-events:none}
+@media (max-width:640px){
+  html #tspw-sbar-pill{right:14px;bottom:14px;height:44px;padding:0 18px}
+  html #tspw-sbar-pill span{display:none}
+  html #tspw-sbar-pill::after{content:"Ask";font-size:14.5px}
+}
 @media (max-width:640px){
   .agent{--ag-h:270px;margin-top:30px;padding:12px;border-radius:22px}
   .agent-head{padding:2px 2px 12px}

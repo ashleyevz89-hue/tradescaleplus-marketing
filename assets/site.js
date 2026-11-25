@@ -10,7 +10,8 @@
    6. the leads and the bars draw in when seen; the test drive days are the next five days; the films' chapters;
    7. the install lines copy on a tap;
    8. the loops (short silent cuts of the product) play only while on screen, and stay on their poster with reduced
-      motion; figures count up once when seen; the hero's loop rises a little as the page scrolls. */
+      motion; figures count up once when seen; the hero's loop rises a little as the page scrolls;
+   9. while a film plays with its sound, the agent's "Ask" button steps out of its way. */
 (function () {
   'use strict';
   var root = document.documentElement;
@@ -436,4 +437,7 @@
     var lift = function () { hraf = 0; hl.style.setProperty('--lift', Math.min(48, window.scrollY * 0.07).toFixed(1)); };
     window.addEventListener('scroll', function () { if (!hraf) hraf = requestAnimationFrame(lift); }, { passive: true });
   }
+  /* ---------- 9. a film playing: the agent's "Ask" button steps aside (the loops are silent and do not count) ---------- */
+  var filmOn = function (e) { var v = e.target; if (v && v.tagName === 'VIDEO' && !v.muted) root.classList.toggle('film-on', e.type === 'play'); };
+  ['play', 'pause', 'ended'].forEach(function (ev) { document.addEventListener(ev, filmOn, true); });
 })();

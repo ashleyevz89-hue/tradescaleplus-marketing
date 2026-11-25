@@ -220,7 +220,9 @@
 .lh-card{position:absolute;z-index:5;font-size:clamp(10px,1.74cqw,13px);text-align:left;border-radius:1.25em;color:var(--text);background:linear-gradient(180deg,rgba(24,38,64,.94),rgba(9,15,29,.96));box-shadow:inset 0 0 0 1px var(--line3),inset 0 1px 0 rgba(200,225,255,.2),0 2.4em 5em -1.6em rgba(0,4,20,.95),0 0 4.5em -1.2em rgba(var(--accent-rgb),.6);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
 .lh-card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:0 0 0 1.5px var(--accent),0 0 3.4em -.2em rgba(var(--accent-rgb),.9);opacity:0;transition:opacity .6s var(--ease)}
 .lh-card .x-hd{display:flex;align-items:center;justify-content:space-between;gap:1em;padding:.95em 1.1em .8em;border-bottom:1px solid var(--line)}
-.lh-buyers{left:-4.5cqw;bottom:0;width:38em;transform-origin:30% 100%;transform:translateZ(70px);transition:transform .8s var(--ease)}
+.lh-buyers{left:-4.5cqw;bottom:0;width:38em;transform-origin:30% 100%;transform:translateZ(70px);transition:transform .8s var(--ease),opacity .6s var(--ease)}
+/* while it plays, the card is not there until the first light flies to it (it sat empty over the cars; the review of 25 Nov) */
+.lh.x-live:not(.b-on) .lh-buyers{opacity:0}
 .lh.f-data .lh-buyers{transform:translateZ(70px) scale(1.04)}
 .lh.f-data .lh-buyers::after,.lh.f-ai .lh-ai::after{opacity:1}
 .lh-buyers .x-live{display:flex;align-items:center;gap:.7em;font-size:1.02em;font-weight:600;letter-spacing:-.015em}
