@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css?v=10">
-<link rel="preload" as="image" href="/assets/loops/hero-wake.jpg">
+<link rel="stylesheet" href="/assets/living-hero.css?v=1">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://tradescaleplus.com/#business","name":"TradeScale Plus","legalName":"Trade Scale Plus Ltd","description":"TradeScale Plus turns old, static websites into interactive, AI-powered ones with the Website Agent: custom built for any business, car dealers and estate agents included, two lines of code put it inside the business's own website, where it answers visitors from the business's own stock and pages, drives the stock list to the cars a buyer describes, works out finance at the dealer's own rate, books test drives and viewings, and sends every lead to the business.","url":"https://tradescaleplus.com/","logo":"https://tradescaleplus.com/assets/icon-512.png","email":"ash@tradescaleplus.com","telephone":"+447338616094","founder":{"@type":"Person","name":"Ashley Evans"},"identifier":{"@type":"PropertyValue","propertyID":"Companies House","value":"17142290"},"address":{"@type":"PostalAddress","addressRegion":"South Wales","addressCountry":"GB"},"areaServed":[{"@type":"Country","name":"United Kingdom"},{"@type":"City","name":"Dubai"}],"sameAs":["https://find-and-update.company-information.service.gov.uk/company/17142290"]},{"@type":"WebSite","@id":"https://tradescaleplus.com/#website","url":"https://tradescaleplus.com/","name":"TradeScale Plus","publisher":{"@id":"https://tradescaleplus.com/#business"}},{"@type":"VideoObject","name":"TradeScale Plus for car dealers: the walkthrough","description":"The Website Agent on a car dealer's website, in five chapters: the interactive website, your leads, the data we provide, your dashboard, and set up and run by us.","thumbnailUrl":"https://tradescaleplus.com/assets/films/car-dealers-poster.jpg","contentUrl":"https://tradescaleplus.com/assets/films/car-dealers-walkthrough.mp4","uploadDate":"2026-11-24","duration":"PT3M26S","publisher":{"@id":"https://tradescaleplus.com/#business"}},{"@type":"VideoObject","name":"TradeScale Plus for estate agents: the walkthrough","description":"The Website Agent on an estate agency's website, in five chapters: the interactive website, your leads, the data we provide, your dashboard, and set up and run by us.","thumbnailUrl":"https://tradescaleplus.com/assets/films/estate-agents-poster.jpg","contentUrl":"https://tradescaleplus.com/assets/films/estate-agents-walkthrough.mp4","uploadDate":"2026-11-24","duration":"PT3M26S","publisher":{"@id":"https://tradescaleplus.com/#business"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Website Agent?","acceptedAnswer":{"@type":"Answer","text":"It is the part of your website that talks to buyers. It works inside your own pages: a search bar on your home page and stock list that drives the list to the cars a buyer describes in their own words, and a panel on every car page with their monthly at your own rate, a side by side, part-exchange details for your team and test drive booking inside your opening hours. It answers only from your own stock and pages."}},{"@type":"Question","name":"Do I need a new website?","acceptedAnswer":{"@type":"Answer","text":"No. Two lines of code go on the website you already have, added by your web company or through your own Google Tag Manager. We set it up and run it."}},{"@type":"Question","name":"Can it make things up?","acceptedAnswer":{"@type":"Answer","text":"It answers only from your own stock and pages, and every reply is checked in code before a buyer sees it, against your own stock and figures. When only your team can answer, it says so and takes the buyer's details."}},{"@type":"Question","name":"Where do the leads go?","acceptedAnswer":{"@type":"Answer","text":"Every enquiry and test drive request is emailed to you the moment it is made, with the car, the buyer's name and number and what they want. Reply and it goes straight to the buyer. Every conversation is also kept in your dashboard."}},{"@type":"Question","name":"Is it only for car dealers and estate agents?","acceptedAnswer":{"@type":"Answer","text":"No. We custom build it for any business with a website, from courses and events to services and catalogues. For UK and Dubai estate agents it searches your homes as a buyer types and books viewings with the listing's consultant."}},{"@type":"Question","name":"What does it cost?","acceptedAnswer":{"@type":"Answer","text":"It is priced for your business: how many cars or listings you have, how many websites or branches it covers and the features you use. Get a quote"}}]}]}
 </script>
@@ -70,28 +70,150 @@
 
 <main id="main">
 
-<!-- ======================= OVERVIEW: what we offer, in one line and one picture ======================= -->
-<section class="hero" id="top">
+<!-- ======================= OVERVIEW: the living hero. The product plays itself (assets/living-hero.css, assets/living-hero.js),
+     then the visitor takes over in our own live Website Agent place (#ask). Without the script, or with reduced motion,
+     the picture below is the finished still: every class on .lh is its last state. ======================= -->
+<section class="hero hero-live" id="top">
   <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="wrap">
-    <p class="eyebrow rv"><span class="dot"></span>Smart interactive websites, fully integrated with AI</p>
-    <h1 class="display rv wide">Your static website.<br> <span class="lit">Now interactive.</span></h1>
-    <p class="lede rv">We turn any old, static website into an interactive one, powered by state-of-the-art AI and custom built for your business. It answers every visitor from your own website, takes them to what they want and takes the booking, day and night, and it captures the customer data your website never has. We set it up and run it for you.</p>
-    <div class="ctas rv">
-      <a class="btn" href="/book-demo">Get your free preview</a>
-      <a class="btn btn-ghost" href="#films">Watch the film</a>
+    <div class="lh-split">
+      <div class="lh-copy">
+        <p class="eyebrow rv"><span class="dot"></span>Smart interactive websites, fully integrated with AI</p>
+        <h1 class="display rv">Your static website.<br> <span class="lit">Now interactive.</span></h1>
+        <p class="lede rv">We turn any old, static website into an interactive one, powered by state-of-the-art AI and custom built for your business. We set it up and run it for you.</p>
+        <div class="ctas rv">
+          <a class="btn" href="/book-demo">Get your free preview</a>
+          <a class="btn btn-ghost" href="#films">Watch the film</a>
+        </div>
+      </div>
+      <ol class="lh-acts rv" aria-label="What the picture shows, in three parts">
+        <li class="x-on"><button type="button" data-lh-act="0"><span class="x-n">01</span><span class="x-tx"><b>The interactive website</b>A buyer types what they want. Your own stock list shows exactly those cars, and the monthly is worked out to the penny.</span><i class="x-bar" aria-hidden="true"></i></button></li>
+        <li><button type="button" data-lh-act="1"><span class="x-n">02</span><span class="x-tx"><b>The buyer data you never had</b>Every search, every question and every test drive asked for, kept for you.</span><i class="x-bar" aria-hidden="true"></i></button></li>
+        <li><button type="button" data-lh-act="2"><span class="x-n">03</span><span class="x-tx"><b>The front door for AI</b>ChatGPT and other AI assistants can read your live stock.</span><i class="x-bar" aria-hidden="true"></i></button></li>
+      </ol>
+      <div class="lh-stagewrap rv">
+        <div class="lh is-found is-car is-dep is-term is-monthly r1 r2 r3 r4 ai-on ai-q ai-ans" data-lh role="img" aria-label="A car dealer's website with the Website Agent in it. A buyer types automatic SUV under £20k and the stock list shows the six cars that fit. Under the 2023 MG ZS EV a panel works out the monthly payment. Each search and question lands in a card called Your buyers today, and ChatGPT reads the same live stock.">
+          <div class="lh-glow" aria-hidden="true"></div>
+          <div class="lh-scene" aria-hidden="true">
+            <div class="lh-frame">
+              <div class="lh-fbar"><span class="x-dots"><i></i><i></i><i></i></span><span class="x-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>demo.tradescaleplus.com/lot/tradescale-motors</span></div>
+              <div class="lh-site">
+                <div class="lh-head"><span class="x-logo"><img src="/assets/tsp-mark-96.png" alt="" width="96" height="96">TradeScale <span>Motors</span></span><span class="x-nav"><b>Used cars</b><span>Finance</span><span>Part exchange</span><span>Delivery</span></span><span class="x-cta">Book a test drive</span></div>
+                <div class="lh-page">
+                  <div class="lh-kick">OUR STOCK</div>
+                  <div class="lh-title"><b class="x-a">Used cars for sale</b><b class="x-b">6 automatic SUVs under £20,000</b></div>
+                  <div class="lh-bar">
+                    <div class="x-l">
+                      <div class="x-k"><i></i>Website Agent <span>· searches every car for you</span></div>
+                      <div class="x-in"><span class="x-q" data-lh-q data-ph="Tell me what you’re after" data-words="automatic SUV under £20k">automatic SUV under £20k</span><span class="x-send"><svg viewBox="0 0 24 24"><path d="M3 11.5 21 3l-7.5 18-2.6-7.4z"/></svg></span></div>
+                    </div>
+                    <div class="x-r">
+                      <div class="x-v x-v1">Type a car, a budget or any question. Your cars show in our own stock list.</div>
+                      <div class="x-v x-v2"><b class="x-n">6</b><span><small>Found for you</small>automatic SUVs under £20,000</span></div>
+                    </div>
+                  </div>
+                  <div class="lh-filters">
+                    <div class="x-f"><small>BODY TYPE</small><span class="x-v"><i>All body types</i><i>SUV</i></span></div>
+                    <div class="x-f"><small>GEARBOX</small><span class="x-v"><i>Any gearbox</i><i>Automatic</i></span></div>
+                    <div class="x-f"><small>MAX PRICE</small><span class="x-v"><i>Any price</i><i>£20,000</i></span></div>
+                    <div class="lh-count">Showing <b data-lh-count>6</b> of 52 cars</div>
+                  </div>
+                  <div class="lh-grid">
+                    <div class="lh-car" data-i="0"><div class="x-ph"><img src="/assets/showcase/cars/tsm-01.jpg" alt="" loading="eager" decoding="async"></div><div class="x-tx"><b>Ford Fiesta</b><span>2017 · 44,100 miles · Manual</span><em>£8,995</em></div></div>
+                    <div class="lh-car" data-i="1" data-hit="0"><div class="x-ph"><img src="/assets/showcase/cars/tsm-26.jpg" alt="" loading="eager" decoding="async"></div><div class="x-tx"><b>Kia Sportage</b><span>2019 · 36,400 miles · Automatic</span><em>£15,995</em></div></div>
+                    <div class="lh-car" data-i="2"><div class="x-ph"><img src="/assets/showcase/cars/tsm-10.jpg" alt="" loading="eager" decoding="async"></div><div class="x-tx"><b>Volkswagen Golf</b><span>2018 · 48,230 miles · Manual</span><em>£12,995</em></div></div>
+                    <div class="lh-car" data-i="3"><div class="x-ph"><img src="/assets/showcase/cars/tsm-33.jpg" alt="" loading="eager" decoding="async"></div><div class="x-tx"><b>Toyota RAV4</b><span>2019 · 39,800 miles · Automatic</span><em>£25,995</em></div></div>
+                    <div class="lh-car" data-i="4" data-hit="1"><div class="x-ph"><img src="/assets/showcase/cars/tsm-28.jpg" alt="" loading="eager" decoding="async"></div><div class="x-tx"><b>Peugeot 3008</b><span>2017 · 41,300 miles · Automatic</span><em>£13,995</em></div></div>
+                    <div class="lh-car" data-i="5"><div class="x-ph"><img src="/assets/showcase/cars/tsm-15.jpg" alt="" loading="eager" decoding="async"></div><div class="x-tx"><b>BMW 3 Series</b><span>2019 · 38,900 miles · Automatic</span><em>£23,495</em></div></div>
+                    <div class="lh-car" data-i="6" data-hit="2"><div class="x-ph"><img src="/assets/showcase/cars/tsm-30.jpg" alt="" loading="eager" decoding="async"></div><div class="x-tx"><b>Nissan Juke</b><span>2020 · 22,700 miles · Automatic</span><em>£15,495</em></div></div>
+                    <div class="lh-car" data-i="7" data-hit="3"><div class="x-ph"><img src="/assets/showcase/cars/tsm-42.jpg" alt="" loading="eager" decoding="async"></div><div class="x-tx"><b>Peugeot 5008</b><span>2018 · 45,600 miles · 7 seats</span><em>£15,995</em></div></div>
+                    <div class="lh-car" data-i="8" data-hit="4"><div class="x-ph"><img src="/assets/showcase/cars/tsm-46.jpg" alt="" loading="eager" decoding="async"></div><div class="x-tx"><b>Kia Niro</b><span>2017 · 51,700 miles · Automatic</span><em>£12,995</em></div></div>
+                    <div class="lh-car" data-i="9" data-hit="5"><div class="x-ph"><img src="/assets/showcase/cars/tsm-47.jpg" alt="" loading="eager" decoding="async"></div><div class="x-tx"><b>MG ZS EV</b><span>2023 · 12,400 miles · Automatic</span><em>£15,995</em></div></div>
+                  </div>
+                  <i class="lh-scan"></i>
+                </div>
+                <div class="lh-carpage">
+                  <div class="x-back">6 automatic SUVs under £20,000</div>
+                  <div class="x-top">
+                    <div class="x-photo"><img src="/assets/showcase/cars/tsm-47-large.jpg" alt="" decoding="async"></div>
+                    <div class="x-buy"><div class="x-chips"><i>AVAILABLE</i><i>ELECTRIC</i><i>SUV</i></div><h5>2023 MG ZS EV</h5><div class="x-var">Trophy Long Range 5dr</div><div class="x-price">£15,995</div><div class="x-spec">12,400 miles · Electric · Automatic</div></div>
+                  </div>
+                  <div class="lh-panel">
+                    <div class="x-tabs"><span class="x-t-mo"><b>£</b>Your monthly</span><span>Compare</span><span>Part-exchange</span><span class="x-t-td">Test drive</span><em><i></i>Website Agent</em></div>
+                    <div class="x-bodies">
+                      <div class="x-mo">
+                        <div class="x-ctl">
+                          <div class="x-row"><small>Your deposit</small><b>£<span data-lh-dep>1,000</span></b></div>
+                          <div class="x-sl"><i></i><u></u></div>
+                          <small class="x-hl">How long</small>
+                          <div class="x-terms"><span>24<small>months</small></span><span>36<small>months</small></span><span class="x-t48">48<small>months</small></span><span>60<small>months</small></span></div>
+                        </div>
+                        <div class="x-fig">
+                          <small>Your monthly, hire purchase</small>
+                          <b data-lh-mon>£376.50</b>
+                          <span>a month for 48 months</span>
+                          <em>Representative APR 9.9%. Cash price £15,995. Subject to status.</em>
+                        </div>
+                      </div>
+                      <div class="x-td">
+                        <div class="x-ctl">
+                          <small>Book the test drive</small>
+                          <div class="x-days"><span>Thu</span><span>Fri</span><span class="x-d-on">Sat</span><span>Sun</span><span>Mon</span></div>
+                          <div class="x-times"><span>9:30</span><span>10:30</span><span class="x-t-on">11:30</span><span>12:30</span><span>13:30</span></div>
+                        </div>
+                        <div class="x-fig">
+                          <small>2023 MG ZS EV</small>
+                          <span class="x-say">Only times inside our opening hours. The team confirms it with you.</span>
+                          <span class="x-go">Book the test drive</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="x-more"><i></i><i></i><i></i></div>
+                </div>
+                <i class="lh-dim"></i>
+              </div>
+            </div>
+            <div class="lh-card lh-buyers">
+              <div class="x-hd"><span class="x-live"><i></i>Your buyers today</span><span class="tag tag-ex">Example</span></div>
+              <ul>
+                <li class="x-b1"><span class="x-ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg></span><span class="x-t"><small>Searched for</small><b>automatic SUV under £20k</b></span></li>
+                <li class="x-b2"><span class="x-ic"><svg viewBox="0 0 24 24"><path d="M16.5 7.5A4 4 0 0 0 9 9.5V15c0 2-1 3.5-2.5 4.5h10M6.5 13h7"/></svg></span><span class="x-t"><small>Worked out a monthly</small><b>MG ZS EV, £1,000 deposit</b></span></li>
+                <li class="x-b3"><span class="x-ic"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span><span class="x-t"><small>Asked to test drive</small><b>2023 MG ZS EV</b></span><span class="x-lead">Lead</span></li>
+                <li class="x-b4"><span class="x-ic"><svg viewBox="0 0 24 24"><path d="M12 3.5 14 10l6.5 2-6.5 2-2 6.5-2-6.5-6.5-2L10 10z"/></svg></span><span class="x-t"><small>Came from an AI assistant</small><b>ChatGPT read your stock</b></span></li>
+              </ul>
+            </div>
+            <div class="lh-card lh-ai">
+              <div class="x-hd"><span class="x-who"><svg viewBox="0 0 24 24"><path d="M12 3.5 14 10l6.5 2-6.5 2-2 6.5-2-6.5-6.5-2L10 10z"/></svg>ChatGPT</span><span class="x-door">The front door for AI</span></div>
+              <div class="x-ask">Any automatic SUVs under £20k at TradeScale Motors?</div>
+              <div class="x-read"><i></i><i></i><i></i>Reading the live stock</div>
+              <div class="x-ans">
+                <b>6 in stock, read from the dealer’s own website:</b>
+                <div class="x-hit"><img src="/assets/showcase/cars/tsm-47.jpg" alt="" decoding="async"><span>2023 MG ZS EV</span></div>
+                <div class="x-hit"><img src="/assets/showcase/cars/tsm-30.jpg" alt="" decoding="async"><span>2020 Nissan Juke</span></div>
+                <div class="x-hit"><img src="/assets/showcase/cars/tsm-26.jpg" alt="" decoding="async"><span>2019 Kia Sportage</span><small>and 3 more</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="lh-sigs" aria-hidden="true"></div>
+        </div>
+        <div class="lh-take">
+          <a class="live-pill" href="#ask" data-lh-try><i></i>Your turn: ask this website anything</a>
+          <a class="lh-alt" href="https://demo.tradescaleplus.com/lot/tradescale-motors" target="_blank" rel="noopener">or try the same search on our example forecourt</a>
+        </div>
+      </div>
     </div>
+    <div class="lh-turn rv">
+      <p class="eyebrow"><span class="dot"></span>Your turn</p>
+      <h2 class="h3">That was a car dealer’s website. <span class="dim">This one is ours, and it is interactive too.</span></h2>
+    </div>
+    <div class="agent rv" id="ask" data-tsp-agent data-tsp-agent-pill><div class="agent-head"><span class="agent-live"><i></i>Website Agent</span><span class="agent-note">Talk to this website. It answers, and takes you there.</span></div><form class="agent-ask" action="/contact" method="get" aria-label="Ask the Website Agent"><input type="text" name="q" placeholder="Ask anything about TradeScale Plus" aria-label="Your question for the Website Agent" autocomplete="off" maxlength="500"><button type="submit" class="agent-go">Ask</button></form><div class="agent-talk" data-tsp-agent-talk><p class="agent-hello">Ask me anything: what we do, how it works on your website, what it costs, how to start. I answer from our own pages and take you to the one that shows it.</p></div></div>
     <ul class="proofs rv">
       <li>Live on a UK car dealer's website</li>
       <li>Answers only from your own stock and pages</li>
       <li>Open to ChatGPT and other AI assistants</li>
       <li>Just added onto your current website, easily</li>
     </ul>
-    <div class="agent rv" id="ask" data-tsp-agent data-tsp-agent-pill><div class="agent-head"><span class="agent-live"><i></i>Website Agent</span><span class="agent-note">Talk to this website. It answers, and takes you there.</span></div><form class="agent-ask" action="/contact" method="get" aria-label="Ask the Website Agent"><input type="text" name="q" placeholder="Ask anything about TradeScale Plus" aria-label="Your question for the Website Agent" autocomplete="off" maxlength="500"><button type="submit" class="agent-go">Ask</button></form><div class="agent-talk" data-tsp-agent-talk><p class="agent-hello">Ask me anything: what we do, how it works on your website, what it costs, how to start. I answer from our own pages and take you to the one that shows it.</p></div></div>
-    <div class="hero-loop">
-      <div class="loop"><div class="loop-bar"><span class="dots"><i></i><i></i><i></i></span><span>your website, before and after two lines of code</span></div><video data-loop muted loop playsinline preload="metadata" poster="/assets/loops/hero-wake.jpg" width="1240" height="800" aria-label="A car dealer's website in grey, then the same website awake with the Website Agent's bar in it"><source src="/assets/loops/hero-wake.mp4" type="video/mp4"></video></div>
-      <a class="live-pill" href="https://demo.tradescaleplus.com/lot/tradescale-motors" target="_blank" rel="noopener"><i></i>Try it live on our example forecourt</a>
-    </div>
   </div>
 </section>
 
@@ -922,6 +1044,7 @@
 </footer>
 
 <script src="/assets/site.js?v=8" defer></script>
+<script src="/assets/living-hero.js?v=1" defer></script>
 <script src="https://demo.tradescaleplus.com/embed.js?slug=tradescale-plus" data-slug="tradescale-plus" async></script>
 </body>
 </html>

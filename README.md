@@ -54,6 +54,9 @@ one top bar, one footer, one set of parts (hero, bands, cards, questions, the la
 
 - `assets/site.css`: the one stylesheet; every colour is a token
 - `assets/site.js`: what every page does on load (menu, reveals, chapter bar, the story, tabs, films, loops, count-ups)
+- `assets/living-hero.css` and `assets/living-hero.js`: the home page's living hero only (the product playing itself in
+  the opening section, then the hand-over to the live agent place `#ask`). The page writes the finished still; the
+  script plays it on a loop when motion is allowed. Its classes are all `lh-` or `x-`, so none meets the shared sheet.
 - `assets/favicon.svg`: brand mark
 - `og-card.png`: the social share image (1200 by 630)
 - `sitemap.xml`, `robots.txt`, `llms.txt`: SEO and AI-engine discoverability
